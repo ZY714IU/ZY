@@ -1,6 +1,6 @@
 /*================
 https://github.com/RuCu6/QuanX/blob/main/Scripts/weibo.js
-2023-05-02 20:55
+2023-05-02 21:00
 
   //注释掉 评论区铁粉标识、头像挂件、关注按钮
 /2/comments/build_comments
@@ -26,7 +26,7 @@ https://github.com/RuCu6/QuanX/blob/main/Scripts/weibo.js
         } else if (itemId === "100505_-_manage") {
           if (item.style) {
             
-  //英文 评论区推荐 Recommend
+  手机语言英文  增加评论区推荐 Recommend
               item?.adType === "相关内容" ||
               item?.adType === "相关评论" ||
               item?.adType === "Recommend" ||
