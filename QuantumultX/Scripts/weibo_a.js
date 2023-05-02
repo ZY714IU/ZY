@@ -1,6 +1,6 @@
 /*================
 https://github.com/RuCu6/QuanX/blob/main/Scripts/weibo.js
-2023-04-30 09:00
+2023-04-30 20:20
 
   //注释掉 评论区铁粉标识、头像挂件、关注按钮
 /2/comments/build_comments
@@ -603,6 +603,7 @@ if (url.includes("/interface/sdk/sdkad.php")) {
       }
     }
     const item = [
+      "bubble_guide_data", // 评论区弹窗
       "extend_info", // 拓展卡片
       "follow_data", // 关注提醒
       "head_cards", // 超话投票
