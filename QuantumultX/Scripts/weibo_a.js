@@ -1,6 +1,6 @@
 /*================
 https://github.com/RuCu6/QuanX/blob/main/Scripts/weibo.js
-2023-04-30 20:20
+2023-04-30 20:55
 
   //注释掉 评论区铁粉标识、头像挂件、关注按钮
 /2/comments/build_comments
@@ -203,6 +203,7 @@ if (url.includes("/interface/sdk/sdkad.php")) {
             if (
               item?.adType === "相关内容" ||
               item?.adType === "相关评论" ||
+              item?.adType === "Recommend" ||
               item?.adType === "推荐"
             ) {
               continue;
