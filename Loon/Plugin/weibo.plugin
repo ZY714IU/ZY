@@ -106,7 +106,7 @@ http-response ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/(statuses\/(extend|show)|co
 # http-request ^https?:\/\/weibo\.c(n|om)\/sinaurl\?(.*&)?(u|toasturl|goto)= script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/QuantumultX/Scripts/noRedirect.js, requires-body=false, timeout=10, tag=noRedirect
 # http-request ^https?:\/\/shop\.sc\.weibo\.c(n|om)\/h5\/jump\/error\?(.*&)?url= script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/QuantumultX/Scripts/noRedirect.js, requires-body=false, timeout=10, tag=noRedirect
 
-
+[Rewrite]
 # https://github.com/ddgksf2013/Rewrite/blob/master/AdBlock/Weibo.conf
 # @https://github.com/zmqcherish/proxy-script
 # 请手动添加以下分流至本地
