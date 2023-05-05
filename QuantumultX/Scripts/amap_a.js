@@ -1,6 +1,6 @@
 /*================
 https://github.com/RuCu6/QuanX/blob/main/Scripts/amap.js
-2023-05-05 09:18
+2023-05-05 22:50
 
 注释掉以下
   // 搜索结果 模块详情
@@ -151,7 +151,7 @@ if (url.includes("/faas/amap-navigation/main-page")) {
     "collect",
     "deviceml_force_recommend",
     "deviceml_update_apk_conf",
-    // "footprint", // 足迹
+    "footprint", // 足迹
     "gd_code_cover",
     "gd_notch_logo",
     "his_input_tip",
@@ -236,9 +236,9 @@ if (url.includes("/faas/amap-navigation/main-page")) {
 } else if (url.includes("/shield/search/poi/detail")) {
   // 搜索结果 模块详情
   const item = [
-    // "anchor",
     "group_buying", // 口碑的医院体检推广
     "group_buying_shelf", // 口碑的医院体检推广
+    // "anchor",
     "adv_compliance_info", // 服务提供方
     "adv_gift",
     // "base_info",
@@ -255,7 +255,7 @@ if (url.includes("/faas/amap-navigation/main-page")) {
     "common_coupon_bar", // 领券条幅 新客专享 省钱卡
     "comprehensiveEditEntrance", // 编辑地点信息
     // "consultancy",
-    // "contributor", // 地点贡献
+    "contributor", // 地点贡献
     // "coupon_allowance",
     // "coupon_entrance",
     "cpt_service_shop", //买卖二手房
@@ -311,8 +311,8 @@ if (url.includes("/faas/amap-navigation/main-page")) {
     "newRelatedRecommends", // 探索周边
     "new_operation_banner", // 精选活动 高德的推广
     "newsellhouse",
-    // "normal_nav_bar", // 右上角图标 客服 反馈
-    // "notification",
+    "normal_nav_bar", // 右上角图标 客服 反馈
+    "notification",
     "officerenthouse",
     "officesellhouse",
     "official_account", // 其他平台官方账号
@@ -455,12 +455,13 @@ if (url.includes("/faas/amap-navigation/main-page")) {
     if (obj?.tip_list?.length > 0) {
       for (let item of obj.tip_list) {
         if (
-          ["toplist"].includes(item.tip?.result_type) ||
+          ["12"].includes(item?.tip?.datatype_spec) ||
+          ["toplist"].includes(item?.tip?.result_type) ||
           [
             "exct_query_sug_merge_theme",
             "query_sug_merge_theme",
             "sp"
-          ].includes(item.tip?.task_tag)
+          ].includes(item?.tip?.task_tag)
         ) {
           continue;
         } else {
@@ -468,6 +469,25 @@ if (url.includes("/faas/amap-navigation/main-page")) {
         }
       }
       obj.tip_list = newList;
+    }
+  } else if (obj?.city_list) {
+    let newList = [];
+    if (obj?.city_list?.length > 0) {
+      for (let item of obj.city_list) {
+        let newTip = [];
+        if (item?.tip_list?.length > 0) {
+          for (let ii of item.tip_list) {
+            if (["12"].includes(ii?.tip?.datatype_spec)) {
+              continue;
+            } else {
+              newTip.push(ii);
+            }
+          }
+          item.tip_list = newTip;
+        }
+        newList.push(item);
+      }
+      obj.city_list = newList;
     }
   }
 } else if (url.includes("/shield/search_poi/tips_operation_location")) {
