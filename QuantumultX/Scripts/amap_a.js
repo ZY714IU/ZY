@@ -1,6 +1,6 @@
 /*================
 https://github.com/RuCu6/QuanX/blob/main/Scripts/amap.js
-2023-04-30 11:05
+2023-05-05 09:18
 
 注释掉以下
   // 搜索结果 模块详情
@@ -236,9 +236,9 @@ if (url.includes("/faas/amap-navigation/main-page")) {
 } else if (url.includes("/shield/search/poi/detail")) {
   // 搜索结果 模块详情
   const item = [
+    // "anchor",
     "group_buying", // 口碑的医院体检推广
     "group_buying_shelf", // 口碑的医院体检推广
-    // "anchor",
     "adv_compliance_info", // 服务提供方
     "adv_gift",
     // "base_info",
@@ -255,7 +255,7 @@ if (url.includes("/faas/amap-navigation/main-page")) {
     "common_coupon_bar", // 领券条幅 新客专享 省钱卡
     "comprehensiveEditEntrance", // 编辑地点信息
     // "consultancy",
-    "contributor", // 地点贡献
+    // "contributor", // 地点贡献
     // "coupon_allowance",
     // "coupon_entrance",
     "cpt_service_shop", //买卖二手房
@@ -386,7 +386,10 @@ if (url.includes("/faas/amap-navigation/main-page")) {
       delete obj.modules[i];
     });
   }
-} else if (url.includes("/shield/search_poi/search/sp")) {
+} else if (
+  url.includes("/shield/search_poi/search/sp") ||
+  url.includes("/shield/search_poi/mps")
+) {
   if (obj.data?.list_data) {
     let list = obj.data.list_data.content[0];
     // 详情页 底部 房产推广
@@ -452,8 +455,12 @@ if (url.includes("/faas/amap-navigation/main-page")) {
     if (obj?.tip_list?.length > 0) {
       for (let item of obj.tip_list) {
         if (
-          ["query_sug_merge_theme", "sp"].includes(item?.tip?.task_tag) ||
-          ["toplist"].includes(item?.tip?.result_type)
+          ["toplist"].includes(item.tip?.result_type) ||
+          [
+            "exct_query_sug_merge_theme",
+            "query_sug_merge_theme",
+            "sp"
+          ].includes(item.tip?.task_tag)
         ) {
           continue;
         } else {
