@@ -1,0 +1,65 @@
+#!name = amap
+#!desc = 
+#!openUrl = 
+#!author =  @RuCu6，@ddgksf2013，@kokoryh
+#!homepage = https://github.com/ZY714IU/ZY/blob/main/QuantumultX/Rewrites/BlockAds.conf
+#!icon = 
+#!update 2023-05-04 00:10
+
+[Mitm]
+hostname = m5.amap.com, m5-zb.amap.com, sns.amap.com
+
+[Rule]
+# amdc 已在重写加入
+# host, amdc.m.taobao.com, rejec
+host, awaken.amap.com, reject
+host, amap-aos-info-nogw.amap.com, reject
+host, free-aos-cdn-image.amap.com, reject
+
+[Rewrite]
+# 首页左下角天气 valueadded\/weather\/v\d
+# 首页顶部横幅 msgbox\/pull(_mp)?
+# 打车页角标、弹窗、卡片 boss\/order(_web\/friendly_information|\/car\/king_toolbox_car_bubble
+# 详情页tips shield\/search_poi\/tips(_adv|\/rec|\/hooks)
+# 打车页内测悬浮窗 yuece\/act\/query
+# 商铺优惠弹窗 shield\/search\/client\/push
+# 反馈里的各种卡片 aos\/feedback\/mainpage\/list
+# 广告 asa\/ads_attribution
+# 风景推荐? shield\/scene\/recommend
+# 打车页引导弹窗 boss\/order\/car\/access_guide
+^https?:\/\/(m5|sns|m5-zb)\.amap\.com\/ws\/(valueadded\/weather\/v\d|msgbox\/pull(_mp)?|boss\/order(_web\/friendly_information|\/car\/king_toolbox_car_bubble)|shield\/search_poi\/tips(_adv|\/(rec|hooks))|yuece\/act\/query|shield\/search\/client\/push|aos\/feedback\/mainpage\/list|asa\/ads_attribution|shield\/scene\/recommend|boss\/order\/car\/access_guide) url reject-dict
+
+# 文字提示? mapapi\/hint_text
+# 底部tab栏角标 message\/notice\/list
+# 搜索框热词 shield\/search\/new_hotword
+# 优惠券预加载 ccoupon\/amap\/preload
+# 路线规划 faas\/amap-navigation\/card-service-route-plan
+# 消息tab通知 faas\/amap-navigation\/main-page-assets
+# 不知是啥? faas\/amap-navigation\/main-page-location
+^https?:\/\/m(5|5-zb)\.amap\.com\/ws\/(mapapi\/hint_text|message\/notice\/list|shield\/search\/new_hotword|ccoupon\/amap\/preload|faas\/amap-navigation\/((main-page-(assets|location))|card-service-route-plan)) url reject-dict
+
+[Script]
+# 阿里系请求 AMap|Cainiao
+http-response ^http?:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$ script-path=https://github.com/ZY714IU/ZY/raw/main/QuantumultX/Scripts/amdc.js, requires-body=false, timeout=10, tag=amdc
+
+# 开屏广告 valueadded\/alimama\/splash_screen
+# 我的页面 shield\/dsp\/profile\/index\/nodefaasv3
+# 首页底部卡片 faas\/amap-navigation\/main-page
+# 首页右中广告 shield\/frogserver\/aocs\/updatable\/\d
+# 打车页处理 promotion-web\/resource\??
+# 拼车订单提示? sharedtrip\/taxi\/order_detail_car_tips
+http-response ^https?:\/\/m(5|5-zb)\.amap\.com\/ws\/(valueadded\/alimama\/splash_screen|shield\/dsp\/profile\/index\/nodefaasv3|faas\/amap-navigation\/main-page|shield\/frogserver\/aocs\/updatable\/\d|promotion-web\/resource\??|sharedtrip\/taxi\/order_detail_car_tips) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/QuantumultX/Scripts/amap_a.js, requires-body=true, timeout=10, tag=amap
+
+# 地点详情页
+# shield\/search_poi\/city_feed
+# shield\/search_poi\/search\/sp
+# shield\/search\/poi\/detail
+# mapapi\/poi\/infolite
+# 个人主页各种卡片 ws\/faas\/amap-navigation\/usr-profile-fc\/(highlightV2|home) 已删
+http-response ^https?:\/\/m5\.amap\.com\/ws\/(shield\/search(_poi\/(city_feed|search\/sp|mps)|\/poi\/detail)|mapapi\/poi\/infolite) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/QuantumultX/Scripts/amap_a.js, requires-body=true, timeout=10, tag=amap
+
+# 搜索框建议列表(_poi)?\/sug
+# 详情页底部上方窄横幅 search_poi\/tips_operation_location
+# 附近页 search\/nearbyrec_smart
+# 详情页顶部红包横幅 search\/common\/coupon\/info
+http-response ^https?:\/\/m5\.amap\.com\/ws\/shield\/search(_poi\/tips_operation_location|(_poi)?\/sug|\/(nearbyrec_smart|common\/coupon\/info)) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/QuantumultX/Scripts/amap_a.js, requires-body=true, timeout=10, tag=amap
