@@ -3,7 +3,7 @@
 #!openUrl = 
 #!author = @RuCu6，@zmqcherish，@ddgksf2013
 #!homepage = https://github.com/ZY714IU/ZY/blob/main/QuantumultX/Rewrites/BlockAds.conf
-#!icon = 
+#!icon = https://github.com/ZY714IU/ZY/raw/main/QuantumultX/Icon/weibo.png
 #!update 2023-05-04 00:10
 
 [Mitm]
