@@ -16,6 +16,8 @@ host-suffix, azureedge.net, direct
 host-suffix, azureiotcentral.com, direct
 host-suffix, azurerms.com, direct
 host-suffix, bing.com, direct
+host-suffix, bing.net, direct
+host-suffix, bingapis.com, direct
 host-suffix, cloudapp.net, direct
 host-suffix, cloudappsecurity.com, direct
 host-suffix, edgesuite.net, direct
