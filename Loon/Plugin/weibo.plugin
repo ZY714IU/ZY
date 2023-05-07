@@ -27,10 +27,10 @@ domain, sdkmonitor.biz.weibo.com, reject
 # 开屏广告
 # v\d\/ad\/realtime$
 # interface\/sdk\/sdkconfig\.php
-^https?:\/\/(bootrealtime|sdkapp)\.uve\.weibo\.c(n|om)\/(v\d\/ad\/realtime$|interface\/sdk\/sdkconfig\.php) url reject-drop
+^https?:\/\/(bootrealtime|sdkapp)\.uve\.weibo\.c(n|om)\/(v\d\/ad\/realtime$|interface\/sdk\/sdkconfig\.php) url reject-200
 
 # 消息页角标、群聊红点
-^https?:\/\/m?api.weibo.c(n|om)\/\d\/direct_messages url response-body "unread_count":\d+ response-body "unread_count":0
+# ^https?:\/\/m?api.weibo.c(n|om)\/\d\/direct_messages url response-body "unread_count":\d+ response-body "unread_count":0
 
 # 看图界面 photo\/info
 # 首页tab角标弹窗 remind
