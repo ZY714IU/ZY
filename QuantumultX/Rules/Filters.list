@@ -1,6 +1,6 @@
-# Name   Filters
+# Name   Filter
 # Author @RuCu6, @ddgksf2013, @kokoryh, @blackmatrix7, @app2smile, @DivineEngine, @zhangjun, @NobyDa, @ACL4SSR
-# Update 2023-04-30 11:50
+# Update 2023-05-07 23:30
 # “#” “;" “//” 是注释符号，去掉符号该行才生效
 # 开启「分流匹配优化」选项，则匹配优先级如下
 ; host > host-suffix > host-keyword(wildcard) > geoip = ip-cidr > user-agent
@@ -14,8 +14,6 @@
 //host-wildcard, *abc.com, proxy
 ; user-agent
 //user-agent, ?abc*, proxy
-
-
 
 
 # ===== direct ===== #
@@ -41,15 +39,18 @@ host, vd.l.qq.com, direct
 host, vi.l.qq.com, direct
 host, livew.l.qq.com, direct
 host, fairplay.l.qq.com, direct
+# 百度
+host-suffix, tuisong.baidu.com, direct
 # 其他
 host, ca.iadsdk.apple.com, direct
 host-suffix, ipleak.net, direct
 host-keyword, tkys, direct
 
+
 # ===== PROXY ===== #
 # 可把 Static 换成任意 策略组/节点
 # AppleProxy
-; 数量：26条
+; 数量：27条
 ; https://github.com/kokoryh/Script/blob/master/Surge/rule/AppleProxy.list
 host, amp-api.podcasts.apple.com, Static
 host, apple.comscoreresearch.com, Static
@@ -70,6 +71,7 @@ host, news-events.apple.com, Static
 host, radio.itunes.apple.com, Static
 host, sandbox.itunes.apple.com, Static
 host, tv.apple.com, Static
+host-suffix, testflight.apple.com, Static
 host-suffix, apple-dns.net, Static
 host-suffix, apple.news, Static
 host-suffix, apps.apple.com, Static
@@ -79,16 +81,17 @@ host-suffix, digicert.com, Static
 host-suffix, smoot.apple.com, Static
 # 必应国际版(不开分流则国内版)
 host, www.bing.com, Static
-# Apple
-host-suffix, testflight.apple.com, Static
+host-suffix, bing.net, Static
+host-suffix, bingapis.com, Static
 # 机场
+host-suffix, 2220.it, Static
 host-suffix, subs.usero.cn, Static
 host-keyword, fishchips, Static
 host-keyword, efcloud, Static
 host-keyword, efshop, Static
 host-keyword, mojie, Static
 host-keyword, xsus, Static
-# 代理软件激活检测
+# 代理软件
 host-suffix, nssurge.com, Static
 host-suffix, quantumult.app, Static
 host-suffix, surge-activation.com, Static
@@ -103,6 +106,7 @@ host-suffix, cdnedge.live, Static
 host-keyword, v2ex, Static
 host-keyword, loon, Static
 host-keyword, notion, Static
+
 
 # ===== reject ===== #
 # 安全浏览限制解除
@@ -137,32 +141,32 @@ host, awaken.amap.com, reject
 host, amap-aos-info-nogw.amap.com, reject
 host, free-aos-cdn-image.amap.com, reject
 # 微博
+host, adimg.uve.weibo.com, reject
+host, adimg.uve.weibo.com, reject
+host, adstrategy.biz.weibo.com, reject
+host, brandvideo.biz.weibo.com, reject
 host, kadmimage.biz.weibo.com, reject
+host, u1.img.mobile.sina.cn, reject
 host, sdkclick.biz.weibo.com, reject
 host, sdkaction.biz.weibo.com, reject
-host, adstrategy.biz.weibo.com, reject
 host, sdkmonitor.biz.weibo.com, reject
 ; 新浪
 host, sax.sina.com.cn, reject
 host, saxn.sina.com.cn, reject
 host, saxs.sina.com.cn, reject
-host, alitui.weibo.com, reject
 host, beacon.sina.com.cn, reject
-host, adimg.uve.weibo.com, reject
-host, adimg.vue.weibo.com, reject
-host, u1.img.mobile.sina.cn, reject
 # 百度
-host, app.duxiaoman.com, reject
+host, als.baidu.com, reject
 host, afd.baidu.com, reject
-HOST, als.baidu.com, reject
-host, pos.baidu.com, reject
+host, afdconf.baidu.com, reject
 host, cpro.baidu.com, reject
-host, mobads.baidu.com, reject
 host, duclick.baidu.com, reject
+host, lc.map.baidu.com, reject
+host, mobads.baidu.com, reject
+host, pos.baidu.com, reject
 host, nsclick.baidu.com, reject
 host, nadvideo2.baidu.com, reject
 host, mobads-logs.baidu.com, reject
-host-keyword, duxiaoman, reject
 ; 贴吧_屏蔽域名 dns 查询(否则去广告不干净)
 ip-cidr, 180.76.76.200/32, reject
 ; 贴吧屏蔽 ws (副作用；消息通知功能失效，需手动进入查看)，强制帖子接口走 http
@@ -190,7 +194,7 @@ host, ads5-normal-lq.zijieapi.com, reject
 host, polaris3-normal-lq.zijieapi.com, reject
 host, sf3-fe-tos.pglstatp-toutiao.com, reject
 host, api-access.pangolin-sdk-toutiao.com, reject
-host-wildcard, p?-ad-sign.byteimg.com, reject
+host-keyword, ad-sign.byteimg.com, reject
 # 腾讯
 host, e.qq.com, reject
 host, l.qq.com, reject
@@ -222,7 +226,7 @@ host-suffix, googleadservices.com, reject
 host-suffix, googleadsserving.com, reject
 host-suffix, googlesyndication.com, reject
 host-suffix, googletagservices.com, reject
-host-wildcard, adservice.google.com.??, reject
+host-keyword, adservice.google.com, reject
 # Amazon AD
 host-suffix, amazon-adsystem.com, reject
 # > 网易云音乐
@@ -245,7 +249,7 @@ host, etl.xlmc.sandai.net, reject
 host, hub5emu.v6.shub.sandai.net, reject
 host, hub5idx.v6.shub.sandai.net, reject
 host, hub5btmain.v6.shub.sandai.net, reject
-# Bilibili_自动换区支持(该规则将拦截B站GRPC服务端地址,迫使其使用旧协议传输内容,使换区脚本正常触发)
+# Bilibili 自动换区支持(该规则将拦截B站GRPC服务端地址,迫使其使用旧协议传输内容,使换区脚本正常触发)
 ip-cidr, 203.107.1.1/24, reject
 ; Bilibili proto
 host, grpc.biliapi.net, reject
