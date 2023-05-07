@@ -1,6 +1,6 @@
 # https://github.com/ACL4SSR/ACL4SSR/blob/master/Clash/Ruleset/Microsoft.list
 # 内容：Microsoft
-# 数量：77条
+# 数量：79条
 host-keyword, 1drv, direct
 host-keyword, microsoft, direct
 host-suffix, aadrm.com, direct
