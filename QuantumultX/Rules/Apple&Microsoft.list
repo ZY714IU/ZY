@@ -1,3 +1,36 @@
+# https://github.com/ACL4SSR/ACL4SSR/blob/master/Clash/Ruleset/Apple.list
+# 内容：AppleDirect
+# 数量：28条
+host, apple.comscoreresearch.com, direct
+host-suffix, aaplimg.com, direct
+host-suffix, akadns.net, direct
+host-suffix, apple-cloudkit.com, direct
+host-suffix, apple-mapkit.com, direct
+host-suffix, apple.co, direct
+host-suffix, apple.com, direct
+host-suffix, apple.com.cn, direct
+host-suffix, apple.news, direct
+host-suffix, appstore.com, direct
+host-suffix, cdn-apple.com, direct
+host-suffix, crashlytics.com, direct
+host-suffix, icloud-content.com, direct
+host-suffix, icloud.com, direct
+host-suffix, icloud.com.cn, direct
+host-suffix, itunes.com, direct
+host-suffix, me.com, direct
+host-suffix, mzstatic.com, direct
+ip-cidr,17.0.0.0/8, direct
+ip-cidr,63.92.224.0/19, direct
+ip-cidr,65.199.22.0/23, direct
+ip-cidr,139.178.128.0/18, direct
+ip-cidr,144.178.0.0/19, direct
+ip-cidr,144.178.36.0/22, direct
+ip-cidr,144.178.48.0/20, direct
+ip-cidr,192.35.50.0/24, direct
+ip-cidr,198.183.17.0/24, direct
+ip-cidr,205.180.175.0/24, direct
+
+
 # https://github.com/ACL4SSR/ACL4SSR/blob/master/Clash/Ruleset/Microsoft.list
 # 内容：Microsoft
 # 数量：79条
