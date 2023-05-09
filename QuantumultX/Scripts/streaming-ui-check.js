@@ -14,7 +14,6 @@ For Quantumult-X 598+ ONLY!!
 
 [task_local]
 event-interaction https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/streaming-ui-check.js, tag=流媒体-解锁查询, img-url=checkmark.seal.system, enabled=true
-
 ================*/
 
 const BASE_URL = 'https://www.netflix.com/title/';
