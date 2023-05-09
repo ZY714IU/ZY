@@ -162,10 +162,10 @@ host, afdconf.baidu.com, reject
 host, cpro.baidu.com, reject
 host, duclick.baidu.com, reject
 host, lc.map.baidu.com, reject
-host, mobads.baidu.com, reject
 host, pos.baidu.com, reject
 host, nsclick.baidu.com, reject
 host, nadvideo2.baidu.com, reject
+host, mobads.baidu.com, reject
 host, mobads-logs.baidu.com, reject
 ; 贴吧_屏蔽域名 dns 查询(否则去广告不干净)
 ip-cidr, 180.76.76.200/32, reject
@@ -176,47 +176,47 @@ ip-cidr, 203.107.1.1/24, reject
 host, ad.toutiao.com, reject
 host, ad.zijieapi.com, reject
 host, ad-sign.byteimg.com, reject
+host, ads3-normal-lq.zijieapi.com, reject
+host, ads5-normal-lq.zijieapi.com, reject
+host, api-access.pangolin-sdk-toutiao-b.com, reject
+host, api-access.pangolin-sdk-toutiao.com, reject
 host, dig.bdurl.net, reject
+host, dsp.toutiao.com, reject
 host, ug.snssdk.com, reject
 host, is.snssdk.com, reject
 host, mcs.snssdk.com, reject
 host, pangolin.snssdk.com, reject
-host, tnc3-alisc1.snssdk.com, reject
-host, security-lq.snssdk.com, reject
-host, tnc3-aliec2.snssdk.com, reject
 host-suffix, pangolin-sdk-toutiao-b.com, reject
 host-suffix, pangolin-sdk-toutiao.com, reject
-host, api-access.pangolin-sdk-toutiao-b.com, reject
-host, dsp.toutiao.com, reject
-host, tnc3-alisc1.zijieapi.com, reject
-host, ads3-normal-lq.zijieapi.com, reject
-host, ads5-normal-lq.zijieapi.com, reject
 host, polaris3-normal-lq.zijieapi.com, reject
+host, security-lq.snssdk.com, reject
 host, sf3-fe-tos.pglstatp-toutiao.com, reject
-host, api-access.pangolin-sdk-toutiao.com, reject
+host, tnc3-alisc1.snssdk.com, reject
+host, tnc3-aliec2.snssdk.com, reject
+host, tnc3-alisc1.zijieapi.com, reject
 host-keyword, ad-sign.byteimg.com, reject
 # 腾讯
+host, adsmind.tc.qq.com, reject
+host, adsmind.gdtimg.com, reject
+host, adsmind.ugdtimg.com, reject
+host, adsmind.apdcdn.tc.qq.com, reject
 host, e.qq.com, reject
-host, l.qq.com, reject
 host, gdt.qq.com, reject
-host, wa.gtimg.com, reject
-host, pgdt.gtimg.cn, reject
 host, mi.gdt.qq.com, reject
+host, pgdt.gtimg.cn, reject
 host, pgdt.gtimg.com, reject
 host, pgdt.ugdtimg.com, reject
-host, adsmind.tc.qq.com, reject
-host, adsmind.gdtimg.com, REJECT
+host, wa.gtimg.com, reject
 host, wxsnsdy.wxs.qq.com, reject
-host, adsmind.ugdtimg.com, reject
+host, wxsnsdythumb.wxs.qq.com, reject
+host, l.qq.com, reject
 host, livep.l.t002.ottcn.com, reject
 host, splashqqlive.gtimg.com, reject
-host, wxsnsdythumb.wxs.qq.com, reject
-host, adsmind.apdcdn.tc.qq.com, reject
 # Apple
-; 绕过 App 企业证书过期
-host, ocsp.apple.com, reject
 ; Safari 防跳转
 host, app-site-association.cdn-apple.com, reject
+; 绕过 App 企业证书过期
+host, ocsp.apple.com, reject
 # Google
 host, ads.youtube.com, reject
 host, adservice.google.com, reject
@@ -236,11 +236,11 @@ host, iadmusicmatvideo.music.126.net, reject
 host-suffix, 163jiasu.com, reject
 # 云闪付
 host, ads.95516.com, reject
-host, tysdk.95516.com, reject
+host, cm-10-138.getui.com, reject
 host, switch.cup.com.cn, reject
 host, sdk-conf.getui.com, reject
-host, cm-10-138.getui.com, reject
 host, sdk.open.talk.getui.net, reject
+host, tysdk.95516.com, reject
 # 迅雷_去开屏
 host, adsp.xunlei.com, reject
 host, adapi.izuiyou.com, reject
@@ -289,8 +289,9 @@ host, open.e.kuaishou.com, reject
 host-keyword, adsystem, reject
 host-keyword, adservice, reject
 
+
 # Hijacking(反劫持)
-# https://github.com/blackmatrix7/ios_rule_script
+# https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/QuantumultX/Hijacking/Hijacking.list
 # 2023-04-07 14:47:32
 # host: 1
 # host-suffix: 185
