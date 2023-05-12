@@ -21,15 +21,15 @@
 # https://github.com/lwd-temp/anti-ip-attribution
 # 注意！更改ip归属地有风险，不建议使用！
 # 微博
-host, api.weibo.cn, Static 
+//host, api.weibo.cn, Static 
 # 微信
 //host, mp.weixin.qq.com, Static
 # 小红书
-host, edith.xiaohongshu.com, Static
+//host, edith.xiaohongshu.com, Static
 # 贴吧
 //host, c.tieba.baidu.com, Static
 # 抖音；需家宽 ip 才生效，否则显示 “未知”
-host-suffix, amemv.com, Static 
+//host-suffix, amemv.com, Static 
 # 快手
 //host-suffix, gifshow.com, Static 
 //host-suffix, ksapisrv.com, Static 
