@@ -1,6 +1,6 @@
 # Name   Filter
 # Author @RuCu6, @ddgksf2013, @kokoryh, @blackmatrix7, @app2smile, @DivineEngine, @zhangjun, @NobyDa, @ACL4SSR
-# Update 2023-05-07 23:30
+# Update 2023-05-13 00:13
 # “#” “;" “//” 是注释符号，去掉符号该行才生效
 # 开启「分流匹配优化」选项，则匹配优先级如下
 ; host > host-suffix > host-keyword(wildcard) > geoip = ip-cidr > user-agent
@@ -14,6 +14,25 @@
 //host-wildcard, *abc.com, proxy
 ; user-agent
 //user-agent, ?abc*, proxy
+
+
+# ===== anti-ip ===== #
+# 针对部分软件显示 ip 归属地分流规则
+# https://github.com/lwd-temp/anti-ip-attribution
+# 注意! 更改 ip 归属地有风险，不建议使用!
+# 微博
+host, api.weibo.cn, Static 
+# 微信
+//host, mp.weixin.qq.com, Static
+# 小红书
+host, edith.xiaohongshu.com, Static
+# 贴吧
+//host, c.tieba.baidu.com, Static
+# 抖音；需家宽 ip 才生效，否则显示 “未知”
+host-suffix, amemv.com, Static 
+# 快手
+//host-suffix, gifshow.com, Static 
+//host-suffix, ksapisrv.com, Static 
 
 
 # ===== direct ===== #
@@ -47,7 +66,7 @@ host-suffix, ipleak.net, direct
 host-keyword, tkys, direct
 
 
-# ===== PROXY ===== #
+# ===== proxy ===== #
 # 可把 Static 换成任意 策略组/节点
 # AppleProxy
 ; 数量：27条
