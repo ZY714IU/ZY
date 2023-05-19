@@ -1,6 +1,6 @@
 /*================
 https://github.com/RuCu6/QuanX/blob/main/Scripts/zhihu.js
-2023-04-30 17:00
+2023-05-19 08:25
 ================*/
 
 if (!$response.body) $done({});
@@ -69,9 +69,10 @@ if (url.includes("/api/cloud/config/all")) {
     delete obj.data;
   }
 } else if (url.includes("/api/v4/articles")) {
-  if (obj.ad_info) {
-    delete obj.ad_info;
-  }
+  const item = ["ad_info", "paging", "recommend_info"];
+  item.forEach((i) => {
+    delete obj[i];
+  });
 } else if (url.includes("/commercial_api/app_float_layer")) {
   // 悬浮图标
   if ("feed_egg" in obj) {
