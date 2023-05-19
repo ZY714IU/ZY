@@ -108,8 +108,6 @@ if (url.includes("/x/resource/show/skin")) {
       }, 
     ]; 
   }
-    fixPos(obj.data.tab);
-  }
   if (obj.data.top) {
     obj.data.top = [
       {
