@@ -1,6 +1,6 @@
 /*================
 https://github.com/RuCu6/QuanX/blob/9a67ac7a83380a7c1cfaa23a3cfe7ac42a7a9ece/Scripts/bilibili/bili.js
-2023-04-30 10:05
+2023-05-19 14:48
 
 更改 tab
           item.name === "直播" ||
@@ -107,6 +107,8 @@ if (url.includes("/x/resource/show/skin")) {
         pos: 3 
       }, 
     ]; 
+  }
+    fixPos(obj.data.tab);
   }
   if (obj.data.top) {
     obj.data.top = [
@@ -216,12 +218,6 @@ if (url.includes("/x/resource/show/skin")) {
           // return false;
           // }
           return false;
-          // ad_av 创作推广广告
-          // ad_inline_3d 上方大的视频3d广告
-          // ad_inline_eggs 上方大的视频广告
-          // ad_player 大视频广告
-          // ad_web_gif 大gif广告
-          // ad_web_s 普通小广告
         } else if (
           cardType === "cm_v2" &&
           [
@@ -234,11 +230,14 @@ if (url.includes("/x/resource/show/skin")) {
           ].includes(cardGoto)
         ) {
           return false;
-          // 游戏广告
-        } else if (cardType === "small_cover_v10" && cardGoto === "game") {
+        } else if (cardType === "small_cover_v9" && cardGoto === "live") {
+          // 直播内容
           return false;
-          // 创作推广-大视频广告
+        } else if (cardType === "small_cover_v10" && cardGoto === "game") {
+          // 游戏广告
+          return false;
         } else if (cardType === "cm_double_v9" && cardGoto === "ad_inline_av") {
+          // 创作推广 大视频广告
           return false;
         }
       }
