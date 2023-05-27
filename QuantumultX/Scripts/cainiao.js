@@ -1,4 +1,7 @@
-// 2023-05-27 08:25
+/********
+https://github.com/RuCu6/QuanX/blob/main/Scripts/cainiao.js
+2023-05-27 08:25
+********/
 
 const url = $request.url;
 if (!$response.body) $done({});
