@@ -42,5 +42,7 @@
 ## 感谢各位大佬的规则分享以及辛勤维护！
 
 ### 项目访问量统计
+## 9️⃣Star 历史
+<img src="https://api.star-history.com/svg?repos=ZY714IU/QuantumultX&type=Date" alt="Star History Chart" width="600" height="356" align="center">
 
-![回到顶部](http://profile-counter.glitch.me/ZY714IU.svg)
+### [回到顶部](https://github.com/ZY714IU/QuantumultX)
