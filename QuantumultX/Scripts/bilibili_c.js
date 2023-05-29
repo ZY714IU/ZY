@@ -2,17 +2,17 @@
 WEBSITE: https://biliuniverse.io
 README: https://github.com/BiliUniverse
 */
-const $ = new Env("📺 BiliBili: 🛡️ ADBlock v0.2.0(4) response");
+const $ = new Env("📺 BiliBili: 🛡️ ADBlock v0.3.0(2) response");
 const URL = new URLs();
 const DataBase = {
 	"ADBlock":{
 		"Settings":{
-			"Switch":"true",
-			"Detail":{"splash":"true","feed":"true","activity":"false","story":"true","cinema":"true","view":"true","search":"true","xlive":"true","Hot_search":"true","Hot_topics":"true","Most_visited":"true","Dynamic_adcard":"true"}
+			"Switch":true,
+			"Detail":{"splash":true,"feed":true,"activity":false,"story":true,"cinema":true,"view":true,"search":true,"xlive":true,"Hot_search":true,"Hot_topics":true,"Most_visited":true,"Dynamic_adcard":true}
 		}
 	},
 	"Default": {
-		"Settings":{"Switch":"true"}
+		"Settings":{"Switch":true}
 	}
 };
 
@@ -20,7 +20,7 @@ const DataBase = {
 (async () => {
 	const { Settings, Caches, Configs } = setENV("BiliBili", "ADBlock", DataBase);
 	switch (Settings?.Switch) {
-		case "true":
+		case true:
 		default:
 			let url = URL.parse($request?.url);
 			const METHOD = $request?.method, HOST = url?.host, PATH = url?.path, PATHs = PATH.split("/");
@@ -59,7 +59,8 @@ const DataBase = {
 								case "x/v2/splash/brand/list": // 开屏页
 								case "x/v2/splash/event/list2": // 开屏页
 									switch (Settings?.Detail?.splash) {
-										case "true":
+										case true:
+										default:
 											const item = ["account", "event_list", "preload", "show"];
 											if (body.data) {
 												item.forEach((i) => {
@@ -68,60 +69,127 @@ const DataBase = {
 												$.log(`🎉 ${$.name}`, "开屏页广告去除");
 											}
 											break;
-										case "false":
+										case false:
 											$.log(`🚧 ${$.name}`, "用户设置开屏页广告不去除");
 											break;
 									};
 									break;
 								case "x/v2/feed/index": // 推荐页
 									switch (Settings?.Detail?.feed) {
-										case "true":
+										case true:
+										default:
 											if (body.data.items?.length) {
-												body.data.items = body.data.items.filter(i => {
-													const { card_type: cardType, card_goto: cardGoto } = i;
+												let config = body.data.config; // 区分pad与phone
+												body.data.items = await Promise.all(body.data.items.map(async item => {
+													const { card_type: cardType, card_goto: cardGoto } = item;
 													if (cardType && cardGoto) {
-														if (cardType === 'banner_v8' && cardGoto === 'banner') {
+														if (['banner_v8', 'banner_ipad_v8'].includes(cardType) && cardGoto === 'banner') {
 															switch (Settings?.Detail?.activity) {
-																case "true":
+																case true:
+																default:
+																	Caches.banner_hash = item.hash;
+																	$.setjson(Caches, "@BiliBili.ADBlock.Caches"); // 获取banner_hash,无此字段会有活动页且此字段无法伪造.
 																	$.log(`🎉 ${$.name}`, "推荐页活动大图去除");
-																	return false;
-																case "false":
-																	if (i.banner_item) {
-																		for (const v of i.banner_item) {
-																			if (v.type) {
-																				if (v.type === 'ad') {
-																					$.log(`🎉 ${$.name}`, "推荐页大图广告去除");
-																					return false;
-																				}
+																	return undefined;
+																case false:
+																	if (item.banner_item) {
+																		item.banner_item = item.banner_item.filter(i => {
+																			if (i.type === 'ad') {
+																				$.log(`🎉 ${$.name}`, "推荐页大图广告去除");
+																				return false;
 																			}
-																		}
+																			return true;
+																		});
 																	}
 																	break;
 															}
-														} else if (cardType === 'cm_v2' && ['ad_web_s', 'ad_av', 'ad_web_gif', 'ad_player', 'ad_inline_3d', 'ad_inline_eggs'].includes(cardGoto)) {
+														} else if (['cm_v2', 'cm_v1'].includes(cardType) && ['ad_web_s', 'ad_av', 'ad_web_gif'].includes(cardGoto)) {
 															// ad_player大视频广告 ad_web_gif大gif广告 ad_web_s普通小广告 ad_av创作推广广告 ad_inline_3d  上方大的视频3d广告 ad_inline_eggs 上方大的视频广告
-															$.log(`🎉 ${$.name}`, `${cardGoto}广告去除)`);
-															return false;
+															$.log(`🎉 ${$.name}`, `${cardGoto}广告去除`);
+															if (config.hasOwnProperty("ipad_hd_abtest")) {
+																return undefined;//pad直接去除
+															} else {
+																await fixPosition().then(result => item = result);//小广告补位
+															}
+														} else if (cardType === 'cm_v2' && ['ad_player', 'ad_inline_3d', 'ad_inline_eggs'].includes(cardGoto)) {
+															$.log(`🎉 ${$.name}`, `${cardGoto}广告去除`);
+															return undefined;//大广告直接去除
 														} else if (cardType === 'small_cover_v10' && cardGoto === 'game') {
 															$.log(`🎉 ${$.name}`, "游戏广告去除");
-															return false;
+															if (config.hasOwnProperty("ipad_hd_abtest")) {
+																return undefined;//pad直接去除
+															} else {
+																await fixPosition().then(result => item = result);//小广告补位
+															}
 														} else if (cardType === 'cm_double_v9' && cardGoto === 'ad_inline_av') {
 															$.log(`🎉 ${$.name}`, "大视频广告去除");
-															return false;
+															return undefined;//大广告直接去除
 														}
 													}
-													return true;
-												});
+													return item;
+												}));
+												body.data.items = body.data.items.filter(fix => fix !== undefined);
+											}
+											async function fixPosition() {
+												let itemsCache = $.getdata("@BiliBili.Index.Caches","");
+												let singleItem = {};
+												if (itemsCache.length > 0) {
+													singleItem = itemsCache.pop();
+													$.log(`🎉 ${$.name}`, "推荐页空缺位填充成功");
+												} else {//重新获取填充位
+													const myRequest = {
+														url: $request.url,
+														headers: $request.heders
+													}
+													await $.http.get(myRequest).then(response => {
+														try {
+															const body = $.toObj(response.body)
+															if (body?.code === 0 && body?.message === "0") {
+																body.data.items = body.data.items.map(item => {
+																	const { card_type: cardType, card_goto: cardGoto } = item;
+																	if (cardType && cardGoto) {
+																		if (cardType === 'banner_v8' && cardGoto === 'banner') {
+																			return undefined;
+																		} else if (cardType === 'cm_v2' && ['ad_web_s', 'ad_av', 'ad_web_gif', 'ad_player', 'ad_inline_3d', 'ad_inline_eggs'].includes(cardGoto)) {
+																			return undefined;
+																		} else if (cardType === 'small_cover_v10' && cardGoto === 'game') {
+																			return undefined;
+																		} else if (cardType === 'cm_double_v9' && cardGoto === 'ad_inline_av') {
+																			return undefined;
+																		} else if (cardType === 'large_cover_v9' && cardGoto === 'inline_av_v2') {//补位不需要大视频
+																			return undefined;
+																		}
+																	}
+																	return item;
+																}).filter(fix => fix !== undefined);
+																$.setdata(body.data.items, "@BiliBili.Index.Caches");
+																$.log(`🎉 ${$.name}`, "推荐页缓存数组补充成功");
+															} else {
+																$.log(`🚧 ${$.name}`, "访问推荐页尝试填补失败");
+															}
+														} catch (e) {
+															$.logErr(e, response)
+														}
+													})
+													itemsCache = $.getdata("@BiliBili.Index.Caches","");
+													if (itemsCache.length > 0) {
+														singleItem = itemsCache.pop();
+														$.log(`🎉 ${$.name}`, "推荐页空缺位填充成功");
+													}
+												}
+												$.setdata(itemsCache, "@BiliBili.Index.Caches");
+												return singleItem;
 											}
 											break;
-										case "false":
+										case false:
 											$.log(`🚧 ${$.name}`, "用户设置推荐页广告不去除");
 											break;
 									};
 									break;
 								case "x/v2/feed/index/story": // 首页短视频流
 									switch (Settings?.Detail?.story) {
-										case "true":
+										case true:
+										default:
 											if (body.data?.items) {
 												// vertical_live 直播内容
 												// vertical_pgc 大会员专享
@@ -133,18 +201,19 @@ const DataBase = {
 												$.log(`🎉 ${$.name}`, "首页短视频流广告去除");
 											}
 											break;
-										case "false":
+										case false:
 											$.log(`🚧 ${$.name}`, "用户设置首页短视频流广告不去除");
 											break;
 									};
 									break;
 								case "x/v2/search/square": // 搜索页
 									switch (Settings?.Detail?.Hot_search) {
-										case "true":
+										case true:
+										default:
 											body.data = body.data.filter((i) => !(i.type === "trending"));
 											$.log(`🎉 ${$.name}`, "搜索页热搜内容去除");
 											break;
-										case "false":
+										case false:
 											$.log(`🚧 ${$.name}`, "用户设置搜索页热搜内容不去除");
 											break;
 									}
@@ -166,7 +235,8 @@ const DataBase = {
 								case "pgc/page/bangumi": // 追番页
 								case "pgc/page/cinema/tab": // 观影页
 									switch (Settings?.Detail?.cinema) {
-										case "true":
+										case true:
+										default:
 											if (body.result?.modules) {
 												body.result.modules.forEach((i) => {
 													if (i.style.startsWith("banner")) {
@@ -182,7 +252,7 @@ const DataBase = {
 												$.log(`🎉 ${$.name}`, "观影页广告去除");
 											}
 											break;
-										case "false":
+										case false:
 											$.log(`🚧 ${$.name}`, "用户设置观影页广告不去除");
 											break;
 									};
@@ -206,7 +276,8 @@ const DataBase = {
 							switch (PATH) {
 								case "xlive/app-room/v1/index/getInfoByRoom": // 直播
 									switch (Settings?.Detail?.xlive) {
-										case "true":
+										case true:
+										default:
 											if (body.data?.activity_banner_info) {
 												body.data.activity_banner_info = null;
 												$.log(`🎉 ${$.name}`, "直播banner广告去除");
@@ -222,7 +293,7 @@ const DataBase = {
 													body.data.new_tab_info.outer_list.filter((i) => i.biz_id !== 33);
 											}
 											break;
-										case "false":
+										case false:
 											$.log(`🚧 ${$.name}`, "用户设置直播页广告不去除");
 											break;
 									};
@@ -308,35 +379,50 @@ const DataBase = {
 										case "bilibili.app.dynamic.v2.Dynamic": // 动态
 											/******************  initialization start  *******************/
 											// protobuf/bilibili/app/dynamic/dynamic.proto
-											var DynamicType;(function(DynamicType){DynamicType[DynamicType["dyn_none"]=0]="dyn_none";DynamicType[DynamicType["forward"]=1]="forward";DynamicType[DynamicType["av"]=2]="av";DynamicType[DynamicType["pgc"]=3]="pgc";DynamicType[DynamicType["courses"]=4]="courses";DynamicType[DynamicType["fold"]=5]="fold";DynamicType[DynamicType["word"]=6]="word";DynamicType[DynamicType["draw"]=7]="draw";DynamicType[DynamicType["article"]=8]="article";DynamicType[DynamicType["music"]=9]="music";DynamicType[DynamicType["common_square"]=10]="common_square";DynamicType[DynamicType["common_vertical"]=11]="common_vertical";DynamicType[DynamicType["live"]=12]="live";DynamicType[DynamicType["medialist"]=13]="medialist";DynamicType[DynamicType["courses_season"]=14]="courses_season";DynamicType[DynamicType["ad"]=15]="ad";DynamicType[DynamicType["applet"]=16]="applet";DynamicType[DynamicType["subscription"]=17]="subscription";DynamicType[DynamicType["live_rcmd"]=18]="live_rcmd";DynamicType[DynamicType["banner"]=19]="banner";DynamicType[DynamicType["ugc_season"]=20]="ugc_season";DynamicType[DynamicType["subscription_new"]=21]="subscription_new";DynamicType[DynamicType["story"]=22]="story";DynamicType[DynamicType["topic_rcmd"]=23]="topic_rcmd"})(DynamicType||(DynamicType={}));class DynAllReply$Type extends MessageType{constructor(){super("bilibili.app.dynamic.v2.DynAllReply",[{no:1,name:"dynamic_list",kind:"message",T:()=>DynamicList},{no:2,name:"up_list",kind:"message",T:()=>CardVideoUpList},{no:3,name:"topic_list",kind:"message",T:()=>TopicList}])}create(value){const message={};globalThis.Object.defineProperty(message,MESSAGE_TYPE,{enumerable:false,value:this});if(value!==undefined)reflectionMergePartial(this,message,value);return message}internalBinaryRead(reader,length,options,target){let message=target??this.create(),end=reader.pos+length;while(reader.pos<end){let[fieldNo,wireType]=reader.tag();switch(fieldNo){case 1:message.dynamicList=DynamicList.internalBinaryRead(reader,reader.uint32(),options,message.dynamicList);break;case 2:message.upList=CardVideoUpList.internalBinaryRead(reader,reader.uint32(),options,message.upList);break;case 3:message.topicList=TopicList.internalBinaryRead(reader,reader.uint32(),options,message.topicList);break;default:let u=options.readUnknownField;if(u==="throw")throw new globalThis.Error(`Unknown field ${fieldNo}(wire type ${wireType})for ${this.typeName}`);let d=reader.skip(wireType);if(u!==false)(u===true?UnknownFieldHandler.onRead:u)(this.typeName,message,fieldNo,wireType,d)}}return message}internalBinaryWrite(message,writer,options){if(message.dynamicList)DynamicList.internalBinaryWrite(message.dynamicList,writer.tag(1,WireType.LengthDelimited).fork(),options).join();if(message.upList)CardVideoUpList.internalBinaryWrite(message.upList,writer.tag(2,WireType.LengthDelimited).fork(),options).join();if(message.topicList)TopicList.internalBinaryWrite(message.topicList,writer.tag(3,WireType.LengthDelimited).fork(),options).join();let u=options.writeUnknownFields;if(u!==false)(u==true?UnknownFieldHandler.onWrite:u)(this.typeName,message,writer);return writer}}const DynAllReply=new DynAllReply$Type();class DynVideoReply$Type extends MessageType{constructor(){super("bilibili.app.dynamic.v2.DynVideoReply",[{no:2,name:"video_up_list",kind:"message",T:()=>CardVideoUpList}])}create(value){const message={};globalThis.Object.defineProperty(message,MESSAGE_TYPE,{enumerable:false,value:this});if(value!==undefined)reflectionMergePartial(this,message,value);return message}internalBinaryRead(reader,length,options,target){let message=target??this.create(),end=reader.pos+length;while(reader.pos<end){let[fieldNo,wireType]=reader.tag();switch(fieldNo){case 2:message.videoUpList=CardVideoUpList.internalBinaryRead(reader,reader.uint32(),options,message.videoUpList);break;default:let u=options.readUnknownField;if(u==="throw")throw new globalThis.Error(`Unknown field ${fieldNo}(wire type ${wireType})for ${this.typeName}`);let d=reader.skip(wireType);if(u!==false)(u===true?UnknownFieldHandler.onRead:u)(this.typeName,message,fieldNo,wireType,d)}}return message}internalBinaryWrite(message,writer,options){if(message.videoUpList)CardVideoUpList.internalBinaryWrite(message.videoUpList,writer.tag(2,WireType.LengthDelimited).fork(),options).join();let u=options.writeUnknownFields;if(u!==false)(u==true?UnknownFieldHandler.onWrite:u)(this.typeName,message,writer);return writer}}const DynVideoReply=new DynVideoReply$Type();class DynamicList$Type extends MessageType{constructor(){super("bilibili.app.dynamic.v2.DynamicList",[{no:1,name:"list",kind:"message",repeat:1,T:()=>DynamicItem}])}create(value){const message={list:[]};globalThis.Object.defineProperty(message,MESSAGE_TYPE,{enumerable:false,value:this});if(value!==undefined)reflectionMergePartial(this,message,value);return message}internalBinaryRead(reader,length,options,target){let message=target??this.create(),end=reader.pos+length;while(reader.pos<end){let[fieldNo,wireType]=reader.tag();switch(fieldNo){case 1:message.list.push(DynamicItem.internalBinaryRead(reader,reader.uint32(),options));break;default:let u=options.readUnknownField;if(u==="throw")throw new globalThis.Error(`Unknown field ${fieldNo}(wire type ${wireType})for ${this.typeName}`);let d=reader.skip(wireType);if(u!==false)(u===true?UnknownFieldHandler.onRead:u)(this.typeName,message,fieldNo,wireType,d)}}return message}internalBinaryWrite(message,writer,options){for(let i=0;i<message.list.length;i++)DynamicItem.internalBinaryWrite(message.list[i],writer.tag(1,WireType.LengthDelimited).fork(),options).join();let u=options.writeUnknownFields;if(u!==false)(u==true?UnknownFieldHandler.onWrite:u)(this.typeName,message,writer);return writer}}const DynamicList=new DynamicList$Type();class DynamicItem$Type extends MessageType{constructor(){super("bilibili.app.dynamic.v2.DynamicItem",[{no:1,name:"card_type",kind:"enum",T:()=>["bilibili.app.dynamic.v2.DynamicType",DynamicType]}])}create(value){const message={cardType:0};globalThis.Object.defineProperty(message,MESSAGE_TYPE,{enumerable:false,value:this});if(value!==undefined)reflectionMergePartial(this,message,value);return message}internalBinaryRead(reader,length,options,target){let message=target??this.create(),end=reader.pos+length;while(reader.pos<end){let[fieldNo,wireType]=reader.tag();switch(fieldNo){case 1:message.cardType=reader.int32();break;default:let u=options.readUnknownField;if(u==="throw")throw new globalThis.Error(`Unknown field ${fieldNo}(wire type ${wireType})for ${this.typeName}`);let d=reader.skip(wireType);if(u!==false)(u===true?UnknownFieldHandler.onRead:u)(this.typeName,message,fieldNo,wireType,d)}}return message}internalBinaryWrite(message,writer,options){if(message.cardType!==0)writer.tag(1,WireType.Varint).int32(message.cardType);let u=options.writeUnknownFields;if(u!==false)(u==true?UnknownFieldHandler.onWrite:u)(this.typeName,message,writer);return writer}}const DynamicItem=new DynamicItem$Type();class CardVideoUpList$Type extends MessageType{constructor(){super("bilibili.app.dynamic.v2.CardVideoUpList",[{no:1,name:"title",kind:"scalar",T:9}])}create(value){const message={title:""};globalThis.Object.defineProperty(message,MESSAGE_TYPE,{enumerable:false,value:this});if(value!==undefined)reflectionMergePartial(this,message,value);return message}internalBinaryRead(reader,length,options,target){let message=target??this.create(),end=reader.pos+length;while(reader.pos<end){let[fieldNo,wireType]=reader.tag();switch(fieldNo){case 1:message.title=reader.string();break;default:let u=options.readUnknownField;if(u==="throw")throw new globalThis.Error(`Unknown field ${fieldNo}(wire type ${wireType})for ${this.typeName}`);let d=reader.skip(wireType);if(u!==false)(u===true?UnknownFieldHandler.onRead:u)(this.typeName,message,fieldNo,wireType,d)}}return message}internalBinaryWrite(message,writer,options){if(message.title!=="")writer.tag(1,WireType.LengthDelimited).string(message.title);let u=options.writeUnknownFields;if(u!==false)(u==true?UnknownFieldHandler.onWrite:u)(this.typeName,message,writer);return writer}}const CardVideoUpList=new CardVideoUpList$Type();class TopicList$Type extends MessageType{constructor(){super("bilibili.app.dynamic.v2.TopicList",[])}create(value){const message={};globalThis.Object.defineProperty(message,MESSAGE_TYPE,{enumerable:false,value:this});if(value!==undefined)reflectionMergePartial(this,message,value);return message}internalBinaryRead(reader,length,options,target){return target??this.create()}internalBinaryWrite(message,writer,options){let u=options.writeUnknownFields;if(u!==false)(u==true?UnknownFieldHandler.onWrite:u)(this.typeName,message,writer);return writer}}const TopicList=new TopicList$Type();
+											var DynamicType;(function(DynamicType){DynamicType[DynamicType["dyn_none"]=0]="dyn_none";DynamicType[DynamicType["forward"]=1]="forward";DynamicType[DynamicType["av"]=2]="av";DynamicType[DynamicType["pgc"]=3]="pgc";DynamicType[DynamicType["courses"]=4]="courses";DynamicType[DynamicType["fold"]=5]="fold";DynamicType[DynamicType["word"]=6]="word";DynamicType[DynamicType["draw"]=7]="draw";DynamicType[DynamicType["article"]=8]="article";DynamicType[DynamicType["music"]=9]="music";DynamicType[DynamicType["common_square"]=10]="common_square";DynamicType[DynamicType["common_vertical"]=11]="common_vertical";DynamicType[DynamicType["live"]=12]="live";DynamicType[DynamicType["medialist"]=13]="medialist";DynamicType[DynamicType["courses_season"]=14]="courses_season";DynamicType[DynamicType["ad"]=15]="ad";DynamicType[DynamicType["applet"]=16]="applet";DynamicType[DynamicType["subscription"]=17]="subscription";DynamicType[DynamicType["live_rcmd"]=18]="live_rcmd";DynamicType[DynamicType["banner"]=19]="banner";DynamicType[DynamicType["ugc_season"]=20]="ugc_season";DynamicType[DynamicType["subscription_new"]=21]="subscription_new";DynamicType[DynamicType["story"]=22]="story";DynamicType[DynamicType["topic_rcmd"]=23]="topic_rcmd"})(DynamicType||(DynamicType={}));
+											class DynAllReply$Type extends MessageType{constructor(){super("bilibili.app.dynamic.v2.DynAllReply",[{no:1,name:"dynamic_list",kind:"message",T:()=>DynamicList},{no:2,name:"up_list",kind:"message",T:()=>CardVideoUpList},{no:3,name:"topic_list",kind:"message",T:()=>TopicList}])}create(value){const message={};globalThis.Object.defineProperty(message,MESSAGE_TYPE,{enumerable:false,value:this});if(value!==undefined)reflectionMergePartial(this,message,value);return message}internalBinaryRead(reader,length,options,target){let message=target??this.create(),end=reader.pos+length;while(reader.pos<end){let[fieldNo,wireType]=reader.tag();switch(fieldNo){case 1:message.dynamicList=DynamicList.internalBinaryRead(reader,reader.uint32(),options,message.dynamicList);break;case 2:message.upList=CardVideoUpList.internalBinaryRead(reader,reader.uint32(),options,message.upList);break;case 3:message.topicList=TopicList.internalBinaryRead(reader,reader.uint32(),options,message.topicList);break;default:let u=options.readUnknownField;if(u==="throw")throw new globalThis.Error(`Unknown field ${fieldNo}(wire type ${wireType})for ${this.typeName}`);let d=reader.skip(wireType);if(u!==false)(u===true?UnknownFieldHandler.onRead:u)(this.typeName,message,fieldNo,wireType,d)}}return message}internalBinaryWrite(message,writer,options){if(message.dynamicList)DynamicList.internalBinaryWrite(message.dynamicList,writer.tag(1,WireType.LengthDelimited).fork(),options).join();if(message.upList)CardVideoUpList.internalBinaryWrite(message.upList,writer.tag(2,WireType.LengthDelimited).fork(),options).join();if(message.topicList)TopicList.internalBinaryWrite(message.topicList,writer.tag(3,WireType.LengthDelimited).fork(),options).join();let u=options.writeUnknownFields;if(u!==false)(u==true?UnknownFieldHandler.onWrite:u)(this.typeName,message,writer);return writer}}
+											const DynAllReply=new DynAllReply$Type();
+											class DynVideoReply$Type extends MessageType{constructor(){super("bilibili.app.dynamic.v2.DynVideoReply",[{no:2,name:"video_up_list",kind:"message",T:()=>CardVideoUpList}])}create(value){const message={};globalThis.Object.defineProperty(message,MESSAGE_TYPE,{enumerable:false,value:this});if(value!==undefined)reflectionMergePartial(this,message,value);return message}internalBinaryRead(reader,length,options,target){let message=target??this.create(),end=reader.pos+length;while(reader.pos<end){let[fieldNo,wireType]=reader.tag();switch(fieldNo){case 2:message.videoUpList=CardVideoUpList.internalBinaryRead(reader,reader.uint32(),options,message.videoUpList);break;default:let u=options.readUnknownField;if(u==="throw")throw new globalThis.Error(`Unknown field ${fieldNo}(wire type ${wireType})for ${this.typeName}`);let d=reader.skip(wireType);if(u!==false)(u===true?UnknownFieldHandler.onRead:u)(this.typeName,message,fieldNo,wireType,d)}}return message}internalBinaryWrite(message,writer,options){if(message.videoUpList)CardVideoUpList.internalBinaryWrite(message.videoUpList,writer.tag(2,WireType.LengthDelimited).fork(),options).join();let u=options.writeUnknownFields;if(u!==false)(u==true?UnknownFieldHandler.onWrite:u)(this.typeName,message,writer);return writer}}
+											const DynVideoReply=new DynVideoReply$Type();
+											class DynamicList$Type extends MessageType{constructor(){super("bilibili.app.dynamic.v2.DynamicList",[{no:1,name:"list",kind:"message",repeat:1,T:()=>DynamicItem}])}create(value){const message={list:[]};globalThis.Object.defineProperty(message,MESSAGE_TYPE,{enumerable:false,value:this});if(value!==undefined)reflectionMergePartial(this,message,value);return message}internalBinaryRead(reader,length,options,target){let message=target??this.create(),end=reader.pos+length;while(reader.pos<end){let[fieldNo,wireType]=reader.tag();switch(fieldNo){case 1:message.list.push(DynamicItem.internalBinaryRead(reader,reader.uint32(),options));break;default:let u=options.readUnknownField;if(u==="throw")throw new globalThis.Error(`Unknown field ${fieldNo}(wire type ${wireType})for ${this.typeName}`);let d=reader.skip(wireType);if(u!==false)(u===true?UnknownFieldHandler.onRead:u)(this.typeName,message,fieldNo,wireType,d)}}return message}internalBinaryWrite(message,writer,options){for(let i=0;i<message.list.length;i++)DynamicItem.internalBinaryWrite(message.list[i],writer.tag(1,WireType.LengthDelimited).fork(),options).join();let u=options.writeUnknownFields;if(u!==false)(u==true?UnknownFieldHandler.onWrite:u)(this.typeName,message,writer);return writer}}
+											const DynamicList=new DynamicList$Type();
+											class DynamicItem$Type extends MessageType{constructor(){super("bilibili.app.dynamic.v2.DynamicItem",[{no:1,name:"card_type",kind:"enum",T:()=>["bilibili.app.dynamic.v2.DynamicType",DynamicType]}])}create(value){const message={cardType:0};globalThis.Object.defineProperty(message,MESSAGE_TYPE,{enumerable:false,value:this});if(value!==undefined)reflectionMergePartial(this,message,value);return message}internalBinaryRead(reader,length,options,target){let message=target??this.create(),end=reader.pos+length;while(reader.pos<end){let[fieldNo,wireType]=reader.tag();switch(fieldNo){case 1:message.cardType=reader.int32();break;default:let u=options.readUnknownField;if(u==="throw")throw new globalThis.Error(`Unknown field ${fieldNo}(wire type ${wireType})for ${this.typeName}`);let d=reader.skip(wireType);if(u!==false)(u===true?UnknownFieldHandler.onRead:u)(this.typeName,message,fieldNo,wireType,d)}}return message}internalBinaryWrite(message,writer,options){if(message.cardType!==0)writer.tag(1,WireType.Varint).int32(message.cardType);let u=options.writeUnknownFields;if(u!==false)(u==true?UnknownFieldHandler.onWrite:u)(this.typeName,message,writer);return writer}}
+											const DynamicItem=new DynamicItem$Type();
+											class CardVideoUpList$Type extends MessageType{constructor(){super("bilibili.app.dynamic.v2.CardVideoUpList",[{no:1,name:"title",kind:"scalar",T:9}])}create(value){const message={title:""};globalThis.Object.defineProperty(message,MESSAGE_TYPE,{enumerable:false,value:this});if(value!==undefined)reflectionMergePartial(this,message,value);return message}internalBinaryRead(reader,length,options,target){let message=target??this.create(),end=reader.pos+length;while(reader.pos<end){let[fieldNo,wireType]=reader.tag();switch(fieldNo){case 1:message.title=reader.string();break;default:let u=options.readUnknownField;if(u==="throw")throw new globalThis.Error(`Unknown field ${fieldNo}(wire type ${wireType})for ${this.typeName}`);let d=reader.skip(wireType);if(u!==false)(u===true?UnknownFieldHandler.onRead:u)(this.typeName,message,fieldNo,wireType,d)}}return message}internalBinaryWrite(message,writer,options){if(message.title!=="")writer.tag(1,WireType.LengthDelimited).string(message.title);let u=options.writeUnknownFields;if(u!==false)(u==true?UnknownFieldHandler.onWrite:u)(this.typeName,message,writer);return writer}}
+											const CardVideoUpList=new CardVideoUpList$Type();
+											class TopicList$Type extends MessageType{constructor(){super("bilibili.app.dynamic.v2.TopicList",[{no:1,name:"title",kind:"scalar",T:9}])}create(value){const message={title:""};globalThis.Object.defineProperty(message,MESSAGE_TYPE,{enumerable:false,value:this});if(value!==undefined)reflectionMergePartial(this,message,value);return message}internalBinaryRead(reader,length,options,target){let message=target??this.create(),end=reader.pos+length;while(reader.pos<end){let[fieldNo,wireType]=reader.tag();switch(fieldNo){case 1:message.title=reader.string();break;default:let u=options.readUnknownField;if(u==="throw")throw new globalThis.Error(`Unknown field ${fieldNo}(wire type ${wireType})for ${this.typeName}`);let d=reader.skip(wireType);if(u!==false)(u===true?UnknownFieldHandler.onRead:u)(this.typeName,message,fieldNo,wireType,d)}}return message}internalBinaryWrite(message,writer,options){if(message.title!=="")writer.tag(1,WireType.LengthDelimited).string(message.title);let u=options.writeUnknownFields;if(u!==false)(u==true?UnknownFieldHandler.onWrite:u)(this.typeName,message,writer);return writer}}
+											const TopicList=new TopicList$Type();
 											/******************  initialization finish  ******************/
 											switch (PATHs?.[1]) {
 												case "DynAll": // 动态综合页
 													data = DynAllReply.fromBinary(body);
 													switch (Settings?.Detail?.Hot_topics) {
-														case "true":
+														case true:
+														default:
 															if (data.topicList) {
 																data.topicList = null;
 																$.log(`🎉 ${$.name}`, "动态综合页热门话题去除");
 															}
 															break;
-														case "false":
+														case false:
 															$.log(`🚧 ${$.name}`, "用户设置动态综合页热门话题不去除");
 															break;
 													}
 													switch (Settings?.Detail?.Most_visited) {
-														case "true":
+														case true:
+														default:
 															if (data.upList) {
 																data.upList = null;
 																$.log(`🎉 ${$.name}`, "动态综合页最常访问去除");
 															}
 															break;
-														case "false":
+														case false:
 															$.log(`🚧 ${$.name}`, "用户设置动态综合页最常访问不去除");
 															break;
 													}
 													switch (Settings?.Detail?.Dynamic_adcard) {
-														case "true":
+														case true:
+														default:
 															if (data.dynamicList?.list?.length) {
 																data.dynamicList.list = data.dynamicList.list.filter(
 																	(item) => {
@@ -349,7 +435,7 @@ const DataBase = {
 																);
 															}
 															break;
-														case "false":
+														case false:
 															$.log(`🚧 ${$.name}`, "用户设置动态综合页广告动态不去除");
 															break;
 													}
@@ -358,13 +444,14 @@ const DataBase = {
 												case "DynVideo": // 动态视频页
 													data = DynVideoReply.fromBinary(body);
 													switch (Settings?.Detail?.Most_visited) {
-														case "true":
+														case true:
+														default:
 															if (data.videoUpList) {
 																data.videoUpList = null;
 																$.log(`🎉 ${$.name}`, "动态视频页最常访问去除");
 															}
 															break;
-														case "false":
+														case false:
 															$.log(`🚧 ${$.name}`, "用户设置动态视频页最常访问不去除");
 															break;
 													}
@@ -389,7 +476,8 @@ const DataBase = {
 													const ViewReply = new ViewReply$Type();
 													/******************  initialization finish  ******************/
 													switch (Settings?.Detail?.view) {
-														case "true":
+														case true:
+														default:
 															let data = ViewReply.fromBinary(body);
 															if (data.cms?.length) {
 																data.cms = [];
@@ -418,7 +506,7 @@ const DataBase = {
 															}
 															body = ViewReply.toBinary(data);
 															break;
-														case "false":
+														case false:
 															$.log(`🚧 ${$.name}`, "用户设置播放页广告不去除");
 															break;
 													};
@@ -456,16 +544,22 @@ const DataBase = {
 											switch (PATHs?.[1]) {
 												case "SearchAll": { // 全部结果（综合）
 													/******************  initialization start  *******************/
-													class Item$Type extends MessageType{constructor(){super("bilibili.polymer.app.search.v1.Item",[{no:25,name:"cm",kind:"message",oneof:"cardItem",T:()=>SearchAdCard}])}create(value){const message={cardItem:{oneofKind:undefined}};globalThis.Object.defineProperty(message,MESSAGE_TYPE,{enumerable:false,value:this});if(value!==undefined)reflectionMergePartial(this,message,value);return message}internalBinaryRead(reader,length,options,target){let message=target??this.create(),end=reader.pos+length;while(reader.pos<end){let[fieldNo,wireType]=reader.tag();switch(fieldNo){case 25:message.cardItem={oneofKind:"cm",cm:SearchAdCard.internalBinaryRead(reader,reader.uint32(),options,message.cardItem.cm)};break;default:let u=options.readUnknownField;if(u==="throw")throw new globalThis.Error(`Unknown field ${fieldNo}(wire type ${wireType})for ${this.typeName}`);let d=reader.skip(wireType);if(u!==false)(u===true?UnknownFieldHandler.onRead:u)(this.typeName,message,fieldNo,wireType,d)}}return message}internalBinaryWrite(message,writer,options){if(message.cardItem.oneofKind==="cm")SearchAdCard.internalBinaryWrite(message.cardItem.cm,writer.tag(25,WireType.LengthDelimited).fork(),options).join();let u=options.writeUnknownFields;if(u!==false)(u==true?UnknownFieldHandler.onWrite:u)(this.typeName,message,writer);return writer}}const Item=new Item$Type();class SearchAdCard$Type extends MessageType{constructor(){super("bilibili.polymer.app.search.v1.SearchAdCard",[{no:1,name:"json_str",kind:"scalar",T:9}])}create(value){const message={jsonStr:""};globalThis.Object.defineProperty(message,MESSAGE_TYPE,{enumerable:false,value:this});if(value!==undefined)reflectionMergePartial(this,message,value);return message}internalBinaryRead(reader,length,options,target){let message=target??this.create(),end=reader.pos+length;while(reader.pos<end){let[fieldNo,wireType]=reader.tag();switch(fieldNo){case 1:message.jsonStr=reader.string();break;default:let u=options.readUnknownField;if(u==="throw")throw new globalThis.Error(`Unknown field ${fieldNo}(wire type ${wireType})for ${this.typeName}`);let d=reader.skip(wireType);if(u!==false)(u===true?UnknownFieldHandler.onRead:u)(this.typeName,message,fieldNo,wireType,d)}}return message}internalBinaryWrite(message,writer,options){if(message.jsonStr!=="")writer.tag(1,WireType.LengthDelimited).string(message.jsonStr);let u=options.writeUnknownFields;if(u!==false)(u==true?UnknownFieldHandler.onWrite:u)(this.typeName,message,writer);return writer}}const SearchAdCard=new SearchAdCard$Type();class SearchAllResponse$Type extends MessageType{constructor(){super("bilibili.polymer.app.search.v1.SearchAllResponse",[{no:4,name:"item",kind:"message",repeat:1,T:()=>Item}])}create(value){const message={item:[]};globalThis.Object.defineProperty(message,MESSAGE_TYPE,{enumerable:false,value:this});if(value!==undefined)reflectionMergePartial(this,message,value);return message}internalBinaryRead(reader,length,options,target){let message=target??this.create(),end=reader.pos+length;while(reader.pos<end){let[fieldNo,wireType]=reader.tag();switch(fieldNo){case 4:message.item.push(Item.internalBinaryRead(reader,reader.uint32(),options));break;default:let u=options.readUnknownField;if(u==="throw")throw new globalThis.Error(`Unknown field ${fieldNo}(wire type ${wireType})for ${this.typeName}`);let d=reader.skip(wireType);if(u!==false)(u===true?UnknownFieldHandler.onRead:u)(this.typeName,message,fieldNo,wireType,d)}}return message}internalBinaryWrite(message,writer,options){for(let i=0;i<message.item.length;i++)Item.internalBinaryWrite(message.item[i],writer.tag(4,WireType.LengthDelimited).fork(),options).join();let u=options.writeUnknownFields;if(u!==false)(u==true?UnknownFieldHandler.onWrite:u)(this.typeName,message,writer);return writer}}const SearchAllResponse=new SearchAllResponse$Type();
+													class Item$Type extends MessageType{constructor(){super("bilibili.polymer.app.search.v1.Item",[{no:25,name:"cm",kind:"message",oneof:"cardItem",T:()=>SearchAdCard}])}create(value){const message={cardItem:{oneofKind:undefined}};globalThis.Object.defineProperty(message,MESSAGE_TYPE,{enumerable:false,value:this});if(value!==undefined)reflectionMergePartial(this,message,value);return message}internalBinaryRead(reader,length,options,target){let message=target??this.create(),end=reader.pos+length;while(reader.pos<end){let[fieldNo,wireType]=reader.tag();switch(fieldNo){case 25:message.cardItem={oneofKind:"cm",cm:SearchAdCard.internalBinaryRead(reader,reader.uint32(),options,message.cardItem.cm)};break;default:let u=options.readUnknownField;if(u==="throw")throw new globalThis.Error(`Unknown field ${fieldNo}(wire type ${wireType})for ${this.typeName}`);let d=reader.skip(wireType);if(u!==false)(u===true?UnknownFieldHandler.onRead:u)(this.typeName,message,fieldNo,wireType,d)}}return message}internalBinaryWrite(message,writer,options){if(message.cardItem.oneofKind==="cm")SearchAdCard.internalBinaryWrite(message.cardItem.cm,writer.tag(25,WireType.LengthDelimited).fork(),options).join();let u=options.writeUnknownFields;if(u!==false)(u==true?UnknownFieldHandler.onWrite:u)(this.typeName,message,writer);return writer}}
+													const Item=new Item$Type();
+													class SearchAdCard$Type extends MessageType{constructor(){super("bilibili.polymer.app.search.v1.SearchAdCard",[{no:1,name:"json_str",kind:"scalar",T:9}])}create(value){const message={jsonStr:""};globalThis.Object.defineProperty(message,MESSAGE_TYPE,{enumerable:false,value:this});if(value!==undefined)reflectionMergePartial(this,message,value);return message}internalBinaryRead(reader,length,options,target){let message=target??this.create(),end=reader.pos+length;while(reader.pos<end){let[fieldNo,wireType]=reader.tag();switch(fieldNo){case 1:message.jsonStr=reader.string();break;default:let u=options.readUnknownField;if(u==="throw")throw new globalThis.Error(`Unknown field ${fieldNo}(wire type ${wireType})for ${this.typeName}`);let d=reader.skip(wireType);if(u!==false)(u===true?UnknownFieldHandler.onRead:u)(this.typeName,message,fieldNo,wireType,d)}}return message}internalBinaryWrite(message,writer,options){if(message.jsonStr!=="")writer.tag(1,WireType.LengthDelimited).string(message.jsonStr);let u=options.writeUnknownFields;if(u!==false)(u==true?UnknownFieldHandler.onWrite:u)(this.typeName,message,writer);return writer}}
+													const SearchAdCard=new SearchAdCard$Type();
+													class SearchAllResponse$Type extends MessageType{constructor(){super("bilibili.polymer.app.search.v1.SearchAllResponse",[{no:4,name:"item",kind:"message",repeat:1,T:()=>Item}])}create(value){const message={item:[]};globalThis.Object.defineProperty(message,MESSAGE_TYPE,{enumerable:false,value:this});if(value!==undefined)reflectionMergePartial(this,message,value);return message}internalBinaryRead(reader,length,options,target){let message=target??this.create(),end=reader.pos+length;while(reader.pos<end){let[fieldNo,wireType]=reader.tag();switch(fieldNo){case 4:message.item.push(Item.internalBinaryRead(reader,reader.uint32(),options));break;default:let u=options.readUnknownField;if(u==="throw")throw new globalThis.Error(`Unknown field ${fieldNo}(wire type ${wireType})for ${this.typeName}`);let d=reader.skip(wireType);if(u!==false)(u===true?UnknownFieldHandler.onRead:u)(this.typeName,message,fieldNo,wireType,d)}}return message}internalBinaryWrite(message,writer,options){for(let i=0;i<message.item.length;i++)Item.internalBinaryWrite(message.item[i],writer.tag(4,WireType.LengthDelimited).fork(),options).join();let u=options.writeUnknownFields;if(u!==false)(u==true?UnknownFieldHandler.onWrite:u)(this.typeName,message,writer);return writer}}
+													const SearchAllResponse=new SearchAllResponse$Type();
 													/******************  initialization finish  *******************/
 													switch (Settings?.Detail?.search) {
-														case "true":
+														case true:
+														default:
 															let data = SearchAllResponse.fromBinary(body);
 															data.item = data.item.filter((i) => !(i.cardItem?.oneofKind === "cm"));
 															$.log(`🎉 ${$.name}`, "搜索页广告去除");
 															body = SearchAllResponse.toBinary(data);
 															break;
-														case "false":
+														case false:
 															$.log(`🚧 ${$.name}`, "用户设置搜索页广告不去除");
 															break;
 													}
@@ -542,6 +636,35 @@ const DataBase = {
 
 /***************** Function *****************/
 /**
+ * Set Environment Variables
+ * @author VirgilClyne
+ * @param {String} name - Persistent Store Key
+ * @param {String} platform - Platform Name
+ * @param {Object} database - Default DataBase
+ * @return {Object} { Settings, Caches, Configs }
+ */
+function setENV(name, platform, database) {
+	//$.log(`☑️ ${$.name}, Set Environment Variables`, "");
+	let { Settings, Caches, Configs } = getENV(name, platform, database);
+	/***************** Prase *****************/
+	traverseObject(Settings, (key, value) => {
+		if (value === "true" || value === "false") value = JSON.parse(value); // 字符串转Boolean
+		else if (typeof value === "string") {
+			if (value?.includes(",")) value = value.split(","); // 字符串转数组
+			else if (!isNaN(value)) value = parseInt(value, 10) // 字符串转数字
+		};
+		return value;
+	});
+	$.log(`✅ ${$.name}, Set Environment Variables`, `Settings: ${typeof Settings}`, `Settings内容: ${JSON.stringify(Settings)}`, "");
+	/***************** Caches *****************/
+	//$.log(`✅ ${$.name}, Set Environment Variables`, `Caches: ${typeof Caches}`, `Caches内容: ${JSON.stringify(Caches)}`, "");
+	/***************** Configs *****************/
+	return { Settings, Caches, Configs };
+
+	function traverseObject(o,c){for(var t in o){var n=o[t];o[t]="object"==typeof n&&null!==n?traverseObject(n,c):c(t,n)}return o}
+};
+
+/**
  * Create New Raw Body
  * @author app2smile
  * @param {ArrayBuffer} header - unGzip Header
@@ -570,29 +693,6 @@ function newRawBody({ header, body }, encoding = undefined) {
 		view.setUint32(0, num, false); // byteOffset = 0; litteEndian = false
 		return new Uint8Array(arr);
 	};
-};
-
-/***************** Function *****************/
-/**
- * Set Environment Variables
- * @author VirgilClyne
- * @param {String} name - Persistent Store Key
- * @param {String} platform - Platform Name
- * @param {Object} database - Default DataBase
- * @return {Object} { Settings, Caches, Configs }
- */
-function setENV(name, platform, database) {
-	$.log(`⚠ ${$.name}, Set Environment Variables`, "");
-	let { Settings, Caches, Configs } = getENV(name, platform, database);
-	/***************** Prase *****************/
-	traverseObject(Settings, (key, value) => value?.includes(",") ? value?.split(",") : value);
-	$.log(`🎉 ${$.name}, Set Environment Variables`, `Settings: ${typeof Settings}`, `Settings内容: ${JSON.stringify(Settings)}`, "");
-	/***************** Caches *****************/
-	//$.log(`🎉 ${$.name}, Set Environment Variables`, `Caches: ${typeof Caches}`, `Caches内容: ${JSON.stringify(Caches)}`, "");
-	/***************** Configs *****************/
-	return { Settings, Caches, Configs };
-
-	function traverseObject(o,c){for(var t in o){var n=o[t];o[t]="object"==typeof n&&null!==n?traverseObject(n,c):c(t,n)}return o}
 };
 
 /***************** Env *****************/
