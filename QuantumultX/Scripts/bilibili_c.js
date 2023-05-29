@@ -396,7 +396,7 @@ const DataBase = {
 											switch (PATHs?.[1]) {
 												case "DynAll": // 动态综合页
 													data = DynAllReply.fromBinary(body);
-													switch (Settings?.Detail?.Hot_topics) {
+													/*switch (Settings?.Detail?.Hot_topics) {
 														case true:
 														default:
 															if (data.topicList) {
@@ -429,7 +429,7 @@ const DataBase = {
 																		if (item.cardType !== 15) {
 																			return true;
 																		}
-																		$.log(`🎉 ${$.name}`, "动态综合页广告动态去除");
+																		$.log(`🎉 ${$.name}`, "动态综合页广告动态去除");*/
 																		return false;
 																	}
 																);
