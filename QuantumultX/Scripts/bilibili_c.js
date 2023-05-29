@@ -396,8 +396,8 @@ const DataBase = {
 											switch (PATHs?.[1]) {
 												case "DynAll": // 动态综合页
 													data = DynAllReply.fromBinary(body);
-													/*switch (Settings?.Detail?.Hot_topics) {
-														case true:
+													switch (Settings?.Detail?.Hot_topics) {
+														case false:
 														default:
 															if (data.topicList) {
 																data.topicList = null;
@@ -409,19 +409,19 @@ const DataBase = {
 															break;
 													}
 													switch (Settings?.Detail?.Most_visited) {
-														case true:
+														case false:
 														default:
 															if (data.upList) {
 																data.upList = null;
 																$.log(`🎉 ${$.name}`, "动态综合页最常访问去除");
 															}
 															break;
-														case false:
+														case true:
 															$.log(`🚧 ${$.name}`, "用户设置动态综合页最常访问不去除");
 															break;
 													}
 													switch (Settings?.Detail?.Dynamic_adcard) {
-														case true:
+														case false:
 														default:
 															if (data.dynamicList?.list?.length) {
 																data.dynamicList.list = data.dynamicList.list.filter(
