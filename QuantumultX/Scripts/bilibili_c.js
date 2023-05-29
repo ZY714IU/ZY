@@ -397,7 +397,7 @@ const DataBase = {
 												case "DynAll": // 动态综合页
 													data = DynAllReply.fromBinary(body);
 													switch (Settings?.Detail?.Hot_topics) {
-														case false:
+														case true:
 														default:
 															if (data.topicList) {
 																data.topicList = null;
@@ -409,19 +409,19 @@ const DataBase = {
 															break;
 													}
 													switch (Settings?.Detail?.Most_visited) {
-														case false:
+														case true:
 														default:
 															if (data.upList) {
 																data.upList = null;
 																$.log(`🎉 ${$.name}`, "动态综合页最常访问去除");
 															}
 															break;
-														case true:
+														case false:
 															$.log(`🚧 ${$.name}`, "用户设置动态综合页最常访问不去除");
 															break;
 													}
 													switch (Settings?.Detail?.Dynamic_adcard) {
-														case false:
+														case true:
 														default:
 															if (data.dynamicList?.list?.length) {
 																data.dynamicList.list = data.dynamicList.list.filter(
@@ -429,7 +429,7 @@ const DataBase = {
 																		if (item.cardType !== 15) {
 																			return true;
 																		}
-																		$.log(`🎉 ${$.name}`, "动态综合页广告动态去除");*/
+																		$.log(`🎉 ${$.name}`, "动态综合页广告动态去除");
 																		return false;
 																	}
 																);
