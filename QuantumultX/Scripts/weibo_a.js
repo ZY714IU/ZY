@@ -1,6 +1,6 @@
 /*================
 https://github.com/RuCu6/QuanX/blob/main/Scripts/weibo.js
-2023-05-02 21:00
+2023-05-31 15:12
 
   //注释掉 评论区铁粉标识、头像挂件、关注按钮
 /2/comments/build_comments
@@ -172,7 +172,7 @@ if (url.includes("/interface/sdk/sdkad.php")) {
             // 微博伪装评论
             if (item.data.user) {
               // 头像挂件,关注按钮
-           // removeAvatar(item.data);
+            // removeAvatar(item.data);
               if (
                 item.data.user.name === "超话社区" ||
                 item.data.user.name === "微博视频"
@@ -203,7 +203,6 @@ if (url.includes("/interface/sdk/sdkad.php")) {
             if (
               item?.adType === "相关内容" ||
               item?.adType === "相关评论" ||
-              item?.adType === "Recommend" ||
               item?.adType === "推荐"
             ) {
               continue;
@@ -380,7 +379,7 @@ if (url.includes("/interface/sdk/sdkad.php")) {
           }
           newItems.push(item);
         } else if (itemId === "100505_-_top8") {
-      /* if (item.items) {
+        /* if (item.items) {
             item.items = item.items.filter(
               (i) =>
                 i.itemId === "100505_-_album" || // 我的相册
@@ -450,6 +449,11 @@ if (url.includes("/interface/sdk/sdkad.php")) {
           } else if (item.category === "cell") {
             // 保留信息流分割线
             newItems.push(item);
+          } else if (item.category === "group") {
+            if (item.items.length > 0) {
+              item.items = item.items.filter((i) => i.data?.card_type === 17);
+              newItems.push(item);
+            }
           }
         }
         obj.items = newItems;
@@ -488,6 +492,13 @@ if (url.includes("/interface/sdk/sdkad.php")) {
                 } else if (item.category === "cell") {
                   // 保留信息流分割线
                   newItems.push(item);
+                } else if (item.category === "group") {
+                  if (item.items.length > 0) {
+                    item.items = item.items.filter(
+                      (i) => i.data?.card_type === 17
+                    );
+                    newItems.push(item);
+                  }
                 }
               }
               payload.items = newItems;
@@ -665,7 +676,7 @@ if (url.includes("/interface/sdk/sdkad.php")) {
       delete obj.button_configs;
     }
     // 广场页
-   if (obj.channelInfo.channel_list) {
+    if (obj.channelInfo.channel_list) {
       obj.channelInfo.channel_list = obj.channelInfo.channel_list.filter(
         (t) => t.title !== "广场"
       );
@@ -757,6 +768,7 @@ function checkSearchWindow(item) {
     item.data?.card_type === 208 || // 实况热聊
     item.data?.card_type === 217 ||
     item.data?.card_type === 1005 ||
+    item.data?.itemid?.includes("finder_window") ||
     item.data?.itemid?.includes("more_frame") ||
     item.data?.mblog?.page_info?.actionlog?.source?.includes("ad")
   ) {
