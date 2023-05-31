@@ -1,6 +1,6 @@
 /*================
 https://github.com/RuCu6/QuanX/blob/9a67ac7a83380a7c1cfaa23a3cfe7ac42a7a9ece/Scripts/bilibili/bili.js
-2023-05-19 14:48
+2023-05-31 16:40
 
 更改 tab
           item.name === "直播" ||
@@ -217,7 +217,7 @@ if (url.includes("/x/resource/show/skin")) {
           // }
           return false;
         } else if (
-          cardType === "cm_v2" &&
+          ["cm_v1", "cm_v2"].includes(cardType) &&
           [
             "ad_av",
             "ad_inline_3d",
