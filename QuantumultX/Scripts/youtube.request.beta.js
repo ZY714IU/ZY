@@ -1,5 +1,5 @@
 /*================
-https://github.com/Maasea/sgmodule/blob/master/Script/Youtube/youtube.js
+https://github.com/Maasea/sgmodule/tree/master/Script/Youtube/dist
 Build: 2023/6/5 14:41:26
 非压缩状态代码可见同目录下 youtube.src.js
 ================*/
