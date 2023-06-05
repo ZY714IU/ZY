@@ -1,6 +1,6 @@
 /*================
 https://github.com/RuCu6/QuanX/blob/main/Scripts/zhihu.js
-2023-05-19 09:18
+2023-06-05 21:30
 ================*/
 
 if (!$response.body) $done({});
@@ -84,7 +84,13 @@ if (url.includes("/api/cloud/config/all")) {
   }
 } else if (url.includes("/next-bff")) {
   if (obj.data) {
-    obj.data = obj.data.filter((i) => !i?.origin_data?.type?.includes("ad"));
+    obj.data = obj.data.filter(
+      (i) =>
+        !(
+          i?.origin_data?.type?.includes("ad") ||
+          i?.origin_data?.resource_type?.includes("ad")
+        )
+    );
   }
 } else if (url.includes("/next-data")) {
   if (obj.data.data) {
@@ -127,6 +133,12 @@ if (url.includes("/api/cloud/config/all")) {
         } else if (
           i.common_card?.footline?.elements?.[0]?.text?.panel_text?.includes(
             "广告"
+          )
+        ) {
+          return false;
+        } else if (
+          i.common_card?.feed_content?.source_line?.elements?.[0]?.text?.panel_text?.includes(
+            "盐选"
           )
         ) {
           return false;
