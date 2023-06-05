@@ -1,3 +1,7 @@
+/*******
+https://github.com/BiliUniverse/ADBlock/blob/main/js/BiliBili.ADBlock.response.js
+********/
+
 /*
 WEBSITE: https://biliuniverse.io
 README: https://github.com/BiliUniverse
@@ -133,7 +137,7 @@ const DataBase = {
 											async function fixPosition() {
 												let itemsCache = $.getdata("@BiliBili.Index.Caches","");
 												let singleItem = {};
-												if (itemsCache.length > 0) {
+												if (itemsCache && itemsCache.length > 0) {
 													singleItem = itemsCache.pop();
 													$.log(`🎉 ${$.name}`, "推荐页空缺位填充成功");
 												} else {//重新获取填充位
