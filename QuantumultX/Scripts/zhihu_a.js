@@ -137,7 +137,7 @@ if (url.includes("/api/cloud/config/all")) {
         ) {
           return false;
         } else if (
-          i.common_card?.feed_content?.source_line?.elements?.[0]?.text?.panel_text?.includes(
+          i.common_card?.feed_content?.source_line?.elements?.[1]?.text?.panel_text?.includes(
             "盐选"
           )
         ) {
