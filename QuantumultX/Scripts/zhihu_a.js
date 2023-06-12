@@ -1,6 +1,6 @@
 /*================
 https://github.com/RuCu6/QuanX/blob/main/Scripts/zhihu.js
-2023-06-05 21:30
+2023-06-12 20:12
 ================*/
 
 if (!$response.body) $done({});
@@ -88,7 +88,8 @@ if (url.includes("/api/cloud/config/all")) {
       (i) =>
         !(
           i?.origin_data?.type?.includes("ad") ||
-          i?.origin_data?.resource_type?.includes("ad")
+          i?.origin_data?.resource_type?.includes("ad") ||
+          i?.origin_data?.next_guide?.title?.includes("推荐")
         )
     );
   }
