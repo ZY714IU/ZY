@@ -1,13 +1,13 @@
 /*================
 https://github.com/app2smile/rules/blob/master/js/tieba-json.js
-2023-02-21
+2023-06-12
 ================*/
 
 const url = $request.url;
 const method = $request.method;
 const postMethod = "POST";
 const notifyTitle = "贴吧json脚本错误";
-console.log(`贴吧json-2023.02.21`);
+console.log(`贴吧json-2023.06.12.1`);
 
 let body = JSON.parse($response.body);
 // 直接全局搜索 @Modify(
@@ -160,7 +160,7 @@ if (url.includes("tiebaads/commonbatch") && method === postMethod) {
     removeGoodsInfo(body.forum?.banner_list?.app);
 } else if (url.includes("c/f/frs/threadlist")) {
     console.log('贴吧-threadlist');
-    // TODO
+    removeGoodsInfo(body.banner_list?.app);
 } else if (url.includes("c/f/pb/page")) {
     console.log('贴吧-PbPage');
     if (body.recom_ala_info?.live_id) {
@@ -190,6 +190,12 @@ if (url.includes("tiebaads/commonbatch") && method === postMethod) {
     console.log('贴吧-personalized');
     removeGoodsInfo(body.banner_list?.app);
     body.thread_list = removeLive(body.thread_list);
+    if(body.live_answer){
+        console.log('去除推荐页上方的banner广告');
+        body.live_answer = null;
+    } else {
+        console.log('推荐页无banner广告');
+    }
 } else if (url.includes("c/f/frs/generalTabList")) {
     console.log('贴吧-generalTabList');
     // TODO
