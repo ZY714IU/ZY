@@ -386,7 +386,7 @@ http-response ^https?://(api|appcloud2|m-cloud)\.zhihu\.com/(v3/config|api/cloud
 # author @RuCu6，@ddgksf2013，@kokoryh
 # https://github.com/RuCu6/QuanX/blob/main/Rewrites/Cube/amap.snippet
 # 阿里系请求 AMap|Cainiao
-http-response ^http?://amdc\.m\.taobao\.com/amdc/mobileDispatch script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/amdc.js, tag=阿里系请求
+http-response ^http?://amdc\.m\.taobao\.com/amdc/mobileDispatch requires-body=true, binary-body-mode=true, tag=阿里系请求
 # 地点详情页 shield/search_poi/city_feed
 # 详情页底部推广 shield/search_poi/search/sp
 # 详情页底部推广 shield/search_poi/mps
