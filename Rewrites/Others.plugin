@@ -442,7 +442,7 @@ http-request ^https?://.+music.+(player/url|playlist|entrance|/eapi/search/).*$ 
 # 首页瀑布流 browse
 # 插播广告 next|player
 # 短视频 reel/reel_watch_sequence
-http-request ^https?://youtubei\.googleapis\.com/youtubei/v1/(browse|next|player|reel/reel_watch_sequence)\? script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/youtube.request.beta.js, requires-body=true, timeout=10, tag=youtube
+http-request ^https?://youtubei\.googleapis\.com/youtubei/v1/(browse|next|player|reel/reel_watch_sequence)\? script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/youtube.request.beta.js, requires-body=true, binary-body-mode=true, tag=youtube
 # script-response-body
 # 首页瀑布流 browse
 # 插播广告 next|player
@@ -450,7 +450,7 @@ http-request ^https?://youtubei\.googleapis\.com/youtubei/v1/(browse|next|player
 # 搜索页 search
 # 上传按钮 guide
 # 画中画、后台播放 account/get_setting
-http-response ^https?://youtubei\.googleapis\.com/youtubei/v1/(browse|next|player|reel/reel_watch_sequence|search|guide|account/get_setting)\? script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/youtube.response.beta.js, requires-body=true, timeout=10, tag=youtube
+http-response ^https?://youtubei\.googleapis\.com/youtubei/v1/(browse|next|player|reel/reel_watch_sequence|search|guide|account/get_setting)\? script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/youtube.response.beta.js, requires-body=true, binary-body-mode=true, tag=youtube
 
 # ===⭐️=== 酷安 ===⭐️=== #
 # author @ddgksf2013
