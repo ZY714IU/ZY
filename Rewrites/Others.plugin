@@ -402,7 +402,7 @@ http-response ^http://amdc\.m\.taobao\.com/amdc/mobileDispatch script-path=https
 # 首页底部卡片 faas/amap-navigation/main-page\?
 # 打车页处理 promotion-web/resource
 # 打车页卡片 sharedtrip/taxi/.*tips
-http-response ^https?://m5(-zb)?\.amap\.com/ws/(shield/(search)?_?/?(poi)?/?(city_feed|search/sp|mps|tips|poi/detail|sug|nearbyrec|common/coupon|dsp/profile/index|frogserver/aocs)|mapapi/poi/infolite|valueadded/alimama/splash|faas/amap-navigation/main-page\?|promotion-web/resource|sharedtrip/taxi/.*tips) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/amap.js, requires-body=true, binary-body-mode=true, tag=高德地图
+http-response ^https?://m5(-zb)?\.amap\.com/ws/(shield/(search)?_?/?(poi)?/?(city_feed|search/sp|mps|tips|poi/detail|sug|nearbyrec|common/coupon|dsp/profile/index|frogserver/aocs)|mapapi/poi/infolite|valueadded/alimama/splash|faas/amap-navigation/main-page\?|promotion-web/resource|sharedtrip/taxi/.*tips) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/amap.js, requires-body=true, tag=高德地图
 
 # ===⭐️=== 小红书 ===⭐️=== #
 # author @RuCu6
