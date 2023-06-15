@@ -52,8 +52,7 @@ ip-cidr, 118.89.204.198/24, reject
 ip-cidr, 2402:4e00:1200:ed00:0:9089:6dac:96b6/128, reject
 
 # ===⭐️=== 高德地图 ===⭐️=== #
-# amdc 已在脚本加入
-# domain, amdc.m.taobao.com, reject
+domain, amdc.m.taobao.com, direct
 domain, awaken.amap.com, reject
 domain, amap-aos-info-nogw.amap.com, reject
 domain, free-aos-cdn-image.amap.com, reject
