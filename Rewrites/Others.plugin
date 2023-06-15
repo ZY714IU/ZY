@@ -192,6 +192,23 @@ domain, httpdns.baidubce.com, reject
 ^https?://pan\.baidu\.com/(act/(v\d/(bchannel|welfare)/list|api/activityentry)|rest/\d\.0/pcs/ad|story/(diff|new)|(im|m|basem)box|api/(diffall|account/getprivilege)|quota|richsearch|recent/diff) url reject-200
 
 
+# ===⭐️=== 网易云音乐 ===⭐️=== #
+# author @RuCu6，@Keywos，@kokoryh，@Weiren
+# https://github.com/RuCu6/QuanX/blob/main/Rewrites/Cube/cloudmusic.snippet
+
+# 开屏广告 首页顶部横幅广告 ad/.*
+# 播放页 各种图标、提示、弹窗 link/position/show|music/songshare/text/recommend|mlivestream/entrance/playpage|community/friends/fans-group/artist|mlog/vinyl/story|user/sub/artist|vipcenter/tspopup|zone/songplay/entry|resniche/position/play
+# 首页 右上角图标、会员续费弹窗、侧边栏推广 event/floating|homepage/banner/ad|link/scene/show|music-vip-(membership|thoth)|vipauth/app/auth/recycle|side-bar|delivery/batch-deliver
+# 搜索页 推荐词、排行榜 search/(chart/(detail|list)$|(default/|rcmd/|special)keyword)
+# 评论页 广告、星评馆、回复广告 comment/(hotcomment|feed/inserted|tips)|(v1/)?content/exposure/(comment/banner|vinyl/comment/entrance)
+# 歌单页 横幅广告 (middle/clientcfg|resource-exposure)(/activity)?/config
+# 播客 弹出广告 voice/play/page/ad
+# 各种 小红点 .*redpoint
+^https?://interface3?\.music\.163\.com/w?eapi/(ad/.*|link/position/show|music/songshare/text/recommend|mlivestream/entrance/playpage|community/friends/fans-group/artist|mlog/vinyl/story|user/sub/artist|vipcenter/tspopup|zone/songplay/entry|resniche/position/play|event/floating|homepage/banner/ad|link/scene/show|music-vip-(membership|thoth)|vipauth/app/auth/recycle|side-bar|delivery/batch-deliver|search/(chart/(detail|list)$|(default/|rcmd/|special)keyword)|comment/(hotcomment|feed/inserted|tips)|(v1/)?content/exposure/(comment/banner|vinyl/comment/entrance)|(middle/clientcfg|resource-exposure)(/activity)?/config|voice/play/page/ad|.*redpoint) url reject-dict
+
+# 评论页 插入广告
+^https?://interface3\.music\.163\.com/eapi/batch url request-header appver=.+; request-header appver=888;
+
 
 [Script]
 # ===⭐️=== 微博 ===⭐️=== #
@@ -334,44 +351,46 @@ http-response ^https?://(tiebac|c\.tieba)\.baidu\.com/(c/f/(frs/(page|threadlist
 http-response ^https?://(tiebac|c\.tieba)\.baidu\.com/c/f/(frs/(page|threadlist|generalTabList)|pb/page|excellent/personalized)\?cmd script-path=https://github.com/ZY714IU/ZY/raw/main/Scripts/baidu_tieba_proto.js, requires-body=true, timeout=10, tag=百度贴吧
 
 
-# 😀😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁
-
-
 # ===⭐️=== 百度搜索 ===⭐️=== #
 # author @Adblock4limbo，@RuCu6，@app2smile
 
 # 搜索首页广告
-^https?://(www|m)\.baidu\.com(/|/\?ref.*)$ url script-response-body https://github.com/ZY714IU/ZY/raw/main/Scripts/baidu_index.js
+http-response ^https?://(www|m)\.baidu\.com(/|/\?ref.*)$ script-path=https://github.com/ZY714IU/ZY/raw/main/Scripts/baidu_index.js, requires-body=true, timeout=10, tag=搜索首页广告
 
 # 防跳转AppStore
-^https?://boxer\.baidu\.com/scheme\?scheme url script-response-header https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/baidu-no-redirect.js
+http-response ^https?://boxer\.baidu\.com/scheme\?scheme script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/baidu-no-redirect.js, requires-body=false, timeout=10, tag=防跳转AppStore
 
 # 知道搜索广告
-^https?://zhidao\.baidu\.com/(question|index|\?(fr|word)) url script-response-body https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/baidu-zhidao.js
+http-response ^https?://zhidao\.baidu\.com/(question|index|\?(fr|word)) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/baidu-zhidao.js, requires-body=true, timeout=10, tag=知道搜索广告
 
 # 搜索结果广告
-//^https?://(www|m)\.baidu\.com/.*word=.* url script-response-body https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/baidu-search.js
+http-response ^https?://(www|m)\.baidu\.com/.*word=.* script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/baidu-search.js, requires-body=true, timeout=10, tag=搜索结果广告
 
 
 # ===⭐️=== 网易云音乐 ===⭐️=== #
-# author @RuCu6，@Keywos，@kokoryh，@Weiren
-# https://github.com/RuCu6/QuanX/blob/main/Rewrites/Cube/cloudmusic.snippet
+# vip (request) @Weiren
 
-# 开屏广告 首页顶部横幅广告 ad/.*
-# 播放页 各种图标、提示、弹窗 link/position/show|music/songshare/text/recommend|mlivestream/entrance/playpage|community/friends/fans-group/artist|mlog/vinyl/story|user/sub/artist|vipcenter/tspopup|zone/songplay/entry|resniche/position/play
-# 首页 右上角图标、会员续费弹窗、侧边栏推广 event/floating|homepage/banner/ad|link/scene/show|music-vip-(membership|thoth)|vipauth/app/auth/recycle|side-bar|delivery/batch-deliver
-# 搜索页 推荐词、排行榜 search/(chart/(detail|list)$|(default/|rcmd/|special)keyword)
-# 评论页 广告、星评馆、回复广告 comment/(hotcomment|feed/inserted|tips)|(v1/)?content/exposure/(comment/banner|vinyl/comment/entrance)
-# 歌单页 横幅广告 (middle/clientcfg|resource-exposure)(/activity)?/config
-# 播客 弹出广告 voice/play/page/ad
-# 各种 小红点 .*redpoint
-^https?://interface3?\.music\.163\.com/w?eapi/(ad/.*|link/position/show|music/songshare/text/recommend|mlivestream/entrance/playpage|community/friends/fans-group/artist|mlog/vinyl/story|user/sub/artist|vipcenter/tspopup|zone/songplay/entry|resniche/position/play|event/floating|homepage/banner/ad|link/scene/show|music-vip-(membership|thoth)|vipauth/app/auth/recycle|side-bar|delivery/batch-deliver|search/(chart/(detail|list)$|(default/|rcmd/|special)keyword)|comment/(hotcomment|feed/inserted|tips)|(v1/)?content/exposure/(comment/banner|vinyl/comment/entrance)|(middle/clientcfg|resource-exposure)(/activity)?/config|voice/play/page/ad|.*redpoint) url reject-dict
+http-request ^https?://.+music.+(player/url|playlist|entrance|/eapi/search/).*$ script-path=https://raw.githubusercontent.com/WeiRen0/Scripts/main/wyun.js, requires-body=false, timeout=10, tag=网易云vip
 
-# 评论页 插入广告
-^https?://interface3\.music\.163\.com/eapi/batch url request-header appver=.+; request-header appver=888;
+# 😀😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁😁
 
-# vip @Weiren
-^https?://.+music.+(player/url|playlist|entrance|/eapi/search/).*$ url script-request-header https://raw.githubusercontent.com/WeiRen0/Scripts/main/wyun.js
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # ===⭐️=== youtube ===⭐️=== #
