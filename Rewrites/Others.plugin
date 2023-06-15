@@ -1,16 +1,18 @@
-#!name = weibo
-#!desc = 
-#!openUrl = https://github.com/ZY714IU/ZY/blob/main/Loon/Plugin/weibo.plugin
-#!author = @RuCu6，@zmqcherish，@ddgksf2013
-#!homepage = https://github.com/ZY714IU/ZY/blob/main/QuantumultX/Rewrites/BlockAds.conf
-#!icon = https://github.com/ZY714IU/ZY/raw/main/QuantumultX/Icon/weibo.png
+#!name = Others
+#!desc = 去广告合集，搬运自各位大佬。
+#!openUrl = https://raw.githubusercontent.com/ZY714IU/ZY/main/Rewrites/Others.plugin
+#!author = 
+#!homepage = https://github.com/ZY714IU/ZY/blob/main/Rewrites/Others.plugin
+#!icon = 
 #!update 2023-05-04 00:10
 
+
 [Mitm]
-hostname = *.uve.weibo.c*, *api.weibo.c*, weibo.c*
-# new.vip.weibo.c*
+hostname = *.uve.weibo.com, *api.weibo.cn, weibo.com, grpc.biliapi.net, ap*.bili*i.*, api.zhihu.com, www.zhihu.com, appcloud2.zhihu.com, m-cloud.zhihu.com, zhuanlan.zhihu.com, m5-zb.amap.com, m5.amap.com, sns.amap.com, edith.xiaohongshu.com, www.xiaohongshu.com, tiebac.baidu.com, newclient.map.baidu.com, pan.baidu.com, www.baidu.com, m.baidu.com, zhidao.baidu.com, boxer.baidu.com, interface*.music.163.com, youtubei.googleapis.com, *.googlevideo.com, *p*.zhuan*.com, *.meitu.com, client.app.coc.10086.cn, h.app.coc.10086.cn, gx.10086.cn, *plus.meituan.net, wmapi.meituan.com, img.meituan.net, api.coolapk.com, mp.weixin.qq.com, api-shoulei-ssl.xunlei.com, rtbapi.douyucdn.cn, *ar*.umetrip.com, cn-acs.m.cainiao.com, guide-acs.m.taobao.com, iyes.youku.com, gorgon.youdao.com, *.pornhub.*, testflight.apple.com, *boxjs.*, sub.store
+
 
 [Rule]
+# ===⭐️=== 微博 ===⭐️=== #
 domain, sdkapp.uve.weibo.com, direct
 domain, weibointl.api.weibo.cn, direct
 domain, adimg.uve.weibo.com, reject
@@ -23,144 +25,9 @@ domain, sdkclick.biz.weibo.com, reject
 domain, sdkaction.biz.weibo.com, reject
 domain, sdkmonitor.biz.weibo.com, reject
 
+
 [Rewrite]
-# 开屏广告
-# v\d\/ad\/realtime$
-# interface\/sdk\/sdkconfig\.php
-^https?:\/\/(bootrealtime|sdkapp)\.uve\.weibo\.c(n|om)\/(v\d\/ad\/realtime$|interface\/sdk\/sdkconfig\.php) url reject-200
-
-# 消息页角标、群聊红点
-# ^https?:\/\/m?api.weibo.c(n|om)\/\d\/direct_messages url response-body "unread_count":\d+ response-body "unread_count":0
-
-# 看图界面 photo\/info
-# 首页tab角标弹窗 remind
-# 首页左上角弹窗 push\/daily
-# 视频流红包 video\/redpacket
-# 热搜提醒 hot\/hours_spotlight
-# 评论弹幕 comments\/bullet_screens
-# 搜索框推荐词 search\/container_discover
-# 信息流底部提示条 statuses\/push_info
-# 作者其他微博 statuses\/container_positive
-# 视频红包? multimedia\/video\/red_package
-# 超话tab角标弹窗 huati\/discovery_home_bottom_getdotinfo
-# 首页顶部直播 live\/media_homelist
-# 发博图片编辑弹窗 photo\/editor\/guide_tips
-# 文章广告 reward|uvead
-# 文章为你推荐更多精彩 recommend
-^https?:\/\/(m?api\.)?weibo\.c(n|om)\/(\d\/(.\/)?(photo\/info|remind|push\/daily|video\/redpacket|hot\/hours_spotlight|comments\/bullet_screens|search\/container_discover|multimedia\/video\/red_package|statuses\/(push_info|container_positive)|huati\/discovery_home_bottom_getdotinfo|live\/media_homelist|photo\/editor\/guide_tips)|ttarticle\/x\/m\/aj\/(uvead|reward|recommend)) url reject-dict
-
-# 微博轻享版(国际版)
-# 热搜? portal\.php\?a=hot_search_users
-# 热推荐 ad\/weibointl
-# 趋势页热门视频 cardlist\?v_f=\d 已删除
-^https?:\/\/(weibointl\.|m?)api\.weibo\.c(n|om)\/(portal\.php\?a=hot_search_users|\d\/ad\/weibointl) url reject-dict
-
-[Script]
-# ⭐️https://github.com/RuCu6/QuanX/blob/main/Rewrites/Cube/weibo.snippet
-# 开屏广告
-# v\d\/ad\/preload$
-# interface\/sdk\/sdkad\.php
-# wbapplua\/wbpullad.lua
-http-response ^https?:\/\/(bootpreload|(sdk|wb)app)\.uve\.weibo\.c(n|om)\/(v\d\/ad\/preload$|interface\/sdk\/sdkad\.php|wbapplua\/wbpullad.lua) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/QuantumultX/Scripts/weibo_a.js, requires-body=true, timeout=10, tag=weibo
-
-# 关注页信息流 statuses\/container_timeline(\?|_unread|_hot)
-# 个人主页信息流 profile\/container_timeline\?
-# 发现页信息流 search\/container_timeline\?
-# 推荐页信息流 statuses\/unread_hot_timeline
-# 搜索信息流 searchall
-http-response ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/((statuses|profile|search)\/(container_timeline(\?|_unread|_hot)|unread_hot_timeline)|searchall) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/QuantumultX/Scripts/weibo_a.js, requires-body=true, timeout=10, tag=weibo
-
-# 发现页 search\/finder
-# 评论区 comments\/build_comments
-# 视频流 video\/tiny_stream_video_list
-# 我的页面 profile\/me
-# 首页签到 checkin\/show
-# 消息动态页 messageflow\/notice
-# 偶现头像挂件 container\/asyn
-# 首页右上角红包 push\/active
-# 首页右上角+按钮 client\/publisher_list
-# 搜索框卡片列表 cardlist
-# 搜索信息流超话 page
-# 个人主页精选信息流挂件 flowlist
-# 详情页 statuses\/extend
-# 商品橱窗 statuses\/show
-http-response ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/(search\/finder|comments\/build_comments|video\/tiny_stream_video_list|profile\/me|checkin\/show|messageflow\/notice|container\/asyn|push\/active|client\/publisher_list|cardlist|page|flowlist|statuses\/(extend|show)) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/QuantumultX/Scripts/weibo_a.js, requires-body=true, timeout=10, tag=weibo
-
-# 超话信息流 container_timeline_topic
-# 屏蔽超话发现页 .\/huati\/discovery_home_bottom_channels
-# http-response ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/(statuses/container_timeline_topic|.\/huati\/discovery_home_bottom_channels) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/QuantumultX/Scripts/weibo_a.js, requires-body=true, timeout=10, tag=weibo
-
-# ⭐️https://github.com/ddgksf2013/Rewrite/blob/master/AdBlock/Weibo.conf
-# https://github.com/zmqcherish/proxy-script
-# 超话信息流 statuses\/container_timeline_topic
-# 未登陆关注页、推荐页信息流 \w{5}\/statuses_unread_hot_timeline|\w{5}\/timeline
-# 发现页搜索框热词 \w{5}\/cardlist
-http-response ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/(statuses\/container_timeline_topic|\w{5}\/(statuses_unread_hot_timeline|timeline|cardlist)) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/QuantumultX/Scripts/weibo_b.js, requires-body=true, timeout=10, tag=weibo
-
-# 开屏广告
-# v\d\/ad\/preload$
-# interface\/sdk\/sdkad\.php
-# wbapplua\/wbpullad.lua
-# http-response ^https?:\/\/(bootpreload|(sdk|wb)app)\.uve\.weibo\.c(n|om)\/(v\d\/ad\/preload$|interface\/sdk\/sdkad\.php|wbapplua\/wbpullad.lua) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/QuantumultX/Scripts/weibo_b.js, requires-body=true, timeout=10, tag=weibo
-# 不知是啥信息流 statuses/(unread_)?friends(/|_)timeline
-# 关注分组信息流? groups\/timeline
-# http-response ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/(statuses/(unread_)?friends(/|_)timeline|groups\/timeline) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/QuantumultX/Scripts/weibo_b.js, requires-body=true, timeout=10, tag=weibo
-# 关注页信息流 statuses\/container_timeline(\?|_unread|_hot)
-# 个人主页信息流 profile\/container_timeline\?
-# 发现页信息流 search\/container_timeline\?
-# 推荐页信息流 statuses\/unread_hot_timeline
-# 搜索信息流 searchall
-# http-response ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/((statuses|profile|search)\/(container_timeline(\?|_unread|_hot)|unread_hot_timeline)|searchall) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/QuantumultX/Scripts/weibo_a.js, requires-body=true, timeout=10, tag=weibo
-# 发现页 search\/finder
-# 搜索框推荐词 search\/container_discover
-# 评论区 comments\/build_comments
-# 我的页面 profile\/me
-# 搜索信息流超话 page
-# 搜索框卡片列表 cardlist
-# 详情页 statuses\/extend
-# 自动下一条视频 statuses\/video_mixtimeline
-# http-response ^https:\/\/m?api\.weibo\.c(n|om)\/\d\/(search\/(finder|container_discover)|statuses\/(extend|video_mixtimeline)|comments\/build_comments|profile\/me|page|cardlist) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/QuantumultX/Scripts/weibo_b.js, requires-body=true, timeout=10, tag=weibo
-
-# 首页签到 checkin\/show
-# 列表相关 container\/get_item
-# 消息动态页 messageflow\/notice
-# 首页顶部直播 .\/live\/media_homelist
-# 社区标签? community_tab
-# 视频信息提醒? remind_info
-# 视频信息处理 tiny_stream_mid_detail
-# 视频流 tiny_stream_video_list
-# http-response ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/(.\/)?(checkin\/show|container\/get_item|messageflow\/notice|live\/media_homelist|video\/(community_tab|remind_info|tiny_stream_(mid_detail|video_list))) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/QuantumultX/Scripts/weibo_b.js, requires-body=true, timeout=10, tag=weibo
-# 自定义tab皮肤 d\/.\/client\/light_skin
-# 非会员设置tab皮肤 littleskin\/preview
-# http-response ^https?:\/\/(m?api|new\.vip)\.weibo\.c(n|om)\/(\d\/.\/client\/light_skin|littleskin\/preview) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/QuantumultX/Scripts/weibo_b.js, requires-body=true, timeout=10, tag=weibo
-
-# 微博轻享版(国际版)
-# 开屏广告 .*get_coopen_ads
-# 趋势页卡片 .*feed&a=trends
-# 热搜置顶 \?a=search_topic
-# 用户vip栏 \?a=user_center
-http-response ^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php(.*(get_coopen_ads|feed&a=trends)|\?a=(search_topic|user_center)) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/QuantumultX/Scripts/weibo_b.js, requires-body=true, timeout=10, tag=weibo
-
-# 搜索框关键词 get_searching_info
-^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php.*user&a=get_searching_info url echo-response text/html echo-response https://raw.githubusercontent.com/ZY714IU/ZY/main/QuantumultX/Scripts/weibo_search_info.json
-
-# 搜索框下方热搜 search_topic
-^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php.*feed&a=search_topic url echo-response text/html echo-response https://raw.githubusercontent.com/ZY714IU/ZY/main/QuantumultX/Scripts/weibo_search_topic.json
-
-
-# 😀
-
-# Name   Others
-# Desc   去广告合集，搬运自各位大佬。
-# Update 2023-06-15 21:08
-
-
-hostname = *.uve.weibo.com, *api.weibo.cn, weibo.com, grpc.biliapi.net, ap*.bili*i.*, api.zhihu.com, www.zhihu.com, appcloud2.zhihu.com, m-cloud.zhihu.com, zhuanlan.zhihu.com, m5-zb.amap.com, m5.amap.com, sns.amap.com, edith.xiaohongshu.com, www.xiaohongshu.com, tiebac.baidu.com, newclient.map.baidu.com, pan.baidu.com, www.baidu.com, m.baidu.com, zhidao.baidu.com, boxer.baidu.com, interface*.music.163.com, youtubei.googleapis.com, *.googlevideo.com, *p*.zhuan*.com, *.meitu.com, client.app.coc.10086.cn, h.app.coc.10086.cn, gx.10086.cn, *plus.meituan.net, wmapi.meituan.com, img.meituan.net, api.coolapk.com, mp.weixin.qq.com, api-shoulei-ssl.xunlei.com, rtbapi.douyucdn.cn, *ar*.umetrip.com, cn-acs.m.cainiao.com, guide-acs.m.taobao.com, iyes.youku.com, gorgon.youdao.com, *.pornhub.*, testflight.apple.com, *boxjs.*, sub.store
-
-
 # ===⭐️=== 微博 ===⭐️=== #
-# author @RuCu6，@zmqcherish，@ddgksf2013
-
 # 开屏广告
 # v2/ad
 # interface/sdk
@@ -190,11 +57,18 @@ hostname = *.uve.weibo.com, *api.weibo.cn, weibo.com, grpc.biliapi.net, ap*.bili
 # 消息页 未读角标、红点
 ^https?://api\.weibo\.cn/2/direct_messages url response-body "unread_count":\d+ response-body "unread_count":0
 
+
+
+
+[Script]
+# ===⭐️=== 微博 ===⭐️=== #
+# author @RuCu6，@zmqcherish，@ddgksf2013
 # 👉https://github.com/RuCu6/QuanX/blob/main/Rewrites/Cube/weibo.snippet
+
 # 开屏广告 v1/ad
 # 开屏广告 interface/sdk
 # 开屏广告 wbapplua/wbpullad
-^https?://(bootpreload|(sdk|wb)app)\.uve\.weibo\.com/(v1/ad|interface/sdk|wbapplua/wbpullad) url script-response-body https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/weibo.js
+http-response ^https?://(bootpreload|(sdk|wb)app)\.uve\.weibo\.com/(v1/ad|interface/sdk|wbapplua/wbpullad) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/weibo.js, requires-body=true, timeout=10, tag=weibo
 
 # 关注信息流 statuses/container_timeline_unread
 # 推荐信息流 statuses/container_timeline_hot
@@ -216,7 +90,7 @@ hostname = *.uve.weibo.com, *api.weibo.cn, weibo.com, grpc.biliapi.net, ap*.bili
 # 搜索信息流超话 page
 # 偶现的头像挂件 container/asyn
 # 精选信息流挂件 flowlist
-^https?://api\.weibo\.cn/2/((statuses|profile|search)/?(container_timeline(\?|_unread|_hot)|all|finder|extend|show|me)|comments/build|video/tiny_stream|checkin|messageflow|push/active|client/publisher|cardlist\?gsid|page|container/asyn|flowlist) url script-response-body https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/weibo.js
+http-response ^https?://api\.weibo\.cn/2/((statuses|profile|search)/?(container_timeline(\?|_unread|_hot)|all|finder|extend|show|me)|comments/build|video/tiny_stream|checkin|messageflow|push/active|client/publisher|cardlist\?gsid|page|container/asyn|flowlist) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/weibo.js, requires-body=true, timeout=10, tag=weibo
 
 # 👉https://github.com/ddgksf2013/Rewrite/blob/master/AdBlock/Weibo.conf
 # 超话信息流 statuses/container_timeline_topic
@@ -227,13 +101,26 @@ hostname = *.uve.weibo.com, *api.weibo.cn, weibo.com, grpc.biliapi.net, ap*.bili
 # (轻享版)趋势卡片 .*feed&a=trends
 # (轻享版)热搜置顶 \?a=search_topic
 # (轻享版)用户vip栏 \?a=user_center
-^https?://(weibointl\.)?api\.weibo\.cn/(2/)?(statuses/container_timeline_topic|guest/(cardlist|(statuses_unread_hot_)?timeline)|portal\.php(.*(get_coopen_ads|feed&a=trends)|\?a=(search_topic|user_center))) url script-response-body https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/weibo_a.js
+http-response ^https?://(weibointl\.)?api\.weibo\.cn/(2/)?(statuses/container_timeline_topic|guest/(cardlist|(statuses_unread_hot_)?timeline)|portal\.php(.*(get_coopen_ads|feed&a=trends)|\?a=(search_topic|user_center))) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/weibo_a.js, requires-body=true, timeout=10, tag=weibo
 
-# (轻享版)搜索框推荐词 get_searching
-^https?://weibointl\.api\.weibo\.cn/portal\.php.*user&a=get_searching url echo-response text/html echo-response https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/weibo_search_info.json
+# (轻享版)搜索框推荐词 get_searching_info
+^https?://weibointl\.api\.weibo\.cn/portal\.php.*user&a=get_searching_info data="https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/weibo_search_info.json" header="Content-Type: text/html"
 
 # (轻享版)搜索框下方热搜 search_topic
-^https?://weibointl\.api\.weibo\.cn/portal\.php.*feed&a=search_topic url echo-response text/html echo-response https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/weibo_search_topic.json
+^https?://weibointl\.api\.weibo\.cn/portal\.php.*feed&a=search_topic data="https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/weibo_search_topic.json" header="Content-Type: text/html"
+
+
+
+
+# 😀
+
+# Name   Others
+# Desc   去广告合集，搬运自各位大佬。
+# Update 2023-06-15 21:08
+
+
+
+
 
 
 # ===⭐️=== 哔哩哔哩 ===⭐️=== #
