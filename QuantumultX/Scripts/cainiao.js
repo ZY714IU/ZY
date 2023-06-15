@@ -3,6 +3,8 @@ https://github.com/RuCu6/QuanX/blob/main/Scripts/cainiao.js
 2023-06-15 08:30
 ********/
 
+// 2023-06-15 08:30
+
 const url = $request.url;
 if (!$response.body) $done({});
 let obj = JSON.parse($response.body);
@@ -136,4 +138,3 @@ if (url.includes("nbpresentation.homepage.merge.get")) {
 }
 
 $done({ body: JSON.stringify(obj) });
-
