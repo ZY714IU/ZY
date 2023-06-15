@@ -1,9 +1,0 @@
-#!name = 代理链路检测
-#!desc = 查看目标节点的代理走向
-#!openUrl = 
-#!author = I-am-R-E
-#!homepage = https://github.com/ZY714IU/ZY/blob/main/Loon/Plugin/NodeLinkCheck.plugin
-#!icon = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Stack.png
-
-[Script]
-generic script-path = https://github.com/ZY714IU/ZY/raw/main/Loon/Scripts/NodeLinkCheck.js, tag = 代理链路检测, img-url = link.circle.system
