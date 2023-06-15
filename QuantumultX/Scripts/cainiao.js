@@ -1,9 +1,7 @@
 /********
 https://github.com/RuCu6/QuanX/blob/main/Scripts/cainiao.js
-2023-06-15 08:30
+2023-06-15 19:25
 ********/
-
-// 2023-06-15 08:30
 
 const url = $request.url;
 if (!$response.body) $done({});
@@ -13,22 +11,11 @@ if (url.includes("nbpresentation.homepage.merge.get")) {
   // 反馈组件
   if (obj.data) {
     const item = [
-      "mtop.cainiao.adkeyword.get.cn@0",
-      "mtop.cainiao.nbmensa.research.researchservice.acquire.cn@0",
-      "mtop.cainiao.nbmensa.research.researchservice.acquire.cn@1",
-      "mtop.cainiao.nbmensa.research.researchservice.acquire.cn@2",
-      "mtop.cainiao.nbmensa.research.researchservice.acquire.cn@3",
-      "mtop.cainiao.nbmensa.research.researchservice.acquire.cn@7",
-      "mtop.cainiao.nbpresentation.protocol.homepage.get.cn@2",
-      "mtop.cainiao.nbpresentation.protocol.homepage.get.cn@10",
-      "mtop.cainiao.nbpresentation.protocol.homepage.get.cn@11",
-      "mtop.cainiao.nbpresentation.protocol.homepage.get.cn@13"
+      "adkeyword", // 底部信息流
+      "nbmensa.research.researchservice.acquire", // 调查问卷
+      "nbpresentation.protocol.homepage" // 顶部图标
     ];
-    for (let i of item) {
-      if (obj.data?.[i]) {
-        delete obj.data[i];
-      }
-    }
+    obj.data = Object.entries(obj.data).filter(([key]) => !item.includes(key));
   }
 } else if (url.includes("nbpresentation.pickup.empty.page.get")) {
   // 取件页面
@@ -63,6 +50,7 @@ if (url.includes("nbpresentation.homepage.merge.get")) {
           // 顶部图标
           if (i.bizData.items) {
             const item = [
+              "618cjhb", // 超级红包
               "bgxq", // 包裹星球
               "cncy", // 填字赚现金
               "cngy", // 免费领水果
