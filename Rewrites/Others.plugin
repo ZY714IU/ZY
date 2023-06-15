@@ -4,7 +4,7 @@
 #!author = 
 #!homepage = https://github.com/ZY714IU/ZY/blob/main/Rewrites/Others.plugin
 #!icon = 
-#!update 2023-06-16 00:30
+#!update 2023-06-16 03:55
 
 
 [Rule]
@@ -115,7 +115,7 @@ domain, img2.360buyimg.com, reject
 # 动态页角标 bilibili\.app\.(dynamic\.v\d\.Dynamic/(DynRed|CampusRedDot)
 # 搜索框推荐词 bilibili\.app\.interface\.v\d\.Search/DefaultWord
 # 打开通知弹窗? x/push/user/notify
-^https?://ap(p|i)\.bilibili\.com/(pgc/(season/player/cards|activity)|bilibili\.app\.(dynamic|interface)\.v\d\.(Dynamic/(DynRed|CampusRedDot)|Search/DefaultWord)|x/push/user/notify) url reject-dict
+^https?://(app|api|grpc)\.bili(bil|ap)i\.(com|net)/(pgc/(season/player/cards|activity)|bilibili\.app\.(dynamic|interface)\.v\d\.(Dynamic/(DynRed|CampusRedDot)|Search/DefaultWord)|x/push/user/notify) url reject-dict
 
 # ===⭐️=== 知乎 ===⭐️=== #
 # 开屏广告 commercial_api/launch
@@ -353,7 +353,7 @@ http-response ^https?://(weibointl\.)?api\.weibo\.cn/(2/)?(statuses/container_ti
 # 右上角活动 x/resource/top/activity
 # 观影页广告 pgc/page/cinema/tab
 # 追番页广告 pgc/page/bangumi
-http-response ^https?://ap(p|i)\.bili(bil|ap)i\.(com|net)/(x/)?(v2/)?(splash/((brand/|event/)?list2?|show)|feed/index(\?|/story)|account/(mine(/ipad)?|myinfo)|resource/(show|top)/(tab|skin|activity)|pgc/page/(cinema/tab|bangumi)) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/bilibili.js, requires-body=true, timeout=10, tag=哔哩哔哩
+http-response ^https?://(app|api|grpc)\.bili(bil|ap)i\.(com|net)/(x/)?(v2/)?(splash/((brand/|event/)?list2?|show)|feed/index(\?|/story)|account/(mine(/ipad)?|myinfo)|resource/(show|top)/(tab|skin|activity)|pgc/page/(cinema/tab|bangumi)) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/bilibili.js, requires-body=true, timeout=10, tag=哔哩哔哩
 # 👉https://github.com/ddgksf2013/Rewrite/blob/master/AdBlock/Bilibili.conf
 # 直播广告 app-room/v\d/index/getInfoByRoom
 # 直播页轮播图 app-interface/v\d/index/feed
@@ -368,7 +368,7 @@ http-response ^https?://api\.live\.bilibili\.com/xlive/(app-(room|interface)|e-c
 # 交互式弹幕 community\.service\.dm\.v\d\.DM/(DmView|DmSegMobile)
 # 青少年模式 app\.interface\.v\d\.Teenagers/ModeStatus
 # 评论列表广告 main\.community\.reply\.v\d\.Reply/MainList
-http-response ^https?://(app|grpc)\.bili(bil|ap)i\.(com|net)/bilibili\.(polymer\.)?app\.(search|dynamic|playurl|view|community\.service\.dm|app\.interface|main\.community\.reply)\.v\d\.(Search/SearchAll$|Dynamic/Dyn(All|Video)$|PlayURL/PlayView$|View/(View|TFInfo)$|DM/(DmView|DmSegMobile)|Teenagers/ModeStatus|Reply/MainList) requires-body=1, binary-body-mode=1, script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/bilibili_b.js, requires-body=true, timeout=10, tag=哔哩哔哩, argument=
+http-response ^https?://(app|api|grpc)\.bili(bil|ap)i\.(com|net)/bilibili\.(polymer\.)?app\.(search|dynamic|playurl|view|community\.service\.dm|app\.interface|main\.community\.reply)\.v\d\.(Search/SearchAll$|Dynamic/Dyn(All|Video)$|PlayURL/PlayView$|View/(View|TFInfo)$|DM/(DmView|DmSegMobile)|Teenagers/ModeStatus|Reply/MainList) requires-body=1, binary-body-mode=1, script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/bilibili_b.js, requires-body=true, timeout=10, tag=哔哩哔哩, argument=
 http-response
 
 # ===⭐️=== 知乎 ===⭐️=== #
