@@ -28,10 +28,10 @@ domain, beacon.sina.com.cn, reject
 # ===⭐️=== 哔哩哔哩 ===⭐️=== #
 # 哔哩哔哩 自动换区支持(该规则将拦截B站GRPC服务端地址,迫使其使用旧协议传输内容,使换区脚本正常触发)
 # Bilibili proto
-domain, grpc.biliapi.net, reject
+# domain, grpc.biliapi.net, reject
 # 后台间歇性失效，请屏蔽以下域名
-domain, mall.bilibili.com, reject
-domain, passport.bilibili.com, reject
+# domain, mall.bilibili.com, reject
+# domain, passport.bilibili.com, reject
 
 # ===⭐️=== 知乎 ===⭐️=== #
 domain, mqtt.zhihu.com, reject
