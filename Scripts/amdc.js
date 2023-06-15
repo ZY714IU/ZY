@@ -1,7 +1,7 @@
 /*================
 https://github.com/RuCu6/QuanX/blob/main/Scripts/amdc.js
 2023-05-08 11:50
-^http?:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$ url script-response-header https://raw.githubusercontent.com/ZY714IU/ZY/main/QuantumultX/Scripts/amdc.js
+^http?:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$ url script-response-header https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/amdc.js
 ================*/
 
 const url = $request.url;
