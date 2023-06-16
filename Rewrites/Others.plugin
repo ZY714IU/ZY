@@ -380,7 +380,7 @@ http-response
 # 推荐信息流 topstory/recommend
 # 热榜信息流 topstory/hot
 # 回答页广告 next-(bff|data)|(v4/)?questions/\d+/(feeds|answers)|api/v4/(answers|articles)/\d+/recommendation
-http-response ^https?://(api|appcloud2|m-cloud)\.zhihu\.com/(v3/config|api/cloud/config|moments_v3|commercial_api/app_float|topstory/(recommend|hot)|next-(bff|data)|(v4/)?questions/\d+/(feeds|answers)|api/v4/(answers|articles)/\d+/recommendation) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/zhihu.js, requires-body=true, timeout=10, tag=知乎
+http-response ^https?://(api|appcloud2|m-cloud)\.zhihu\.com/(v3/config|api/cloud/config|moments_v3|commercial_api/app_float|topstory/(recommend|hot)|next-(bff|data)|(v4/)?questions/\d+/(feeds|answers)|api/v4/(answers|articles)/\d+/recommendation) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/zhihu.js, requires-body=true, tag=知乎
 
 # ===⭐️=== 高德地图 ===⭐️=== #
 # author @RuCu6，@ddgksf2013，@kokoryh
@@ -411,7 +411,7 @@ http-response ^https?://m5(-zb)?\.amap\.com/ws/(shield/(search)?_?/?(poi)?/?(cit
 # 开屏广告 system_service/(splash_)?config
 # 推荐页信息流 homefeed/client
 # 关注页感兴趣的人 followfeed
-http-response ^https?://edith\.xiaohongshu\.com/api/sns/v\d+?/(search/(banner|trending|note)|system_service/(splash_)?config|homefeed/client|followfeed) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/xiaohongshu.js, requires-body=true, timeout=10, tag=小红书
+http-response ^https?://edith\.xiaohongshu\.com/api/sns/v\d+?/(search/(banner|trending|note)|system_service/(splash_)?config|homefeed/client|followfeed) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/xiaohongshu.js, requires-body=true, tag=小红书
 
 # ===⭐️=== 百度贴吧 ===⭐️=== #
 # author @app2smile
