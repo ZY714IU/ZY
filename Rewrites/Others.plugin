@@ -38,7 +38,7 @@ domain, appcloud.zhihu.com, reject
 domain, appcloud2.in.zhihu.com, reject
 ip-cidr, 103.41.167.237/24, reject
 ip-cidr, 118.89.204.198/24, reject
-ip-cidr, 2402:4e00:1200:ed00:0:9089:6dac:96b6/128, reject
+ip-cidr6, 2402:4e00:1200:ed00:0:9089:6dac:96b6/128, reject
 
 # ===⭐️=== 高德地图 ===⭐️=== #
 domain, amdc.m.taobao.com, direct
