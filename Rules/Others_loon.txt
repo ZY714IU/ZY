@@ -49,10 +49,11 @@ DOMAIN, nadvideo2.baidu.com, REJECT
 DOMAIN, mobads.baidu.com, REJECT
 DOMAIN, mobads-logs.baidu.com,REJECT
 # 贴吧 屏蔽域名dns查询(否则去广告不干净)
-IP-CIDR,180.76.76.200/32,REJECT,no-resolve
+DOMAIN, 180.76.76.200 REJECT
+IP-CIDR,180.76.76.200/32,REJECT
 # 贴吧 屏蔽ws(副作用：消息通知功能失效，需手动进入查看)， 强制帖子接口走http
 DOMAIN, im.tieba.baidu.com, REJECT
-IP-CIDR, 203.107.1.1/24, REJECT,no-resolve
+IP-CIDR, 203.107.1.1/24, REJECT
 
 # ===⭐️=== 网易云音乐 ===⭐️=== #
 DOMAIN, httpdns.n.netease.com, REJECT
