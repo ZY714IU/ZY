@@ -64,7 +64,14 @@ ip-cidr, 180.76.76.200/32, reject, no-resolve
 # 贴吧 屏蔽ws(副作用：消息通知功能失效，需手动进入查看)， 强制帖子接口走http
 domain, im.tieba.baidu.com, reject
 ip-cidr, 203.107.1.1/24, reject, no-resolve
-
+# ===⭐️=== 百度地图 ===⭐️=== #
+# author @ddgksf2013
+URL-REGEX, ^https?://httpdns\.baidubce\.com url reject-200
+# 开屏&首页左上方 广告 phpui2/\?qt=ads
+# 搜索推广 phpui.*qt=hw
+# 各种商业推广 crossmarketing
+# 我的页面动态 usersystem/home/dynamic
+URL-REGEX, ^https?://newclient\.map\.baidu\.com/client/(phpui(2/\?qt=ads|.*qt=hw)|crossmarketing|usersystem/home/dynamic) url reject
 
 # ===⭐️=== 网易云音乐 ===⭐️=== #
 domain, httpdns.n.netease.com, reject
@@ -188,16 +195,6 @@ domain, img2.360buyimg.com, reject
 # 推送通知弹窗? messages/unread
 # 不知啥弹窗 system_service/popup
 ^https?://(edith|www)\.xiaohongshu\.com/api/(sns|im)/v\d/(surprisebox/(get_style|open|submit_action$)|(note/)?guide$?/((user|template)_banner|home_guide)|user/teenager/status|followfeed/reddot|(tag/)?ads|messages/unread|system_service/popup) url reject-dict
-
-# ===⭐️=== 百度地图 ===⭐️=== #
-# author @ddgksf2013
-^https?://httpdns\.baidubce\.com url reject-200
-^http://180\.76\.76\.112 url reject-dict
-# 开屏&首页左上方 广告 phpui2/\?qt=ads
-# 搜索推广 phpui.*qt=hw
-# 各种商业推广 crossmarketing
-# 我的页面动态 usersystem/home/dynamic
-^https?://newclient\.map\.baidu\.com/client/(phpui(2/\?qt=ads|.*qt=hw)|crossmarketing|usersystem/home/dynamic) url reject-200
 
 # ===⭐️=== 百度云盘 ===⭐️=== #
 # author @RuCu6，@kokoryh
