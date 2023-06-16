@@ -49,7 +49,8 @@ domain, free-aos-cdn-image.amap.com, reject
 # ===⭐️=== 百度贴吧 ===⭐️=== #
 # 屏蔽域名dns查询(否则去广告不干净)
 domain, 180.76.76.200, reject
-ip-cidr,180.76.76.200/32, reject, no-resolve
+ip-cidr, 180.76.76.200/32, reject, no-resolve
+ip-cidr, 180.76.76.112, reject
 # 屏蔽ws(副作用：消息通知功能失效，需手动进入查看)， 强制帖子接口走http
 domain, im.tieba.baidu.com, reject
 ip-cidr, 203.107.1.1, reject
