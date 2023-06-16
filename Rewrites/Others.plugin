@@ -202,7 +202,7 @@ domain, img2.360buyimg.com, reject
 # 各种 小红点 .*redpoint
 ^https?://interface3?\.music\.163\.com/w?eapi/(ad/.*|link/position/show|music/songshare/text/recommend|mlivestream/entrance/playpage|community/friends/fans-group/artist|mlog/vinyl/story|user/sub/artist|vipcenter/tspopup|zone/songplay/entry|resniche/position/play|event/floating|homepage/banner/ad|link/scene/show|music-vip-(membership|thoth)|vipauth/app/auth/recycle|side-bar|delivery/batch-deliver|search/(chart/(detail|list)$|(default/|rcmd/|special)keyword)|comment/(hotcomment|feed/inserted|tips)|(v1/)?content/exposure/(comment/banner|vinyl/comment/entrance)|(middle/clientcfg|resource-exposure)(/activity)?/config|voice/play/page/ad|.*redpoint) url reject-dict
 # 评论页 插入广告
-^https?://interface3\.music\.163\.com/eapi/batch header-replace-regex Cookie appver=\d\.\d\.\d\d appver=888
+^https?://interface3\.music\.163\.com/eapi/batch header-replace-regex Cookie appver=\d\.\d\.\d\d appver=9999
 
 # ===⭐️=== youtube ===⭐️=== #
 # 其他 initplayback.+&oad
