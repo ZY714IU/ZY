@@ -9,79 +9,79 @@
 
 [Rule]
 # ===⭐️=== 微博 ===⭐️=== #
-domain, sdkapp.uve.weibo.com, direct
-domain, weibointl.api.weibo.cn, direct
-domain, adimg.uve.weibo.com, reject
-domain, adimg.uve.weibo.com, reject
-domain, adstrategy.biz.weibo.com, reject
-domain, brandvideo.biz.weibo.com, reject
-domain, kadmimage.biz.weibo.com, reject
-domain, u1.img.mobile.sina.cn, reject
-domain, sdkclick.biz.weibo.com, reject
-domain, sdkaction.biz.weibo.com, reject
-domain, sdkmonitor.biz.weibo.com, reject
-domain, sax.sina.com.cn, reject
-domain, saxn.sina.com.cn, reject
-domain, saxs.sina.com.cn, reject
-domain, beacon.sina.com.cn, reject
+domain, sdkapp.uve.weibo.com, DIRECT
+domain, weibointl.api.weibo.cn, DIRECT
+domain, adimg.uve.weibo.com, REJECT
+domain, adimg.uve.weibo.com, REJECT
+domain, adstrategy.biz.weibo.com, REJECT
+domain, brandvideo.biz.weibo.com, REJECT
+domain, kadmimage.biz.weibo.com, REJECT
+domain, u1.img.mobile.sina.cn, REJECT
+domain, sdkclick.biz.weibo.com, REJECT
+domain, sdkaction.biz.weibo.com, REJECT
+domain, sdkmonitor.biz.weibo.com, REJECT
+domain, sax.sina.com.cn, REJECT
+domain, saxn.sina.com.cn, REJECT
+domain, saxs.sina.com.cn, REJECT
+domain, beacon.sina.com.cn, REJECT
 
 # ===⭐️=== 哔哩哔哩 ===⭐️=== #
 # 哔哩哔哩 自动换区支持(该规则将拦截B站GRPC服务端地址,迫使其使用旧协议传输内容,使换区脚本正常触发)
 # Bilibili proto
-# domain, grpc.biliapi.net, reject
+# domain, grpc.biliapi.net, REJECT
 
 # ===⭐️=== 知乎 ===⭐️=== #
-domain, mqtt.zhihu.com, reject
-domain, sugar.zhihu.com, reject
-domain, crash2.zhihu.com, reject
-domain, appcloud.zhihu.com, reject
-domain, appcloud2.in.zhihu.com, reject
-# ip-cidr, 103.41.167.237/24, reject
-# ip-cidr, 118.89.204.198/24, reject
-# ip-cidr, 2402:4e00:1200:ed00:0:9089:6dac:96b6/128, reject
+domain, mqtt.zhihu.com, REJECT
+domain, sugar.zhihu.com, REJECT
+domain, crash2.zhihu.com, REJECT
+domain, appcloud.zhihu.com, REJECT
+domain, appcloud2.in.zhihu.com, REJECT
+# ip-cidr, 103.41.167.237/24, REJECT
+# ip-cidr, 118.89.204.198/24, REJECT
+# ip-cidr, 2402:4e00:1200:ed00:0:9089:6dac:96b6/128, REJECT
 
 # ===⭐️=== 高德地图 ===⭐️=== #
-domain, amdc.m.taobao.com, direct
-domain, awaken.amap.com, reject
-domain, amap-aos-info-nogw.amap.com, reject
-domain, free-aos-cdn-image.amap.com, reject
+domain, amdc.m.taobao.com, DIRECT 
+domain, awaken.amap.com, REJECT
+domain, amap-aos-info-nogw.amap.com, REJECT
+domain, free-aos-cdn-image.amap.com, REJECT
 
 # ===⭐️=== 百度 ===⭐️=== #
-domain, als.baidu.com, reject
-domain, afd.baidu.com, reject
-domain, afdconf.baidu.com, reject
-domain, cpro.baidu.com, reject
-domain, duclick.baidu.com, reject
-domain, lc.map.baidu.com, reject
-domain, pos.baidu.com, reject
-domain, nsclick.baidu.com, reject
-domain, nadvideo2.baidu.com, reject
-domain, mobads.baidu.com, reject
-domain, mobads-logs.baidu.com, reject
+domain, als.baidu.com, REJECT
+domain, afd.baidu.com, REJECT
+domain, afdconf.baidu.com, REJECT
+domain, cpro.baidu.com, REJECT
+domain, duclick.baidu.com, REJECT
+domain, lc.map.baidu.com, REJECT
+domain, pos.baidu.com, REJECT
+domain, nsclick.baidu.com, REJECT
+domain, nadvideo2.baidu.com, REJECT
+domain, mobads.baidu.com, REJECT
+domain, mobads-logs.baidu.com, REJECT
 # 贴吧 屏蔽域名dns查询(否则去广告不干净)
-domain, 180.76.76.200, reject
-ip-cidr, 180.76.76.200/32, reject, no-resolve
+domain, 180.76.76.200, REJECT
+ip-cidr, 180.76.76.200/32, REJECT, no-resolve
 # 贴吧 屏蔽ws(副作用：消息通知功能失效，需手动进入查看)， 强制帖子接口走http
-domain, im.tieba.baidu.com, reject
-ip-cidr, 203.107.1.1/24, reject, no-resolve
+domain, im.tieba.baidu.com, REJECT
+ip-cidr, 203.107.1.1/24, REJECT, no-resolve
 
 # ===⭐️=== 网易云音乐 ===⭐️=== #
-domain, httpdns.n.netease.com, reject
-domain, iadmat.nosdn.127.net, reject
-domain, iadmatapk.nosdn.127.net, reject
-domain, iadmusicmat.music.126.net, reject
-domain, iadmusicmatvideo.music.126.net, reject
-domain-suffix, 163jiasu.com, reject
+domain, httpdns.n.netease.com, REJECT
+domain, iadmat.nosdn.127.net, REJECT
+domain, iadmatapk.nosdn.127.net, REJECT
+domain, iadmusicmat.music.126.net, REJECT
+domain, iadmusicmatvideo.music.126.net, REJECT
+domain-suffix, 163jiasu.com, REJECT
 
 # ===⭐️=== 美图秀秀 ===⭐️=== #
 # 开屏广告
-domain-suffix, adui.tg.meitu.com, reject
+domain-suffix, adui.tg.meitu.com, REJECT
 
 # 有道翻译官
-domain, dsp-impr2.youdao.com, reject
-domain, log-yex.youdao.com, reject
-domain, download.ydstatic.com, reject
-domain, b-clkservice.youdao.com, reject
+domain, dsp-impr2.youdao.com, REJECT
+domain, log-yex.youdao.com, REJECT
+domain, download.ydstatic.com, REJECT
+domain, b-clkservice.youdao.com, REJECT
 domain, dsp-impr2.youdao.com, reject
 domain, img2.360buyimg.com, reject
 
