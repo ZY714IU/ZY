@@ -118,6 +118,9 @@ domain, img2.360buyimg.com, reject
 ^https?://(app|api|grpc)\.bili(bil|ap)i\.(com|net)/(pgc/(season/player/cards|activity)|bilibili\.app\.(dynamic|interface)\.v\d\.(Dynamic/(DynRed|CampusRedDot)|Search/DefaultWord)|x/push/user/notify) url reject-dict
 
 # ===⭐️=== 知乎 ===⭐️=== #
+^https?://118\.89\.204\.198 - reject-dict
+^https?://103\.41\.167\.237 - reject-dict
+^https?://2402:4e00:1200:ed00:0:9089:6dac:96b6 - reject-dict
 # 开屏广告 commercial_api/launch
 # 开屏广告 commercial_api/real_time_launch
 # 推荐页顶部横幅 commercial_api/banner
