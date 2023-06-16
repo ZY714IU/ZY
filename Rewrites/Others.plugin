@@ -46,11 +46,22 @@ domain, awaken.amap.com, reject
 domain, amap-aos-info-nogw.amap.com, reject
 domain, free-aos-cdn-image.amap.com, reject
 
-# ===⭐️=== 百度贴吧 ===⭐️=== #
-# 屏蔽域名dns查询(否则去广告不干净)
+# ===⭐️=== 百度 ===⭐️=== #
+domain, als.baidu.com, reject
+domain, afd.baidu.com, reject
+domain, afdconf.baidu.com, reject
+domain, cpro.baidu.com, reject
+domain, duclick.baidu.com, reject
+domain, lc.map.baidu.com, reject
+domain, pos.baidu.com, reject
+domain, nsclick.baidu.com, reject
+domain, nadvideo2.baidu.com, reject
+domain, mobads.baidu.com, reject
+domain, mobads-logs.baidu.com, reject
+# 贴吧 屏蔽域名dns查询(否则去广告不干净)
 domain, 180.76.76.200, reject
 ip-cidr, 180.76.76.200/32, reject, no-resolve
-# 屏蔽ws(副作用：消息通知功能失效，需手动进入查看)， 强制帖子接口走http
+# 贴吧 屏蔽ws(副作用：消息通知功能失效，需手动进入查看)， 强制帖子接口走http
 domain, im.tieba.baidu.com, reject
 ip-cidr, 203.107.1.1/24, reject, no-resolve
 
