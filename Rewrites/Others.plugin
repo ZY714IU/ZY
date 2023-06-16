@@ -181,6 +181,7 @@ domain, img2.360buyimg.com, reject
 # ===⭐️=== 百度地图 ===⭐️=== #
 # author @ddgksf2013
 ^https?://httpdns\.baidubce\.com url reject-200
+^http://180\.76\.76\.112 url reject-dict
 # 开屏&首页左上方 广告 phpui2/\?qt=ads
 # 搜索推广 phpui.*qt=hw
 # 各种商业推广 crossmarketing
