@@ -424,22 +424,7 @@ http-request ^https?://(.+\.)?boxjs\.(com|net) script-path=https://raw.githubuse
 http-request ^https?://sub\.store/((download)|api/(preview|sync|(utils/node-info))) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/sub-store-1.min.js, requires-body=true, timeout=10, tag=sub-store-1.min
 http-request ^https?://sub\.store script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/sub-store-0.min.js, requires-body=true, timeout=10, tag=sub-store-0.min
 
-# ===⭐️=== 转换器 ===⭐️=== #
-# QX或Surge重写&规则集转Loon
-# 使用方法，在QX重写链接末尾加上qx，在surge模块链接末尾加上sg，规则集链接末尾加r_parser.list，支持解析QX & Clash规则集，点击下方链接查看使用手册
-# author @小白， @chengkongyiban
-# https://github.com/chengkongyiban/stash/tree/main/Rewrite_Parser_Wiki
-#!select=启用插件随机图标,启用,禁用
-#!select=替换原始插件图标,启用,禁用
-#!select=插件随机图标合集,Doraemon,Shin-chan
-
-http-request /[^/]+\.[^/]+qx$|qx\?(jsc|hnadd|hndel|n|y|x|del|i)= script-path=https://github.com/chengkongyiban/stash/raw/main/js/QX_Rewrite_Parser.js, requires-body=true, timeout=10, tag=QX转Loon
-http-request /[^/]+\.[^/]+sg$|sg\?(jsc|hnadd|hndel|n|y|x|del|i)= script-path=https://github.com/chengkongyiban/stash/raw/main/js/Surge_Rewrite_Parser.js, requires-body=true, timeout=10, tag=Surge转Loon
-http-request /[^/]+\.[^/]+loon$|loon\?(hndel|hnadd|n|y|x|del)= script-path=https://github.com/chengkongyiban/stash/raw/main/js/Loon_Rewrite_Parser.js, requires-body=true, tag=Loon插件控制器
-http-request r_parser.list$|r_parser.list\?.* script-path=https://raw.githubusercontent.com/chengkongyiban/stash/main/js/rule_parser.js, requires-body=true, tag=规则集转换
-http-request _script-converter-(stash|surge|loon|shadowrocket)\.js$ script-path=https://raw.githubusercontent.com/xream/scripts/main/surge/modules/script-converter/script-converter.js, requires-body=true, tag=脚本转换
-
 
 # ===⭐️=== hostname ===⭐️=== #
 [Mitm]
-hostname = %APPEND% *.uve.weibo.com, *api.weibo.cn, weibo.com, grpc.biliapi.net, ap*.bili*i.*, 118.89.204.198,103.41.167.237,2402:4e00:1200:ed00:0:9089:6dac:96b6,www.zhihu.com,api.zhihu.com,zhuanlan.zhihu.com,appcloud2.zhihu.com,m-cloud.zhihu.com,103.41.167.236,103.41.167.234,103.41.167.235,103.41.167.226, m5-zb.amap.com, m5.amap.com, sns.amap.com, edith.xiaohongshu.com, www.xiaohongshu.com, tiebac.baidu.com, 180.76.76.200, newclient.map.baidu.com, httpdns.baidubce.com, pan.baidu.com, www.baidu.com, m.baidu.com, zhidao.baidu.com, boxer.baidu.com, interface*.music.163.com, youtubei.googleapis.com, *.googlevideo.com, *p*.zhuan*.com, *.meitu.com, client.app.coc.10086.cn, h.app.coc.10086.cn, gx.10086.cn, *plus.meituan.net, wmapi.meituan.com, img.meituan.net, api.coolapk.com, mp.weixin.qq.com, api-shoulei-ssl.xunlei.com, rtbapi.douyucdn.cn, *ar*.umetrip.com, cn-acs.m.cainiao.com, guide-acs.m.taobao.com, iyes.youku.com, gorgon.youdao.com, *.pornhub.*, testflight.apple.com, *boxjs.*, sub.store, github.com,raw.githubusercontent.com,gist.githubusercontent.com,gitlab.com,yfamily.ml
+hostname = %APPEND% *.uve.weibo.com, *api.weibo.cn, weibo.com, grpc.biliapi.net, ap*.bili*i.*, 118.89.204.198,103.41.167.237,2402:4e00:1200:ed00:0:9089:6dac:96b6,www.zhihu.com,api.zhihu.com,zhuanlan.zhihu.com,appcloud2.zhihu.com,m-cloud.zhihu.com,103.41.167.236,103.41.167.234,103.41.167.235,103.41.167.226, m5-zb.amap.com, m5.amap.com, sns.amap.com, edith.xiaohongshu.com, www.xiaohongshu.com, tiebac.baidu.com, 180.76.76.200, newclient.map.baidu.com, httpdns.baidubce.com, pan.baidu.com, www.baidu.com, m.baidu.com, zhidao.baidu.com, boxer.baidu.com, interface*.music.163.com, youtubei.googleapis.com, *.googlevideo.com, *p*.zhuan*.com, *.meitu.com, client.app.coc.10086.cn, h.app.coc.10086.cn, gx.10086.cn, *plus.meituan.net, wmapi.meituan.com, img.meituan.net, api.coolapk.com, mp.weixin.qq.com, api-shoulei-ssl.xunlei.com, rtbapi.douyucdn.cn, *ar*.umetrip.com, cn-acs.m.cainiao.com, guide-acs.m.taobao.com, iyes.youku.com, gorgon.youdao.com, *.pornhub.*, testflight.apple.com, *boxjs.*, sub.store
