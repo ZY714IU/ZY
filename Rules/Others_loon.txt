@@ -1,6 +1,6 @@
 # ===⭐️=== 微博 ===⭐️=== #
-DOMAIN, sdkapp.uve.weibo.com, DIRECT
-DOMAIN, weibointl.api.weibo.cn, DIRECT
+# DOMAIN, sdkapp.uve.weibo.com, DIRECT
+# DOMAIN, weibointl.api.weibo.cn, DIRECT
 DOMAIN, adimg.uve.weibo.com, REJECT
 DOMAIN, adimg.uve.weibo.com, REJECT
 DOMAIN, adstrategy.biz.weibo.com, REJECT
@@ -31,7 +31,7 @@ DOMAIN, appcloud2.in.zhihu.com, REJECT
 # IP-CIDR, 2402:4e00:1200:ed00:0:9089:6dac:96b6/128, REJECT
 
 # ===⭐️=== 高德地图 ===⭐️=== #
-DOMAIN, amdc.m.taobao.com, DIRECT 
+# DOMAIN, amdc.m.taobao.com, DIRECT 
 DOMAIN, awaken.amap.com, REJECT
 DOMAIN, amap-aos-info-nogw.amap.com, REJECT
 DOMAIN, free-aos-cdn-image.amap.com, REJECT
