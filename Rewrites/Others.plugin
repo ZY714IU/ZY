@@ -28,17 +28,17 @@ domain, beacon.sina.com.cn, reject
 # ===⭐️=== 哔哩哔哩 ===⭐️=== #
 # 哔哩哔哩 自动换区支持(该规则将拦截B站GRPC服务端地址,迫使其使用旧协议传输内容,使换区脚本正常触发)
 # Bilibili proto
-# domain, grpc.biliapi.net, reject
+# DOMAIN, grpc.biliapi.net, REJECT
 
 # ===⭐️=== 知乎 ===⭐️=== #
-domain, mqtt.zhihu.com, reject
-domain, sugar.zhihu.com, reject
-domain, crash2.zhihu.com, reject
-domain, appcloud.zhihu.com, reject
-domain, appcloud2.in.zhihu.com, reject
-ip-cidr, 103.41.167.237/24, reject
-ip-cidr, 118.89.204.198/24, reject
-ip-cidr6, 2402:4e00:1200:ed00:0:9089:6dac:96b6/128, reject
+DOMAIN, mqtt.zhihu.com, REJECT
+DOMAIN, sugar.zhihu.com, REJECT
+DOMAIN, crash2.zhihu.com, REJECT
+DOMAIN, appcloud.zhihu.com, REJECT
+DOMAIN, appcloud2.in.zhihu.com, REJECT
+IP-CIDR, 103.41.167.237/24, REJECT
+IP-CIDR, 118.89.204.198/24, REJECT
+IP-CIDR6, 2402:4e00:1200:ed00:0:9089:6dac:96b6/128, REJECT
 
 # ===⭐️=== 高德地图 ===⭐️=== #
 domain, amdc.m.taobao.com, direct
