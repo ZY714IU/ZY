@@ -347,12 +347,12 @@ http-response ^https?://(tiebac|c\.tieba)\.baidu\.com/c/f/(frs/(page|threadlist|
 
 # ===⭐️=== 百度地图 ===⭐️=== #
 # author @ddgksf2013
-^https?:\/\/httpdns\.baidubce\.com url reject-dict
-# 开屏&首页左上方 广告 phpui2/\?qt=ads
+^https?:\/\/httpdns\.baidubce\.com url reject-200
+# 开屏&首页左上方 广告 phpui2\/\?qt=ads
 # 搜索推广 phpui.*qt=hw
 # 各种商业推广 crossmarketing
-# 我的页面动态 usersystem/home/dynamic
-^https?:\/\/newclient\.map\.baidu\.com\/client\/(phpui(2\/\?qt=ads|.*qt=hw)|crossmarketing|usersystem/home/dynamic) url reject-dict
+# 我的页面动态 usersystem\/home\/dynamic
+^https?:\/\/newclient\.map\.baidu\.com\/client\/(phpui(2\/\?qt=ads|.*qt=hw)|crossmarketing|usersystem\/home\/dynamic) url reject-200
 
 # ===⭐️=== 百度搜索 ===⭐️=== #
 # author @Adblock4limbo，@RuCu6，@app2smile
