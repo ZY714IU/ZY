@@ -1,4 +1,4 @@
-# Apple & Microsoft & Speedtest & Hijacking
+# Apple&Microsoft&Speedtest&Hijacking
 # AppleDirect；数量：28条
 # https://github.com/ACL4SSR/ACL4SSR/blob/master/Clash/Ruleset/Apple.list
 host, apple.comscoreresearch.com, direct
