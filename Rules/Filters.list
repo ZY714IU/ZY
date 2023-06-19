@@ -1,6 +1,5 @@
 # Name   Filter
-# Author @RuCu6，@ddgksf2013，@kokoryh，@blackmatrix7，@app2smile，@DivineEngine, @zhangjun，@NobyDa，@ACL4SSR，@lwd-temp
-# Update 2023-06-16 00:15
+# Update 2023-06-19 13:22
 # “#” “;" “//” 是注释符号，去掉符号该行才生效
 # 开启「分流匹配优化」选项，则匹配优先级如下
 ; host > host-suffix > host-keyword(wildcard) > geoip = ip-cidr > user-agent
@@ -15,27 +14,33 @@
 ; user-agent
 //user-agent, ?abc*, proxy
 
-
-# ===== anti-ip ===== #
+# == ⭐️ == anti-ip == ⭐️ == #
 # 针对部分软件显示ip归属地分流规则
 # https://github.com/lwd-temp/anti-ip-attribution
 # 注意！更改ip归属地有风险，不建议使用！
 # 微博
-//host, api.weibo.cn, Static 
+host, api.weibo.cn, Static 
 # 抖音；需家宽ip才生效，否则显示 “未知”
 //host-suffix, amemv.com, Static
 # 小红书
 //host, edith.xiaohongshu.com, Static
 # 贴吧
-//host, c.tieba.baidu.com, Static
+host, c.tieba.baidu.com, Static
+# 知乎
+//host, api.zhihu.com, Static
+# 哔哩哔哩
+//host, api.bilibili.com, Static
+//host, api.biliapi.net, Static
 # 微信
 //host, mp.weixin.qq.com, Static 
 
-
-# ===== direct ===== #
+# == ⭐️ == direct == ⭐️ == #
 # 微博
 host, sdkapp.uve.weibo.com, direct
 host, weibointl.api.weibo.cn, direct
+# 字节跳动
+host, verify.zijieapi.com, direct
+host-suffix, byteimg.com, direct
 # 阿里系
 host, amdc.m.taobao.com, direct
 host-suffix, ynuf.aliapp.org, direct
@@ -55,16 +60,13 @@ host, vd.l.qq.com, direct
 host, vi.l.qq.com, direct
 host, livew.l.qq.com, direct
 host, fairplay.l.qq.com, direct
-# 百度
-host-suffix, tuisong.baidu.com, direct
 # 其他
 host, ca.iadsdk.apple.com, direct
 host-suffix, ipleak.net, direct
 host-keyword, tkys, direct
 
-
-# ===== proxy ===== #
-; 可把 Static 换成任意 策略组/节点
+# == ⭐️ == proxy == ⭐️ == #
+# 可把 Static 换成任意 策略组/节点
 # 必应国际版(不开分流则国内版)
 host, www.bing.com, Static
 host, www.bing.net, Static
@@ -95,108 +97,75 @@ host-suffix, missav.com, Static
 host-suffix, cdnedge.live, Static
 host-keyword, v2ex, Static
 host-keyword, notion, Static
-# AppleProxy
-; 数量：27
-; https://github.com/kokoryh/Script/blob/master/Surge/rule/AppleProxy.list
-host, amp-api.podcasts.apple.com, Static
-host, apple.comscoreresearch.com, Static
-host, beta.music.apple.com, Static
-host, books.apple.com, Static
-host, books.itunes.apple.com, Static
-host, cvws.icloud-content.com, Static
-host, developer.apple.com, Static
-host, gateway.icloud.com, Static
-host, gspe1-ssl.ls.apple.com, Static
-host, itunes.apple.com, Static
-host, lookup-api.apple.com, Static
-host, news-assets.apple.com, Static
-host, news-client-search.apple.com, Static
-host, news-client.apple.com, Static
-host, news-edge.apple.com, Static
-host, news-events.apple.com, Static
-host, radio.itunes.apple.com, Static
-host, sandbox.itunes.apple.com, Static
-host, tv.apple.com, Static
-host-suffix, testflight.apple.com, Static
-host-suffix, apple-dns.net, Static
-host-suffix, apple.news, Static
-host-suffix, apps.apple.com, Static
-host-suffix, appsto.re, Static
-host-suffix, blobstore.apple.com, Static
-host-suffix, digicert.com, Static
-host-suffix, smoot.apple.com, Static
-# Speedtest
-host, www.speedtest.net, proxy
-; https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/QuantumultX/Speedtest/Speedtest.list
-; 数量: 17
-host, speed.dler.io, Static
-host-suffix, cdnst.net, Static
-host-suffix, cellmaps.com, Static
-host-suffix, ekahau.cloud, Static
-host-suffix, ekahau.com, Static
-host-suffix, fast.com, Static
-host-suffix, ookla.com, Static
-host-suffix, ooklaserver.net, Static
-host-suffix, pingtest.net, Static
-host-suffix, speed.cloudflare.com, Static
-host-suffix, speed.dler.io, Static
-host-suffix, speedtest.co, Static
-host-suffix, speedtest.net, Static
-host-suffix, speedtestcustom.com, Static
-host-suffix, webtest.net, Static
-host-keyword, speedtest, Static
-user-agent, SpeedTest*, Static
 
-
-# ===== reject ===== #
-# 哔哩哔哩 自动换区支持(该规则将拦截B站GRPC服务端地址,迫使其使用旧协议传输内容,使换区脚本正常触发)
-; Bilibili proto
-host, grpc.biliapi.net, reject
-; 后台间歇性失效，请屏蔽以下域名
-host, mall.bilibili.com, reject
-host, passport.bilibili.com, reject
-# 知乎
-host, mqtt.zhihu.com, reject
-host, sugar.zhihu.com, reject
-host, crash2.zhihu.com, reject
-host, appcloud.zhihu.com, reject
-host, appcloud2.in.zhihu.com, reject
-ip-cidr, 103.41.167.237/24, reject
-ip-cidr, 118.89.204.198/24, reject
-ip6-cidr, 2402:4e00:1200:ed00:0:9089:6dac:96b6/128, reject
+# == ⭐️ == reject == ⭐️ == #
+# 微信键盘
+host, wetype.weixin.qq.com, reject
 # 微博
 host, adimg.uve.weibo.com, reject
 host, adimg.uve.weibo.com, reject
 host, adstrategy.biz.weibo.com, reject
 host, brandvideo.biz.weibo.com, reject
+host, vs.biz.weibo.com, reject
 host, kadmimage.biz.weibo.com, reject
 host, u1.img.mobile.sina.cn, reject
 host, sdkclick.biz.weibo.com, reject
 host, sdkaction.biz.weibo.com, reject
 host, sdkmonitor.biz.weibo.com, reject
-; 新浪
 host, sax.sina.com.cn, reject
 host, saxn.sina.com.cn, reject
 host, saxs.sina.com.cn, reject
 host, beacon.sina.com.cn, reject
+# 哔哩哔哩 后台间歇性失效，请在分流屏蔽以下域名
+; 注意！屏蔽会导致登录和安全相关功能无法使用
+host, mall.bilibili.com, reject
+host, passport.bilibili.com, reject
+# 知乎
+host, appcloud.zhihu.com, reject
+host, appcloud2.in.zhihu.com, reject
+host, crash2.zhihu.com, reject
+host, mqtt.zhihu.com, reject
+host, sugar.zhihu.com, reject
+ip-cidr, 118.89.204.198/32, reject
+ip-cidr, 103.41.167.237/32, reject
+ip6-cidr, 2402:4e00:1200:ed00:0:9089:6dac:96b6/128, reject
+# 字节跳动
+host, ad.toutiao.com, reject
+host, ad-sign.byteimg.com, reject
+host, im-x.jd.com, reject
+host, dig.bdurl.net, reject
+host, dig.zjurl.cn, reject
+host, dsp.toutiao.com, reject
+host, api-access.pangolin-sdk-toutiao-b.com, reject
+host, api-access.pangolin-sdk-toutiao.com, reject
+host-suffix, snssdk.com, reject
+host-suffix, zijieapi.com, reject
+host-suffix, pangolin-sdk-toutiao-b.com, reject
+host-suffix, pangolin-sdk-toutiao.com, reject
+host, sf3-fe-tos.pglstatp-toutiao.com, reject
+host, sf3-ttcdn-tos.pstatp.com, reject
+host-suffix, pglstatp-toutiao.com, reject
+host-suffix, byteorge.com, reject
+host-suffix, bytegoofy.com, reject
+host-suffix, bytedance.com, reject
+host-suffix, p6-ad-sign.byteimg.com, reject
+host-suffix, p9-ad-sign.byteimg.com, reject
+host-suffix, bytegecko.com, reject
+host-suffix, rp.hpplay.cn, reject
+host-suffix, shark-tracer.netease.com, reject
 # 百度
-host, als.baidu.com, reject
+host-SUFFIX, pos.baidu.com, reject
+# 百度地图
 host, afd.baidu.com, reject
 host, afdconf.baidu.com, reject
-host, cpro.baidu.com, reject
-host, duclick.baidu.com, reject
-host, lc.map.baidu.com, reject
-host, pos.baidu.com, reject
-host, nsclick.baidu.com, reject
-host, nadvideo2.baidu.com, reject
-host, mobads.baidu.com, reject
-host, mobads-logs.baidu.com, reject
-; 贴吧、地图 屏蔽域名dns查询(否则去广告不干净)
-ip-cidr, 180.76.76.200/32, reject
 host, httpdns.baidubce.com, reject
+host, lc.map.baidu.com, reject
+; 贴吧、地图 屏蔽域名dns查询(否则去广告不干净)
+host, httpdns.baidubce.com, reject
+ip-cidr, 180.76.76.200/32, reject
 ; 贴吧屏蔽 ws (副作用；消息通知功能失效，需手动进入查看)，强制帖子接口走http
 host, im.tieba.baidu.com, reject
-ip-cidr, 203.107.1.1/24, reject
+ip-cidr, 203.107.1.1/32, reject
 # 阿里巴巴
 host, adashx.ut.amap.com, reject
 host, adashx.m.taobao.com, reject
@@ -209,35 +178,14 @@ host, adashxgc.ut.taobao.com, reject
 host, awaken.amap.com, reject
 host, amap-aos-info-nogw.amap.com, reject
 host, free-aos-cdn-image.amap.com, reject
-# 字节跳动
-host, ad.toutiao.com, reject
-host, ad.zijieapi.com, reject
-host, ad-sign.byteimg.com, reject
-host, ads3-normal-lq.zijieapi.com, reject
-host, ads5-normal-lq.zijieapi.com, reject
-host, api-access.pangolin-sdk-toutiao-b.com, reject
-host, api-access.pangolin-sdk-toutiao.com, reject
-host, dig.bdurl.net, reject
-host, dsp.toutiao.com, reject
-host, ug.snssdk.com, reject
-host, is.snssdk.com, reject
-host, mcs.snssdk.com, reject
-host, pangolin.snssdk.com, reject
-host-suffix, pangolin-sdk-toutiao-b.com, reject
-host-suffix, pangolin-sdk-toutiao.com, reject
-host, polaris3-normal-lq.zijieapi.com, reject
-host, security-lq.snssdk.com, reject
-host, sf3-fe-tos.pglstatp-toutiao.com, reject
-host, tnc3-alisc1.snssdk.com, reject
-host, tnc3-aliec2.snssdk.com, reject
-host, tnc3-alisc1.zijieapi.com, reject
-host-keyword, ad-sign.byteimg.com, reject
 # 腾讯
 host, adsmind.tc.qq.com, reject
 host, adsmind.gdtimg.com, reject
 host, adsmind.ugdtimg.com, reject
 host, adsmind.apdcdn.tc.qq.com, reject
+host, api.iegadp.qq.com, reject
 host, e.qq.com, reject
+host, l.qq.com, reject
 host, gdt.qq.com, reject
 host, mi.gdt.qq.com, reject
 host, pgdt.gtimg.cn, reject
@@ -246,7 +194,6 @@ host, pgdt.ugdtimg.com, reject
 host, wa.gtimg.com, reject
 host, wxsnsdy.wxs.qq.com, reject
 host, wxsnsdythumb.wxs.qq.com, reject
-host, l.qq.com, reject
 host, livep.l.t002.ottcn.com, reject
 host, splashqqlive.gtimg.com, reject
 # Apple
@@ -254,6 +201,9 @@ host, splashqqlive.gtimg.com, reject
 host, app-site-association.cdn-apple.com, reject
 ; 绕过 App 企业证书过期
 host, ocsp.apple.com, reject
+; 其他 
+host, api-adservices.apple.com, reject
+host-suffix, iadsdk.apple.com, reject
 # Google
 host, ads.youtube.com, reject
 host, adservice.google.com, reject
@@ -334,240 +284,3 @@ host, safebrowsing.googleapis.com, reject
 host, proxy.safebrowsing.apple, reject
 host, token.safebrowsing.apple, reject
 host-suffix, safebrowsing.apple, reject
-
-
-# Hijacking(反劫持)
-# https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/QuantumultX/Hijacking/Hijacking.list
-# 2023-04-07 14:47:32
-# host: 1
-# host-suffix: 185
-# ip-cidr: 42
-# total: 228
-host, geo2.adobe.com, reject
-host-suffix, 17gouwuba.com, reject
-host-suffix, 186078.com, reject
-host-suffix, 189key.com, reject
-host-suffix, 189zj.cn, reject
-host-suffix, 285680.com, reject
-host-suffix, 3721zh.com, reject
-host-suffix, 4009997658.com, reject
-host-suffix, 4336wang.cn, reject
-host-suffix, 51chumoping.com, reject
-host-suffix, 51mld.cn, reject
-host-suffix, 51mypc.cn, reject
-host-suffix, 58mingri.cn, reject
-host-suffix, 58mingtian.cn, reject
-host-suffix, 5vl58stm.com, reject
-host-suffix, 6d63d3.com, reject
-host-suffix, 7gg.cc, reject
-host-suffix, 91veg.com, reject
-host-suffix, 9s6q.cn, reject
-host-suffix, abbyychina.com, reject
-host-suffix, adsame.com, reject
-host-suffix, akuai.top, reject
-host-suffix, alienskins.cn, reject
-host-suffix, anydeskchina.cn, reject
-host-suffix, atplay.cn, reject
-host-suffix, baiwanchuangyi.com, reject
-host-suffix, bartender.cc, reject
-host-suffix, beerto.cn, reject
-host-suffix, beilamusi.com, reject
-host-suffix, benshiw.net, reject
-host-suffix, betterzip.net, reject
-host-suffix, betterzipcn.com, reject
-host-suffix, beyondcompare.cc, reject
-host-suffix, bianxianmao.com, reject
-host-suffix, bingdianhuanyuan.cn, reject
-host-suffix, bkyhq.cn, reject
-host-suffix, bryonypie.com, reject
-host-suffix, chemdraw.com.cn, reject
-host-suffix, cishantao.com, reject
-host-suffix, cjmakeding.com, reject
-host-suffix, cjmkt.com, reject
-host-suffix, codesoftchina.com, reject
-host-suffix, coreldrawchina.com, reject
-host-suffix, crossoverchina.com, reject
-host-suffix, cszlks.com, reject
-host-suffix, cudaojia.com, reject
-host-suffix, dafapromo.com, reject
-host-suffix, daitdai.com, reject
-host-suffix, dongmansoft.com, reject
-host-suffix, dsaeerf.com, reject
-host-suffix, dugesheying.com, reject
-host-suffix, dv8c1t.cn, reject
-host-suffix, earmasterchina.cn, reject
-host-suffix, easyrecoverychina.com, reject
-host-suffix, echatu.com, reject
-host-suffix, ediuschina.com, reject
-host-suffix, erdoscs.com, reject
-host-suffix, fan-yong.com, reject
-host-suffix, feih.com.cn, reject
-host-suffix, fjlqqc.com, reject
-host-suffix, fkku194.com, reject
-host-suffix, flash.cn, reject
-host-suffix, flstudiochina.com, reject
-host-suffix, folxchina.cn, reject
-host-suffix, formysql.com, reject
-host-suffix, freedrive.cn, reject
-host-suffix, gclick.cn, reject
-host-suffix, goufanli100.com, reject
-host-suffix, goupaoerdai.com, reject
-host-suffix, gouwubang.com, reject
-host-suffix, gscxs.cn, reject
-host-suffix, guitarpro.cc, reject
-host-suffix, gzxnlk.com, reject
-host-suffix, haoshengtoys.com, reject
-host-suffix, hbssjd.cn, reject
-host-suffix, huishenghuiying.com.cn, reject
-host-suffix, hypeapp.cn, reject
-host-suffix, hypersnap.net, reject
-host-suffix, hyunke.com, reject
-host-suffix, ichaosheng.com, reject
-host-suffix, iconworkshop.cn, reject
-host-suffix, idmchina.net, reject
-host-suffix, imazingchina.com, reject
-host-suffix, imindmap.cc, reject
-host-suffix, ishop789.com, reject
-host-suffix, jdkic.com, reject
-host-suffix, jihehuaban.com.cn, reject
-host-suffix, jiubuhua.com, reject
-host-suffix, jsncke.com, reject
-host-suffix, junkucm.com, reject
-host-suffix, jwg365.cn, reject
-host-suffix, kawo77.com, reject
-host-suffix, keyshot.cc, reject
-host-suffix, kingdeecn.cn, reject
-host-suffix, kuaizip.com, reject
-host-suffix, kualianyingxiao.cn, reject
-host-suffix, kumihua.com, reject
-host-suffix, logoshejishi.com,  reject
-host-suffix, ltheanine.cn, reject
-host-suffix, luping.net.cn, reject
-host-suffix, lvehaisen.com, reject
-host-suffix, mackeeper.com, reject
-host-suffix, maipinshangmao.com, reject
-host-suffix, mairuan.cn, reject
-host-suffix, mairuan.com, reject
-host-suffix, mairuan.com.cn, reject
-host-suffix, mairuan.net, reject
-host-suffix, mairuanwang.com, reject
-host-suffix, makeding.com, reject
-host-suffix, mathtype.cn, reject
-host-suffix, mindmanager.cc, reject
-host-suffix, mindmanager.cn, reject
-host-suffix, mindmapper.cc, reject
-host-suffix, minisplat.cn, reject
-host-suffix, mkitgfs.com, reject
-host-suffix, mlnbike.com, reject
-host-suffix, mobjump.com, reject
-host-suffix, mycleanmymac.com, reject
-host-suffix, nbkbgd.cn, reject
-host-suffix, newapi.com, reject
-host-suffix, nicelabel.cc, reject
-host-suffix, ntfsformac.cc, reject
-host-suffix, ntfsformac.cn, reject
-host-suffix, officesoftcn.com, reject
-host-suffix, overturechina.com, reject
-host-suffix, passwordrecovery.cn, reject
-host-suffix, pdfexpert.cc, reject
-host-suffix, photozoomchina.com, reject
-host-suffix, pinzhitmall.com, reject
-host-suffix, poppyta.com, reject
-host-suffix, qianchuanghr.com, reject
-host-suffix, qichexin.com, reject
-host-suffix, qinchugudao.com, reject
-host-suffix, quanliyouxi.cn, reject
-host-suffix, qutaobi.com, reject
-host-suffix, ry51w.cn, reject
-host-suffix, sg536.cn, reject
-host-suffix, shankejingling.com, reject
-host-suffix, sifubo.cn, reject
-host-suffix, sifuce.cn, reject
-host-suffix, sifuda.cn, reject
-host-suffix, sifufu.cn, reject
-host-suffix, sifuge.cn, reject
-host-suffix, sifugu.cn, reject
-host-suffix, sifuhe.cn, reject
-host-suffix, sifuhu.cn, reject
-host-suffix, sifuji.cn, reject
-host-suffix, sifuka.cn, reject
-host-suffix, smgru.net, reject
-host-suffix, taoggou.com, reject
-host-suffix, tcxshop.com, reject
-host-suffix, tjqonline.cn, reject
-host-suffix, topitme.com, reject
-host-suffix, tt114.net, reject
-host-suffix, tt3sm4.cn, reject
-host-suffix, tuia.cn, reject
-host-suffix, tuipenguin.com, reject
-host-suffix, tuitiger.com, reject
-host-suffix, ultraiso.net, reject
-host-suffix, urlaw.cn, reject
-host-suffix, urlet.cn, reject
-host-suffix, vegaschina.cn, reject
-host-suffix, websd8.com, reject
-host-suffix, wsgblw.com, reject
-host-suffix, wx16999.com, reject
-host-suffix, xchmai.com, reject
-host-suffix, xiaohuau.xyz, reject
-host-suffix, xitongqingli.com, reject
-host-suffix, xmindchina.net, reject
-host-suffix, xshellcn.com, reject
-host-suffix, ygyzx.cn, reject
-host-suffix, yihuifu.cn, reject
-host-suffix, yinmong.com, reject
-host-suffix, yitaopt.com, reject
-host-suffix, yjqiqi.com, reject
-host-suffix, yuanchengxiezuo.com, reject
-host-suffix, yukhj.com, reject
-host-suffix, zbrushcn.com, reject
-HOST-SUFFIX,zhaozecheng.cn, reject
-host-suffix, zhenxinet.com, reject
-host-suffix, zhzzx.com, reject
-host-suffix, zlne800.com, reject
-host-suffix, zmlled.cn, reject
-host-suffix, zryydi.com, reject
-host-suffix, zunmi.cn, reject
-host-suffix, zzd6.com, reject
-ip-cidr, 103.49.209.27/32, reject
-ip-cidr, 106.75.231.48/32, reject
-ip-cidr, 111.175.220.163/32, reject
-ip-cidr, 111.175.220.164/32, reject
-ip-cidr, 114.119.160.0/21, reject
-ip-cidr, 114.247.28.96/32, reject
-ip-cidr, 115.182.16.79/32, reject
-ip-cidr, 118.144.88.126/32, reject
-ip-cidr, 118.144.88.215/32, reject
-ip-cidr, 118.144.88.216/32, reject
-ip-cidr, 119.4.249.166/32, reject
-ip-cidr, 120.240.95.37/32, reject
-ip-cidr, 120.76.189.132/32, reject
-ip-cidr, 122.229.29.89/32, reject
-ip-cidr, 122.229.8.47/32, reject
-ip-cidr, 123.56.152.96/32, reject
-ip-cidr, 124.14.21.147/32, reject
-ip-cidr, 124.14.21.151/32, reject
-ip-cidr, 124.232.160.178/32, reject
-ip-cidr, 175.6.223.15/32, reject
-ip-cidr, 180.166.52.24/32, reject
-ip-cidr, 183.59.53.237/32, reject
-ip-cidr, 211.161.101.106/32, reject
-ip-cidr, 211.161.101.110/32, reject
-ip-cidr, 218.93.127.37/32, reject
-ip-cidr, 220.115.251.25/32, reject
-ip-cidr, 220.196.52.141/32, reject
-ip-cidr, 221.179.131.72/32, reject
-ip-cidr, 221.179.140.145/32, reject
-ip-cidr, 221.228.17.152/32, reject
-ip-cidr, 221.231.6.79/32, reject
-ip-cidr, 221.6.4.148/32, reject
-ip-cidr, 222.186.61.91/32, reject
-ip-cidr, 222.186.61.95/32, reject
-ip-cidr, 222.186.61.96/31, reject
-ip-cidr, 222.73.156.235/32, reject
-ip-cidr, 39.107.15.115/32, reject
-ip-cidr, 47.89.59.182/32, reject
-ip-cidr, 61.160.200.223/32, reject
-ip-cidr, 61.160.200.242/32, reject
-ip-cidr, 61.160.200.252/32, reject
-ip-cidr, 61.174.50.214/32, reject
