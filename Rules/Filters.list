@@ -1,18 +1,5 @@
 # Name   Others
-# Update 2023-06-19 20:35
-# “#” “;" “//” 是注释符号，去掉符号该行才生效
-# 开启「分流匹配优化」选项，则匹配优先级如下
-# host > host-suffix > host-keyword(wildcard) > geoip = ip-cidr > user-agent
-# 完整域名匹配
-//host, www.google.com, Static
-# 域名后缀匹配
-//host-suffix, baidu.com, direct
-# 域名关键词匹配
-//host-keyword, adsite, reject
-# 域名通配符匹配
-//host-wildcard, *abc.com, proxy
-# user-agent
-//user-agent, ?abc*, proxy
+# Update 2023-06-20 22:08
 
 # ===⭐️=== direct ===⭐️=== #
 # 微博
@@ -93,7 +80,7 @@ host, api.biliapi.net, Static
 # 微信
 //host, mp.weixin.qq.com, Static 
 
-# == ⭐️ == reject == ⭐️ == #
+# ===⭐️=== reject ===⭐️=== #
 # 微信键盘
 host, wetype.weixin.qq.com, reject
 # 微博
@@ -278,3 +265,399 @@ host, safebrowsing.googleapis.com, reject
 host, proxy.safebrowsing.apple, reject
 host, token.safebrowsing.apple, reject
 host-suffix, safebrowsing.apple, reject
+
+#==⭐️Apple&Microsoft&Speedtest&Hijacking⭐️==#
+# AppleDirect；数量：28条
+# https://github.com/ACL4SSR/ACL4SSR/blob/master/Clash/Ruleset/Apple.list
+host, apple.comscoreresearch.com, direct
+host-suffix, aaplimg.com, direct
+host-suffix, akadns.net, direct
+host-suffix, apple-cloudkit.com, direct
+host-suffix, apple-mapkit.com, direct
+host-suffix, apple.co, direct
+host-suffix, apple.com, direct
+host-suffix, apple.com.cn, direct
+host-suffix, apple.news, direct
+host-suffix, appstore.com, direct
+host-suffix, cdn-apple.com, direct
+host-suffix, crashlytics.com, direct
+host-suffix, icloud-content.com, direct
+host-suffix, icloud.com, direct
+host-suffix, icloud.com.cn, direct
+host-suffix, itunes.com, direct
+host-suffix, me.com, direct
+host-suffix, mzstatic.com, direct
+ip-cidr,17.0.0.0/8, direct
+ip-cidr,63.92.224.0/19, direct
+ip-cidr,65.199.22.0/23, direct
+ip-cidr,139.178.128.0/18, direct
+ip-cidr,144.178.0.0/19, direct
+ip-cidr,144.178.36.0/22, direct
+ip-cidr,144.178.48.0/20, direct
+ip-cidr,192.35.50.0/24, direct
+ip-cidr,198.183.17.0/24, direct
+ip-cidr,205.180.175.0/24, direct
+
+# AppleProxy；数量：27
+# https://github.com/kokoryh/Script/blob/master/Surge/rule/AppleProxy.list
+host, amp-api.podcasts.apple.com, Static
+host, apple.comscoreresearch.com, Static
+host, beta.music.apple.com, Static
+host, books.apple.com, Static
+host, books.itunes.apple.com, Static
+host, cvws.icloud-content.com, Static
+host, developer.apple.com, Static
+host, gateway.icloud.com, Static
+host, gspe1-ssl.ls.apple.com, Static
+host, itunes.apple.com, Static
+host, lookup-api.apple.com, Static
+host, news-assets.apple.com, Static
+host, news-client-search.apple.com, Static
+host, news-client.apple.com, Static
+host, news-edge.apple.com, Static
+host, news-events.apple.com, Static
+host, radio.itunes.apple.com, Static
+host, sandbox.itunes.apple.com, Static
+host, tv.apple.com, Static
+host-suffix, testflight.apple.com, Static
+host-suffix, apple-dns.net, Static
+host-suffix, apple.news, Static
+host-suffix, apps.apple.com, Static
+host-suffix, appsto.re, Static
+host-suffix, blobstore.apple.com, Static
+host-suffix, digicert.com, Static
+host-suffix, smoot.apple.com, Static
+
+# Microsoft；数量：79条
+# https://github.com/ACL4SSR/ACL4SSR/blob/master/Clash/Ruleset/Microsoft.list
+host-keyword, 1drv, direct
+host-keyword, microsoft, direct
+host-suffix, aadrm.com, direct
+host-suffix, acompli.com, direct
+host-suffix, acompli.net, direct
+host-suffix, aka.ms, direct
+host-suffix, akadns.net, direct
+host-suffix, aspnetcdn.com, direct
+host-suffix, assets-yammer.com, direct
+host-suffix, azure.com, direct
+host-suffix, azure.net, direct
+host-suffix, azureedge.net, direct
+host-suffix, azureiotcentral.com, direct
+host-suffix, azurerms.com, direct
+host-suffix, bing.com, direct
+host-suffix, bing.net, direct
+host-suffix, bingapis.com, direct
+host-suffix, cloudapp.net, direct
+host-suffix, cloudappsecurity.com, direct
+host-suffix, edgesuite.net, direct
+host-suffix, gfx.ms, direct
+host-suffix, hotmail.com, direct
+host-suffix, live.com, direct
+host-suffix, live.net, direct
+host-suffix, lync.com, direct
+host-suffix, msappproxy.net, direct
+host-suffix, msauth.net, direct
+host-suffix, msauthimages.net, direct
+host-suffix, msecnd.net, direct
+host-suffix, msedge.net, direct
+host-suffix, msft.net, direct
+host-suffix, msftauth.net, direct
+host-suffix, msftauthimages.net, direct
+host-suffix, msftidentity.com, direct
+host-suffix, msidentity.com, direct
+host-suffix, msn.cn, direct
+host-suffix, msn.com, direct
+host-suffix, msocdn.com, direct
+host-suffix, msocsp.com, direct
+host-suffix, mstea.ms, direct
+host-suffix, o365weve.com, direct
+host-suffix, oaspapps.com, direct
+host-suffix, office.com, direct
+host-suffix, office.net, direct
+host-suffix, office365.com, direct
+host-suffix, officeppe.net, direct
+host-suffix, omniroot.com, direct
+host-suffix, onedrive.com, direct
+host-suffix, onenote.com, direct
+host-suffix, onenote.net, direct
+host-suffix, onestore.ms, direct
+host-suffix, outlook.com, direct
+host-suffix, outlookmobile.com, direct
+host-suffix, phonefactor.net, direct
+host-suffix, public-trust.com, direct
+host-suffix, sfbassets.com, direct
+host-suffix, sfx.ms, direct
+host-suffix, sharepoint.com, direct
+host-suffix, sharepointonline.com, direct
+host-suffix, skype.com, direct
+host-suffix, skypeassets.com, direct
+host-suffix, skypeforbusiness.com, direct
+host-suffix, staffhub.ms, direct
+host-suffix, svc.ms, direct
+host-suffix, sway-cdn.com, direct
+host-suffix, sway-extensions.com, direct
+host-suffix, sway.com, direct
+host-suffix, trafficmanager.net, direct
+host-suffix, uservoice.com, direct
+host-suffix, virtualearth.net, direct
+host-suffix, visualstudio.com, direct
+host-suffix, windows-ppe.net, direct
+host-suffix, windows.com, direct
+host-suffix, windows.net, direct
+host-suffix, windowsazure.com, direct
+host-suffix, windowsupdate.com, direct
+host-suffix, wunderlist.com, direct
+host-suffix, yammer.com, direct
+host-suffix, yammerusercontent.com, direct
+
+# Speedtest；数量：18
+host, www.speedtest.net, proxy
+# https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/QuantumultX/Speedtest/Speedtest.list
+host, speed.dler.io, Static
+host-suffix, cdnst.net, Static
+host-suffix, cellmaps.com, Static
+host-suffix, ekahau.cloud, Static
+host-suffix, ekahau.com, Static
+host-suffix, fast.com, Static
+host-suffix, ookla.com, Static
+host-suffix, ooklaserver.net, Static
+host-suffix, pingtest.net, Static
+host-suffix, speed.cloudflare.com, Static
+host-suffix, speed.dler.io, Static
+host-suffix, speedtest.co, Static
+host-suffix, speedtest.net, Static
+host-suffix, speedtestcustom.com, Static
+host-suffix, webtest.net, Static
+host-keyword, speedtest, Static
+user-agent, SpeedTest*, Static
+
+# Hijacking；数量：228 更新时间：2023-04-07
+# https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/QuantumultX/Hijacking/Hijacking.list
+host, geo2.adobe.com, reject
+host-suffix, 17gouwuba.com, reject
+host-suffix, 186078.com, reject
+host-suffix, 189key.com, reject
+host-suffix, 189zj.cn, reject
+host-suffix, 285680.com, reject
+host-suffix, 3721zh.com, reject
+host-suffix, 4009997658.com, reject
+host-suffix, 4336wang.cn, reject
+host-suffix, 51chumoping.com, reject
+host-suffix, 51mld.cn, reject
+host-suffix, 51mypc.cn, reject
+host-suffix, 58mingri.cn, reject
+host-suffix, 58mingtian.cn, reject
+host-suffix, 5vl58stm.com, reject
+host-suffix, 6d63d3.com, reject
+host-suffix, 7gg.cc, reject
+host-suffix, 91veg.com, reject
+host-suffix, 9s6q.cn, reject
+host-suffix, abbyychina.com, reject
+host-suffix, adsame.com, reject
+host-suffix, akuai.top, reject
+host-suffix, alienskins.cn, reject
+host-suffix, anydeskchina.cn, reject
+host-suffix, atplay.cn, reject
+host-suffix, baiwanchuangyi.com, reject
+host-suffix, bartender.cc, reject
+host-suffix, beerto.cn, reject
+host-suffix, beilamusi.com, reject
+host-suffix, benshiw.net, reject
+host-suffix, betterzip.net, reject
+host-suffix, betterzipcn.com, reject
+host-suffix, beyondcompare.cc, reject
+host-suffix, bianxianmao.com, reject
+host-suffix, bingdianhuanyuan.cn, reject
+host-suffix, bkyhq.cn, reject
+host-suffix, bryonypie.com, reject
+host-suffix, chemdraw.com.cn, reject
+host-suffix, cishantao.com, reject
+host-suffix, cjmakeding.com, reject
+host-suffix, cjmkt.com, reject
+host-suffix, codesoftchina.com, reject
+host-suffix, coreldrawchina.com, reject
+host-suffix, crossoverchina.com, reject
+host-suffix, cszlks.com, reject
+host-suffix, cudaojia.com, reject
+host-suffix, dafapromo.com, reject
+host-suffix, daitdai.com, reject
+host-suffix, dongmansoft.com, reject
+host-suffix, dsaeerf.com, reject
+host-suffix, dugesheying.com, reject
+host-suffix, dv8c1t.cn, reject
+host-suffix, earmasterchina.cn, reject
+host-suffix, easyrecoverychina.com, reject
+host-suffix, echatu.com, reject
+host-suffix, ediuschina.com, reject
+host-suffix, erdoscs.com, reject
+host-suffix, fan-yong.com, reject
+host-suffix, feih.com.cn, reject
+host-suffix, fjlqqc.com, reject
+host-suffix, fkku194.com, reject
+host-suffix, flash.cn, reject
+host-suffix, flstudiochina.com, reject
+host-suffix, folxchina.cn, reject
+host-suffix, formysql.com, reject
+host-suffix, freedrive.cn, reject
+host-suffix, gclick.cn, reject
+host-suffix, goufanli100.com, reject
+host-suffix, goupaoerdai.com, reject
+host-suffix, gouwubang.com, reject
+host-suffix, gscxs.cn, reject
+host-suffix, guitarpro.cc, reject
+host-suffix, gzxnlk.com, reject
+host-suffix, haoshengtoys.com, reject
+host-suffix, hbssjd.cn, reject
+host-suffix, huishenghuiying.com.cn, reject
+host-suffix, hypeapp.cn, reject
+host-suffix, hypersnap.net, reject
+host-suffix, hyunke.com, reject
+host-suffix, ichaosheng.com, reject
+host-suffix, iconworkshop.cn, reject
+host-suffix, idmchina.net, reject
+host-suffix, imazingchina.com, reject
+host-suffix, imindmap.cc, reject
+host-suffix, ishop789.com, reject
+host-suffix, jdkic.com, reject
+host-suffix, jihehuaban.com.cn, reject
+host-suffix, jiubuhua.com, reject
+host-suffix, jsncke.com, reject
+host-suffix, junkucm.com, reject
+host-suffix, jwg365.cn, reject
+host-suffix, kawo77.com, reject
+host-suffix, keyshot.cc, reject
+host-suffix, kingdeecn.cn, reject
+host-suffix, kuaizip.com, reject
+host-suffix, kualianyingxiao.cn, reject
+host-suffix, kumihua.com, reject
+host-suffix, logoshejishi.com,  reject
+host-suffix, ltheanine.cn, reject
+host-suffix, luping.net.cn, reject
+host-suffix, lvehaisen.com, reject
+host-suffix, mackeeper.com, reject
+host-suffix, maipinshangmao.com, reject
+host-suffix, mairuan.cn, reject
+host-suffix, mairuan.com, reject
+host-suffix, mairuan.com.cn, reject
+host-suffix, mairuan.net, reject
+host-suffix, mairuanwang.com, reject
+host-suffix, makeding.com, reject
+host-suffix, mathtype.cn, reject
+host-suffix, mindmanager.cc, reject
+host-suffix, mindmanager.cn, reject
+host-suffix, mindmapper.cc, reject
+host-suffix, minisplat.cn, reject
+host-suffix, mkitgfs.com, reject
+host-suffix, mlnbike.com, reject
+host-suffix, mobjump.com, reject
+host-suffix, mycleanmymac.com, reject
+host-suffix, nbkbgd.cn, reject
+host-suffix, newapi.com, reject
+host-suffix, nicelabel.cc, reject
+host-suffix, ntfsformac.cc, reject
+host-suffix, ntfsformac.cn, reject
+host-suffix, officesoftcn.com, reject
+host-suffix, overturechina.com, reject
+host-suffix, passwordrecovery.cn, reject
+host-suffix, pdfexpert.cc, reject
+host-suffix, photozoomchina.com, reject
+host-suffix, pinzhitmall.com, reject
+host-suffix, poppyta.com, reject
+host-suffix, qianchuanghr.com, reject
+host-suffix, qichexin.com, reject
+host-suffix, qinchugudao.com, reject
+host-suffix, quanliyouxi.cn, reject
+host-suffix, qutaobi.com, reject
+host-suffix, ry51w.cn, reject
+host-suffix, sg536.cn, reject
+host-suffix, shankejingling.com, reject
+host-suffix, sifubo.cn, reject
+host-suffix, sifuce.cn, reject
+host-suffix, sifuda.cn, reject
+host-suffix, sifufu.cn, reject
+host-suffix, sifuge.cn, reject
+host-suffix, sifugu.cn, reject
+host-suffix, sifuhe.cn, reject
+host-suffix, sifuhu.cn, reject
+host-suffix, sifuji.cn, reject
+host-suffix, sifuka.cn, reject
+host-suffix, smgru.net, reject
+host-suffix, taoggou.com, reject
+host-suffix, tcxshop.com, reject
+host-suffix, tjqonline.cn, reject
+host-suffix, topitme.com, reject
+host-suffix, tt114.net, reject
+host-suffix, tt3sm4.cn, reject
+host-suffix, tuia.cn, reject
+host-suffix, tuipenguin.com, reject
+host-suffix, tuitiger.com, reject
+host-suffix, ultraiso.net, reject
+host-suffix, urlaw.cn, reject
+host-suffix, urlet.cn, reject
+host-suffix, vegaschina.cn, reject
+host-suffix, websd8.com, reject
+host-suffix, wsgblw.com, reject
+host-suffix, wx16999.com, reject
+host-suffix, xchmai.com, reject
+host-suffix, xiaohuau.xyz, reject
+host-suffix, xitongqingli.com, reject
+host-suffix, xmindchina.net, reject
+host-suffix, xshellcn.com, reject
+host-suffix, ygyzx.cn, reject
+host-suffix, yihuifu.cn, reject
+host-suffix, yinmong.com, reject
+host-suffix, yitaopt.com, reject
+host-suffix, yjqiqi.com, reject
+host-suffix, yuanchengxiezuo.com, reject
+host-suffix, yukhj.com, reject
+host-suffix, zbrushcn.com, reject
+HOST-SUFFIX,zhaozecheng.cn, reject
+host-suffix, zhenxinet.com, reject
+host-suffix, zhzzx.com, reject
+host-suffix, zlne800.com, reject
+host-suffix, zmlled.cn, reject
+host-suffix, zryydi.com, reject
+host-suffix, zunmi.cn, reject
+host-suffix, zzd6.com, reject
+ip-cidr, 103.49.209.27/32, reject
+ip-cidr, 106.75.231.48/32, reject
+ip-cidr, 111.175.220.163/32, reject
+ip-cidr, 111.175.220.164/32, reject
+ip-cidr, 114.119.160.0/21, reject
+ip-cidr, 114.247.28.96/32, reject
+ip-cidr, 115.182.16.79/32, reject
+ip-cidr, 118.144.88.126/32, reject
+ip-cidr, 118.144.88.215/32, reject
+ip-cidr, 118.144.88.216/32, reject
+ip-cidr, 119.4.249.166/32, reject
+ip-cidr, 120.240.95.37/32, reject
+ip-cidr, 120.76.189.132/32, reject
+ip-cidr, 122.229.29.89/32, reject
+ip-cidr, 122.229.8.47/32, reject
+ip-cidr, 123.56.152.96/32, reject
+ip-cidr, 124.14.21.147/32, reject
+ip-cidr, 124.14.21.151/32, reject
+ip-cidr, 124.232.160.178/32, reject
+ip-cidr, 175.6.223.15/32, reject
+ip-cidr, 180.166.52.24/32, reject
+ip-cidr, 183.59.53.237/32, reject
+ip-cidr, 211.161.101.106/32, reject
+ip-cidr, 211.161.101.110/32, reject
+ip-cidr, 218.93.127.37/32, reject
+ip-cidr, 220.115.251.25/32, reject
+ip-cidr, 220.196.52.141/32, reject
+ip-cidr, 221.179.131.72/32, reject
+ip-cidr, 221.179.140.145/32, reject
+ip-cidr, 221.228.17.152/32, reject
+ip-cidr, 221.231.6.79/32, reject
+ip-cidr, 221.6.4.148/32, reject
+ip-cidr, 222.186.61.91/32, reject
+ip-cidr, 222.186.61.95/32, reject
+ip-cidr, 222.186.61.96/31, reject
+ip-cidr, 222.73.156.235/32, reject
+ip-cidr, 39.107.15.115/32, reject
+ip-cidr, 47.89.59.182/32, reject
+ip-cidr, 61.160.200.223/32, reject
+ip-cidr, 61.160.200.242/32, reject
+ip-cidr, 61.160.200.252/32, reject
+ip-cidr, 61.174.50.214/32, reject
