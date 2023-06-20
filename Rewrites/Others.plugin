@@ -6,10 +6,9 @@
 #!icon = 
 #!update 2023-06-16 03:55
 
+[General]
 
 [Rule]
-
-
 
 [Rewrite]
 # ===⭐️=== 微博 ===⭐️=== #
@@ -203,15 +202,6 @@
 # 热词
 ^https?://api\.coolapk\.com/v\d/search\?.*type=hotSearch url reject-dict
 
-# ===⭐️=== 菜鸟裹裹 ===⭐️=== #
-# 首页好物推荐 adkeyword\.get
-# 首页商品推广 guoguo\.nbnetflow\.ads\.index
-# 首页快递详情 nbopen\.miniapp\.recommend\.cpc
-# 首页问卷调查 nbmensa\.research\.researchservice\.(acquire|event|close)
-# 发现页 裹裹券 longquan\.place\.getpageresourcecontent
-# 支付宝 菜鸟小程序 adx\.flyad\.getad
-^https?://(cn-acs|guide-acs)\.m\.cainiao\.com/gw/mtop\.(com\.)?cainiao\.(adkeyword\.get|guoguo\.nbnetflow\.ads\.index|nbopen\.miniapp\.recommend\.cpc|nbmensa\.research\.researchservice\.(acquire|event|close)|longquan\.place\.getpageresourcecontent|adx\.flyad\.getad) url reject-dict
-
 # ===⭐️=== 闲鱼 ===⭐️=== #
 # 开屏广告
 ^https?://iyes\.youku\.com/uts/v\d/start/pre url reject-200
@@ -222,7 +212,6 @@
 
 # ===⭐️=== pornhub ===⭐️=== #
 ^https?://(cn|www)\.pornhub\.com/_xa/ads.* url reject
-
 
 [Script]
 # ===⭐️=== 微博 ===⭐️=== #
@@ -348,12 +337,12 @@ http-response ^https?://(tiebac|c\.tieba)\.baidu\.com/c/f/(frs/(page|threadlist|
 
 # ===⭐️=== 百度地图 ===⭐️=== #
 # author @ddgksf2013
-^https?:\/\/httpdns\.baidubce\.com url reject-200
+^https?://httpdns\.baidubce\.com url reject-200
 # 开屏&首页左上方 广告 phpui2\/\?qt=ads
 # 搜索推广 phpui.*qt=hw
 # 各种商业推广 crossmarketing
 # 我的页面动态 usersystem\/home\/dynamic
-^https?:\/\/newclient\.map\.baidu\.com\/client\/(phpui(2\/\?qt=ads|.*qt=hw)|crossmarketing|usersystem\/home\/dynamic) url reject-200
+^https?://newclient\.map\.baidu\.com/client/(phpui(2/\?qt=ads|.*qt=hw)|crossmarketing|usersystem/home/dynamic) url reject-200
 
 # ===⭐️=== 百度搜索 ===⭐️=== #
 # author @Adblock4limbo，@RuCu6，@app2smile
@@ -425,7 +414,6 @@ http-request ^https?://(.+\.)?boxjs\.(com|net) script-path=https://raw.githubuse
 http-request ^https?://sub\.store/((download)|api/(preview|sync|(utils/node-info))) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/sub-store-1.min.js, requires-body=true, timeout=10, tag=sub-store-1.min
 http-request ^https?://sub\.store script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/sub-store-0.min.js, requires-body=true, timeout=10, tag=sub-store-0.min
 
-
 # ===⭐️=== hostname ===⭐️=== #
 [Mitm]
-hostname = *.uve.weibo.com, *api.weibo.cn, weibo.com, grpc.biliapi.net, ap*.bili*i.*, 118.89.204.198,103.41.167.237,2402:4e00:1200:ed00:0:9089:6dac:96b6,www.zhihu.com,api.zhihu.com,zhuanlan.zhihu.com,appcloud2.zhihu.com,m-cloud.zhihu.com,103.41.167.236,103.41.167.234,103.41.167.235,103.41.167.226, m5-zb.amap.com, m5.amap.com, sns.amap.com, edith.xiaohongshu.com, www.xiaohongshu.com, tiebac.baidu.com, 180.76.76.200, newclient.map.baidu.com, httpdns.baidubce.com, pan.baidu.com, www.baidu.com, m.baidu.com, zhidao.baidu.com, boxer.baidu.com, interface*.music.163.com, youtubei.googleapis.com, *.googlevideo.com, *p*.zhuan*.com, *.meitu.com, client.app.coc.10086.cn, h.app.coc.10086.cn, gx.10086.cn, *plus.meituan.net, wmapi.meituan.com, img.meituan.net, api.coolapk.com, mp.weixin.qq.com, api-shoulei-ssl.xunlei.com, rtbapi.douyucdn.cn, *ar*.umetrip.com, cn-acs.m.cainiao.com, guide-acs.m.taobao.com, iyes.youku.com, gorgon.youdao.com, *.pornhub.*, testflight.apple.com, *boxjs.*, sub.store
+hostname = *.uve.weibo.com, *api.weibo.cn, weibo.com, grpc.biliapi.net, ap*.bili*i.*, 118.89.204.198,103.41.167.237,2402:4e00:1200:ed00:0:9089:6dac:96b6,www.zhihu.com,api.zhihu.com,zhuanlan.zhihu.com,appcloud2.zhihu.com,m-cloud.zhihu.com,103.41.167.236,103.41.167.234,103.41.167.235,103.41.167.226, m5-zb.amap.com, m5.amap.com, sns.amap.com, edith.xiaohongshu.com, www.xiaohongshu.com, tiebac.baidu.com, 180.76.76.200, newclient.map.baidu.com, httpdns.baidubce.com, pan.baidu.com, www.baidu.com, m.baidu.com, zhidao.baidu.com, boxer.baidu.com, interface*.music.163.com, youtubei.googleapis.com, *.googlevideo.com, *p*.zhuan*.com, *.meitu.com, client.app.coc.10086.cn, h.app.coc.10086.cn, gx.10086.cn, *plus.meituan.net, wmapi.meituan.com, img.meituan.net, api.coolapk.com, mp.weixin.qq.com, api-shoulei-ssl.xunlei.com, rtbapi.douyucdn.cn, *ar*.umetrip.com, iyes.youku.com, gorgon.youdao.com, *.pornhub.*, testflight.apple.com, *boxjs.*, sub.store
