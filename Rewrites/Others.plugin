@@ -41,6 +41,12 @@
 ^https?://api\.weibo\.cn/2/direct_messages url response-body "unread_count":\d+ response-body "unread_count":0
 
 # ===⭐️=== 哔哩哔哩 ===⭐️=== #
+#!select = 移除动态综合页热门话题, 开启, 关闭
+#!select = 移除动态综合页最常访问, 开启, 关闭
+#!select = 替换会员弹幕为普通弹幕, 开启, 关闭
+#!select = 移除交互式弹幕, 开启, 关闭
+#!select = 移除青少年弹窗, 默认开启
+#!select = 脚本日志, 开启, 关闭
 # ip请求
 ^https?://app.bilibili.com/x/resource/ip$ url reject-200
 # 卡片广告 pgc/season/player/cards
