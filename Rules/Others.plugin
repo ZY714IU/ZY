@@ -6,6 +6,7 @@
 #!icon = 
 #!update 2023-06-16 03:55
 
+[Rule]
 # ===⭐️=== direct ===⭐️=== #
 # 微博
 domain, sdkapp.uve.weibo.com, direct
