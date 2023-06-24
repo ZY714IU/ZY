@@ -1,17 +1,10 @@
 #!name = Others
-#!desc = 去广告合集，搬运自各位大佬。
+#!desc = 重写
 #!openUrl = https://raw.githubusercontent.com/ZY714IU/ZY/main/Rewrites/Others.plugin
 #!author = 
 #!homepage = https://github.com/ZY714IU/ZY/blob/main/Rewrites/Others.plugin
 #!icon = 
 #!update 2023-06-16 03:55
-
-
-[General]
-
-
-[Rule]
-
 
 [Rewrite]
 # ===⭐️=== 微博 ===⭐️=== #
