@@ -16,12 +16,8 @@ host-suffix, getui.com, direct
 # 友盟
 host-suffix, msg.umeng.com, direct
 host-suffix, msg.umengcloud.com, direct
-# Wi-Fi万能钥匙
-host-suffix, 51y5.net, direct
 # 汽水音乐
 host-suffix, qishui.com, direct
-# 茶壶杯影视
-host-keyword, cupfox, direct
 # 腾讯
 host, vd.l.qq.com, direct
 host, vi.l.qq.com, direct
