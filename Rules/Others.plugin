@@ -22,12 +22,8 @@ domain-suffix, getui.com, direct
 # 友盟
 domain-suffix, msg.umeng.com, direct
 domain-suffix, msg.umengcloud.com, direct
-# Wi-Fi万能钥匙
-domain-suffix, 51y5.net, direct
 # 汽水音乐
 domain-suffix, qishui.com, direct
-# 茶壶杯影视
-domain-keyword, cupfox, direct
 # 腾讯
 domain, vd.l.qq.com, direct
 domain, vi.l.qq.com, direct
