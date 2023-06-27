@@ -382,14 +382,6 @@ http-response ^https?://youtubei\.googleapis\.com/youtubei/v1/(browse|next|playe
 # 推广广告 detail
 http-response ^https?://api\.coolapk\.com/v\d/(feed/(replyList|detail)|main/index|dataList) script-path=https://github.com/ZY714IU/ZY/raw/main/Scripts/coolapk.js, requires-body=true, timeout=10, tag=酷安
 
-# ===⭐️=== 菜鸟裹裹 ===⭐️=== #
-# author @RuCu6，@Keywos
-# https://github.com/RuCu6/QuanX/blob/main/Rewrites/Cube/cainiao.snippet
-# 标签页 guoguo\.nbnetflow\.ads
-# 主页图标 nbpresentation\.(homepage\.merge|pickup\.empty\.page|protocol\.homepage)\.get
-# 支付宝菜鸟小程序 guoguo\.nbnetflow\.ads
-http-response ^https?://cn-acs\.m\.cainiao\.com/gw/mtop\.cainiao\.(guoguo\.nbnetflow\.ads|nbpresentation\.(homepage\.merge|pickup\.empty|protocol\.homepage)|guoguo\.nbnetflow\.ads) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/cainiao.js, requires-body=true, binary-body-mode=true, tag=菜鸟裹裹
-
 # ===⭐️=== pornhub ===⭐️=== #
 #author @Adblock4limbo
 # https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/surge_pornhub.js
