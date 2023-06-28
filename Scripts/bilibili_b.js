@@ -28,6 +28,22 @@ https://github.com/BiliUniverse/ADBlock/blob/main/js/BiliBili.ADBlock.response.j
 															break;
 ********/
 
+// 测试:loon 2023-06-03 19:26:44 MartinsKing、VirgilClyne、app2smile、RuCu6、Maasea、kokoryh、key
+const URL = new URLs();
+const isLoon =typeof $loon !== 'undefined'
+const isQx =typeof $task !== 'undefined'
+let nolog=true, 
+Hot_topics=true, 
+Most_visited=false, 
+colorfulDms=true, 
+commandDms=true;
+// console.info(isLoon);
+if (isLoon){
+	Hot_topics = $persistentStore.read("动态综合页热门话题去除") == "开启" ? true : false;
+	Most_visited = $persistentStore.read("动态综合页最常访问去除") == "开启" ? true : false;
+	colorfulDms = $persistentStore.read("会员弹幕已替换为普通弹幕") == "开启" ? true : false;
+	commandDms = $persistentStore.read("交互式弹幕去除") == "开启" ? true : false;
+
 /*
 WEBSITE: https://biliuniverse.io
 README: https://github.com/BiliUniverse
