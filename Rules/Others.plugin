@@ -33,55 +33,6 @@ domain, fairplay.l.qq.com, DIRECT
 domain-suffix, ipleak.net, DIRECT
 domain-keyword, tkys, DIRECT
 
-# ===⭐️=== proxy ===⭐️=== #
-# 必应国际版(不开分流则国内版)
-domain, www.bing.com, Select
-domain, www.bing.net, Select
-domain-suffix, bing.com, Select
-domain-suffix, bing.net, Select
-domain-suffix, bingapis.com, Select
-domain-suffix, bingapis.net, Select
-# 机场
-domain-suffix, 2220.it, Select
-domain-suffix, subs.usero.cn, Select
-domain-keyword, fishchips, Select
-domain-keyword, efcloud, Select
-domain-keyword, efshop, Select
-domain-keyword, mojie, Select
-domain-keyword, xsus, Select
-# 代理软件
-domain-suffix, quantumult.app, Select
-domain-suffix, nssurge.com, Select
-domain-suffix, surge-activation.com, Select
-domain-suffix, stash-activation.com, Select
-domain-keyword, loon, Select
-# 其他
-domain-suffix, shrtm.nu, Select
-domain-suffix, adtidy.org, Select
-domain-suffix, adguard.com, Select
-domain-suffix, adguard.org, Select
-domain-suffix, missav.com, Select
-domain-suffix, cdnedge.live, Select
-domain-keyword, v2ex, Select
-domain-keyword, notion, Select
-# anti-ip，针对部分软件显示ip归属地分流规则，注意！更改ip归属地有风险，不建议使用！
-# https://github.com/lwd-temp/anti-ip-attribution
-# 微博
-# domain, api.weibo.cn, Select 
-# 抖音；需家宽ip才生效，否则显示 “未知”
-domain-suffix, amemv.com, Select
-# 小红书
-domain, edith.xiaohongshu.com, Select
-# 贴吧
-# domain, c.tieba.baidu.com, Select
-# 知乎
-domain, api.zhihu.com, Select
-# 哔哩哔哩
-domain, api.bilibili.com, Select
-domain, api.biliapi.net, Select
-# 微信
-# domain, mp.weixin.qq.com, Select 
-
 # ===⭐️=== reject ===⭐️=== #
 # 微信键盘
 domain, wetype.weixin.qq.com, REJECT
