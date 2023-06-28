@@ -230,7 +230,7 @@ domain, ad.cyapi.cn, reject
 domain, adshow.58.com, reject
 # 美图秀秀
 domain-suffix, xiuxiu.video.xiuxiustatic.com, reject
-domain-suffix, qchannel01.cn, reject
+domain-suffix, qchannel01.cn, REJECT
 domain-suffix, stat.meitudata.com, reject
 domain-suffix, rabbit.meitustat.com, reject
 domain-suffix, strategy.app.meitudata.com, reject
