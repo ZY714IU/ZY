@@ -282,7 +282,7 @@ http-response ^https?://api\.live\.bilibili\.com/xlive/(app-(room|interface)|e-c
 # 交互式弹幕 community\.service\.dm\.v\d\.DM/(DmView|DmSegMobile)
 # 青少年模式 app\.interface\.v\d\.Teenagers/ModeStatus
 # 评论列表广告 main\.community\.reply\.v\d\.Reply/MainList
-http-response ^https?://(app|api|grpc)\.bili(bil|ap)i\.(com|net)/bilibili\.(polymer\.)?app\.(search|dynamic|playurl|view|community\.service\.dm|app\.interface|main\.community\.reply)\.v\d\.(Search/SearchAll$|Dynamic/Dyn(All|Video)$|PlayURL/PlayView$|View/(View|TFInfo)$|DM/(DmView|DmSegMobile)|Teenagers/ModeStatus|Reply/MainList) requires-body=1, binary-body-mode=1, script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/bilibili_b.js, requires-body=true, argument=http-response, timeout=10, tag=哔哩哔哩
+http-response ^https?://(app|api|grpc)\.bili(bil|ap)i\.(com|net)/bilibili\.(polymer\.)?app\.(search|dynamic|playurl|view|community\.service\.dm|interface|main\.community\.reply)\.v\d\.(Search/SearchAll$|Dynamic/Dyn(All|Video)$|PlayURL/PlayView$|View/(View|TFInfo)$|DM/(DmView|DmSegMobile)|Teenagers/ModeStatus|Reply/MainList) requires-body=1, binary-body-mode=1, script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/bilibili_b.js, requires-body=true, argument=http-response, timeout=10, tag=哔哩哔哩
 
 # ===⭐️=== 知乎 ===⭐️=== #
 # author @blackmatrix7，@RuCu6
