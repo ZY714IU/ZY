@@ -279,6 +279,10 @@ http-response ^https?://(app|api|grpc)\.bili(bil|ap)i\.(com|net)/(x/)?(v2/)?(spl
 # 直播间广告浮窗 e-commerce-interface/v\d/ecommerce-user/get_shopping
 http-response ^https?://api\.live\.bilibili\.com/xlive/(app-(room|interface)|e-commerce-interface)/v\d/(index/(getInfoByRoom|feed)|ecommerce-user/get_shopping) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/bilibili_a.js, requires-body=true, timeout=10, tag=哔哩哔哩
 # 👉https://github.com/BiliUniverse/ADBlock
+#!select = 移除动态综合页热门话题, 开启, 关闭
+#!select = 移除动态综合页最常访问, 开启, 关闭
+#!select = 替换会员弹幕为普通弹幕, 开启, 关闭
+#!select = 移除交互式弹幕, 开启, 关闭
 # 搜索页广告 polymer\.app\.search\.v\d\.Search/SearchAll$
 # 动态页广告 dynamic\.v\d\.Dynamic/Dyn(All|Video)$
 # 后台播放限制 playurl\.v\d\.PlayURL/PlayView$
