@@ -9,29 +9,29 @@
 [Rule]
 # ===⭐️=== direct ===⭐️=== #
 # 微博
-domain, sdkapp.uve.weibo.com, direct
-domain, weibointl.api.weibo.cn, direct
+domain, sdkapp.uve.weibo.com, DIRECT
+domain, weibointl.api.weibo.cn, DIRECT
 # 字节跳动
-domain, verify.zijieapi.com, direct
-domain-suffix, byteimg.com, direct
+domain, verify.zijieapi.com, DIRECT
+domain-suffix, byteimg.com, DIRECT
 # 阿里系
-domain, amdc.m.taobao.com, direct
-domain-suffix, ynuf.aliapp.org, direct
+domain, amdc.m.taobao.com, DIRECT
+domain-suffix, ynuf.aliapp.org, DIRECT
 # 个推
-domain-suffix, getui.com, direct
+domain-suffix, getui.com, DIRECT
 # 友盟
-domain-suffix, msg.umeng.com, direct
-domain-suffix, msg.umengcloud.com, direct
+domain-suffix, msg.umeng.com, DIRECT
+domain-suffix, msg.umengcloud.com, DIRECT
 # 汽水音乐
-domain-suffix, qishui.com, direct
+domain-suffix, qishui.com, DIRECT
 # 腾讯
-domain, vd.l.qq.com, direct
-domain, vi.l.qq.com, direct
-domain, livew.l.qq.com, direct
-domain, fairplay.l.qq.com, direct
+domain, vd.l.qq.com, DIRECT
+domain, vi.l.qq.com, DIRECT
+domain, livew.l.qq.com, DIRECT
+domain, fairplay.l.qq.com, DIRECT
 # 其他
-domain-suffix, ipleak.net, direct
-domain-keyword, tkys, direct
+domain-suffix, ipleak.net, DIRECT
+domain-keyword, tkys, DIRECT
 
 # ===⭐️=== proxy ===⭐️=== #
 # 必应国际版(不开分流则国内版)
@@ -84,13 +84,13 @@ domain, api.biliapi.net, Select
 
 # ===⭐️=== reject ===⭐️=== #
 # 微信键盘
-domain, wetype.weixin.qq.com, reject
+domain, wetype.weixin.qq.com, REJECT
 # 微博
-domain, adimg.uve.weibo.com, reject
-domain, adimg.uve.weibo.com, reject
-domain, adstrategy.biz.weibo.com, reject
-domain, brandvideo.biz.weibo.com, reject
-domain, vs.biz.weibo.com, reject
+domain, adimg.uve.weibo.com, REJECT
+domain, adimg.uve.weibo.com, REJECT
+domain, adstrategy.biz.weibo.com, REJECT
+domain, brandvideo.biz.weibo.com, REJECT
+domain, vs.biz.weibo.com, REJECT
 domain, kadmimage.biz.weibo.com, reject
 domain, u1.img.mobile.sina.cn, reject
 domain, sdkclick.biz.weibo.com, reject
