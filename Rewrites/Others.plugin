@@ -6,6 +6,11 @@
 #!icon = 
 #!update 2023-06-28 00:20
 
+[General]
+# ===⭐️=== testflight ===⭐️=== #
+skip-proxy = iosapps.itunes.apple.com
+
+
 [Rewrite]
 # ===⭐️=== 微博 ===⭐️=== #
 # 开屏广告
