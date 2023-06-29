@@ -81,7 +81,6 @@ domain-suffix, bytegoofy.com, REJECT
 domain-suffix, bytedance.com, REJECT
 domain-suffix, p6-ad-sign.byteimg.com, REJECT
 domain-suffix, p9-ad-sign.byteimg.com, REJECT
-domain-suffix, bytegecko.com, REJECT
 domain-suffix, rp.hpplay.cn, REJECT
 domain-suffix, shark-tracer.netease.com, REJECT
 # 百度
