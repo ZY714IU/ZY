@@ -1,8 +1,8 @@
 /*================
 https://github.com/RuCu6/QuanX/blob/main/Scripts/zhihu.js
-2023-06-12 20:12
 ================*/
 
+// 2023-06-25 13:50
 if (!$response.body) $done({});
 const url = $request.url;
 let obj = JSON.parse($response.body);
@@ -100,6 +100,19 @@ if (url.includes("/api/cloud/config/all")) {
         !(i?.type?.includes("ad") || i?.data?.answer_type?.includes("PAID"))
     );
   }
+} else if (url.includes("/next-render")) {
+  if (obj.data) {
+    obj.data = obj.data.filter(
+      (i) =>
+        !(
+          i?.biz_type_list?.includes("article") ||
+          i?.biz_type_list?.includes("content") ||
+          i?.business_type?.includes("paid") ||
+          i?.section_info ||
+          i?.tips
+        )
+    );
+  }
 } else if (url.includes("/topstory/recommend")) {
   // 推荐信息流
   if (obj.data) {
@@ -148,8 +161,8 @@ if (url.includes("/api/cloud/config/all")) {
           return false;
         }
         return true;
-      } else if (i.type === "pin_aggregation_card") {
-        // 横排卡片
+      } else if (i.type.includes("aggregation_card")) {
+        // 横排卡片 知乎热榜
         return false;
       } else if (i.type === "feed_advert") {
         // 伪装成正常内容的卡片
