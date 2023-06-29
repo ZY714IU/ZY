@@ -1,13 +1,10 @@
 /*================
 https://github.com/RuCu6/QuanX/blob/main/Scripts/bilibili/biliProto.js
-2023-
 ================*/
 
 // 2023-06-28 18:40
-
 const url = $request.url;
 const isQuanX = typeof $task !== "undefined";
-
 (async () => {
   // 创建空数据
   let body;
