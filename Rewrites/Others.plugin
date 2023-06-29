@@ -182,7 +182,7 @@ skip-proxy = iosapps.itunes.apple.com
 # ===⭐️=== 微信 ===⭐️=== #
 # author @RuCu6
 # 移除公众号 中间带货推广、底部广告、底部相关文章
-^https?://mp\.weixin\.qq\.com/mp/(cps_product_info|getappmsgad|relatedarticle)\? url reject-dict
+^https?://mp\.weixin\.qq\.com/mp/(cps_product_info|getappmsgad|relatedarticle|masonryfeed)\? url reject-dict
 
 # ===⭐️=== 迅雷 ===⭐️=== #
 # author @zhangjun
