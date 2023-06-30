@@ -1,8 +1,9 @@
 /*================
 https://github.com/RuCu6/QuanX/blob/main/Scripts/weibo.js
 
-  //注释掉 评论区铁粉标识、头像挂件、关注按钮
-/2/comments/build_comments
+  //注释掉 评论区铁粉标识
+  } else if (url.includes("/2/comments/build_comments")) {
+              // 头像挂件,关注按钮
            // removeAvatar(item.data);
 
   //注释掉 我的页面 top8 卡片
