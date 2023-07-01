@@ -2,7 +2,7 @@
 https://github.com/RuCu6/QuanX/blob/main/Scripts/zhihu.js
 ================*/
 
-// 2023-06-25 13:50
+// 2023-07-01 18:08
 if (!$response.body) $done({});
 const url = $request.url;
 let obj = JSON.parse($response.body);
@@ -105,11 +105,13 @@ if (url.includes("/api/cloud/config/all")) {
     obj.data = obj.data.filter(
       (i) =>
         !(
+          i?.adjson ||
           i?.biz_type_list?.includes("article") ||
           i?.biz_type_list?.includes("content") ||
           i?.business_type?.includes("paid") ||
           i?.section_info ||
-          i?.tips
+          i?.tips ||
+          i?.type?.includes("ad")
         )
     );
   }
