@@ -52,20 +52,18 @@ skip-proxy = iosapps.itunes.apple.com
 ^https?://(app|api|grpc)\.bili(bil|ap)i\.(com|net)/(pgc/(season/player/cards|activity)|bilibili\.app\.(dynamic|interface)\.v\d\.(Dynamic/(DynRed|CampusRedDot)|Search/DefaultWord)|x/push/user/notify) url reject-dict
 
 # ===⭐️=== 知乎 ===⭐️=== #
-^https?://118\.89\.204\.198 - reject-dict
-^https?://103\.41\.167\.237 - reject-dict
-^https?://2402:4e00:1200:ed00:0:9089:6dac:96b6 - reject-dict
+^https?://(118\.89\.204\.198|103\.41\.167\.237|2402:4e00:1200:ed00:0:9089:6dac:96b6) url reject-dict
 # 开屏广告 commercial_api/launch
 # 开屏广告 commercial_api/real_time_launch
 # 推荐页顶部横幅 commercial_api/banner
 # 服务器推送配置 ad-style
-# 服务器推送配置 v3/resource\?group_name=mp$
+# 服务器推送配置 v3/resource\?group_name=mp
 # 回答下方广告 v4/answers/\d+/recommendations
 # 回答下相关搜索 v4/search/related
 # 推荐页顶部广告 v4/ecom
 # 创作中心各卡片 v4/creators|sku
 # 会员页悬浮窗 bazaar/float
-# 搜索框左侧活动 root/window$
+# 搜索框左侧活动 root/window
 # 搜索框推荐词 search/preset
 # 活动推荐窗？ event-center/recommend
 # 热榜直播 drama/hot
@@ -73,8 +71,10 @@ skip-proxy = iosapps.itunes.apple.com
 # 消息页角标 notifications/v3/count
 # 应用内弹窗 me/guides
 # 发布+广告 content-distribution
+# 回答详情页 comment_v5/answers/\d+/list
+# 回答详情页 v5\.1/topics/answer/\d+/relation
 # 网页版广告 distribute/rhea/qa_ad
-^https?://(api|www|appcloud2)\.zhihu\.com/(commercial_api/((real_time_)?launch|banner)|ad-style|v3/resource\?group_name=mp$|api/v4/(answers/\d+/recommendations|search/related|ecom|creators)|sku|bazaar/float|root/window$|search/preset|market/popovers|event-center/recommend|drama/hot|moments/tab|notifications/v3/count|me/guides|content-distribution|distribute/rhea/qa_ad) url reject-dict
+^https?://(api|www|appcloud2)\.zhihu\.com/(commercial_api/((real_time_)?launch|banner)|ad-style|v3/resource\?group_name=mp|api/v4/(answers/\d+/recommendations|search/related|ecom|creators)|sku|bazaar/float|root/window|search/preset|market/popovers|event-center/recommend|drama/hot|moments/tab|notifications/v3/count|me/guides|content-distribution|comment_v5/answers/\d+/list|v5\.1/topics/answer/\d+/relation|distribute/rhea/qa_ad) url reject-dict
 # 我的页面会员卡片 unlimited/go/my_card$
 # 我的页面下方卡片 appview/v3/zhmore
 ^https?://(api|www)\.zhihu\.com/(unlimited/go/my_card$|appview/v3/zhmore) url reject-200
