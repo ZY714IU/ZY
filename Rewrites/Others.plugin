@@ -75,9 +75,9 @@ skip-proxy = iosapps.itunes.apple.com
 # 回答详情页 v5\.1/topics/answer/\d+/relation
 # 网页版广告 distribute/rhea/qa_ad
 ^https?://(api|www|appcloud2)\.zhihu\.com/(commercial_api/((real_time_)?launch|banner)|ad-style|v3/resource\?group_name=mp|api/v4/(answers/\d+/recommendations|search/related|ecom|creators)|sku|bazaar/float|root/window|search/preset|market/popovers|event-center/recommend|drama/hot|moments/tab|notifications/v3/count|me/guides|content-distribution|comment_v5/answers/\d+/list|v5\.1/topics/answer/\d+/relation|distribute/rhea/qa_ad) url reject-dict
-# 我的页面会员卡片 unlimited/go/my_card$
+# 我的页面会员卡片 unlimited/go/my_card
 # 我的页面下方卡片 appview/v3/zhmore
-^https?://(api|www)\.zhihu\.com/(unlimited/go/my_card$|appview/v3/zhmore) url reject-200
+^https?://(api|www)\.zhihu\.com/(unlimited/go/my_card|appview/v3/zhmore) url reject-200
 # 服务器推送配置 products/zhihu/platforms/ios
 # 网页版广告
 ^https?://(api|www|zhuanlan)\.zhihu\.com/(ab/)?(api/)?(v\d/)?(products/zhihu/platforms/ios|(questions|anwsers)/\d+/related-readings|hot_recommendation|articles/\d+/recommendation|commercial_api/banners_v3|mcn/v2/linkcard) url reject
