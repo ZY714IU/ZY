@@ -43,7 +43,7 @@ skip-proxy = iosapps.itunes.apple.com
 
 # ===⭐️=== 哔哩哔哩 ===⭐️=== #
 # ip请求
-^https?://app.bilibili.com/x/resource/ip$ url reject-200
+^https?://app.bilibili.com/x/resource/ip url reject-200
 # 卡片广告 pgc/season/player/cards
 # 广告浮窗 pgc/activity
 # 动态页角标 bilibili\.app\.(dynamic\.v\d\.Dynamic/(DynRed|CampusRedDot)
@@ -112,7 +112,7 @@ skip-proxy = iosapps.itunes.apple.com
 # 通用广告 (tag/)?ads
 # 推送通知弹窗? messages/unread
 # 不知啥弹窗 system_service/popup
-^https?://(edith|www)\.xiaohongshu\.com/api/(sns|im)/v\d/(surprisebox/(get_style|open|submit_action$)|(note/)?guide$?/((user|template)_banner|home_guide)|user/teenager/status|followfeed/reddot|(tag/)?ads|messages/unread|system_service/popup) url reject-dict
+^https?://(edith|www)\.xiaohongshu\.com/api/(sns|im)/v\d/(surprisebox/(get_style|open|submit_action)|(note/)?guide?/((user|template)_banner|home_guide)|user/teenager/status|followfeed/reddot|(tag/)?ads|messages/unread|system_service/popup) url reject-dict
 
 # ===⭐️=== 百度云盘 ===⭐️=== #
 # author @RuCu6，@kokoryh
