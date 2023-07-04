@@ -6,7 +6,7 @@
 #!icon = 
 #!update 2023-06-16 03:55
 # > Type:DOMAIN-SUFFIX,DOMAIN,DOMAIN-KEYWORD,USER-AGENT,URL-REGEX,IP-CIDR
-# > 优先级：本地-插件-订阅规则集
+# > 优先级：本地-插件-订阅规则集，ip和域名优先
 
 [Rule]
 # ======⭐️====== direct ======⭐️====== #
