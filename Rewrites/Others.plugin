@@ -164,18 +164,18 @@ skip-proxy = iosapps.itunes.apple.com
 ^https?://app\.zhuanzhuan\.com/(zzx|zz|common)/(open/zzui_lottie_message|v\d/(zzusercenter/personalcenterreddot|corecyclelogic/getredpoint)|transfer/(getsearc(hword|configdata)|getpopup|userred)) url reject-dict
 
 # ===⭐️=== 美图秀秀 ===⭐️=== #
-# 开屏广告(已在分流拦截)
-# 我的页面卡片 tool/common/home
-# 搜索框推荐词 search/pre
+# 开屏广告 (已在分流拦截)
+# 我的页卡片 tool/common/home
 # 热搜页卡片 hot
+# 搜索框推荐词 search/pre
 # 首页vip弹窗 vip/sub_popup
 # 视频剪辑横幅 promotion/config
-# 我的页面vip横幅 prompt/query
+# 设计室悬浮窗 homepage
+# 我的页vip prompt/query
 # 其他 user/show|user/unread|topic/retouch_topics|business|tool/common/activity|common/activity
-^https?://((api|tool|h5)\.xiuxiu|vesdk)\.meitu\.com//?(v\d/)?(tool/common/home|search/pre|hot|vip/(sub_popup|prompt/query)|promotion/config|user/show|user/unread|topic/retouch_topic|business|tool/activity|common/activity) url reject-dict
+^https?://((api|tool|h5)\.(xiuxiu|posters)|vesdk)\.meitu\.com//?(v\d/)?(tool/common/home|hot|search/pre|vip/(sub_popup|prompt/query)|homepage|promotion/config|user/show|user/unread|topic/retouch_topic|business|tool/activity|common/activity) url reject-dict
 
 # ===⭐️=== 中国移动 ===⭐️=== #
-# author @zhangjun
 # 开屏广告 init/startInit|explorePage/getAdverList
 # 首页悬浮窗 emotionMarket
 # 子页悬浮窗 emotionMarket
@@ -189,33 +189,34 @@ skip-proxy = iosapps.itunes.apple.com
 ^https?://gx\.10086\.cn/zt-portal/gxhzg/portal/app/api/v\d/(1102|1401|2000|1701) url reject-dict
 
 # ===⭐️=== 美团&外卖 ===⭐️=== #
-# author @RuCu6
+# @RuCu6
 # 开屏广告
 ^https?://(s3plus|flowplus|img|wmapi)\.meituan\.(net|com)/(v\d/mss_\w+/((brandcpt-vedio|waimai-alita)/\w+\.zip$|linglong/\d+\.jpg)|bizad/bizad_brandCpt_\d+\.jpg|api/v\d/(loadInfo|openscreen|startpicture)) url reject-dict
 
+# ===⭐️=== 酷安 ===⭐️=== #
+# @ddgksf2013
+# 热词
+^https?://api\.coolapk\.com/v\d/search\?.*type=hotSearch url reject-dict
+
 # ===⭐️=== 微信 ===⭐️=== #
-# author @RuCu6
-# 移除公众号 中间带货推广、底部广告、底部相关文章
+# @RuCu6
+# 公众号 中间带货推广、底部广告、底部相关文章
 ^https?://mp\.weixin\.qq\.com/mp/(cps_product_info|getappmsgad|relatedarticle|masonryfeed)\? url reject-dict
 
 # ===⭐️=== 迅雷 ===⭐️=== #
-# author @zhangjun
+# @zhangjun
 # 新人专享福利、大家都在看、经典必看
 ^https?://api-shoulei-ssl\.xunlei\.com/flowhub/v\d/slots:batchGet url reject-200
 
 # ===⭐️=== 斗鱼 ===⭐️=== #
-# author @ddgksf2013
+# @ddgksf2013
 # 开屏广告
 ^https?://rtbapi\.douyucdn\.cn/japi/sign/app/(getinfo|getmaterial) url reject-200
 
 # ===⭐️=== 航旅纵横 ===⭐️=== #
-# author @ddgksf2013
+# @ddgksf2013
 # 开屏广告
 ^https?://(discardrp|startup)\.umetrip\.com/gateway/api/umetrip/native url reject-200
-
-# ===⭐️=== 酷安 ===⭐️=== #
-# 热词
-^https?://api\.coolapk\.com/v\d/search\?.*type=hotSearch url reject-dict
 
 # ===⭐️=== 闲鱼 ===⭐️=== #
 # 开屏广告
@@ -425,4 +426,5 @@ http-request ^https?://sub\.store script-path=https://raw.githubusercontent.com/
 
 # =============== hostname =============== #
 [Mitm]
-hostname = *.uve.weibo.com, *api.weibo.cn, weibo.com, grpc.biliapi.net, ap*.bili*i.*, 118.89.204.198, 103.41.167.237, 2402:4e00:1200:ed00:0:9089:6dac:96b6, 103.41.167.236, 103.41. 167.234, 103.41.167.235, 103.41.167.226, www.zhihu.com, api.zhihu.com, zhuanlan.zhihu.com, appcloud2.zhihu.com, m-cloud.zhihu.com, m5-zb.amap.com, m5.amap.com, sns.amap.com, edith.xiaohongshu.com, www.xiaohongshu.com, tiebac.baidu.com, newclient.map.baidu.com, pan.baidu.com, www.baidu.com, m.baidu.com, zhidao.baidu.com, boxer.baidu.com, interface*.music.163.com, youtubei.googleapis.com, *.googlevideo.com, *p*.zhuan*.com, *.meitu.com, client.app.coc.10086.cn, h.app.coc.10086.cn, gx.10086.cn, *plus.meituan.net, wmapi.meituan.com, img.meituan.net, api.coolapk.com, mp.weixin.qq.com, api-shoulei-ssl.xunlei.com, rtbapi.douyucdn.cn, *ar*.umetrip.com, iyes.youku.com, gorgon.youdao.com, *.pornhub.*, testflight.apple.com, *boxjs.*, sub.store
+# ===⭐️=== hostname ===⭐️=== #
+hostname = *.uve.weibo.com, *api.weibo.cn, weibo.com, grpc.biliapi.net, ap*.bili*i.*, 2402:4e00:1200:ed00:0:9089:6dac:96b6, 103.41.167.226, 103.41. 167.234, 103.41.167.235, 103.41.167.236, 103.41.167.237, 118.89.204.198, www.zhihu.com, api.zhihu.com, zhuanlan.zhihu.com, appcloud2.zhihu.com, m-cloud.zhihu.com, m5-zb.amap.com, m5.amap.com, sns.amap.com, edith.xiaohongshu.com, www.xiaohongshu.com, tiebac.baidu.com, newclient.map.baidu.com, pan.baidu.com, www.baidu.com, m.baidu.com, boxer.baidu.com, interface*.music.163.com, youtubei.googleapis.com, *.googlevideo.com, *p*.zhuan*.com, *.meitu.com, client.app.coc.10086.cn, h.app.coc.10086.cn, gx.10086.cn, *plus.meituan.net, wmapi.meituan.com, img.meituan.net, api.coolapk.com, mp.weixin.qq.com, api-shoulei-ssl.xunlei.com, rtbapi.douyucdn.cn, *ar*.umetrip.com, iyes.youku.com, gorgon.youdao.com, *.pornhub.*, testflight.apple.com, *boxjs.*, sub.store
