@@ -1,41 +1,42 @@
-# Name   Others
-# Update 2023-06-20 22:08
+# > Name   Others
+# > Desc   分流
+# > Update 2023-07-05 00:00
 
-# ===⭐️=== direct ===⭐️=== #
-# 微博
+# ======⭐️====== direct ======⭐️====== #
+# > 微博
 host, sdkapp.uve.weibo.com, direct
 host, weibointl.api.weibo.cn, direct
-# 字节跳动
+# > 字节跳动
 host, verify.zijieapi.com, direct
 host-suffix, byteimg.com, direct
-# 阿里系
+# > 阿里系
 host, amdc.m.taobao.com, direct
 host-suffix, ynuf.aliapp.org, direct
-# 个推
+# > 个推
 host-suffix, getui.com, direct
-# 友盟
+# > 友盟
 host-suffix, msg.umeng.com, direct
 host-suffix, msg.umengcloud.com, direct
-# 汽水音乐
+# > 汽水音乐
 host-suffix, qishui.com, direct
-# 腾讯
+# > 腾讯
 host, vd.l.qq.com, direct
 host, vi.l.qq.com, direct
 host, livew.l.qq.com, direct
 host, fairplay.l.qq.com, direct
-# 其他
+# > 其他
 host-suffix, ipleak.net, direct
 host-keyword, tkys, direct
 
-# ===⭐️=== proxy ===⭐️=== #
-# 必应国际版(不开分流则国内版)
+# ======⭐️====== proxy ======⭐️====== #
+# > 必应国际版(不开分流则国内版)
 host, www.bing.com, Static
 host, www.bing.net, Static
 host-suffix, bing.com, Static
 host-suffix, bing.net, Static
 host-suffix, bingapis.com, Static
 host-suffix, bingapis.net, Static
-# 机场
+# > 机场
 host-suffix, 2220.it, Static
 host-suffix, subs.usero.cn, Static
 host-keyword, fishchips, Static
@@ -43,13 +44,13 @@ host-keyword, efcloud, Static
 host-keyword, efshop, Static
 host-keyword, mojie, Static
 host-keyword, xsus, Static
-# 代理软件
+# > 代理软件
 host-suffix, quantumult.app, Static
 host-suffix, nssurge.com, Static
 host-suffix, surge-activation.com, Static
 host-suffix, stash-activation.com, Static
 host-keyword, loon, Static
-# 其他
+# > 其他
 host-suffix, shrtm.nu, Static
 host-suffix, adtidy.org, Static
 host-suffix, adguard.com, Static
@@ -58,28 +59,28 @@ host-suffix, missav.com, Static
 host-suffix, cdnedge.live, Static
 host-keyword, v2ex, Static
 host-keyword, notion, Static
-# anti-ip，针对部分软件显示ip归属地分流规则，注意！更改ip归属地有风险，不建议使用！
+# > anti-ip，针对部分软件显示ip归属地分流规则，注意！更改ip归属地有风险，不建议使用！
 # https://github.com/lwd-temp/anti-ip-attribution
-# 微博
-host, api.weibo.cn, Static 
-# 抖音；需家宽ip才生效，否则显示 “未知”
-host-suffix, amemv.com, Static
-# 小红书
+# > 微博
+//host, api.weibo.cn, Static 
+# > 抖音；需家宽ip才生效，否则显示 “未知”
+//host-suffix, amemv.com, Static
+# > 小红书
 host, edith.xiaohongshu.com, Static
-# 贴吧
+# > 贴吧
 //host, c.tieba.baidu.com, Static
-# 知乎
+# > 知乎
 host, api.zhihu.com, Static
-# 哔哩哔哩
+# > 哔哩哔哩
 host, api.bilibili.com, Static
 host, api.biliapi.net, Static
-# 微信
+# > 微信
 //host, mp.weixin.qq.com, Static 
 
-# ===⭐️=== reject ===⭐️=== #
-# 微信键盘
+# ======⭐️====== reject ======⭐️====== #
+# > 微信键盘
 host, wetype.weixin.qq.com, reject
-# 微博
+# > 微博
 host, adimg.uve.weibo.com, reject
 host, adimg.uve.weibo.com, reject
 host, adstrategy.biz.weibo.com, reject
@@ -94,11 +95,11 @@ host, sax.sina.com.cn, reject
 host, saxn.sina.com.cn, reject
 host, saxs.sina.com.cn, reject
 host, beacon.sina.com.cn, reject
-# 哔哩哔哩 后台间歇性失效，请在分流屏蔽以下域名
-# 注意！屏蔽会导致登录和安全相关功能无法使用
+# > 哔哩哔哩 后台间歇性失效，请在分流屏蔽以下域名
+# > 注意！屏蔽会导致登录和安全相关功能无法使用
 host, mall.bilibili.com, reject
 host, passport.bilibili.com, reject
-# 知乎
+# > 知乎
 host, appcloud.zhihu.com, reject
 host, appcloud2.in.zhihu.com, reject
 host, crash2.zhihu.com, reject
@@ -107,7 +108,7 @@ host, sugar.zhihu.com, reject
 ip-cidr, 118.89.204.198/32, reject
 ip-cidr, 103.41.167.237/32, reject
 ip6-cidr, 2402:4e00:1200:ed00:0:9089:6dac:96b6/128, reject
-# 字节跳动
+# > 字节跳动
 host, ad.toutiao.com, reject
 host, ad-sign.byteimg.com, reject
 host, im-x.jd.com, reject
@@ -128,34 +129,33 @@ host-suffix, bytegoofy.com, reject
 host-suffix, bytedance.com, reject
 host-suffix, p6-ad-sign.byteimg.com, reject
 host-suffix, p9-ad-sign.byteimg.com, reject
-host-suffix, bytegecko.com, reject
 host-suffix, rp.hpplay.cn, reject
 host-suffix, shark-tracer.netease.com, reject
-# 百度
+# > 百度
 host-SUFFIX, pos.baidu.com, reject
-# 百度地图
+# > 百度地图
 host, afd.baidu.com, reject
 host, afdconf.baidu.com, reject
 host, httpdns.baidubce.com, reject
 host, lc.map.baidu.com, reject
-# 贴吧、地图 屏蔽域名dns查询(否则去广告不干净)
+# > 贴吧、地图 屏蔽域名dns查询(否则去广告不干净)
 host, httpdns.baidubce.com, reject
 ip-cidr, 180.76.76.200/32, reject
-# 贴吧屏蔽 ws (副作用；消息通知功能失效，需手动进入查看)，强制帖子接口走http
-host, im.tieba.baidu.com, reject
-ip-cidr, 203.107.1.1/32, reject
-# 阿里巴巴
+# > 贴吧屏蔽 ws (副作用；消息通知功能失效，需手动进入查看)，强制帖子接口走http
+//host, im.tieba.baidu.com, reject
+//ip-cidr, 203.107.1.1/32, reject
+# > 阿里巴巴
 host, adashx.ut.amap.com, reject
 host, adashx.m.taobao.com, reject
 host, adashbc.m.taobao.com, reject
 host, adash-c.ut.taobao.com, reject
 host, adashbc.ut.taobao.com, reject
 host, adashxgc.ut.taobao.com, reject
-# 高德地图
+# > 高德地图
 host, awaken.amap.com, reject
 host, amap-aos-info-nogw.amap.com, reject
 host, free-aos-cdn-image.amap.com, reject
-# 腾讯
+# > 腾讯
 host, adsmind.tc.qq.com, reject
 host, adsmind.gdtimg.com, reject
 host, adsmind.ugdtimg.com, reject
@@ -173,15 +173,14 @@ host, wxsnsdy.wxs.qq.com, reject
 host, wxsnsdythumb.wxs.qq.com, reject
 host, livep.l.t002.ottcn.com, reject
 host, splashqqlive.gtimg.com, reject
-# Apple 
-# Safari 防跳转
+# > Safari 防跳转
 host, app-site-association.cdn-apple.com, reject
-# Apple 绕过 App 企业证书过期
+# > Apple 绕过 App 企业证书过期
 host, ocsp.apple.com, reject
-# 其他 
+# > 其他 
 host, api-adservices.apple.com, reject
 host-suffix, iadsdk.apple.com, reject
-# Google
+# > Google
 host, ads.youtube.com, reject
 host, adservice.google.com, reject
 host, www.googleadservices.com, reject
@@ -191,37 +190,37 @@ host-suffix, googleadsserving.com, reject
 host-suffix, googlesyndication.com, reject
 host-suffix, googletagservices.com, reject
 host-keyword, adservice.google.com, reject
-# Amazon AD
+# > Amazon AD
 host-suffix, amazon-adsystem.com, reject
-# 网易云音乐
+# > 网易云音乐
 host, httpdns.n.netease.com, reject
 host, iadmat.nosdn.127.net, reject
 host, iadmatapk.nosdn.127.net, reject
 host, iadmusicmat.music.126.net, reject
 host, iadmusicmatvideo.music.126.net, reject
 host-suffix, 163jiasu.com, reject
-# 云闪付
+# > 云闪付
 host, ads.95516.com, reject
 host, cm-10-138.getui.com, reject
 host, switch.cup.com.cn, reject
 host, sdk-conf.getui.com, reject
 host, sdk.open.talk.getui.net, reject
 host, tysdk.95516.com, reject
-# 迅雷_去开屏
+# > 迅雷 开屏广告
 host, adsp.xunlei.com, reject
 host, adapi.izuiyou.com, reject
 host, etl.xlmc.sandai.net, reject
-# 迅雷 解除版权限制
+# > 迅雷 解除版权限制
 host, hub5emu.v6.shub.sandai.net, reject
 host, hub5idx.v6.shub.sandai.net, reject
 host, hub5btmain.v6.shub.sandai.net, reject
-# 虎扑
+# > 虎扑 开屏广告
 host-suffix, goblin.hupu.com, reject
-# 彩云天气
+# > 彩云天气
 host, ad.cyapi.cn, reject
-# 58同城
+# > 58同城
 host, adshow.58.com, reject
-# 美图秀秀
+# >美图秀秀
 host-suffix, xiuxiu.video.xiuxiustatic.com, reject
 host-suffix, qchannel01.cn, reject
 host-suffix, stat.meitudata.com, reject
@@ -234,25 +233,22 @@ host-suffix, openapi.mtlab.meitu.com, reject
 host-suffix, xiuxiu-im-route.meitu.com, reject
 host-suffix, push.meitu.com, reject
 host-suffix, i.qchannel03.cn, reject
-# 美图秀秀开屏
+# > 美图秀秀 开屏广告
 host-suffix, adui.tg.meitu.com, reject
-# 央视频开屏
+# > 央视频 开屏广告
 host, wimg.yangshipin.cn, reject
-# 数字联盟
+# > 数字联盟
 host-suffix, shuzilm.cn, reject
-# 快手联盟
+# > 快手联盟
 host, open.e.kuaishou.com, reject
-# 其他
-host-keyword, adsystem, reject
-host-keyword, adservice, reject
-# 有道翻译官
+# > 有道翻译官
 host, dsp-impr2.youdao.com, reject
 host, log-yex.youdao.com, reject
 host, download.ydstatic.com, reject
 host, b-clkservice.youdao.com, reject
 host, dsp-impr2.youdao.com, reject
 host, img2.360buyimg.com, reject
-# 安全浏览限制解除
+# > 安全浏览限制解除
 host, u3.ucweb.com, reject
 host, lookup.api.bsb.baidu.com, reject
 host, safebrowsing.g.applimg.com, reject
@@ -261,10 +257,11 @@ host, safebrowsing.googleapis.com, reject
 host, proxy.safebrowsing.apple, reject
 host, token.safebrowsing.apple, reject
 host-suffix, safebrowsing.apple, reject
-
-#==⭐️Apple&Microsoft&Speedtest⭐️==#
-# AppleDirect；数量：28条
-# https://github.com/ACL4SSR/ACL4SSR/blob/master/Clash/Ruleset/Apple.list
+# > 其他
+host-keyword, adsystem, reject
+host-keyword, adservice, reject
+# > AppleDirect；数量：28条
+# > https://github.com/ACL4SSR/ACL4SSR/blob/master/Clash/Ruleset/Apple.list
 host, apple.comscoreresearch.com, direct
 host-suffix, aaplimg.com, direct
 host-suffix, akadns.net, direct
@@ -293,9 +290,8 @@ ip-cidr,144.178.48.0/20, direct
 ip-cidr,192.35.50.0/24, direct
 ip-cidr,198.183.17.0/24, direct
 ip-cidr,205.180.175.0/24, direct
-
-# AppleProxy；数量：27
-# https://github.com/kokoryh/Script/blob/master/Surge/rule/AppleProxy.list
+# > AppleProxy；数量：27
+# > https://github.com/kokoryh/Script/blob/master/Surge/rule/AppleProxy.list
 host, amp-api.podcasts.apple.com, Static
 host, apple.comscoreresearch.com, Static
 host, beta.music.apple.com, Static
@@ -323,9 +319,8 @@ host-suffix, appsto.re, Static
 host-suffix, blobstore.apple.com, Static
 host-suffix, digicert.com, Static
 host-suffix, smoot.apple.com, Static
-
-# Microsoft；数量：79条
-# https://github.com/ACL4SSR/ACL4SSR/blob/master/Clash/Ruleset/Microsoft.list
+# > Microsoft；数量：79条
+# > https://github.com/ACL4SSR/ACL4SSR/blob/master/Clash/Ruleset/Microsoft.list
 host-keyword, 1drv, direct
 host-keyword, microsoft, direct
 host-suffix, aadrm.com, direct
@@ -406,9 +401,9 @@ host-suffix, wunderlist.com, direct
 host-suffix, yammer.com, direct
 host-suffix, yammerusercontent.com, direct
 
-# Speedtest；数量：18
-host, www.speedtest.net, proxy
-# https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/QuantumultX/Speedtest/Speedtest.list
+# > Speedtest；数量：18
+# > https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/QuantumultX/Speedtest/Speedtest.list
+host, www.speedtest.net, Static
 host, speed.dler.io, Static
 host-suffix, cdnst.net, Static
 host-suffix, cellmaps.com, Static
