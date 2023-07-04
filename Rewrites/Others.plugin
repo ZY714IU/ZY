@@ -1,16 +1,16 @@
-#!name = Others
-#!desc = 插件
-#!openUrl = https://raw.githubusercontent.com/ZY714IU/ZY/main/Rewrites/Others.plugin
-#!author = 搬运自各位大佬
-#!homepage = https://github.com/ZY714IU/ZY/blob/main/Rewrites/Others.plugin
-#!icon = 
-#!update 2023-06-28 00:20
+#!name=Others
+#!desc=Plugin
+#!openUrl=https://raw.githubusercontent.com/ZY714IU/ZY/main/Rewrites/Others.plugin
+#!author=搬运自各位大佬
+#!homepage=https://github.com/ZY714IU/ZY/blob/main/Rewrites/Others.plugin
+#!icon= 
+#!update=2023-06-28 00:20
 
 
 # ======⭐️====== General ======⭐️====== #
 [General]
 # > testflight
-skip-proxy = iosapps.itunes.apple.com
+skip-proxy=iosapps.itunes.apple.com
 
 
 # ======⭐️====== 分流 ======⭐️====== #
@@ -19,7 +19,7 @@ skip-proxy = iosapps.itunes.apple.com
 
 # ======⭐️====== 重写 ======⭐️====== #
 [Rewrite]
-# > 微博
+# > weibo
 # @RuCu6，@zmqcherish，@ddgksf2013
 # 开屏广告 v2/ad|interface/sdk
 ^https?://(bootrealtime|sdkapp)\.uve\.weibo\.com/(v2/ad|interface/sdk) url reject-200
@@ -44,7 +44,7 @@ skip-proxy = iosapps.itunes.apple.com
 # (轻享版)热推 ad
 ^https?://((weibointl\.)?api\.)?weibo\.c(n|om)/(2/)?(\!/)?(hot|comments/bullet|vote/get|profile/recommend|video/redpacket|remind|push/daily|search/container_discover|statuses/(push_info|container_positive)|photo/(info|editor/guide)|multimedia/video/red|live|huati/discovery|ttarticle/x/m/aj/(uvead|reward|recommend)|portal\.php\?a=hot|ad) url reject-dict
 
-# > 哔哩哔哩
+# > bilibili
 # @app2smile，@RuCu6，@ddgksf2013，@kokoryh，@ClydeTime
 # ip请求
 ^https?://app.bilibili.com/x/resource/ip url reject-200
@@ -84,7 +84,7 @@ skip-proxy = iosapps.itunes.apple.com
 # 网页版广告
 ^https?://(api|www|zhuanlan)\.zhihu\.com/(ab/)?(api/)?(v\d/)?(products/zhihu/platforms/ios|(questions|anwsers)/\d+/related-readings|hot_recommendation|articles/\d+/recommendation|commercial_api/banners_v3|mcn/v2/linkcard) url reject
 
-# > 高德地图
+# > amap
 # @RuCu6，@ddgksf2013，@kokoryh
 # 详情页 shield/search_poi/tips/?(_adv|rec|hooks)
 # 商铺弹窗 shield/search/client/push
@@ -102,7 +102,7 @@ skip-proxy = iosapps.itunes.apple.com
 # 优惠券 ccoupon
 ^https?://(m5(-zb)?|sns)\.amap\.com/ws/(shield/(search|scene)/?(_poi/tips/?(_adv|rec|hooks)|client/push|recommend|new_hotword)|faas/amap-navigation/(main-page-(assets|location)|card-service-route-plan)|boss/order(_web/friendly|/car/(king_toolbox|access_guide))|yuece/(act|openapi/activity/current)/query|promotion-web/resource|valueadded/weather|msgbox|message|asa/ads|mapapi/hint|ccoupon) url reject-dict
 
-# > 小红书
+# > xiaohongshu
 # @RuCu6
 # https://github.com/RuCu6/QuanX/blob/main/Rewrites/Cube/xiaohongshu.snippet
 # 保存图片、视频时的水印
