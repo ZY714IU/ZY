@@ -267,6 +267,7 @@ host-suffix, safebrowsing.apple, reject
 # > 其他
 host-keyword, adsystem, reject
 host-keyword, adservice, reject
+
 # > AppleDirect；数量：28条
 # > https://github.com/ACL4SSR/ACL4SSR/blob/master/Clash/Ruleset/Apple.list
 host, apple.comscoreresearch.com, direct
@@ -407,7 +408,6 @@ host-suffix, windowsupdate.com, direct
 host-suffix, wunderlist.com, direct
 host-suffix, yammer.com, direct
 host-suffix, yammerusercontent.com, direct
-
 # > Speedtest；数量：18
 # > https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/QuantumultX/Speedtest/Speedtest.list
 host, www.speedtest.net, Static
