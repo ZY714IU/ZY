@@ -198,7 +198,7 @@ skip-proxy = iosapps.itunes.apple.com
 # 热词
 ^https?://api\.coolapk\.com/v\d/search\?.*type=hotSearch url reject-dict
 
-# > weChat
+# > wechat
 # @RuCu6
 # 公众号 中间带货推广、底部广告、底部相关文章
 ^https?://mp\.weixin\.qq\.com/mp/(cps_product_info|getappmsgad|relatedarticle|masonryfeed)\? url reject-dict
@@ -351,25 +351,14 @@ http-response ^https?://edith\.xiaohongshu\.com/api/sns/v\d+?/(search/(banner|tr
 http-response ^https?://(tiebac|c\.tieba)\.baidu\.com/(c/f/(frs/(page|threadlist|generalTabList)|pb/page|excellent/personalized)$|tiebaads/commonbatch|c/s/sync$) script-path=https://github.com/ZY714IU/ZY/raw/main/Scripts/baidu_tieba_json.js,requires-body=true, timeout=10,tag=tieba-json
 http-response ^https?://(tiebac|c\.tieba)\.baidu\.com/c/f/(frs/(page|threadlist|generalTabList)|pb/page|excellent/personalized)\?cmd script-path=https://github.com/ZY714IU/ZY/raw/main/Scripts/baidu_tieba_proto.js,requires-body=true,binary-body-mode=true,timeout=10,tag=tieba-proto
 
-# ===⭐️=== 百度地图 ===⭐️=== #
-# author @ddgksf2013
-^https?://httpdns\.baidubce\.com url reject-200
-# 开屏&首页左上方 广告 phpui2\/\?qt=ads
-# 搜索推广 phpui.*qt=hw
-# 各种商业推广 crossmarketing
-# 我的页面动态 usersystem\/home\/dynamic
-^https?://newclient\.map\.baidu\.com/client/(phpui(2/\?qt=ads|.*qt=hw)|crossmarketing|usersystem/home/dynamic) url reject-200
-
-# ===⭐️=== 百度搜索 ===⭐️=== #
+# > baidu search
 # author @Adblock4limbo，@RuCu6，@app2smile
 # 搜索首页广告
-http-response ^https?://(www|m)\.baidu\.com(/|/\?ref.*)$ script-path=https://github.com/ZY714IU/ZY/raw/main/Scripts/baidu_index.js, requires-body=true, timeout=10, tag=搜索首页广告
+http-response ^https?://(www|m)\.baidu\.com(/|/\?ref.*)$ script-path=https://github.com/ZY714IU/ZY/raw/main/Scripts/baidu_index.js,requires-body=true,timeout=10,tag=baidu_index
 # 防跳转AppStore
-http-response ^https?://boxer\.baidu\.com/scheme\?scheme script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/baidu-no-redirect.js, requires-body=true, timeout=10, tag=防跳转AppStore
-# 知道搜索广告
-http-response ^https?://zhidao\.baidu\.com/(question|index|\?(fr|word)) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/baidu-zhidao.js, requires-body=true, timeout=10, tag=知道搜索广告
+http-response ^https?://boxer\.baidu\.com/scheme\?scheme script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/baidu-no-redirect.js,requires-body=true,timeout=10,tag=baidu-no-redirect
 # 搜索结果广告
-http-response ^https?://(www|m)\.baidu\.com/.*word=.* script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/baidu-search.js, requires-body=true, timeout=10, tag=搜索结果广告
+http-response ^https?://(www|m)\.baidu\.com/.*word=.* script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/baidu-search.js,requires-body=true,timeout=10,tag=搜索结果广告
 
 # ===⭐️=== 网易云音乐 ===⭐️=== #
 # vip (request) @Weiren
