@@ -302,7 +302,7 @@ http-response ^https?://api\.live\.bilibili\.com/xlive/(app-(room|interface)|e-c
 # ⚠️以下两条QuantumultX可能不可用！
 # 交互式弹幕 DM/(DmView|DmSegMobile)
 # 青少年模式 Teenagers/ModeStatus
-http-response ^https?://(app|api|grpc)\.bili(bil|ap)i\.(com|net)/bilibili\.(polymer\.)?(app\.)?(search|dynamic|playurl|view|main\.community\.reply|community\.service\.dm|interface)\.v\d\.(Search/SearchAll|Dynamic/Dyn(All|Video)|View/(View|TFInfo)|PlayURL/PlayView|Reply/MainList|DM/(DmView|DmSegMobile)|Teenagers/ModeStatus) requires-body=1,binary-body-mode=1,script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/bilibili_b.js,requires-body=true, argument=http-response,timeout=10,tag=bilibili
+http-response ^https?://(app|api|grpc)\.bili(bil|ap)i\.(com|net)/bilibili\.(polymer\.)?(app\.)?(search|dynamic|playurl|view|main\.community\.reply|community\.service\.dm|interface)\.v\d\.(Search/SearchAll|Dynamic/Dyn(All|Video)|View/(View|TFInfo)|PlayURL/PlayView|Reply/MainList|DM/(DmView|DmSegMobile)|Teenagers/ModeStatus) requires-body=1,binary-body-mode=1,script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/bilibili_proto_b.js,requires-body=true, argument=http-response,timeout=10,tag=bilibili
 
 # > zhihu
 # author @blackmatrix7，@RuCu6
