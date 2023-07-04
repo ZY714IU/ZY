@@ -1,5 +1,5 @@
 #!name = Others
-#!desc = 分流
+#!desc = Rules
 #!openUrl = https://raw.githubusercontent.com/ZY714IU/ZY/main/Rules/Others.plugin
 #!author = 
 #!homepage = https://github.com/ZY714IU/ZY/blob/main/Rules/Others.plugin
@@ -9,7 +9,7 @@
 # > 优先级：本地-插件-订阅规则集，ip和域名优先
 
 [Rule]
-# ======⭐️====== direct ======⭐️====== #
+# > ⭐️ direct
 # > 微博
 host, sdkapp.uve.weibo.com, direct
 host, weibointl.api.weibo.cn, direct
@@ -35,7 +35,7 @@ host, fairplay.l.qq.com, direct
 host-suffix, ipleak.net, direct
 host-keyword, tkys, direct
 
-# ======⭐️====== proxy ======⭐️====== #
+# > ⭐️ proxy
 # > 必应国际版(不开分流则国内版)
 host, www.bing.com, Static
 host, www.bing.net, Static
@@ -84,7 +84,7 @@ host, api.biliapi.net, Static
 # > 微信
 //host, mp.weixin.qq.com, Static 
 
-# ======⭐️====== reject ======⭐️====== #
+# > ⭐️ reject
 # > 微信键盘
 host, wetype.weixin.qq.com, reject
 # > 微博
