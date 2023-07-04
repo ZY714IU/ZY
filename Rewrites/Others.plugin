@@ -1,23 +1,23 @@
-#!name=Others
-#!desc=Plugin
-#!openUrl=https://raw.githubusercontent.com/ZY714IU/ZY/main/Rewrites/Others.plugin
-#!author=搬运自各位大佬
-#!homepage=https://github.com/ZY714IU/ZY/blob/main/Rewrites/Others.plugin
-#!icon= 
-#!update=2023-06-28 00:20
+#!name = Others
+#!desc = Plugin
+#!openUrl = https://raw.githubusercontent.com/ZY714IU/ZY/main/Rewrites/Others.plugin
+#!author = 搬运自各位大佬
+#!homepage = https://github.com/ZY714IU/ZY/blob/main/Rewrites/Others.plugin
+#!icon = 
+#!update = 2023-06-28 00:20
 
 
 # ======⭐️====== General ======⭐️====== #
 [General]
 # > testflight
-skip-proxy=iosapps.itunes.apple.com
+skip-proxy = iosapps.itunes.apple.com
 
 
-# ======⭐️====== 分流 ======⭐️====== #
+# ======⭐️====== Rule ======⭐️====== #
 [Rule]
 
 
-# ======⭐️====== 重写 ======⭐️====== #
+# ======⭐️====== Rewrite ======⭐️====== #
 [Rewrite]
 # > weibo
 # @RuCu6，@zmqcherish，@ddgksf2013
@@ -119,7 +119,7 @@ skip-proxy=iosapps.itunes.apple.com
 # 不知啥弹窗 system_service/popup
 ^https?://(edith|www)\.xiaohongshu\.com/api/(sns|im)/v\d/(surprisebox/(get_style|open|submit_action)|(note/)?guide?/((user|template)_banner|home_guide)|user/teenager/status|followfeed/reddot|(tag/)?ads|messages/unread|system_service/popup) url reject-dict
 
-# > 百度地图
+# > baidu map
 # @ddgksf2013
 # 开屏&首页左上 广告 phpui2/\?qt=ads
 # 搜索推广 phpui.*qt=hw
@@ -127,11 +127,11 @@ skip-proxy=iosapps.itunes.apple.com
 # 我的页动态 usersystem/home/dynamic
 ^https?://newclient\.map\.baidu\.com/client/(phpui(2/\?qt=ads|.*qt=hw)|crossmarketing|usersystem/home/dynamic) url reject-200
 
-# > 百度云盘
+# > baidu yun
 # @RuCu6，@kokoryh
 ^https?://pan\.baidu\.com/(act/(v\d/(bchannel|welfare)/list|api/activityentry)|rest/\d\.0/pcs/ad|story/(diff|new)|(im|m|basem)box|api/(diffall|account/getprivilege)|quota|richsearch|recent/diff) url reject-200
 
-# > 网易云音乐
+# > netease cloudmusic
 # @RuCu6，@Keywos，@kokoryh，@Weiren
 # https://github.com/RuCu6/QuanX/blob/main/Rewrites/Cube/cloudmusic.snippet
 # 开屏广告 首页顶部横幅 ad/.*
@@ -151,7 +151,7 @@ skip-proxy=iosapps.itunes.apple.com
 # 首页反馈 youtubei/v1/feedback
 ^https?://([\w-]+\.googlevideo|youtubei\.googleapis)\.com/(initplayback.+&oad|youtubei/v1/feedback) url reject-200
 
-# > 转转
+# > zhuanzhuan
 # 开屏广告 zhuanzh/\w+
 ^https?://pic1\.zhuanstatic\.com/zhuanzh/\w+ url reject-dict
 # 消息页? open/zzui_lottie_message
@@ -163,7 +163,7 @@ skip-proxy=iosapps.itunes.apple.com
 # 不知是啥？transfer/userred
 ^https?://app\.zhuanzhuan\.com/(zzx|zz|common)/(open/zzui_lottie_message|v\d/(zzusercenter/personalcenterreddot|corecyclelogic/getredpoint)|transfer/(getsearc(hword|configdata)|getpopup|userred)) url reject-dict
 
-# > 美图秀秀
+# > meituxiuxiu
 # 开屏广告 (已在分流拦截)
 # 我的页卡片 tool/common/home
 # 热搜页卡片 hot
@@ -175,7 +175,7 @@ skip-proxy=iosapps.itunes.apple.com
 # 其他 user/show|user/unread|topic/retouch_topics|business|tool/common/activity|common/activity
 ^https?://((api|tool|h5)\.(xiuxiu|posters)|vesdk)\.meitu\.com//?(v\d/)?(tool/common/home|hot|search/pre|vip/(sub_popup|prompt/query)|homepage|promotion/config|user/show|user/unread|topic/retouch_topic|business|tool/activity|common/activity) url reject-dict
 
-# > 中国移动
+# > china mobile
 # 开屏广告 init/startInit|explorePage/getAdverList
 # 首页悬浮窗 emotionMarket
 # 子页悬浮窗 emotionMarket
@@ -184,31 +184,31 @@ skip-proxy=iosapps.itunes.apple.com
 # 提示 DA/fault/getPromptInfo
 ^https?://((client|h).app\.coc|app)\.10086\.cn/biz-orange/(DN/(init/startInit|explorePage/getAdverList|emotionMarket|msg/getMessageUnread)|WN/mailService/getUnreadCount|DA/fault/getPromptInfo) url reject-dict
 
-# > 中国移动广西
+# > china mobile GX
 # 开屏广告 1102|1401；各种悬浮窗、签到模块、其他推广 2000；底部5G设置悬浮窗 1701
 ^https?://gx\.10086\.cn/zt-portal/gxhzg/portal/app/api/v\d/(1102|1401|2000|1701) url reject-dict
 
-# > 美团&外卖
+# > meituan&waimai
 # @RuCu6
 # 开屏广告
 ^https?://(s3plus|flowplus|img|wmapi)\.meituan\.(net|com)/(v\d/mss_\w+/((brandcpt-vedio|waimai-alita)/\w+\.zip$|linglong/\d+\.jpg)|bizad/bizad_brandCpt_\d+\.jpg|api/v\d/(loadInfo|openscreen|startpicture)) url reject-dict
 
-# > 酷安
+# > coolapk
 # @ddgksf2013
 # 热词
 ^https?://api\.coolapk\.com/v\d/search\?.*type=hotSearch url reject-dict
 
-# > 微信
+# > weChat
 # @RuCu6
 # 公众号 中间带货推广、底部广告、底部相关文章
 ^https?://mp\.weixin\.qq\.com/mp/(cps_product_info|getappmsgad|relatedarticle|masonryfeed)\? url reject-dict
 
-# > 迅雷
+# > xunlei
 # @zhangjun
 # 新人专享福利、大家都在看、经典必看
 ^https?://api-shoulei-ssl\.xunlei\.com/flowhub/v\d/slots:batchGet url reject-200
 
-# > 斗鱼
+# > douyu
 # @ddgksf2013
 # 开屏广告
 ^https?://rtbapi\.douyucdn\.cn/japi/sign/app/(getinfo|getmaterial) url reject-200
