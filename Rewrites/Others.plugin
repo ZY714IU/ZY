@@ -345,10 +345,10 @@ http-response ^https?://m5(-zb)?\.amap\.com/ws/(shield/(search)?_?/?(poi)?/?(cit
 # 关注页感兴趣的人 followfeed
 http-response ^https?://edith\.xiaohongshu\.com/api/sns/v\d+?/(search/(banner|trending|note)|system_service/(splash_)?config|homefeed/client|followfeed) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/xiaohongshu.js,requires-body=true,tag=xiaohongshu
 
-# > tieba
+# > baidu tieba
 # author @app2smile
 # https://github.com/app2smile/rules/blob/master/module/tieba-qx.conf
-http-response ^https?://(tiebac|c\.tieba)\.baidu\.com/(c/f/(frs/(page|threadlist|generalTabList)|pb/page|excellent/personalized)$|tiebaads/commonbatch|c/s/sync$) script-path=https://github.com/ZY714IU/ZY/raw/main/Scripts/baidu_tieba.js,requires-body=true, timeout=10,tag=tieba-json
+http-response ^https?://(tiebac|c\.tieba)\.baidu\.com/(c/f/(frs/(page|threadlist|generalTabList)|pb/page|excellent/personalized)$|tiebaads/commonbatch|c/s/sync$) script-path=https://github.com/ZY714IU/ZY/raw/main/Scripts/baidu_tieba_json.js,requires-body=true, timeout=10,tag=tieba-json
 http-response ^https?://(tiebac|c\.tieba)\.baidu\.com/c/f/(frs/(page|threadlist|generalTabList)|pb/page|excellent/personalized)\?cmd script-path=https://github.com/ZY714IU/ZY/raw/main/Scripts/baidu_tieba_proto.js,requires-body=true,binary-body-mode=true,timeout=10,tag=tieba-proto
 
 # ===⭐️=== 百度地图 ===⭐️=== #
