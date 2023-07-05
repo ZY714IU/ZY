@@ -73,14 +73,14 @@ DOMAIN-KEYWORD,notion,PROXY
 # > 抖音；需家宽ip才生效，否则显示 “未知”
 //DOMAIN-SUFFIX,amemv.com,PROXY
 # > 小红书
-DOMAIN,edith.xiaohongshu.com,PROXY
+//DOMAIN,edith.xiaohongshu.com,PROXY
 # > 贴吧
 //DOMAIN,c.tieba.baidu.com,PROXY
 # > 知乎
-DOMAIN,api.zhihu.com,PROXY
+//DOMAIN,api.zhihu.com,PROXY
 # > 哔哩哔哩
-DOMAIN,api.bilibili.com,PROXY
-DOMAIN,api.biliapi.net, PROXY
+//DOMAIN,api.bilibili.com,PROXY
+//DOMAIN,api.biliapi.net, PROXY
 # > 微信
 //DOMAIN,mp.weixin.qq.com,PROXY 
 
