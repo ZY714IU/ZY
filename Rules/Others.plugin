@@ -229,7 +229,6 @@ DOMAIN,ad.cyapi.cn,REJECT
 DOMAIN,adshow.58.com,REJECT
 # >美图秀秀
 DOMAIN-SUFFIX,xiuxiu.video.xiuxiustatic.com,REJECT
-DOMAIN-SUFFIX,qchannel01.cn,REJECT
 DOMAIN-SUFFIX,stat.meitudata.com,REJECT
 DOMAIN-SUFFIX,rabbit.meitustat.com,REJECT
 DOMAIN-SUFFIX,strategy.app.meitudata.com,REJECT
