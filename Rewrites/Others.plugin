@@ -188,7 +188,6 @@ DOMAIN,app-site-association.cdn-apple.com,REJECT
 DOMAIN,ocsp.apple.com,REJECT
 # > 其他 
 DOMAIN,api-adservices.apple.com,REJECT
-DOMAIN-SUFFIX,iadsdk.apple.com,REJECT
 # > Google
 DOMAIN,ads.youtube.com,REJECT
 DOMAIN,adservice.google.com,REJECT
