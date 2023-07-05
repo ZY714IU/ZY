@@ -9,99 +9,99 @@
 # > 优先级：本地-插件-订阅规则集，ip和域名优先
 
 [Rule]
-# > ⭐️ direct
+# > ⭐️ DIRECT
 # > 微博
-host, sdkapp.uve.weibo.com, direct
-host, weibointl.api.weibo.cn, direct
+DOMAIN, sdkapp.uve.weibo.com,DIRECT
+DOMAIN, weibointl.api.weibo.cn,DIRECT
 # > 字节跳动
-host, verify.zijieapi.com, direct
-host-suffix, byteimg.com, direct
+DOMAIN, verify.zijieapi.com,DIRECT
+DOMAIN-suffix, byteimg.com,DIRECT
 # > 阿里系
-host, amdc.m.taobao.com, direct
-host-suffix, ynuf.aliapp.org, direct
+DOMAIN, amdc.m.taobao.com,DIRECT
+DOMAIN-suffix, ynuf.aliapp.org,DIRECT
 # > 个推
-host-suffix, getui.com, direct
+DOMAIN-suffix, getui.com,DIRECT
 # > 友盟
-host-suffix, msg.umeng.com, direct
-host-suffix, msg.umengcloud.com, direct
+DOMAIN-suffix, msg.umeng.com,DIRECT
+DOMAIN-suffix, msg.umengcloud.com,DIRECT
 # > 汽水音乐
-host-suffix, qishui.com, direct
+DOMAIN-suffix, qishui.com,DIRECT
 # > 腾讯
-host, vd.l.qq.com, direct
-host, vi.l.qq.com, direct
-host, livew.l.qq.com, direct
-host, fairplay.l.qq.com, direct
+DOMAIN, vd.l.qq.com,DIRECT
+DOMAIN, vi.l.qq.com,DIRECT
+DOMAIN, livew.l.qq.com,DIRECT
+DOMAIN, fairplay.l.qq.com,DIRECT
 # > 其他
-host-suffix, ipleak.net, direct
-host-keyword, tkys, direct
+DOMAIN-suffix, ipleak.net,DIRECT
+DOMAIN-keyword, tkys,DIRECT
 
-# > ⭐️ proxy
+# > ⭐️ PROXY
 # > 必应国际版(不开分流则国内版)
-host, www.bing.com, Static
-host, www.bing.net, Static
-host-suffix, bing.com, Static
-host-suffix, bing.net, Static
-host-suffix, bingapis.com, Static
-host-suffix, bingapis.net, Static
+DOMAIN, www.bing.com,DIRECT
+DOMAIN, www.bing.net,DIRECT
+DOMAIN-suffix, bing.com,Static
+DOMAIN-suffix, bing.net,Static
+DOMAIN-suffix, bingapis.com,Static
+DOMAIN-suffix, bingapis.net,Static
 # > 机场
-host-suffix, 2220.it, Static
-host-suffix, subs.usero.cn, Static
-host-keyword, fishchips, Static
-host-keyword, efcloud, Static
-host-keyword, efshop, Static
-host-keyword, mojie, Static
-host-keyword, xsus, Static
+DOMAIN-suffix,2220.it,Static
+DOMAIN-suffix,subs.usero.cn,Static
+DOMAIN-keyword,fishchips,Static
+DOMAIN-keyword,efcloud,Static
+DOMAIN-keyword,efshop,Static
+DOMAIN-keyword,mojie,Static
+DOMAIN-keyword,xsus,Static
 # > 代理软件
-host-suffix, quantumult.app, Static
-host-suffix, nssurge.com, Static
-host-suffix, surge-activation.com, Static
-host-suffix, stash-activation.com, Static
-host-keyword, loon, Static
+DOMAIN-suffix,quantumult.app,Static
+DOMAIN-suffix,nssurge.com,Static
+DOMAIN-suffix,surge-activation.com,Static
+DOMAIN-suffix,stash-activation.com,Static
+DOMAIN-keyword,loon,Static
 # > 其他
-host-suffix, shrtm.nu, Static
-host-suffix, adtidy.org, Static
-host-suffix, adguard.com, Static
-host-suffix, adguard.org, Static
-host-suffix, missav.com, Static
-host-suffix, cdnedge.live, Static
-host-keyword, v2ex, Static
-host-keyword, notion, Static
+DOMAIN-suffix,shrtm.nu,Static
+DOMAIN-suffix,adtidy.org,Static
+DOMAIN-suffix,adguard.com,Static
+DOMAIN-suffix,adguard.org,Static
+DOMAIN-suffix,missav.com,Static
+DOMAIN-suffix,cdnedge.live,Static
+DOMAIN-keyword,v2ex,Static
+DOMAIN-keyword,notion,Static
 # > anti-ip，针对部分软件显示ip归属地分流规则，注意！更改ip归属地有风险，不建议使用！
 # https://github.com/lwd-temp/anti-ip-attribution
 # > 微博
-//host, api.weibo.cn, Static 
+//DOMAIN,api.weibo.cn,Static 
 # > 抖音；需家宽ip才生效，否则显示 “未知”
-//host-suffix, amemv.com, Static
+//DOMAIN-suffix,amemv.com, Static
 # > 小红书
-host, edith.xiaohongshu.com, Static
+DOMAIN,edith.xiaohongshu.com,Static
 # > 贴吧
-//host, c.tieba.baidu.com, Static
+//DOMAIN,c.tieba.baidu.com,Static
 # > 知乎
-host, api.zhihu.com, Static
+DOMAIN,api.zhihu.com,Static
 # > 哔哩哔哩
-host, api.bilibili.com, Static
-host, api.biliapi.net, Static
+DOMAIN,api.bilibili.com,Static
+DOMAIN,api.biliapi.net, Static
 # > 微信
-//host, mp.weixin.qq.com, Static 
+//DOMAIN,mp.weixin.qq.com,Static 
 
-# > ⭐️ reject
+# > ⭐️ REJECT
 # > 微信键盘
-host, wetype.weixin.qq.com, reject
+DOMAIN,wetype.weixin.qq.com,reject
 # > 微博
-host, adimg.uve.weibo.com, reject
-host, adimg.uve.weibo.com, reject
-host, adstrategy.biz.weibo.com, reject
-host, brandvideo.biz.weibo.com, reject
-host, vs.biz.weibo.com, reject
-host, kadmimage.biz.weibo.com, reject
-host, u1.img.mobile.sina.cn, reject
-host, sdkclick.biz.weibo.com, reject
-host, sdkaction.biz.weibo.com, reject
-host, sdkmonitor.biz.weibo.com, reject
-host, sax.sina.com.cn, reject
-host, saxn.sina.com.cn, reject
-host, saxs.sina.com.cn, reject
-host, beacon.sina.com.cn, reject
+DOMAIN,adimg.uve.weibo.com,reject
+DOMAIN,adimg.uve.weibo.com,reject
+DOMAIN,adstrategy.biz.weibo.com,reject
+DOMAIN,brandvideo.biz.weibo.com,reject
+DOMAIN,vs.biz.weibo.com,reject
+DOMAIN,kadmimage.biz.weibo.com,reject
+DOMAIN,u1.img.mobile.sina.cn,reject
+DOMAIN,sdkclick.biz.weibo.com,reject
+DOMAIN,sdkaction.biz.weibo.com,reject
+DOMAIN,sdkmonitor.biz.weibo.com,reject
+DOMAIN,sax.sina.com.cn,reject
+DOMAIN,saxn.sina.com.cn,reject
+DOMAIN,saxs.sina.com.cn,reject
+DOMAIN,beacon.sina.com.cn,reject
 # > 哔哩哔哩 后台间歇性失效，请在分流屏蔽以下域名
 # > 注意！屏蔽会导致登录和安全相关功能无法使用
 host, mall.bilibili.com, reject
