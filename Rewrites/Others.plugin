@@ -559,7 +559,7 @@ USER-AGENT,SpeedTest*,PROXY
 ^https?://interface3\.music\.163\.com/eapi/batch\? header-replace-regex Cookie appver=\d\.\d\.\d\d appver=9999
 
 # > youtube
-# 其他 initplayback.+&oad
+# 播放页广告 initplayback.+&oad
 # 首页反馈 youtubei/v1/feedback
 ^https?://([\w-]+\.googlevideo|youtubei\.googleapis)\.com/(initplayback.+&oad|youtubei/v1/feedback) url reject-200
 
@@ -783,7 +783,7 @@ http-request ^https?://.+music.+(player/url|playlist|entrance|/eapi/search/).*$ 
 # 首页瀑布流 browse
 # 插播广告 next|player
 # 短视频 reel/reel_watch_sequence
-# 👉script-request-body
+# script-request-body 请求体
 http-request ^https?://youtubei\.googleapis\.com/youtubei/v1/(browse|next|player|reel/reel_watch_sequence)\? script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/youtube.request.beta.js,requires-body=true,binary-body-mode=true,tag=youtube
 # 首页瀑布流 browse
 # 插播广告 next|player
@@ -791,7 +791,7 @@ http-request ^https?://youtubei\.googleapis\.com/youtubei/v1/(browse|next|player
 # 搜索页 search
 # 上传键 guide
 # 画中画、后台播放 account/get_setting
-# 👉script-response-body
+# script-response-body 响应体
 http-response ^https?://youtubei\.googleapis\.com/youtubei/v1/(browse|next|player|reel/reel_watch_sequence|search|guide|account/get_setting)\? script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/youtube.response.beta.js,requires-body=true,binary-body-mode=true,tag=youtube
 
 # > 酷安
