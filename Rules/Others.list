@@ -1,8 +1,7 @@
 # > Name   Others
 # > Desc   分流
-# > Update 2023-07-05 00:00
+# > Update 2023-07-05 20:12
 
-# > ⭐️ direct
 # > 微博
 host, sdkapp.uve.weibo.com, direct
 host, weibointl.api.weibo.cn, direct
@@ -28,7 +27,6 @@ host, fairplay.l.qq.com, direct
 host-suffix, ipleak.net, direct
 host-keyword, tkys, direct
 
-# > ⭐️ proxy
 # > 必应国际版(不开分流则国内版)
 host, www.bing.com, Static
 host, www.bing.net, Static
@@ -60,11 +58,10 @@ host-suffix, cdnedge.live, Static
 host-keyword, v2ex, Static
 host-keyword, notion, Static
 # > anti-ip，针对部分软件显示ip归属地分流规则，注意！更改ip归属地有风险，不建议使用！
-# https://github.com/lwd-temp/anti-ip-attribution
 # > 微博
-//host, api.weibo.cn, Static 
+host, api.weibo.cn, Static 
 # > 抖音；需家宽ip才生效，否则显示 “未知”
-//host-suffix, amemv.com, Static
+host-suffix, amemv.com, Static
 # > 小红书
 host, edith.xiaohongshu.com, Static
 # > 贴吧
@@ -77,9 +74,6 @@ host, api.biliapi.net, Static
 # > 微信
 //host, mp.weixin.qq.com, Static 
 
-# > ⭐️ reject
-# > 微信键盘
-host, wetype.weixin.qq.com, reject
 # > 微博
 host, adimg.uve.weibo.com, reject
 host, adimg.uve.weibo.com, reject
@@ -179,7 +173,6 @@ host, app-site-association.cdn-apple.com, reject
 host, ocsp.apple.com, reject
 # > 其他 
 host, api-adservices.apple.com, reject
-host-suffix, iadsdk.apple.com, reject
 # > Google
 host, ads.youtube.com, reject
 host, adservice.google.com, reject
@@ -222,7 +215,6 @@ host, ad.cyapi.cn, reject
 host, adshow.58.com, reject
 # >美图秀秀
 host-suffix, xiuxiu.video.xiuxiustatic.com, reject
-host-suffix, qchannel01.cn, reject
 host-suffix, stat.meitudata.com, reject
 host-suffix, rabbit.meitustat.com, reject
 host-suffix, strategy.app.meitudata.com, reject
