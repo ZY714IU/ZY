@@ -560,8 +560,7 @@ USER-AGENT,SpeedTest*,PROXY
 
 # > youtube
 # 播放页广告 initplayback.+&oad
-# 首页反馈 youtubei/v1/feedback
-^https?://([\w-]+\.googlevideo|youtubei\.googleapis)\.com/(initplayback.+&oad|youtubei/v1/feedback) url reject-200
+^https?://[\w-]+\.googlevideo\.com/initplayback.+&oad url reject-200
 
 # > 转转
 # 开屏广告 zhuanzh/\w+
