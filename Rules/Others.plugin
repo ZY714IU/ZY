@@ -86,7 +86,7 @@ DOMAIN-KEYWORD,notion,PROXY
 
 # > ⭐️ REJECT
 # > 微信键盘
-DOMAIN,wetype.weixin.qq.com,REJECT
+//DOMAIN,wetype.weixin.qq.com,REJECT
 # > 微博
 DOMAIN,adimg.uve.weibo.com,REJECT
 DOMAIN,adimg.uve.weibo.com,REJECT
