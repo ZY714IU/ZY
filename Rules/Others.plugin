@@ -5,7 +5,7 @@
 #!homepage = https://github.com/ZY714IU/ZY/blob/main/Rules/Others.plugin
 #!icon = 
 #!update 2023-06-16 03:55
-# > Type:DOMAIN-SUFFIX,DOMAIN,DOMAIN-KEYWORD,USER-AGENT,URL-REGEX,IP-CIDR
+# > Type:DOMAIN,DOMAIN-SUFFIX,DOMAIN-KEYWORD,USER-AGENT,URL-REGEX,IP-CIDR
 # > 优先级：本地-插件-订阅规则集，ip和域名优先
 
 [Rule]
@@ -112,9 +112,9 @@ DOMAIN,appcloud2.in.zhihu.com,REJECT
 DOMAIN,crash2.zhihu.com,REJECT
 DOMAIN,mqtt.zhihu.com,REJECT
 DOMAIN,sugar.zhihu.com,REJECT
-ip-cidr,118.89.204.198/32,REJECT
-ip-cidr,103.41.167.237/32,REJECT
-ip-cidr6,2402:4e00:1200:ed00:0:9089:6dac:96b6/128,REJECT
+IP-CIDR,118.89.204.198/32,REJECT
+IP-CIDR,103.41.167.237/32,REJECT
+IP-CIDR6,2402:4e00:1200:ed00:0:9089:6dac:96b6/128,REJECT
 # > 字节跳动
 DOMAIN,ad.toutiao.com,REJECT
 DOMAIN,ad-sign.byteimg.com,REJECT
@@ -124,20 +124,20 @@ DOMAIN,dig.zjurl.cn,REJECT
 DOMAIN,dsp.toutiao.com,REJECT
 DOMAIN,api-access.pangolin-sdk-toutiao-b.com,REJECT
 DOMAIN,api-access.pangolin-sdk-toutiao.com,REJECT
-DOMAIN-suffix,snssdk.com,REJECT
-DOMAIN-suffix,zijieapi.com,REJECT
-DOMAIN-suffix,pangolin-sdk-toutiao-b.com,REJECT
-DOMAIN-suffix,pangolin-sdk-toutiao.com,REJECT
 DOMAIN,sf3-fe-tos.pglstatp-toutiao.com,REJECT
 DOMAIN,sf3-ttcdn-tos.pstatp.com,REJECT
-DOMAIN-suffix,pglstatp-toutiao.com,REJECT
-DOMAIN-suffix,byteorge.com,REJECT
-DOMAIN-suffix,bytegoofy.com,REJECT
-DOMAIN-suffix,bytedance.com,REJECT
-DOMAIN-suffix,p6-ad-sign.byteimg.com,REJECT
-DOMAIN-suffix,p9-ad-sign.byteimg.com,REJECT
-DOMAIN-suffix,rp.hpplay.cn,REJECT
-DOMAIN-suffix,shark-tracer.netease.com,REJECT
+DOMAIN-SUFFIX,snssdk.com,REJECT
+DOMAIN-SUFFIX,zijieapi.com,REJECT
+DOMAIN-SUFFIX,pangolin-sdk-toutiao-b.com,REJECT
+DOMAIN-SUFFIX,pangolin-sdk-toutiao.com,REJECT
+DOMAIN-SUFFIX,pglstatp-toutiao.com,REJECT
+DOMAIN-SUFFIX,byteorge.com,REJECT
+DOMAIN-SUFFIX,bytegoofy.com,REJECT
+DOMAIN-SUFFIX,bytedance.com,REJECT
+DOMAIN-SUFFIX,p6-ad-sign.byteimg.com,REJECT
+DOMAIN-SUFFIX,p9-ad-sign.byteimg.com,REJECT
+DOMAIN-SUFFIX,rp.hpplay.cn,REJECT
+DOMAIN-SUFFIX,shark-tracer.netease.com,REJECT
 # > 百度
 DOMAIN-SUFFIX,pos.baidu.com,REJECT
 # > 百度地图
@@ -147,10 +147,10 @@ DOMAIN,httpdns.baidubce.com,REJECT
 DOMAIN,lc.map.baidu.com,REJECT
 # > 贴吧、地图 屏蔽域名dns查询(否则去广告不干净)
 DOMAIN,httpdns.baidubce.com,REJECT
-ip-cidr,180.76.76.200/32,REJECT
+IP-CIDR,180.76.76.200/32,REJECT
 # > 贴吧屏蔽 ws (副作用；消息通知功能失效，需手动进入查看)，强制帖子接口走http
 //DOMAIN,im.tieba.baidu.com,REJECT
-//ip-cidr,203.107.1.1/32,REJECT
+//IP-CIDR,203.107.1.1/32,REJECT
 # > 阿里巴巴
 DOMAIN,adashx.ut.amap.com,reject
 DOMAIN,adashx.m.taobao.com,reject
@@ -186,26 +186,26 @@ DOMAIN,app-site-association.cdn-apple.com,reject
 DOMAIN,ocsp.apple.com,reject
 # > 其他 
 DOMAIN,api-adservices.apple.com,reject
-DOMAIN-suffix,iadsdk.apple.com,reject
+DOMAIN-SUFFIX,iadsdk.apple.com,reject
 # > Google
 DOMAIN,ads.youtube.com,reject
 DOMAIN,adservice.google.com,reject
 DOMAIN,www.googleadservices.com,reject
-DOMAIN-suffix,doubleclick.net,reject
-DOMAIN-suffix,googleadservices.com,reject
-DOMAIN-suffixgoogleadsserving.com,reject
-DOMAIN-suffix,googlesyndication.com,reject
-DOMAIN-suffix,googletagservices.com,reject
-DOMAIN-keyword,adservice.google.com,reject
+DOMAIN-SUFFIX,doubleclick.net,reject
+DOMAIN-SUFFIX,googleadservices.com,reject
+DOMAIN-SUFFIX,googleadsserving.com,reject
+DOMAIN-SUFFIX,googlesyndication.com,reject
+DOMAIN-SUFFIX,googletagservices.com,reject
+DOMAIN-KEYWORD,adservice.google.com,reject
 # > Amazon AD
-DOMAIN-suffix,amazon-adsystem.com,reject
+DOMAIN-SUFFIX,amazon-adsystem.com,reject
 # > 网易云音乐
 DOMAIN,httpdns.n.netease.com,reject
 DOMAIN,iadmat.nosdn.127.net,reject
 DOMAIN,iadmatapk.nosdn.127.net,reject
 DOMAIN,iadmusicmat.music.126.net,reject
 DOMAIN,iadmusicmatvideo.music.126.net,reject
-DOMAIN-suffix,163jiasu.com,reject
+DOMAIN-SUFFIX,163jiasu.com,reject
 # > 云闪付
 DOMAIN,ads.95516.com,reject
 DOMAIN,cm-10-138.getui.com,reject
@@ -222,30 +222,30 @@ DOMAIN,hub5emu.v6.shub.sandai.net,reject
 DOMAIN,hub5idx.v6.shub.sandai.net,reject
 DOMAIN,hub5btmain.v6.shub.sandai.net,reject
 # > 虎扑 开屏广告
-DOMAIN-suffix,goblin.hupu.com,reject
+DOMAIN-SUFFIX,goblin.hupu.com,reject
 # > 彩云天气
 DOMAIN,ad.cyapi.cn,reject
 # > 58同城
 DOMAIN,adshow.58.com,reject
 # >美图秀秀
-DOMAIN-suffix,xiuxiu.video.xiuxiustatic.com,reject
-DOMAIN-suffix,qchannel01.cn,reject
-DOMAIN-suffix,stat.meitudata.com,reject
-DOMAIN-suffix,rabbit.meitustat.com,reject
-DOMAIN-suffix,strategy.app.meitudata.com,reject
-DOMAIN-suffix,meepo.meitustat.com,reject
-DOMAIN-suffix,gondar.meitustat.com,reject
-DOMAIN-suffix,xiuxiu-im-connd.meitu.com,reject
-DOMAIN-suffix,openapi.mtlab.meitu.com,reject
-DOMAIN-suffix,xiuxiu-im-route.meitu.com,reject
-DOMAIN-suffix,push.meitu.com,reject
-DOMAIN-suffix,i.qchannel03.cn,reject
+DOMAIN-SUFFIX,xiuxiu.video.xiuxiustatic.com,reject
+DOMAIN-SUFFIX,qchannel01.cn,reject
+DOMAIN-SUFFIX,stat.meitudata.com,reject
+DOMAIN-SUFFIX,rabbit.meitustat.com,reject
+DOMAIN-SUFFIX,strategy.app.meitudata.com,reject
+DOMAIN-SUFFIX,meepo.meitustat.com,reject
+DOMAIN-SUFFIX,gondar.meitustat.com,reject
+DOMAIN-SUFFIX,xiuxiu-im-connd.meitu.com,reject
+DOMAIN-SUFFIX,openapi.mtlab.meitu.com,reject
+DOMAIN-SUFFIX,xiuxiu-im-route.meitu.com,reject
+DOMAIN-SUFFIX,push.meitu.com,reject
+DOMAIN-SUFFIX,i.qchannel03.cn,reject
 # > 美图秀秀 开屏广告
-DOMAIN-suffix,adui.tg.meitu.com,reject
+DOMAIN-SUFFIX,adui.tg.meitu.com,reject
 # > 央视频 开屏广告
 DOMAIN,wimg.yangshipin.cn,reject
 # > 数字联盟
-DOMAIN-suffix,shuzilm.cn,reject
+DOMAIN-SUFFIX,shuzilm.cn,reject
 # > 快手联
 DOMAIN,open.e.kuaishou.com,reject
 # > 有道翻译官
@@ -263,41 +263,41 @@ DOMAIN,safebrowsing.urlsec.qq.com,reject
 DOMAIN,safebrowsing.googleapis.com,reject
 DOMAIN,proxy.safebrowsing.apple,reject
 DOMAIN,token.safebrowsing.apple,reject
-DOMAIN-suffix,safebrowsing.apple,reject
+DOMAIN-SUFFIX,safebrowsing.apple,reject
 # > 其他
-DOMAIN-keyword,adsystem,reject
-DOMAIN-keyword,adservice,reject
+DOMAIN-KEYWORD,adsystem,reject
+DOMAIN-KEYWORD,adservice,reject
 
 # > AppleDirect；数量：28条
 # > https://github.com/ACL4SSR/ACL4SSR/blob/master/Clash/Ruleset/Apple.list
 DOMAIN,apple.comscoreresearch.com,direct
-DOMAIN-suffix,aaplimg.com,direct
-DOMAIN-suffix,akadns.net,direct
-DOMAIN-suffix,apple-cloudkit.com,direct
-DOMAIN-suffix,apple-mapkit.com,direct
-DOMAIN-suffix,apple.co,direct
-DOMAIN-suffix,apple.com,direct
-DOMAIN-suffix,apple.com.cn,direct
-DOMAIN-suffix,apple.news,direct
-DOMAIN-suffix,appstore.com,direct
-DOMAIN-suffix,cdn-apple.com,direct
-DOMAIN-suffix,crashlytics.com,direct
-DOMAIN-suffix,icloud-content.com,direct
-DOMAIN-suffix,icloud.com,direct
-DOMAIN-suffix,icloud.com.cn,direct
-DOMAIN-suffix,itunes.com,direct
-DOMAIN-suffix,me.com,direct
-DOMAIN-suffix,mzstatic.com,direct
-ip-cidr,17.0.0.0/8,direct
-ip-cidr,63.92.224.0/19,direct
-ip-cidr,65.199.22.0/23,direct
-ip-cidr,139.178.128.0/18,direct
-ip-cidr,144.178.0.0/19,direct
-ip-cidr,144.178.36.0/22,direct
-ip-cidr,144.178.48.0/20,direct
-ip-cidr,192.35.50.0/24,direct
-ip-cidr,198.183.17.0/24,direct
-ip-cidr,205.180.175.0/24,direct
+DOMAIN-SUFFIX,aaplimg.com,direct
+DOMAIN-SUFFIX,akadns.net,direct
+DOMAIN-SUFFIX,apple-cloudkit.com,direct
+DOMAIN-SUFFIX,apple-mapkit.com,direct
+DOMAIN-SUFFIX,apple.co,direct
+DOMAIN-SUFFIX,apple.com,direct
+DOMAIN-SUFFIX,apple.com.cn,direct
+DOMAIN-SUFFIX,apple.news,direct
+DOMAIN-SUFFIX,appstore.com,direct
+DOMAIN-SUFFIX,cdn-apple.com,direct
+DOMAIN-SUFFIX,crashlytics.com,direct
+DOMAIN-SUFFIX,icloud-content.com,direct
+DOMAIN-SUFFIX,icloud.com,direct
+DOMAIN-SUFFIX,icloud.com.cn,direct
+DOMAIN-SUFFIX,itunes.com,direct
+DOMAIN-SUFFIX,me.com,direct
+DOMAIN-SUFFIX,mzstatic.com,direct
+IP-CIDR,17.0.0.0/8,direct
+IP-CIDR,63.92.224.0/19,direct
+IP-CIDR,65.199.22.0/23,direct
+IP-CIDR,139.178.128.0/18,direct
+IP-CIDR,144.178.0.0/19,direct
+IP-CIDR,144.178.36.0/22,direct
+IP-CIDR,144.178.48.0/20,direct
+IP-CIDR,192.35.50.0/24,direct
+IP-CIDR,198.183.17.0/24,direct
+IP-CIDR,205.180.175.0/24,direct
 # > AppleProxy；数量：27
 # > https://github.com/kokoryh/Script/blob/master/Surge/rule/AppleProxy.list
 DOMAIN,amp-api.podcasts.apple.com,Static
@@ -319,112 +319,112 @@ DOMAIN,news-events.apple.com,Static
 DOMAIN,radio.itunes.apple.com,Static
 DOMAIN,sandbox.itunes.apple.com,Static
 DOMAIN,tv.apple.com,Static
-DOMAIN-suffix,testflight.apple.com,Static
-DOMAIN-suffix,apple-dns.net,Static
-DOMAIN-suffix,apple.news,Static
-DOMAIN-suffix,apps.apple.com,Static
-DOMAIN-suffix,appsto.re,Static
-DOMAIN-suffix,blobstore.apple.com,Static
-DOMAIN-suffix,digicert.com,Static
-DOMAIN-suffix,smoot.apple.com,Static
+DOMAIN-SUFFIX,testflight.apple.com,Static
+DOMAIN-SUFFIX,apple-dns.net,Static
+DOMAIN-SUFFIX,apple.news,Static
+DOMAIN-SUFFIX,apps.apple.com,Static
+DOMAIN-SUFFIX,appsto.re,Static
+DOMAIN-SUFFIX,blobstore.apple.com,Static
+DOMAIN-SUFFIX,digicert.com,Static
+DOMAIN-SUFFIX,smoot.apple.com,Static
 # > Microsoft；数量：79条
 # > https://github.com/ACL4SSR/ACL4SSR/blob/master/Clash/Ruleset/Microsoft.list
-DOMAIN-keyword,1drv,direct
-DOMAIN-keyword,microsoft,direct
-DOMAIN-suffix,aadrm.com,direct
-DOMAIN-suffix,acompli.com,direct
-DOMAIN-suffix,acompli.net,direct
-DOMAIN-suffix,aka.ms,direct
-DOMAIN-suffix,akadns.net,direct
-DOMAIN-suffix,aspnetcdn.com,direct
-DOMAIN-suffix,assets-yammer.com,direct
-DOMAIN-suffix,azure.com,direct
-DOMAIN-suffix,azure.net,direct
-DOMAIN-suffix,azureedge.net,direct
-DOMAIN-suffix,azureiotcentral.com,direct
-DOMAIN-suffix,azurerms.com,direct
-DOMAIN-suffix,bing.com,direct
-DOMAIN-suffix,bing.net,direct
-DOMAIN-suffix,bingapis.com,direct
-DOMAIN-suffix,cloudapp.net,direct
-DOMAIN-suffix,cloudappsecurity.com,direct
-DOMAIN-suffix,edgesuite.net,direct
-DOMAIN-suffix,gfx.ms,direct
-DOMAIN-suffix,hotmail.com,direct
-DOMAIN-suffix,live.com,direct
-DOMAIN-suffix,live.net,direct
-DOMAIN-suffix,lync.com,direct
-DOMAIN-suffix,msappproxy.net,direct
-DOMAIN-suffix,msauth.net,direct
-DOMAIN-suffix,msauthimages.net,direct
-DOMAIN-suffix,msecnd.net,direct
-DOMAIN-suffix,msedge.net,direct
-DOMAIN-suffix,msft.net,direct
-DOMAIN-suffix,msftauth.net,direct
-DOMAIN-suffix,msftauthimages.net,direct
-DOMAIN-suffix,msftidentity.com,direct
-DOMAIN-suffix,msidentity.com,direct
-DOMAIN-suffix,msn.cn,direct
-DOMAIN-suffix,msn.com,direct
-DOMAIN-suffix,msocdn.com,direct
-DOMAIN-suffix,msocsp.com,direct
-DOMAIN-suffix,mstea.ms,direct
-DOMAIN-suffix,o365weve.com,direct
-DOMAIN-suffix,oaspapps.com,direct
-DOMAIN-suffix,office.com,direct
-DOMAIN-suffix,office.net,direct
-DOMAIN-suffix,office365.com,direct
-DOMAIN-suffix,officeppe.net,direct
-DOMAIN-suffix,omniroot.com,direct
-DOMAIN-suffix,onedrive.com,direct
-DOMAIN-suffix,onenote.com,direct
-DOMAIN-suffix,onenote.net,direct
-DOMAIN-suffix,onestore.ms,direct
-DOMAIN-suffix,outlook.com,direct
-DOMAIN-suffix,outlookmobile.com,direct
-DOMAIN-suffix,phonefactor.net,direct
-DOMAIN-suffix,public-trust.com,direct
-DOMAIN-suffix,sfbassets.com,direct
-DOMAIN-suffix,sfx.ms,direct
-DOMAIN-suffix,sharepoint.com,direct
-DOMAIN-suffix,sharepointonline.com,direct
-DOMAIN-suffix,skype.com,direct
-DOMAIN-suffix,skypeassets.com,direct
-DOMAIN-suffix,skypeforbusiness.com,direct
-DOMAIN-suffix,staffhub.ms,direct
-DOMAIN-suffix,svc.ms,direct
-DOMAIN-suffix,sway-cdn.com,direct
-DOMAIN-suffix,sway-extensions.com,direct
-DOMAIN-suffix,sway.com,direct
-DOMAIN-suffix,trafficmanager.net,direct
-DOMAIN-suffix,uservoice.com,direct
-DOMAIN-suffix,virtualearth.net,direct
-DOMAIN-suffix,visualstudio.com,direct
-DOMAIN-suffix,windows-ppe.net,direct
-DOMAIN-suffix,windows.com,direct
-DOMAIN-suffix,windows.net,direct
-DOMAIN-suffix,windowsazure.com,direct
-DOMAIN-suffix,windowsupdate.com,direct
-DOMAIN-suffix,wunderlist.com,direct
-DOMAIN-suffix,yammer.com,direct
-DOMAIN-suffix,yammerusercontent.com,direct
+DOMAIN-KEYWORD,1drv,direct
+DOMAIN-KEYWORD,microsoft,direct
+DOMAIN-SUFFIX,aadrm.com,direct
+DOMAIN-SUFFIX,acompli.com,direct
+DOMAIN-SUFFIX,acompli.net,direct
+DOMAIN-SUFFIX,aka.ms,direct
+DOMAIN-SUFFIX,akadns.net,direct
+DOMAIN-SUFFIX,aspnetcdn.com,direct
+DOMAIN-SUFFIX,assets-yammer.com,direct
+DOMAIN-SUFFIX,azure.com,direct
+DOMAIN-SUFFIX,azure.net,direct
+DOMAIN-SUFFIX,azureedge.net,direct
+DOMAIN-SUFFIX,azureiotcentral.com,direct
+DOMAIN-SUFFIX,azurerms.com,direct
+DOMAIN-SUFFIX,bing.com,direct
+DOMAIN-SUFFIX,bing.net,direct
+DOMAIN-SUFFIX,bingapis.com,direct
+DOMAIN-SUFFIX,cloudapp.net,direct
+DOMAIN-SUFFIX,cloudappsecurity.com,direct
+DOMAIN-SUFFIX,edgesuite.net,direct
+DOMAIN-SUFFIX,gfx.ms,direct
+DOMAIN-SUFFIX,hotmail.com,direct
+DOMAIN-SUFFIX,live.com,direct
+DOMAIN-SUFFIX,live.net,direct
+DOMAIN-SUFFIX,lync.com,direct
+DOMAIN-SUFFIX,msappproxy.net,direct
+DOMAIN-SUFFIX,msauth.net,direct
+DOMAIN-SUFFIX,msauthimages.net,direct
+DOMAIN-SUFFIX,msecnd.net,direct
+DOMAIN-SUFFIX,msedge.net,direct
+DOMAIN-SUFFIX,msft.net,direct
+DOMAIN-SUFFIX,msftauth.net,direct
+DOMAIN-SUFFIX,msftauthimages.net,direct
+DOMAIN-SUFFIX,msftidentity.com,direct
+DOMAIN-SUFFIX,msidentity.com,direct
+DOMAIN-SUFFIX,msn.cn,direct
+DOMAIN-SUFFIX,msn.com,direct
+DOMAIN-SUFFIX,msocdn.com,direct
+DOMAIN-SUFFIX,msocsp.com,direct
+DOMAIN-SUFFIX,mstea.ms,direct
+DOMAIN-SUFFIX,o365weve.com,direct
+DOMAIN-SUFFIX,oaspapps.com,direct
+DOMAIN-SUFFIX,office.com,direct
+DOMAIN-SUFFIX,office.net,direct
+DOMAIN-SUFFIX,office365.com,direct
+DOMAIN-SUFFIX,officeppe.net,direct
+DOMAIN-SUFFIX,omniroot.com,direct
+DOMAIN-SUFFIX,onedrive.com,direct
+DOMAIN-SUFFIX,onenote.com,direct
+DOMAIN-SUFFIX,onenote.net,direct
+DOMAIN-SUFFIX,onestore.ms,direct
+DOMAIN-SUFFIX,outlook.com,direct
+DOMAIN-SUFFIX,outlookmobile.com,direct
+DOMAIN-SUFFIX,phonefactor.net,direct
+DOMAIN-SUFFIX,public-trust.com,direct
+DOMAIN-SUFFIX,sfbassets.com,direct
+DOMAIN-SUFFIX,sfx.ms,direct
+DOMAIN-SUFFIX,sharepoint.com,direct
+DOMAIN-SUFFIX,sharepointonline.com,direct
+DOMAIN-SUFFIX,skype.com,direct
+DOMAIN-SUFFIX,skypeassets.com,direct
+DOMAIN-SUFFIX,skypeforbusiness.com,direct
+DOMAIN-SUFFIX,staffhub.ms,direct
+DOMAIN-SUFFIX,svc.ms,direct
+DOMAIN-SUFFIX,sway-cdn.com,direct
+DOMAIN-SUFFIX,sway-extensions.com,direct
+DOMAIN-SUFFIX,sway.com,direct
+DOMAIN-SUFFIX,trafficmanager.net,direct
+DOMAIN-SUFFIX,uservoice.com,direct
+DOMAIN-SUFFIX,virtualearth.net,direct
+DOMAIN-SUFFIX,visualstudio.com,direct
+DOMAIN-SUFFIX,windows-ppe.net,direct
+DOMAIN-SUFFIX,windows.com,direct
+DOMAIN-SUFFIX,windows.net,direct
+DOMAIN-SUFFIX,windowsazure.com,direct
+DOMAIN-SUFFIX,windowsupdate.com,direct
+DOMAIN-SUFFIX,wunderlist.com,direct
+DOMAIN-SUFFIX,yammer.com,direct
+DOMAIN-SUFFIX,yammerusercontent.com,direct
 # > Speedtest；数量：18
 # > https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/QuantumultX/Speedtest/Speedtest.list
 DOMAIN,www.speedtest.net,Static
 DOMAIN,speed.dler.io,Static
-DOMAIN-suffix,cdnst.net,Static
-DOMAIN-suffix,cellmaps.com,Static
-DOMAIN-suffix,ekahau.cloud,Static
-DOMAIN-suffix,ekahau.com,Static
-DOMAIN-suffix,fast.com,Static
-DOMAIN-suffix,ookla.com,Static
-DOMAIN-suffix,ooklaserver.net,Static
-DOMAIN-suffix,pingtest.net,Static
-DOMAIN-suffix,speed.cloudflare.com,Static
-DOMAIN-suffix,speed.dler.io,Static
-DOMAIN-suffix,speedtest.co,Static
-DOMAIN-suffix,speedtest.net,Static
-DOMAIN-suffix,speedtestcustom.com,Static
-DOMAIN-suffix,webtest.net,Static
-DOMAIN-keyword,speedtest,Static
+DOMAIN-SUFFIX,cdnst.net,Static
+DOMAIN-SUFFIX,cellmaps.com,Static
+DOMAIN-SUFFIX,ekahau.cloud,Static
+DOMAIN-SUFFIX,ekahau.com,Static
+DOMAIN-SUFFIX,fast.com,Static
+DOMAIN-SUFFIX,ookla.com,Static
+DOMAIN-SUFFIX,ooklaserver.net,Static
+DOMAIN-SUFFIX,pingtest.net,Static
+DOMAIN-SUFFIX,speed.cloudflare.com,Static
+DOMAIN-SUFFIX,speed.dler.io,Static
+DOMAIN-SUFFIX,speedtest.co,Static
+DOMAIN-SUFFIX,speedtest.net,Static
+DOMAIN-SUFFIX,speedtestcustom.com,Static
+DOMAIN-SUFFIX,webtest.net,Static
+DOMAIN-KEYWORD,speedtest,Static
 USER-AGENT,SpeedTest*,Static
