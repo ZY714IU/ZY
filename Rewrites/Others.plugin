@@ -409,8 +409,8 @@ http-request ^https?://(.+\.)?boxjs\.(com|net) script-path=https://raw.githubuse
 # > substore
 # @Peng-YM
 # https://github.com/sub-store-org/Sub-Store/blob/master/config/QX.snippet
-http-request ^https?://sub\.store/((download)|api/(preview|sync|(utils/node-info))) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/sub-store_1.min.js, requires-body=true,timeout=10,tag=sub-store_1.min
-http-request ^https?://sub\.store script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/sub-store_0.min.js, requires-body=true,timeout=10,tag=sub-store_0.min
+http-request ^https?://sub\.store/((download)|api/(preview|sync|(utils/node-info))) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/sub_store_1.min.js, requires-body=true,timeout=10,tag=sub-store_1.min
+http-request ^https?://sub\.store script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/sub_store_0.min.js, requires-body=true,timeout=10,tag=sub-store_0.min
 
 
 # ⭐️
