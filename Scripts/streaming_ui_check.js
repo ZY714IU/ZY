@@ -1,5 +1,4 @@
-/*================
-https://github.com/KOP-XIAO/QuantumultX/blob/master/Scripts/streaming-ui-check.js
+/***
 
 Thanks to & modified from 
 1. https://gist.githubusercontent.com/Hyseen/b06e911a41036ebc36acf04ddebe7b9a/raw/nf_check.js
@@ -10,11 +9,16 @@ Thanks to & modified from
 For Quantumult-X 598+ ONLY!!
 
 2023-02-14
-支持 ChatGPT 检测
+
+- 支持 ChatGPT 检测
 
 [task_local]
+
 event-interaction https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/streaming-ui-check.js, tag=流媒体-解锁查询, img-url=checkmark.seal.system, enabled=true
-================*/
+
+@XIAO_KOP
+
+**/
 
 const BASE_URL = 'https://www.netflix.com/title/';
 const BASE_URL_YTB = "https://www.youtube.com/premium";
@@ -366,6 +370,7 @@ function testNf(filmId) {
         resolve("nf:"+result["Netflix"])
         return 
       }
+      resolve("Netflix Test Error")
     }, reason => {
       result["Netflix"] = "<b>Netflix: </b>检测超时 🚦"
       console.log(result["Netflix"])
