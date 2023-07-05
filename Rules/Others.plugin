@@ -11,78 +11,78 @@
 [Rule]
 # > ⭐️ DIRECT
 # > 微博
-DOMAIN, sdkapp.uve.weibo.com,DIRECT
-DOMAIN, weibointl.api.weibo.cn,DIRECT
+DOMAIN,sdkapp.uve.weibo.com,DIRECT
+DOMAIN,weibointl.api.weibo.cn,DIRECT
 # > 字节跳动
-DOMAIN, verify.zijieapi.com,DIRECT
-DOMAIN-suffix, byteimg.com,DIRECT
+DOMAIN,verify.zijieapi.com,DIRECT
+DOMAIN-suffix,byteimg.com,DIRECT
 # > 阿里系
-DOMAIN, amdc.m.taobao.com,DIRECT
-DOMAIN-suffix, ynuf.aliapp.org,DIRECT
+DOMAIN,amdc.m.taobao.com,DIRECT
+DOMAIN-suffix,ynuf.aliapp.org,DIRECT
 # > 个推
-DOMAIN-suffix, getui.com,DIRECT
+DOMAIN-suffix,getui.com,DIRECT
 # > 友盟
-DOMAIN-suffix, msg.umeng.com,DIRECT
-DOMAIN-suffix, msg.umengcloud.com,DIRECT
+DOMAIN-suffix,msg.umeng.com,DIRECT
+DOMAIN-suffix,msg.umengcloud.com,DIRECT
 # > 汽水音乐
-DOMAIN-suffix, qishui.com,DIRECT
+DOMAIN-suffix,qishui.com,DIRECT
 # > 腾讯
-DOMAIN, vd.l.qq.com,DIRECT
-DOMAIN, vi.l.qq.com,DIRECT
-DOMAIN, livew.l.qq.com,DIRECT
-DOMAIN, fairplay.l.qq.com,DIRECT
+DOMAIN,vd.l.qq.com,DIRECT
+DOMAIN,vi.l.qq.com,DIRECT
+DOMAIN,livew.l.qq.com,DIRECT
+DOMAIN,fairplay.l.qq.com,DIRECT
 # > 其他
-DOMAIN-suffix, ipleak.net,DIRECT
-DOMAIN-keyword, tkys,DIRECT
+DOMAIN-suffix,ipleak.net,DIRECT
+DOMAIN-keyword,tkys,DIRECT
 
 # > ⭐️ PROXY
 # > 必应国际版(不开分流则国内版)
-DOMAIN, www.bing.com,DIRECT
-DOMAIN, www.bing.net,DIRECT
-DOMAIN-suffix, bing.com,Static
-DOMAIN-suffix, bing.net,Static
-DOMAIN-suffix, bingapis.com,Static
-DOMAIN-suffix, bingapis.net,Static
+DOMAIN,www.bing.com,PROXY
+DOMAIN,www.bing.net,PROXY
+DOMAIN-suffix,bing.com,PROXY
+DOMAIN-suffix,bing.net,PROXY
+DOMAIN-suffix,bingapis.com,PROXY
+DOMAIN-suffix,bingapis.net,PROXY
 # > 机场
-DOMAIN-suffix,2220.it,Static
-DOMAIN-suffix,subs.usero.cn,Static
-DOMAIN-keyword,fishchips,Static
-DOMAIN-keyword,efcloud,Static
-DOMAIN-keyword,efshop,Static
-DOMAIN-keyword,mojie,Static
-DOMAIN-keyword,xsus,Static
+DOMAIN-suffix,2220.it,PROXY
+DOMAIN-suffix,subs.usero.cn,PROXY
+DOMAIN-keyword,fishchips,PROXY
+DOMAIN-keyword,efcloud,PROXY
+DOMAIN-keyword,efshop,PROXY
+DOMAIN-keyword,mojie,PROXY
+DOMAIN-keyword,xsus,PROXY
 # > 代理软件
-DOMAIN-suffix,quantumult.app,Static
-DOMAIN-suffix,nssurge.com,Static
-DOMAIN-suffix,surge-activation.com,Static
-DOMAIN-suffix,stash-activation.com,Static
-DOMAIN-keyword,loon,Static
+DOMAIN-suffix,quantumult.app,PROXY
+DOMAIN-suffix,nssurge.com,PROXY
+DOMAIN-suffix,surge-activation.com,PROXY
+DOMAIN-suffix,stash-activation.com,PROXY
+DOMAIN-keyword,loon,PROXY
 # > 其他
-DOMAIN-suffix,shrtm.nu,Static
-DOMAIN-suffix,adtidy.org,Static
-DOMAIN-suffix,adguard.com,Static
-DOMAIN-suffix,adguard.org,Static
-DOMAIN-suffix,missav.com,Static
-DOMAIN-suffix,cdnedge.live,Static
-DOMAIN-keyword,v2ex,Static
-DOMAIN-keyword,notion,Static
+DOMAIN-suffix,shrtm.nu,PROXY
+DOMAIN-suffix,adtidy.org,PROXY
+DOMAIN-suffix,adguard.com,PROXY
+DOMAIN-suffix,adguard.org,PROXY
+DOMAIN-suffix,missav.com,PROXY
+DOMAIN-suffix,cdnedge.live,PROXY
+DOMAIN-keyword,v2ex,PROXY
+DOMAIN-keyword,notion,PROXY
 # > anti-ip，针对部分软件显示ip归属地分流规则，注意！更改ip归属地有风险，不建议使用！
 # https://github.com/lwd-temp/anti-ip-attribution
 # > 微博
-//DOMAIN,api.weibo.cn,Static 
+//DOMAIN,api.weibo.cn,PROXY 
 # > 抖音；需家宽ip才生效，否则显示 “未知”
-//DOMAIN-suffix,amemv.com, Static
+//DOMAIN-suffix,amemv.com,PROXY
 # > 小红书
-DOMAIN,edith.xiaohongshu.com,Static
+DOMAIN,edith.xiaohongshu.com,PROXY
 # > 贴吧
-//DOMAIN,c.tieba.baidu.com,Static
+//DOMAIN,c.tieba.baidu.com,PROXY
 # > 知乎
-DOMAIN,api.zhihu.com,Static
+DOMAIN,api.zhihu.com,PROXY
 # > 哔哩哔哩
-DOMAIN,api.bilibili.com,Static
-DOMAIN,api.biliapi.net, Static
+DOMAIN,api.bilibili.com,PROXY
+DOMAIN,api.biliapi.net, PROXY
 # > 微信
-//DOMAIN,mp.weixin.qq.com,Static 
+//DOMAIN,mp.weixin.qq.com,PROXY 
 
 # > ⭐️ REJECT
 # > 微信键盘
