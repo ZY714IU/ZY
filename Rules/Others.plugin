@@ -152,142 +152,142 @@ IP-CIDR,180.76.76.200/32,REJECT
 //DOMAIN,im.tieba.baidu.com,REJECT
 //IP-CIDR,203.107.1.1/32,REJECT
 # > 阿里巴巴
-DOMAIN,adashx.ut.amap.com,reject
-DOMAIN,adashx.m.taobao.com,reject
-DOMAIN,adashbc.m.taobao.com,reject
-DOMAIN,adash-c.ut.taobao.com,reject
-DOMAIN,adashbc.ut.taobao.com,reject
-DOMAIN,adashxgc.ut.taobao.com,reject
+DOMAIN,adashx.ut.amap.com,REJECT
+DOMAIN,adashx.m.taobao.com,REJECT
+DOMAIN,adashbc.m.taobao.com,REJECT
+DOMAIN,adash-c.ut.taobao.com,REJECT
+DOMAIN,adashbc.ut.taobao.com,REJECT
+DOMAIN,adashxgc.ut.taobao.com,REJECT
 # > 高德地图
-DOMAIN,awaken.amap.com,reject
-DOMAIN,amap-aos-info-nogw.amap.com,reject
-DOMAIN,free-aos-cdn-image.amap.com,reject
+DOMAIN,awaken.amap.com,REJECT
+DOMAIN,amap-aos-info-nogw.amap.com,REJECT
+DOMAIN,free-aos-cdn-image.amap.com,REJECT
 # > 腾讯
-DOMAIN,adsmind.tc.qq.com,reject
-DOMAIN,adsmind.gdtimg.com,reject
-DOMAIN,adsmind.ugdtimg.com,reject
-DOMAIN,adsmind.apdcdn.tc.qq.com,reject
-DOMAIN,api.iegadp.qq.com,reject
-DOMAIN,e.qq.com,reject
-DOMAIN,l.qq.com,reject
-DOMAIN,gdt.qq.com,reject
-DOMAIN,mi.gdt.qq.com,reject
-DOMAIN,pgdt.gtimg.cn,reject
-DOMAIN,pgdt.gtimg.com,reject
-DOMAIN,pgdt.ugdtimg.com,reject
-DOMAIN,wa.gtimg.com,reject
-DOMAIN,wxsnsdy.wxs.qq.com,reject
-DOMAIN,wxsnsdythumb.wxs.qq.com,reject
-DOMAIN,livep.l.t002.ottcn.com,reject
-DOMAIN,splashqqlive.gtimg.com,reject
+DOMAIN,adsmind.tc.qq.com,REJECT
+DOMAIN,adsmind.gdtimg.com,REJECT
+DOMAIN,adsmind.ugdtimg.com,REJECT
+DOMAIN,adsmind.apdcdn.tc.qq.com,REJECT
+DOMAIN,api.iegadp.qq.com,REJECT
+DOMAIN,e.qq.com,REJECT
+DOMAIN,l.qq.com,REJECT
+DOMAIN,gdt.qq.com,REJECT
+DOMAIN,mi.gdt.qq.com,REJECT
+DOMAIN,pgdt.gtimg.cn,REJECT
+DOMAIN,pgdt.gtimg.com,REJECT
+DOMAIN,pgdt.ugdtimg.com,REJECT
+DOMAIN,wa.gtimg.com,REJECT
+DOMAIN,wxsnsdy.wxs.qq.com,REJECT
+DOMAIN,wxsnsdythumb.wxs.qq.com,REJECT
+DOMAIN,livep.l.t002.ottcn.com,REJECT
+DOMAIN,splashqqlive.gtimg.com,REJECT
 # > Safari 防跳转
-DOMAIN,app-site-association.cdn-apple.com,reject
+DOMAIN,app-site-association.cdn-apple.com,REJECT
 # > Apple 绕过 App 企业证书过期
-DOMAIN,ocsp.apple.com,reject
+DOMAIN,ocsp.apple.com,REJECT
 # > 其他 
-DOMAIN,api-adservices.apple.com,reject
-DOMAIN-SUFFIX,iadsdk.apple.com,reject
+DOMAIN,api-adservices.apple.com,REJECT
+DOMAIN-SUFFIX,iadsdk.apple.com,REJECT
 # > Google
-DOMAIN,ads.youtube.com,reject
-DOMAIN,adservice.google.com,reject
-DOMAIN,www.googleadservices.com,reject
-DOMAIN-SUFFIX,doubleclick.net,reject
-DOMAIN-SUFFIX,googleadservices.com,reject
-DOMAIN-SUFFIX,googleadsserving.com,reject
-DOMAIN-SUFFIX,googlesyndication.com,reject
-DOMAIN-SUFFIX,googletagservices.com,reject
-DOMAIN-KEYWORD,adservice.google.com,reject
+DOMAIN,ads.youtube.com,REJECT
+DOMAIN,adservice.google.com,REJECT
+DOMAIN,www.googleadservices.com,REJECT
+DOMAIN-SUFFIX,doubleclick.net,REJECT
+DOMAIN-SUFFIX,googleadservices.com,REJECT
+DOMAIN-SUFFIX,googleadsserving.com,REJECT
+DOMAIN-SUFFIX,googlesyndication.com,REJECT
+DOMAIN-SUFFIX,googletagservices.com,REJECT
+DOMAIN-KEYWORD,adservice.google.com,REJECT
 # > Amazon AD
-DOMAIN-SUFFIX,amazon-adsystem.com,reject
+DOMAIN-SUFFIX,amazon-adsystem.com,REJECT
 # > 网易云音乐
-DOMAIN,httpdns.n.netease.com,reject
-DOMAIN,iadmat.nosdn.127.net,reject
-DOMAIN,iadmatapk.nosdn.127.net,reject
-DOMAIN,iadmusicmat.music.126.net,reject
-DOMAIN,iadmusicmatvideo.music.126.net,reject
-DOMAIN-SUFFIX,163jiasu.com,reject
+DOMAIN,httpdns.n.netease.com,REJECT
+DOMAIN,iadmat.nosdn.127.net,REJECT
+DOMAIN,iadmatapk.nosdn.127.net,REJECT
+DOMAIN,iadmusicmat.music.126.net,REJECT
+DOMAIN,iadmusicmatvideo.music.126.net,REJECT
+DOMAIN-SUFFIX,163jiasu.com,REJECT
 # > 云闪付
-DOMAIN,ads.95516.com,reject
-DOMAIN,cm-10-138.getui.com,reject
-DOMAIN,switch.cup.com.cn,reject
-DOMAIN,sdk-conf.getui.com,reject
-DOMAIN,sdk.open.talk.getui.net,reject
-DOMAIN,tysdk.95516.com,reject
+DOMAIN,ads.95516.com,REJECT
+DOMAIN,cm-10-138.getui.com,REJECT
+DOMAIN,switch.cup.com.cn,REJECT
+DOMAIN,sdk-conf.getui.com,REJECT
+DOMAIN,sdk.open.talk.getui.net,REJECT
+DOMAIN,tysdk.95516.com,REJECT
 # > 迅雷 开屏广告
-DOMAIN,adsp.xunlei.com,reject
-DOMAIN,adapi.izuiyou.com,reject
-DOMAIN,etl.xlmc.sandai.net,reject
+DOMAIN,adsp.xunlei.com,REJECT
+DOMAIN,adapi.izuiyou.com,REJECT
+DOMAIN,etl.xlmc.sandai.net,REJECT
 # > 迅雷 解除版权限制
-DOMAIN,hub5emu.v6.shub.sandai.net,reject
-DOMAIN,hub5idx.v6.shub.sandai.net,reject
-DOMAIN,hub5btmain.v6.shub.sandai.net,reject
+DOMAIN,hub5emu.v6.shub.sandai.net,REJECT
+DOMAIN,hub5idx.v6.shub.sandai.net,REJECT
+DOMAIN,hub5btmain.v6.shub.sandai.net,REJECT
 # > 虎扑 开屏广告
-DOMAIN-SUFFIX,goblin.hupu.com,reject
+DOMAIN-SUFFIX,goblin.hupu.com,REJECT
 # > 彩云天气
-DOMAIN,ad.cyapi.cn,reject
+DOMAIN,ad.cyapi.cn,REJECT
 # > 58同城
-DOMAIN,adshow.58.com,reject
+DOMAIN,adshow.58.com,REJECT
 # >美图秀秀
-DOMAIN-SUFFIX,xiuxiu.video.xiuxiustatic.com,reject
-DOMAIN-SUFFIX,qchannel01.cn,reject
-DOMAIN-SUFFIX,stat.meitudata.com,reject
-DOMAIN-SUFFIX,rabbit.meitustat.com,reject
-DOMAIN-SUFFIX,strategy.app.meitudata.com,reject
-DOMAIN-SUFFIX,meepo.meitustat.com,reject
-DOMAIN-SUFFIX,gondar.meitustat.com,reject
-DOMAIN-SUFFIX,xiuxiu-im-connd.meitu.com,reject
-DOMAIN-SUFFIX,openapi.mtlab.meitu.com,reject
-DOMAIN-SUFFIX,xiuxiu-im-route.meitu.com,reject
-DOMAIN-SUFFIX,push.meitu.com,reject
-DOMAIN-SUFFIX,i.qchannel03.cn,reject
+DOMAIN-SUFFIX,xiuxiu.video.xiuxiustatic.com,REJECT
+DOMAIN-SUFFIX,qchannel01.cn,REJECT
+DOMAIN-SUFFIX,stat.meitudata.com,REJECT
+DOMAIN-SUFFIX,rabbit.meitustat.com,REJECT
+DOMAIN-SUFFIX,strategy.app.meitudata.com,REJECT
+DOMAIN-SUFFIX,meepo.meitustat.com,REJECT
+DOMAIN-SUFFIX,gondar.meitustat.com,REJECT
+DOMAIN-SUFFIX,xiuxiu-im-connd.meitu.com,REJECT
+DOMAIN-SUFFIX,openapi.mtlab.meitu.com,REJECT
+DOMAIN-SUFFIX,xiuxiu-im-route.meitu.com,REJECT
+DOMAIN-SUFFIX,push.meitu.com,REJECT
+DOMAIN-SUFFIX,i.qchannel03.cn,REJECT
 # > 美图秀秀 开屏广告
-DOMAIN-SUFFIX,adui.tg.meitu.com,reject
+DOMAIN-SUFFIX,adui.tg.meitu.com,REJECT
 # > 央视频 开屏广告
-DOMAIN,wimg.yangshipin.cn,reject
+DOMAIN,wimg.yangshipin.cn,REJECT
 # > 数字联盟
-DOMAIN-SUFFIX,shuzilm.cn,reject
+DOMAIN-SUFFIX,shuzilm.cn,REJECT
 # > 快手联
-DOMAIN,open.e.kuaishou.com,reject
+DOMAIN,open.e.kuaishou.com,REJECT
 # > 有道翻译官
-DOMAIN,dsp-impr2.youdao.com,reject
-DOMAIN,log-yex.youdao.com,reject
-DOMAIN,download.ydstatic.com,reject
-DOMAIN,b-clkservice.youdao.com,reject
-DOMAIN,dsp-impr2.youdao.com,reject
-DOMAIN,img2.360buyimg.com,reject
+DOMAIN,dsp-impr2.youdao.com,REJECT
+DOMAIN,log-yex.youdao.com,REJECT
+DOMAIN,download.ydstatic.com,REJECT
+DOMAIN,b-clkservice.youdao.com,REJECT
+DOMAIN,dsp-impr2.youdao.com,REJECT
+DOMAIN,img2.360buyimg.com,REJECT
 # > 安全浏览限制解除
-DOMAIN,u3.ucweb.com,reject
-DOMAIN,lookup.api.bsb.baidu.com,reject
-DOMAIN,safebrowsing.g.applimg.com,reject
-DOMAIN,safebrowsing.urlsec.qq.com,reject
-DOMAIN,safebrowsing.googleapis.com,reject
-DOMAIN,proxy.safebrowsing.apple,reject
-DOMAIN,token.safebrowsing.apple,reject
-DOMAIN-SUFFIX,safebrowsing.apple,reject
+DOMAIN,u3.ucweb.com,REJECT
+DOMAIN,lookup.api.bsb.baidu.com,REJECT
+DOMAIN,safebrowsing.g.applimg.com,REJECT
+DOMAIN,safebrowsing.urlsec.qq.com,REJECT
+DOMAIN,safebrowsing.googleapis.com,REJECT
+DOMAIN,proxy.safebrowsing.apple,REJECT
+DOMAIN,token.safebrowsing.apple,REJECT
+DOMAIN-SUFFIX,safebrowsing.apple,REJECT
 # > 其他
-DOMAIN-KEYWORD,adsystem,reject
-DOMAIN-KEYWORD,adservice,reject
+DOMAIN-KEYWORD,adsystem,REJECT
+DOMAIN-KEYWORD,adservice,REJECT
 
 # > AppleDirect；数量：28条
 # > https://github.com/ACL4SSR/ACL4SSR/blob/master/Clash/Ruleset/Apple.list
-DOMAIN,apple.comscoreresearch.com,direct
-DOMAIN-SUFFIX,aaplimg.com,direct
-DOMAIN-SUFFIX,akadns.net,direct
-DOMAIN-SUFFIX,apple-cloudkit.com,direct
-DOMAIN-SUFFIX,apple-mapkit.com,direct
-DOMAIN-SUFFIX,apple.co,direct
-DOMAIN-SUFFIX,apple.com,direct
-DOMAIN-SUFFIX,apple.com.cn,direct
-DOMAIN-SUFFIX,apple.news,direct
-DOMAIN-SUFFIX,appstore.com,direct
-DOMAIN-SUFFIX,cdn-apple.com,direct
-DOMAIN-SUFFIX,crashlytics.com,direct
-DOMAIN-SUFFIX,icloud-content.com,direct
-DOMAIN-SUFFIX,icloud.com,direct
-DOMAIN-SUFFIX,icloud.com.cn,direct
-DOMAIN-SUFFIX,itunes.com,direct
-DOMAIN-SUFFIX,me.com,direct
-DOMAIN-SUFFIX,mzstatic.com,direct
+DOMAIN,apple.comscoreresearch.com,DIRECT
+DOMAIN-SUFFIX,aaplimg.com,DIRECT
+DOMAIN-SUFFIX,akadns.net,DIRECT
+DOMAIN-SUFFIX,apple-cloudkit.com,DIRECT
+DOMAIN-SUFFIX,apple-mapkit.com,DIRECT
+DOMAIN-SUFFIX,apple.co,DIRECT
+DOMAIN-SUFFIX,apple.com,DIRECT
+DOMAIN-SUFFIX,apple.com.cn,DIRECT
+DOMAIN-SUFFIX,apple.news,DIRECT
+DOMAIN-SUFFIX,appstore.com,DIRECT
+DOMAIN-SUFFIX,cdn-apple.com,DIRECT
+DOMAIN-SUFFIX,crashlytics.com,DIRECT
+DOMAIN-SUFFIX,icloud-content.com,DIRECT
+DOMAIN-SUFFIX,icloud.com,DIRECT
+DOMAIN-SUFFIX,icloud.com.cn,DIRECT
+DOMAIN-SUFFIX,itunes.com,DIRECT
+DOMAIN-SUFFIX,me.com,DIRECT
+DOMAIN-SUFFIX,mzstatic.com,DIRECT
 IP-CIDR,17.0.0.0/8,direct
 IP-CIDR,63.92.224.0/19,direct
 IP-CIDR,65.199.22.0/23,direct
