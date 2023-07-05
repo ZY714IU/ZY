@@ -33,11 +33,10 @@ https://github.com/RuCu6/QuanX/blob/main/Scripts/weibo.js
               item?.adType === "推荐"
 ================*/
 
-// 2023-06-21 21:20
+// 2023-07-05 22:25
 const url = $request.url;
 if (!$response.body) $done({});
 let body = $response.body;
-
 // 微博详情页菜单配置
 const itemMenusConfig = {
   creatortypeask: false, // 转发任务
@@ -391,7 +390,7 @@ if (url.includes("/interface/sdk/sdkad.php")) {
           }
           newItems.push(item);
         } else if (itemId === "100505_-_top8") {
-        /* if (item.items) {
+       /* if (item.items) {
             item.items = item.items.filter(
               (i) =>
                 i.itemId === "100505_-_album" || // 我的相册
@@ -746,28 +745,28 @@ function isAd(data) {
 
 // 移除头像挂件,关注按钮
 function removeAvatar(data) {
-  if (data.user?.avatargj_id) {
+  if (data?.user?.avatargj_id) {
     delete data.user.avatargj_id;
   }
-  if (data.user?.avatar_extend_info) {
+  if (data?.user?.avatar_extend_info) {
     delete data.user.avatar_extend_info;
   }
-  if (data.user?.cardid) {
+  if (data?.user?.cardid) {
     delete data.user.cardid;
   }
-  if (data.user?.icons) {
+  if (data?.user?.icons) {
     delete data.user.icons;
   }
-  if (data.buttons) {
+  if (data?.buttons) {
     delete data.buttons;
   }
-  if (data.cardid) {
+  if (data?.cardid) {
     delete data.cardid;
   }
-  if (data.icons) {
+  if (data?.icons) {
     delete data.icons;
   }
-  if (data.pic_bg_new) {
+  if (data?.pic_bg_new) {
     delete data.pic_bg_new;
   }
   return data;
@@ -804,3 +803,4 @@ function removeFeedAd(item) {
     delete item.comment_summary;
   }
 }
+
