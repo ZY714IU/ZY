@@ -237,7 +237,7 @@ skip-proxy = iosapps.itunes.apple.com
 # author @RuCu6，@zmqcherish，@ddgksf2013
 # https://github.com/RuCu6/QuanX/blob/main/Rewrites/Cube/weibo.snippet
 # 开屏广告 v1/ad|interface/sdk|wbapplua
-http-response ^https?://(bootpreload|(sdk|wb)app)\.uve\.weibo\.com/(v1/ad|interface/sdk|wbapplua) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/weibo.js,requires-body=true,timeout=10,tag=weibo
+http-response ^https?://(bootpreload|(sdk|wb)app)\.uve\.weibo\.com/(v1/ad|interface/sdk|wbapplua) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/weibo.js,requires-body=true,timeout=10,tag=微博
 # 关注信息流 statuses/container_timeline_unread
 # 推荐信息流 statuses/container_timeline_hot
 # 分组信息流 statuses/container_timeline\?
@@ -259,7 +259,7 @@ http-response ^https?://(bootpreload|(sdk|wb)app)\.uve\.weibo\.com/(v1/ad|interf
 # 搜索信息流超话 page
 # 偶现的头像挂件 container/asyn
 # 精选信息流挂件 flowlist
-http-response ^https?://api\.weibo\.cn/2/((statuses|profile|search)/?(container_timeline(\?|_unread|_hot)|all|finder|extend|show|me)|comments/build|video/tiny_stream|messageflow|direct_messages|checkin|push/active|client/publisher|cardlist\?gsid|page|container/asyn|flowlist) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/weibo.js,requires-body=true,timeout=10,tag=weibo
+http-response ^https?://api\.weibo\.cn/2/((statuses|profile|search)/?(container_timeline(\?|_unread|_hot)|all|finder|extend|show|me)|comments/build|video/tiny_stream|messageflow|direct_messages|checkin|push/active|client/publisher|cardlist\?gsid|page|container/asyn|flowlist) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/weibo.js,requires-body=true,timeout=10,tag=微博
 # https://github.com/ddgksf2013/Rewrite/blob/master/AdBlock/Weibo.conf
 # 超话信息流 container_timeline_topic
 # 未登录搜索推荐词 cardlist
@@ -269,7 +269,7 @@ http-response ^https?://api\.weibo\.cn/2/((statuses|profile|search)/?(container_
 # (轻享版)趋势卡片 .*feed&a=trends
 # (轻享版)热搜置顶 \?a=search_topic
 # (轻享版)我的vip栏 \?a=user_center
-http-response ^https?://(weibointl\.)?api\.weibo\.cn/(2/)?(statuses/container_timeline_topic|guest/(cardlist|(statuses_unread_hot_)?timeline)|portal\.php(.*(get_coopen_ads|feed&a=trends)|\?a=(search_topic|user_center))) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/weibo_a.js,requires-body=true,timeout=10,tag=weibo
+http-response ^https?://(weibointl\.)?api\.weibo\.cn/(2/)?(statuses/container_timeline_topic|guest/(cardlist|(statuses_unread_hot_)?timeline)|portal\.php(.*(get_coopen_ads|feed&a=trends)|\?a=(search_topic|user_center))) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/weibo_a.js,requires-body=true,timeout=10,tag=微博
 # (轻享版)搜索框推荐词 get_searching_info
 ^https?://weibointl\.api\.weibo\.cn/portal\.php.*user&a=get_searching_info data="https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/weibo_search_info.json" header="Content-Type: text/html"
 # (轻享版)搜索框下方热搜 search_topic
@@ -288,12 +288,12 @@ http-response ^https?://(weibointl\.)?api\.weibo\.cn/(2/)?(statuses/container_ti
 # 右上角活动 x/resource/top/activity
 # 观影页广告 pgc/page/cinema/tab
 # 追番页广告 pgc/page/bangumi
-http-response ^https?://(app|api|grpc)\.bili(bil|ap)i\.(com|net)/(x/)?(v2/)?(splash/((brand/|event/)?list2?|show)|feed/index(\?|/story)|account/(mine(/ipad)?|myinfo)|resource/(show|top)/(tab|skin|activity)|pgc/page/(cinema/tab|bangumi)) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/bilibili.js,requires-body=true, timeout=10,tag=bilibili
+http-response ^https?://(app|api|grpc)\.bili(bil|ap)i\.(com|net)/(x/)?(v2/)?(splash/((brand/|event/)?list2?|show)|feed/index(\?|/story)|account/(mine(/ipad)?|myinfo)|resource/(show|top)/(tab|skin|activity)|pgc/page/(cinema/tab|bangumi)) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/bilibili.js,requires-body=true, timeout=10,tag=哔哩哔哩
 # https://github.com/ddgksf2013/Rewrite/blob/master/AdBlock/Bilibili.conf
 # 直播广告 index/getInfoByRoom
 # 直播顶部轮播图 index/feed
 # 直播广告悬浮窗 ecommerce-user/get_shopping
-http-response ^https?://api\.live\.bilibili\.com/xlive/(app-(room|interface)|e-commerce-interface)/v\d/(index/(getInfoByRoom|feed)|ecommerce-user/get_shopping) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/bilibili_a.js,requires-body=true,timeout=10,tag=bilibili
+http-response ^https?://api\.live\.bilibili\.com/xlive/(app-(room|interface)|e-commerce-interface)/v\d/(index/(getInfoByRoom|feed)|ecommerce-user/get_shopping) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/bilibili_a.js,requires-body=true,timeout=10,tag=哔哩哔哩
 # https://github.com/BiliUniverse/ADBlock
 # 搜索页广告 Search/SearchAll
 # 动态页广告 Dynamic/Dyn(All|Video)
@@ -303,7 +303,7 @@ http-response ^https?://api\.live\.bilibili\.com/xlive/(app-(room|interface)|e-c
 # ⚠️以下两条QuantumultX可能不可用！
 # 交互式弹幕 DM/(DmView|DmSegMobile)
 # 青少年模式 Teenagers/ModeStatus
-http-response ^https?://(app|api|grpc)\.bili(bil|ap)i\.(com|net)/bilibili\.(polymer\.)?(app\.)?(search|dynamic|playurl|view|main\.community\.reply|community\.service\.dm|interface)\.v\d\.(Search/SearchAll|Dynamic/Dyn(All|Video)|View/(View|TFInfo)|PlayURL/PlayView|Reply/MainList|DM/(DmView|DmSegMobile)|Teenagers/ModeStatus) requires-body=1,binary-body-mode=1,script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/bilibili_proto_b.js,requires-body=true, argument=http-response,timeout=10,tag=bilibili
+http-response ^https?://(app|api|grpc)\.bili(bil|ap)i\.(com|net)/bilibili\.(polymer\.)?(app\.)?(search|dynamic|playurl|view|main\.community\.reply|community\.service\.dm|interface)\.v\d\.(Search/SearchAll|Dynamic/Dyn(All|Video)|View/(View|TFInfo)|PlayURL/PlayView|Reply/MainList|DM/(DmView|DmSegMobile)|Teenagers/ModeStatus) requires-body=1,binary-body-mode=1,script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/bilibili_proto_b.js,requires-body=true, argument=http-response,timeout=10,tag=哔哩哔哩
 
 # > 知乎
 # author @blackmatrix7，@RuCu6
@@ -335,7 +335,7 @@ http-response ^http://amdc\.m\.taobao\.com/amdc/mobileDispatch script-path=https
 # 首页底部卡片 faas/amap-navigation/main-page\?
 # 打车页处理 promotion-web/resource
 # 打车页卡片 sharedtrip/taxi/.*tips
-http-response ^https?://m5(-zb)?\.amap\.com/ws/(shield/(search)?_?/?(poi)?/?(city_feed|search/sp|mps|tips|poi/detail|sug|nearbyrec|common/coupon|dsp/profile/index|frogserver/aocs)|mapapi/poi/infolite|valueadded/alimama/splash|faas/amap-navigation/main-page\?|promotion-web/resource|sharedtrip/taxi/.*tips) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/amap.js,requires-body=true,tag=amap
+http-response ^https?://m5(-zb)?\.amap\.com/ws/(shield/(search)?_?/?(poi)?/?(city_feed|search/sp|mps|tips|poi/detail|sug|nearbyrec|common/coupon|dsp/profile/index|frogserver/aocs)|mapapi/poi/infolite|valueadded/alimama/splash|faas/amap-navigation/main-page\?|promotion-web/resource|sharedtrip/taxi/.*tips) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/amap.js,requires-body=true,tag=高德地图
 
 # > 小红书
 # author @RuCu6
@@ -344,22 +344,22 @@ http-response ^https?://m5(-zb)?\.amap\.com/ws/(shield/(search)?_?/?(poi)?/?(cit
 # 开屏广告 system_service/(splash_)?config
 # 推荐页信息流 homefeed/client
 # 关注页感兴趣的人 followfeed
-http-response ^https?://edith\.xiaohongshu\.com/api/sns/v\d+?/(search/(banner|trending|note)|system_service/(splash_)?config|homefeed/client|followfeed) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/xiaohongshu.js,requires-body=true,tag=xiaohongshu
+http-response ^https?://edith\.xiaohongshu\.com/api/sns/v\d+?/(search/(banner|trending|note)|system_service/(splash_)?config|homefeed/client|followfeed) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/xiaohongshu.js,requires-body=true,tag=小红书
 
 # > 百度贴吧
 # @app2smile
 # https://github.com/app2smile/rules/blob/master/module/tieba-qx.conf
-http-response ^https?://(tiebac|c\.tieba)\.baidu\.com/(c/f/(frs/(page|threadlist|generalTabList)|pb/page|excellent/personalized)$|tiebaads/commonbatch|c/s/sync$) script-path=https://github.com/ZY714IU/ZY/raw/main/Scripts/baidu_tieba_json.js,requires-body=true, timeout=10,tag=tieba-json
-http-response ^https?://(tiebac|c\.tieba)\.baidu\.com/c/f/(frs/(page|threadlist|generalTabList)|pb/page|excellent/personalized)\?cmd script-path=https://github.com/ZY714IU/ZY/raw/main/Scripts/baidu_tieba_proto.js,requires-body=true,binary-body-mode=true,timeout=10,tag=tieba-proto
+http-response ^https?://(tiebac|c\.tieba)\.baidu\.com/(c/f/(frs/(page|threadlist|generalTabList)|pb/page|excellent/personalized)$|tiebaads/commonbatch|c/s/sync$) script-path=https://github.com/ZY714IU/ZY/raw/main/Scripts/baidu_tieba_json.js,requires-body=true, timeout=10,tag=贴吧
+http-response ^https?://(tiebac|c\.tieba)\.baidu\.com/c/f/(frs/(page|threadlist|generalTabList)|pb/page|excellent/personalized)\?cmd script-path=https://github.com/ZY714IU/ZY/raw/main/Scripts/baidu_tieba_proto.js,requires-body=true,binary-body-mode=true,timeout=10,tag=贴吧
 
 # > 百度搜索
 # @Adblock4limbo，@RuCu6，@app2smile
 # 搜索首页广告
-http-response ^https?://(www|m)\.baidu\.com(/|/\?ref.*)$ script-path=https://github.com/ZY714IU/ZY/raw/main/Scripts/baidu_index.js,requires-body=true,timeout=10,tag=baidu_index
+http-response ^https?://(www|m)\.baidu\.com(/|/\?ref.*)$ script-path=https://github.com/ZY714IU/ZY/raw/main/Scripts/baidu_index.js,requires-body=true,timeout=10,tag=百度搜索首页广告
 # 防跳转AppStore
-http-response ^https?://boxer\.baidu\.com/scheme\?scheme script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/baidu-no-redirect.js,requires-body=true,timeout=10,tag=baidu-no-redirect
+http-response ^https?://boxer\.baidu\.com/scheme\?scheme script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/baidu-no-redirect.js,requires-body=true,timeout=10,tag=百度防跳转AppStore
 # 搜索结果广告
-http-response ^https?://(www|m)\.baidu\.com/.*word=.* script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/baidu-search.js,requires-body=true,timeout=10,tag=搜索结果广告
+http-response ^https?://(www|m)\.baidu\.com/.*word=.* script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/baidu-search.js,requires-body=true,timeout=10,tag=百度搜索结果广告
 
 # > 网易云音乐
 # vip (request) @Weiren
@@ -389,7 +389,7 @@ http-response ^https?://youtubei\.googleapis\.com/youtubei/v1/(browse|next|playe
 # 商品推广 feed/detail
 # 首页广告 main/index
 # 推广广告 detail
-http-response ^https?://api\.coolapk\.com/v\d/(feed/(replyList|detail)|main/index|dataList) script-path=https://github.com/ZY714IU/ZY/raw/main/Scripts/coolapk.js,requires-body=true,timeout=10,tag=coolapk
+http-response ^https?://api\.coolapk\.com/v\d/(feed/(replyList|detail)|main/index|dataList) script-path=https://github.com/ZY714IU/ZY/raw/main/Scripts/coolapk.js,requires-body=true,timeout=10,tag=酷安
 
 # > pornhub
 # @Adblock4limbo
