@@ -104,119 +104,119 @@ DOMAIN,saxs.sina.com.cn,REJECT
 DOMAIN,beacon.sina.com.cn,REJECT
 # > 哔哩哔哩 后台间歇性失效，请在分流屏蔽以下域名
 # > 注意！屏蔽会导致登录和安全相关功能无法使用
-host,mall.bilibili.com,REJECT
-host,passport.bilibili.com,REJECT
+DOMAIN,mall.bilibili.com,REJECT
+DOMAIN,passport.bilibili.com,REJECT
 # > 知乎
-host,appcloud.zhihu.com,REJECT
-host,appcloud2.in.zhihu.com,REJECT
-host,crash2.zhihu.com,REJECT
-host,mqtt.zhihu.com,REJECT
-host,sugar.zhihu.com,REJECT
+DOMAIN,appcloud.zhihu.com,REJECT
+DOMAIN,appcloud2.in.zhihu.com,REJECT
+DOMAIN,crash2.zhihu.com,REJECT
+DOMAIN,mqtt.zhihu.com,REJECT
+DOMAIN,sugar.zhihu.com,REJECT
 ip-cidr,118.89.204.198/32,REJECT
 ip-cidr,103.41.167.237/32,REJECT
 ip-cidr6,2402:4e00:1200:ed00:0:9089:6dac:96b6/128,REJECT
 # > 字节跳动
-host,ad.toutiao.com,REJECT
-host,ad-sign.byteimg.com,REJECT
-host,im-x.jd.com,REJECT
-host,dig.bdurl.net,REJECT
-host,dig.zjurl.cn,REJECT
-host,dsp.toutiao.com,REJECT
-host,api-access.pangolin-sdk-toutiao-b.com,REJECT
-host,api-access.pangolin-sdk-toutiao.com,REJECT
-host-suffix,snssdk.com,REJECT
-host-suffix,zijieapi.com,REJECT
-host-suffix,pangolin-sdk-toutiao-b.com,REJECT
-host-suffix,pangolin-sdk-toutiao.com,REJECT
-host,sf3-fe-tos.pglstatp-toutiao.com,REJECT
-host,sf3-ttcdn-tos.pstatp.com,REJECT
-host-suffix,pglstatp-toutiao.com,REJECT
-host-suffix,byteorge.com,REJECT
-host-suffix,bytegoofy.com,REJECT
-host-suffix,bytedance.com,REJECT
-host-suffix,p6-ad-sign.byteimg.com,REJECT
-host-suffix,p9-ad-sign.byteimg.com,REJECT
-host-suffix,rp.hpplay.cn,REJECT
-host-suffix,shark-tracer.netease.com,REJECT
+DOMAIN,ad.toutiao.com,REJECT
+DOMAIN,ad-sign.byteimg.com,REJECT
+DOMAIN,im-x.jd.com,REJECT
+DOMAIN,dig.bdurl.net,REJECT
+DOMAIN,dig.zjurl.cn,REJECT
+DOMAIN,dsp.toutiao.com,REJECT
+DOMAIN,api-access.pangolin-sdk-toutiao-b.com,REJECT
+DOMAIN,api-access.pangolin-sdk-toutiao.com,REJECT
+DOMAIN-suffix,snssdk.com,REJECT
+DOMAIN-suffix,zijieapi.com,REJECT
+DOMAIN-suffix,pangolin-sdk-toutiao-b.com,REJECT
+DOMAIN-suffix,pangolin-sdk-toutiao.com,REJECT
+DOMAIN,sf3-fe-tos.pglstatp-toutiao.com,REJECT
+DOMAIN,sf3-ttcdn-tos.pstatp.com,REJECT
+DOMAIN-suffix,pglstatp-toutiao.com,REJECT
+DOMAIN-suffix,byteorge.com,REJECT
+DOMAIN-suffix,bytegoofy.com,REJECT
+DOMAIN-suffix,bytedance.com,REJECT
+DOMAIN-suffix,p6-ad-sign.byteimg.com,REJECT
+DOMAIN-suffix,p9-ad-sign.byteimg.com,REJECT
+DOMAIN-suffix,rp.hpplay.cn,REJECT
+DOMAIN-suffix,shark-tracer.netease.com,REJECT
 # > 百度
-host-SUFFIX,pos.baidu.com,REJECT
+DOMAIN-SUFFIX,pos.baidu.com,REJECT
 # > 百度地图
-host,afd.baidu.com,REJECT
-host,afdconf.baidu.com,REJECT
-host,httpdns.baidubce.com,REJECT
-host,lc.map.baidu.com,REJECT
+DOMAIN,afd.baidu.com,REJECT
+DOMAIN,afdconf.baidu.com,REJECT
+DOMAIN,httpdns.baidubce.com,REJECT
+DOMAIN,lc.map.baidu.com,REJECT
 # > 贴吧、地图 屏蔽域名dns查询(否则去广告不干净)
-host,httpdns.baidubce.com,REJECT
+DOMAIN,httpdns.baidubce.com,REJECT
 ip-cidr,180.76.76.200/32,REJECT
 # > 贴吧屏蔽 ws (副作用；消息通知功能失效，需手动进入查看)，强制帖子接口走http
-//host,im.tieba.baidu.com,REJECT
+//DOMAIN,im.tieba.baidu.com,REJECT
 //ip-cidr,203.107.1.1/32,REJECT
 # > 阿里巴巴
-host,adashx.ut.amap.com,reject
-host,adashx.m.taobao.com,reject
-host,adashbc.m.taobao.com,reject
-host,adash-c.ut.taobao.com,reject
-host,adashbc.ut.taobao.com,reject
-host,adashxgc.ut.taobao.com,reject
+DOMAIN,adashx.ut.amap.com,reject
+DOMAIN,adashx.m.taobao.com,reject
+DOMAIN,adashbc.m.taobao.com,reject
+DOMAIN,adash-c.ut.taobao.com,reject
+DOMAIN,adashbc.ut.taobao.com,reject
+DOMAIN,adashxgc.ut.taobao.com,reject
 # > 高德地图
-host,awaken.amap.com,reject
-host,amap-aos-info-nogw.amap.com,reject
-host,free-aos-cdn-image.amap.com,reject
+DOMAIN,awaken.amap.com,reject
+DOMAIN,amap-aos-info-nogw.amap.com,reject
+DOMAIN,free-aos-cdn-image.amap.com,reject
 # > 腾讯
-host,adsmind.tc.qq.com,reject
-host,adsmind.gdtimg.com,reject
-host,adsmind.ugdtimg.com,reject
-host,adsmind.apdcdn.tc.qq.com,reject
-host,api.iegadp.qq.com,reject
-host,e.qq.com,reject
-host,l.qq.com,reject
-host,gdt.qq.com,reject
-host,mi.gdt.qq.com,reject
-host,pgdt.gtimg.cn,reject
-host,pgdt.gtimg.com,reject
-host,pgdt.ugdtimg.com,reject
-host,wa.gtimg.com,reject
-host,wxsnsdy.wxs.qq.com,reject
-host,wxsnsdythumb.wxs.qq.com,reject
-host,livep.l.t002.ottcn.com,reject
-host,splashqqlive.gtimg.com,reject
+DOMAIN,adsmind.tc.qq.com,reject
+DOMAIN,adsmind.gdtimg.com,reject
+DOMAIN,adsmind.ugdtimg.com,reject
+DOMAIN,adsmind.apdcdn.tc.qq.com,reject
+DOMAIN,api.iegadp.qq.com,reject
+DOMAIN,e.qq.com,reject
+DOMAIN,l.qq.com,reject
+DOMAIN,gdt.qq.com,reject
+DOMAIN,mi.gdt.qq.com,reject
+DOMAIN,pgdt.gtimg.cn,reject
+DOMAIN,pgdt.gtimg.com,reject
+DOMAIN,pgdt.ugdtimg.com,reject
+DOMAIN,wa.gtimg.com,reject
+DOMAIN,wxsnsdy.wxs.qq.com,reject
+DOMAIN,wxsnsdythumb.wxs.qq.com,reject
+DOMAIN,livep.l.t002.ottcn.com,reject
+DOMAIN,splashqqlive.gtimg.com,reject
 # > Safari 防跳转
-host,app-site-association.cdn-apple.com,reject
+DOMAIN,app-site-association.cdn-apple.com,reject
 # > Apple 绕过 App 企业证书过期
-host,ocsp.apple.com,reject
+DOMAIN,ocsp.apple.com,reject
 # > 其他 
-host,api-adservices.apple.com,reject
-host-suffix,iadsdk.apple.com,reject
+DOMAIN,api-adservices.apple.com,reject
+DOMAIN-suffix,iadsdk.apple.com,reject
 # > Google
-host, ads.youtube.com, reject
-host, adservice.google.com, reject
-host, www.googleadservices.com, reject
-host-suffix, doubleclick.net, reject
-host-suffix, googleadservices.com, reject
-host-suffix, googleadsserving.com, reject
-host-suffix, googlesyndication.com, reject
-host-suffix, googletagservices.com, reject
-host-keyword, adservice.google.com, reject
+DOMAIN,ads.youtube.com,reject
+DOMAIN,adservice.google.com,reject
+DOMAIN,www.googleadservices.com,reject
+DOMAIN-suffix,doubleclick.net,reject
+DOMAIN-suffix,googleadservices.com,reject
+DOMAIN-suffixgoogleadsserving.com,reject
+DOMAIN-suffix,googlesyndication.com,reject
+DOMAIN-suffix,googletagservices.com,reject
+DOMAIN-keyword,adservice.google.com,reject
 # > Amazon AD
-host-suffix, amazon-adsystem.com, reject
+DOMAIN-suffix,amazon-adsystem.com,reject
 # > 网易云音乐
-host, httpdns.n.netease.com, reject
-host, iadmat.nosdn.127.net, reject
-host, iadmatapk.nosdn.127.net, reject
-host, iadmusicmat.music.126.net, reject
-host, iadmusicmatvideo.music.126.net, reject
-host-suffix, 163jiasu.com, reject
+DOMAIN,httpdns.n.netease.com,reject
+DOMAIN,iadmat.nosdn.127.net,reject
+DOMAIN,iadmatapk.nosdn.127.net,reject
+DOMAIN,iadmusicmat.music.126.net,reject
+DOMAIN,iadmusicmatvideo.music.126.net,reject
+DOMAIN-suffix,163jiasu.com,reject
 # > 云闪付
-host, ads.95516.com, reject
-host, cm-10-138.getui.com, reject
-host, switch.cup.com.cn, reject
-host, sdk-conf.getui.com, reject
-host, sdk.open.talk.getui.net, reject
-host, tysdk.95516.com, reject
+host,ads.95516.com,reject
+host,cm-10-138.getui.com,reject
+host,switch.cup.com.cn,reject
+host,sdk-conf.getui.com,reject
+host,sdk.open.talk.getui.net,reject
+host,tysdk.95516.com,reject
 # > 迅雷 开屏广告
-host, adsp.xunlei.com, reject
-host, adapi.izuiyou.com, reject
-host, etl.xlmc.sandai.net, reject
+host,adsp.xunlei.com,reject
+host,adapi.izuiyou.com,reject
+host,etl.xlmc.sandai.net,reject
 # > 迅雷 解除版权限制
 host, hub5emu.v6.shub.sandai.net, reject
 host, hub5idx.v6.shub.sandai.net, reject
