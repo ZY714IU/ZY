@@ -12,7 +12,7 @@
 skip-proxy = iosapps.itunes.apple.com
 
 
-# 分流⭐️
+# 分流
 [Rule]
 # > Type:DOMAIN,DOMAIN-SUFFIX,DOMAIN-KEYWORD,USER-AGENT,URL-REGEX,IP-CIDR
 # > 优先级：本地-插件-订阅规则集，ip和域名优先
