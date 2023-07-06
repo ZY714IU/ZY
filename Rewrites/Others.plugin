@@ -627,7 +627,7 @@ USER-AGENT,SpeedTest*,PROXY
 # > pornhub
 ^https?://(cn|www)\.pornhub\.com/_xa/ads.* url reject
 
-# > NewBing 将 Safari 伪装成 Chrome 以使用BingAI，需要将 NewBing App 地区设置为美国
+# > NewBing 将 Safari 伪装成 Edge 以使用BingAI，需要将 NewBing App 地区设置为美国
 ^https?://www\.bing\.com/(search|new|web) header-add X-Forwarded-For 1.1.1.1
 
 
@@ -815,7 +815,7 @@ http-request ^https?://(.+\.)?boxjs\.(com|net) script-path=https://raw.githubuse
 http-request ^https?://sub\.store/((download)|api/(preview|sync|(utils/node-info))) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/sub_store_1.min.js, requires-body=true,timeout=10,tag=sub_store_1.min
 http-request ^https?://sub\.store script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/sub_store_0.min.js, requires-body=true,timeout=10,tag=sub_store_0.min
 
-# BingAI
+# > NewBing 将 Safari 伪装成 Edge 以使用BingAI，需要将 NewBing App 地区设置为美国
 http-request ^https?://www\.bing\.com/(search|new|web) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/BingAI.js,requires-body=false,tag=BingAI
 
 [Mitm]
