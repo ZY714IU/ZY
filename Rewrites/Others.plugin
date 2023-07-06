@@ -9,7 +9,7 @@
 
 [General]
 # > testflight
-skip-proxy = iosapps.itunes.apple.com
+skip-proxy=iosapps.itunes.apple.com
 
 
 # 分流
