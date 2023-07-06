@@ -226,18 +226,6 @@ DOMAIN-SUFFIX,goblin.hupu.com,REJECT
 DOMAIN,ad.cyapi.cn,REJECT
 # > 58同城
 DOMAIN,adshow.58.com,REJECT
-# >美图秀秀
-DOMAIN-SUFFIX,xiuxiu.video.xiuxiustatic.com,REJECT
-DOMAIN-SUFFIX,stat.meitudata.com,REJECT
-DOMAIN-SUFFIX,rabbit.meitustat.com,REJECT
-DOMAIN-SUFFIX,strategy.app.meitudata.com,REJECT
-DOMAIN-SUFFIX,meepo.meitustat.com,REJECT
-DOMAIN-SUFFIX,gondar.meitustat.com,REJECT
-DOMAIN-SUFFIX,xiuxiu-im-connd.meitu.com,REJECT
-DOMAIN-SUFFIX,openapi.mtlab.meitu.com,REJECT
-DOMAIN-SUFFIX,xiuxiu-im-route.meitu.com,REJECT
-DOMAIN-SUFFIX,push.meitu.com,REJECT
-DOMAIN-SUFFIX,i.qchannel03.cn,REJECT
 # > 美图秀秀 开屏广告
 DOMAIN-SUFFIX,adui.tg.meitu.com,REJECT
 # > 央视频 开屏广告
