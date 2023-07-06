@@ -213,18 +213,6 @@ host-suffix, goblin.hupu.com, reject
 host, ad.cyapi.cn, reject
 # > 58同城
 host, adshow.58.com, reject
-# >美图秀秀
-host-suffix, xiuxiu.video.xiuxiustatic.com, reject
-host-suffix, stat.meitudata.com, reject
-host-suffix, rabbit.meitustat.com, reject
-host-suffix, strategy.app.meitudata.com, reject
-host-suffix, meepo.meitustat.com, reject
-host-suffix, gondar.meitustat.com, reject
-host-suffix, xiuxiu-im-connd.meitu.com, reject
-host-suffix, openapi.mtlab.meitu.com, reject
-host-suffix, xiuxiu-im-route.meitu.com, reject
-host-suffix, push.meitu.com, reject
-host-suffix, i.qchannel03.cn, reject
 # > 美图秀秀 开屏广告
 host-suffix, adui.tg.meitu.com, reject
 # > 央视频 开屏广告
