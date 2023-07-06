@@ -4,16 +4,15 @@
 #!author = 搬运自各位大佬
 #!homepage = https://github.com/ZY714IU/ZY/blob/main/Rewrites/Others.plugin
 #!icon = 
-#!update = 2023-06-28 00:20
+#!update = 2023-07-06 10:00
 
 
-# ⭐️
 [General]
 # > testflight
 skip-proxy = iosapps.itunes.apple.com
 
 
-# ⭐️
+# 分流⭐️
 [Rule]
 # > Type:DOMAIN,DOMAIN-SUFFIX,DOMAIN-KEYWORD,USER-AGENT,URL-REGEX,IP-CIDR
 # > 优先级：本地-插件-订阅规则集，ip和域名优先
@@ -266,7 +265,6 @@ DOMAIN-SUFFIX,safebrowsing.apple,REJECT
 # > 其他
 DOMAIN-KEYWORD,adsystem,REJECT
 DOMAIN-KEYWORD,adservice,REJECT
-
 # > AppleDirect；数量：28条
 # > https://github.com/ACL4SSR/ACL4SSR/blob/master/Clash/Ruleset/Apple.list
 DOMAIN,apple.comscoreresearch.com,DIRECT
@@ -429,7 +427,7 @@ DOMAIN-KEYWORD,speedtest,PROXY
 USER-AGENT,SpeedTest*,PROXY
 
 
-# ⭐️
+# 重写
 [Rewrite]
 # > 微博
 # @RuCu6，@zmqcherish，@ddgksf2013
@@ -642,10 +640,10 @@ USER-AGENT,SpeedTest*,PROXY
 ^https?://(cn|www)\.pornhub\.com/_xa/ads.* url reject
 
 
-# ⭐️
+# 脚本
 [Script]
 # > 微博
-# author @RuCu6，@zmqcherish，@ddgksf2013
+# @RuCu6，@zmqcherish，@ddgksf2013
 # https://github.com/RuCu6/QuanX/blob/main/Rewrites/Cube/weibo.snippet
 # 开屏广告 v1/ad|interface/sdk|wbapplua
 http-response ^https?://(bootpreload|(sdk|wb)app)\.uve\.weibo\.com/(v1/ad|interface/sdk|wbapplua) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/weibo.js,requires-body=true,timeout=10,tag=微博
@@ -687,7 +685,7 @@ http-response ^https?://(weibointl\.)?api\.weibo\.cn/(2/)?(statuses/container_ti
 ^https?://weibointl\.api\.weibo\.cn/portal\.php.*feed&a=search_topic data="https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/weibo_search_topic.json" header="Content-Type: text/html"
 
 # > 哔哩哔哩
-# author @app2smile，@RuCu6，@ddgksf2013，@kokoryh，@ClydeTime
+# @app2smile，@RuCu6，@ddgksf2013，@kokoryh，@ClydeTime
 # https://github.com/RuCu6/QuanX/blob/main/Rewrites/Cube/bilibili.snippet
 # 开屏广告 x/v2/splash/((brand/|event/)?list2?|show)
 # 推荐页广告 x/v2/feed/index\?
@@ -711,13 +709,12 @@ http-response ^https?://api\.live\.bilibili\.com/xlive/(app-(room|interface)|e-c
 # 播放页广告 View/(View|TFInfo)
 # 后台播放限制 PlayURL/PlayView
 # 评论列表广告 Reply/MainList
-# ⚠️以下两条QuantumultX可能不可用！
 # 交互式弹幕 DM/(DmView|DmSegMobile)
 # 青少年模式 Teenagers/ModeStatus
 http-response ^https?://(app|api|grpc)\.bili(bil|ap)i\.(com|net)/bilibili\.(polymer\.)?(app\.)?(search|dynamic|playurl|view|main\.community\.reply|community\.service\.dm|interface)\.v\d\.(Search/SearchAll|Dynamic/Dyn(All|Video)|View/(View|TFInfo)|PlayURL/PlayView|Reply/MainList|DM/(DmView|DmSegMobile)|Teenagers/ModeStatus) requires-body=1,binary-body-mode=1,script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/bilibili_proto_b.js,requires-body=true, argument=http-response,timeout=10,tag=哔哩哔哩
 
 # > 知乎
-# author @blackmatrix7，@RuCu6
+# @blackmatrix7，@RuCu6
 # https://github.com/RuCu6/QuanX/blob/d2ad4b8e71b73ff2849345067ee4dddea5dfcd30/Rewrites/Cube/zhihu.snippet
 # 推送配置 v3/config|api/cloud/config
 # 关注页 moments_v3
@@ -728,7 +725,7 @@ http-response ^https?://(app|api|grpc)\.bili(bil|ap)i\.(com|net)/bilibili\.(poly
 http-response ^https?://(api|appcloud2|m-cloud)\.zhihu\.com/(v3/config|api/cloud/config|moments_v3|commercial_api/app_float|topstory/(recommend|hot)|next-(bff|data|render)|(v4/)?questions/\d+/(feeds|answers)|api/v4/(answers|articles)/\d+/recommendation) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/zhihu.js,requires-body=true,tag=知乎
 
 # > 高德地图
-# author @RuCu6，@ddgksf2013，@kokoryh
+# @RuCu6，@ddgksf2013，@kokoryh
 # https://github.com/RuCu6/QuanX/blob/main/Rewrites/Cube/amap.snippet
 # 阿里系请求 AMap|Cainiao
 http-response ^http://amdc\.m\.taobao\.com/amdc/mobileDispatch script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/amdc.js,tag=阿里系请求
@@ -749,7 +746,7 @@ http-response ^http://amdc\.m\.taobao\.com/amdc/mobileDispatch script-path=https
 http-response ^https?://m5(-zb)?\.amap\.com/ws/(shield/(search)?_?/?(poi)?/?(city_feed|search/sp|mps|tips|poi/detail|sug|nearbyrec|common/coupon|dsp/profile/index|frogserver/aocs)|mapapi/poi/infolite|valueadded/alimama/splash|faas/amap-navigation/main-page\?|promotion-web/resource|sharedtrip/taxi/.*tips) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/amap.js,requires-body=true,tag=高德地图
 
 # > 小红书
-# author @RuCu6
+# @RuCu6
 # https://github.com/RuCu6/QuanX/blob/main/Rewrites/Cube/xiaohongshu.snippet
 # 搜索页 search/(banner|trending|note)
 # 开屏广告 system_service/(splash_)?config
@@ -774,12 +771,12 @@ http-response ^https?://(www|m)\.baidu\.com/.*word=.* script-path=https://raw.gi
 
 # > 网易云音乐
 # vip (request) @Weiren
-http-request ^https?://.+music.+(player/url|playlist|entrance|/eapi/search/).*$ script-path=https://raw.githubusercontent.com/WeiRen0/Scripts/main/wyun.js, requires-body=false, timeout=10, tag=网易云vip
+http-request ^https?://.+music.+(player/url|playlist|entrance|/eapi/search/).*$ script-path=https://raw.githubusercontent.com/WeiRen0/Scripts/main/wyun.js,requires-body=false,timeout=10,tag=网易云vip
 
 # > youtube
 # @app2smile，@Maasea，@Choler，@DivineEngine，@VirgilClyne，@RuCu6
 # https://github.com/Maasea/sgmodule/blob/master/YoutubeAds.sgmodule
-# 请禁止 udp 443 端口
+# 需要禁止 udp 443
 # 首页瀑布流 browse
 # 插播广告 next|player
 # 短视频 reel/reel_watch_sequence
@@ -824,6 +821,5 @@ http-request ^https?://sub\.store/((download)|api/(preview|sync|(utils/node-info
 http-request ^https?://sub\.store script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/sub_store_0.min.js, requires-body=true,timeout=10,tag=sub_store_0.min
 
 
-# ⭐️
 [Mitm]
 hostname = *.uve.weibo.com, *api.weibo.cn, weibo.com, grpc.biliapi.net, ap*.bili*i.*, 2402:4e00:1200:ed00:0:9089:6dac:96b6, 103.41.167.226, 103.41. 167.234, 103.41.167.235, 103.41.167.236, 103.41.167.237, 118.89.204.198, www.zhihu.com, api.zhihu.com, zhuanlan.zhihu.com, appcloud2.zhihu.com, m-cloud.zhihu.com, m5-zb.amap.com, m5.amap.com, sns.amap.com, edith.xiaohongshu.com, www.xiaohongshu.com, tiebac.baidu.com, newclient.map.baidu.com, pan.baidu.com, www.baidu.com, m.baidu.com, boxer.baidu.com, interface*.music.163.com, youtubei.googleapis.com, *.googlevideo.com, *p*.zhuan*.com, *.meitu.com, client.app.coc.10086.cn, h.app.coc.10086.cn, gx.10086.cn, *plus.meituan.net, wmapi.meituan.com, img.meituan.net, api.coolapk.com, mp.weixin.qq.com, api-shoulei-ssl.xunlei.com, rtbapi.douyucdn.cn, *ar*.umetrip.com, iyes.youku.com, gorgon.youdao.com, *.pornhub.*, testflight.apple.com, *boxjs.*, sub.store
