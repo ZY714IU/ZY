@@ -75,20 +75,20 @@ DOMAIN-KEYWORD,v2ex,PROXY
 DOMAIN-KEYWORD,notion,PROXY
 # > anti-ip，针对部分软件显示ip归属地分流规则，注意！更改ip归属地有风险，不建议使用！
 # > 微博
-//DOMAIN,api.weibo.cn,PROXY 
+# DOMAIN,api.weibo.cn,PROXY 
 # > 抖音；需家宽ip才生效，否则显示 “未知”
-//DOMAIN-SUFFIX,amemv.com,PROXY
+# DOMAIN-SUFFIX,amemv.com,PROXY
 # > 小红书
-//DOMAIN,edith.xiaohongshu.com,PROXY
+# DOMAIN,edith.xiaohongshu.com,PROXY
 # > 贴吧
-//DOMAIN,c.tieba.baidu.com,PROXY
+# DOMAIN,c.tieba.baidu.com,PROXY
 # > 知乎
-//DOMAIN,api.zhihu.com,PROXY
+# DOMAIN,api.zhihu.com,PROXY
 # > 哔哩哔哩
 DOMAIN,api.bilibili.com,PROXY
 DOMAIN,api.biliapi.net,PROXY
 # > 微信
-//DOMAIN,mp.weixin.qq.com,PROXY 
+# DOMAIN,mp.weixin.qq.com,PROXY 
 
 # > REJECT
 # > 微博
@@ -149,8 +149,8 @@ DOMAIN,lc.map.baidu.com,REJECT
 DOMAIN,httpdns.baidubce.com,REJECT
 IP-CIDR,180.76.76.200/32,REJECT,no-resolve
 # > 贴吧屏蔽 ws (副作用；消息通知功能失效，需手动进入查看)，强制帖子接口走http
-//DOMAIN,im.tieba.baidu.com,REJECT
-//IP-CIDR,203.107.1.1/32,REJECT,no-resolve
+# DOMAIN,im.tieba.baidu.com,REJECT
+# IP-CIDR,203.107.1.1/32,REJECT,no-resolve
 # > 阿里巴巴
 DOMAIN,adashx.ut.amap.com,REJECT
 DOMAIN,adashx.m.taobao.com,REJECT
