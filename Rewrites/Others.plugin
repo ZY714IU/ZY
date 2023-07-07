@@ -86,7 +86,7 @@ DOMAIN-KEYWORD,notion,PROXY
 //DOMAIN,api.zhihu.com,PROXY
 # > 哔哩哔哩
 DOMAIN,api.bilibili.com,PROXY
-DOMAIN,api.biliapi.net, PROXY
+DOMAIN,api.biliapi.net,PROXY
 # > 微信
 //DOMAIN,mp.weixin.qq.com,PROXY 
 
