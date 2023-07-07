@@ -147,10 +147,10 @@ DOMAIN,httpdns.baidubce.com,REJECT
 DOMAIN,lc.map.baidu.com,REJECT
 # > 贴吧、地图 屏蔽域名dns查询(否则去广告不干净)
 DOMAIN,httpdns.baidubce.com,REJECT
-IP-CIDR,180.76.76.200/32,REJECT
+IP-CIDR,180.76.76.200/32,REJECT,no-resolve
 # > 贴吧屏蔽 ws (副作用；消息通知功能失效，需手动进入查看)，强制帖子接口走http
 //DOMAIN,im.tieba.baidu.com,REJECT
-//IP-CIDR,203.107.1.1/32,REJECT
+//IP-CIDR,203.107.1.1/32,REJECT,no-resolve
 # > 阿里巴巴
 DOMAIN,adashx.ut.amap.com,REJECT
 DOMAIN,adashx.m.taobao.com,REJECT
@@ -273,16 +273,16 @@ DOMAIN-SUFFIX,icloud.com.cn,DIRECT
 DOMAIN-SUFFIX,itunes.com,DIRECT
 DOMAIN-SUFFIX,me.com,DIRECT
 DOMAIN-SUFFIX,mzstatic.com,DIRECT
-IP-CIDR,17.0.0.0/8,DIRECT
-IP-CIDR,63.92.224.0/19,DIRECT
-IP-CIDR,65.199.22.0/23,DIRECT
-IP-CIDR,139.178.128.0/18,DIRECT
-IP-CIDR,144.178.0.0/19,DIRECT
-IP-CIDR,144.178.36.0/22,DIRECT
-IP-CIDR,144.178.48.0/20,DIRECT
-IP-CIDR,192.35.50.0/24,DIRECT
-IP-CIDR,198.183.17.0/24,DIRECT
-IP-CIDR,205.180.175.0/24,DIRECT
+IP-CIDR,17.0.0.0/8,DIRECT,no-resolve
+IP-CIDR,63.92.224.0/19,DIRECT,no-resolve
+IP-CIDR,65.199.22.0/23,DIRECT,no-resolve
+IP-CIDR,139.178.128.0/18,DIRECT,no-resolve
+IP-CIDR,144.178.0.0/19,DIRECT,no-resolve
+IP-CIDR,144.178.36.0/22,DIRECT,no-resolve
+IP-CIDR,144.178.48.0/20,DIRECT,no-resolve
+IP-CIDR,192.35.50.0/24,DIRECT,no-resolve
+IP-CIDR,198.183.17.0/24,DIRECT,no-resolve
+IP-CIDR,205.180.175.0/24,DIRECT,no-resolve
 # > AppleProxy；数量：27
 # > https://github.com/kokoryh/Script/blob/master/Surge/rule/AppleProxy.list
 DOMAIN,amp-api.podcasts.apple.com,PROXY
