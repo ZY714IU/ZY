@@ -163,23 +163,22 @@ DOMAIN,awaken.amap.com,REJECT
 DOMAIN,amap-aos-info-nogw.amap.com,REJECT
 DOMAIN,free-aos-cdn-image.amap.com,REJECT
 # > 腾讯
-DOMAIN,adsmind.tc.qq.com,REJECT
-DOMAIN,adsmind.gdtimg.com,REJECT
-DOMAIN,adsmind.ugdtimg.com,REJECT
-DOMAIN,adsmind.apdcdn.tc.qq.com,REJECT
-DOMAIN,api.iegadp.qq.com,REJECT
-DOMAIN,e.qq.com,REJECT
-DOMAIN,l.qq.com,REJECT
-DOMAIN,gdt.qq.com,REJECT
-DOMAIN,mi.gdt.qq.com,REJECT
-DOMAIN,pgdt.gtimg.cn,REJECT
-DOMAIN,pgdt.gtimg.com,REJECT
-DOMAIN,pgdt.ugdtimg.com,REJECT
-DOMAIN,wa.gtimg.com,REJECT
-DOMAIN,wxsnsdy.wxs.qq.com,REJECT
-DOMAIN,wxsnsdythumb.wxs.qq.com,REJECT
-DOMAIN,livep.l.t002.ottcn.com,REJECT
-DOMAIN,splashqqlive.gtimg.com,REJECT
+DOMAIN-SUFFIX,adsmind.tc.qq.com,REJECT
+DOMAIN-SUFFIX,adsmind.gdtimg.com,REJECT
+DOMAIN-SUFFIX,adsmind.ugdtimg.com,REJECT
+DOMAIN-SUFFIX,adsmind.apdcdn.tc.qq.com,REJECT
+DOMAIN-SUFFIX,api.iegadp.qq.com,REJECT
+DOMAIN-SUFFIX,gdt.qq.com,REJECT
+DOMAIN-SUFFIX,e.qq.com,REJECT
+DOMAIN-SUFFIX,l.qq.com,REJECT
+DOMAIN-SUFFIX,pgdt.gtimg.cn,REJECT
+DOMAIN-SUFFIX,pgdt.gtimg.com,REJECT
+DOMAIN-SUFFIX,pgdt.ugdtimg.com,REJECT
+DOMAIN-SUFFIX,wa.gtimg.com,REJECT
+DOMAIN-SUFFIX,wxsnsdy.wxs.qq.com,REJECT
+DOMAIN-SUFFIX,wxsnsdythumb.wxs.qq.com,REJECT
+DOMAIN-SUFFIX,ottcn.com,REJECT
+DOMAIN-SUFFIX,splashqqlive.gtimg.com,REJECT
 # > Safari 防跳转
 DOMAIN,app-site-association.cdn-apple.com,REJECT
 # > Apple 绕过 App 企业证书过期
