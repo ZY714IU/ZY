@@ -582,8 +582,8 @@ USER-AGENT,SpeedTest*,PROXY
 ^https?://((client|h).app\.coc|app)\.10086\.cn/biz-orange/(DN/(init/startInit|explorePage/getAdverList|emotionMarket|msg/getMessageUnread)|WN/mailService/getUnreadCount|DA/fault/getPromptInfo) url reject-dict
 
 # > 中国移动广西
-# 开屏广告 1102|1401；各种悬浮窗、签到模块、其他推广 2000；底部5G设置悬浮窗 1701
-^https?://gx\.10086\.cn/zt-portal/gxhzg/portal/app/api/v\d/(1102|1401|2000|1701) url reject-dict
+# 开屏广告 1102|1401；各种悬浮窗、签到模块、其他推广 2000；底部5G设置悬浮窗 1701；移动快报 1803
+^https?://gx\.10086\.cn/zt-portal/gxhzg/portal/app/api/v\d/(1102|1401|2000|1701|1803) url reject-dict
 
 # > 美团&外卖
 # @RuCu6
