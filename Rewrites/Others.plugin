@@ -184,7 +184,8 @@ DOMAIN,splashqqlive.gtimg.com,REJECT
 DOMAIN,app-site-association.cdn-apple.com,REJECT
 # > Apple 绕过 App 企业证书过期
 DOMAIN,ocsp.apple.com,REJECT
-# > 其他 
+# > 其他
+DOMAIN,ca.iadsdk.apple.com,REJECT
 DOMAIN,api-adservices.apple.com,REJECT
 # > Google
 DOMAIN,ads.youtube.com,REJECT
