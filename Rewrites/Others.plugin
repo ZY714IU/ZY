@@ -37,51 +37,51 @@ DOMAIN-SUFFIX,msg.umeng.com,DIRECT
 DOMAIN-SUFFIX,msg.umengcloud.com,DIRECT
 
 # > 必应国际版(不开分流则国内版)
-DOMAIN,www.bing.com,Static
-DOMAIN,www.bing.net,Static
-DOMAIN-SUFFIX,bing.com,Static
-DOMAIN-SUFFIX,bing.net,Static
-DOMAIN-SUFFIX,bingapis.com,Static
-DOMAIN-SUFFIX,bingapis.net,Static
+DOMAIN,www.bing.com,PROXY
+DOMAIN,www.bing.net,PROXY
+DOMAIN-SUFFIX,bing.com,PROXY
+DOMAIN-SUFFIX,bing.net,PROXY
+DOMAIN-SUFFIX,bingapis.com,PROXY
+DOMAIN-SUFFIX,bingapis.net,PROXY
 # > 机场
-DOMAIN-SUFFIX,2220.it,Static
-DOMAIN-SUFFIX,subs.usero.cn,Static
-DOMAIN-KEYWORD,fishchips,Static
-DOMAIN-KEYWORD,efcloud,Static
-DOMAIN-KEYWORD,efshop,Static
-DOMAIN-KEYWORD,mojie,Static
-DOMAIN-KEYWORD,xsus,Static
+DOMAIN-SUFFIX,2220.it,PROXY
+DOMAIN-SUFFIX,subs.usero.cn,PROXY
+DOMAIN-KEYWORD,fishchips,PROXY
+DOMAIN-KEYWORD,efcloud,PROXY
+DOMAIN-KEYWORD,efshop,PROXY
+DOMAIN-KEYWORD,mojie,PROXY
+DOMAIN-KEYWORD,xsus,PROXY
 # > 代理软件
-DOMAIN-SUFFIX,quantumult.app,Static
-DOMAIN-SUFFIX,nssurge.com,Static
-DOMAIN-SUFFIX,surge-activation.com,Static
-DOMAIN-SUFFIX,stash-activation.com,Static
-DOMAIN-KEYWORD,loon,Static
+DOMAIN-SUFFIX,quantumult.app,PROXY
+DOMAIN-SUFFIX,nssurge.com,PROXY
+DOMAIN-SUFFIX,surge-activation.com,PROXY
+DOMAIN-SUFFIX,stash-activation.com,PROXY
+DOMAIN-KEYWORD,loon,PROXY
 # > 其他
-DOMAIN-SUFFIX,shrtm.nu,Static
-DOMAIN-SUFFIX,adtidy.org,Static
-DOMAIN-SUFFIX,adguard.com,Static
-DOMAIN-SUFFIX,adguard.org,Static
-DOMAIN-SUFFIX,missav.com,Static
-DOMAIN-SUFFIX,cdnedge.live,Static
-DOMAIN-KEYWORD,v2ex,Static
-DOMAIN-KEYWORD,notion,Static
+DOMAIN-SUFFIX,shrtm.nu,PROXY
+DOMAIN-SUFFIX,adtidy.org,PROXY
+DOMAIN-SUFFIX,adguard.com,PROXY
+DOMAIN-SUFFIX,adguard.org,PROXY
+DOMAIN-SUFFIX,missav.com,PROXY
+DOMAIN-SUFFIX,cdnedge.live,PROXY
+DOMAIN-KEYWORD,v2ex,PROXY
+DOMAIN-KEYWORD,notion,PROXY
 # > anti-ip，针对部分软件显示ip归属地分流规则，注意！更改ip归属地有风险，不建议使用！
 # > 微博
-#DOMAIN,api.weibo.cn,Static 
+#DOMAIN,api.weibo.cn,PROXY 
 # > 抖音；需家宽ip才生效，否则显示“未知”
-DOMAIN-SUFFIX,amemv.com,Static
+DOMAIN-SUFFIX,amemv.com,PROXY
 # > 小红书
-DOMAIN,edith.xiaohongshu.com,Static
+DOMAIN,edith.xiaohongshu.com,PROXY
 # > 贴吧
-#DOMAIN,c.tieba.baidu.com,Static
+#DOMAIN,c.tieba.baidu.com,PROXY
 # > 知乎
-DOMAIN,api.zhihu.com,Static
+DOMAIN,api.zhihu.com,PROXY
 # > 哔哩哔哩
-DOMAIN,api.bilibili.com,Static
-DOMAIN,api.biliapi.net,Static
+DOMAIN,api.bilibili.com,PROXY
+DOMAIN,api.biliapi.net,PROXY
 # > 微信
-#DOMAIN,mp.weixin.qq.com,Static 
+#DOMAIN,mp.weixin.qq.com,PROXY 
 
 # > 微博
 DOMAIN-SUFFIX,adimg.uve.weibo.com,REJECT
