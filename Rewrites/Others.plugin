@@ -600,7 +600,6 @@ USER-AGENT,SpeedTest*,PROXY
 ^https?://mp.weixin.qq.com/mp/(cps_product_info|getappmsgad|relatedarticle|masonryfeed)\? url reject-dict
 
 # > 迅雷
-# @zhangjun
 # 开屏广告 (已在分流拦截)
 # 新人专享福利、大家都在看、经典必看
 ^https?://api-shoulei-ssl.xunlei.com/flowhub/v\d/slots:batchGet url reject-200
