@@ -37,6 +37,8 @@ DOMAIN-SUFFIX,msg.umeng.com,DIRECT
 DOMAIN-SUFFIX,msg.umengcloud.com,DIRECT
 # > 汽水音乐
 DOMAIN-SUFFIX,qishui.com,DIRECT
+# > 其他
+DOMAIN-SUFFIX,ppio.cloud,DIRECT
 
 # > 必应国际版(不开分流则国内版)
 DOMAIN,www.bing.com,PROXY
