@@ -1,6 +1,7 @@
 /*================
 https://github.com/app2smile/rules/blob/master/js/tieba-proto.js
 2023-06-15
+
 ================*/
 
 // protobuf.jsv7.2.3(做了部分修改 i.util.global.protobuf=i -> protobuf=i.util.global.protobuf=i)
