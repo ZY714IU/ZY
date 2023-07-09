@@ -12,92 +12,92 @@
 skip-proxy=iosapps.itunes.apple.com
 
 
-# 分流
+# > 分流
 [Rule]
 # > Type:DOMAIN,DOMAIN-SUFFIX,DOMAIN-KEYWORD,USER-AGENT,URL-REGEX,IP-CIDR
 # > 优先级：本地-插件-订阅规则集，ip和域名优先
 # > DIRECT
 # > 微博
-HOST,sdkapp.uve.weibo.com,DIRECT
-HOST,weibointl.api.weibo.cn,DIRECT
+DOMAIN,sdkapp.uve.weibo.com,DIRECT
+DOMAIN,weibointl.api.weibo.cn,DIRECT
 # > 字节跳动
-HOST,verify.zijieapi.com,DIRECT
-HOST-SUFFIX,byteimg.com,DIRECT
+DOMAIN,verify.zijieapi.com,DIRECT
+DOMAIN-SUFFIX,byteimg.com,DIRECT
 # > 阿里系
-HOST,amdc.m.taobao.com,DIRECT
+DOMAIN,amdc.m.taobao.com,DIRECT
 # > 腾讯
-HOST-SUFFIX,vd.l.qq.com,DIRECT
-HOST-SUFFIX,vi.l.qq.com,DIRECT
-HOST-SUFFIX,livew.l.qq.com,DIRECT
-HOST-SUFFIX,fairplay.l.qq.com,DIRECT
+DOMAIN-SUFFIX,vd.l.qq.com,DIRECT
+DOMAIN-SUFFIX,vi.l.qq.com,DIRECT
+DOMAIN-SUFFIX,livew.l.qq.com,DIRECT
+DOMAIN-SUFFIX,fairplay.l.qq.com,DIRECT
 # > 个推
-HOST-SUFFIX,getui.com,DIRECT
+DOMAIN-SUFFIX,getui.com,DIRECT
 # > 友盟
-HOST-SUFFIX,msg.umeng.com,DIRECT
-HOST-SUFFIX,msg.umengcloud.com,DIRECT
+DOMAIN-SUFFIX,msg.umeng.com,DIRECT
+DOMAIN-SUFFIX,msg.umengcloud.com,DIRECT
 
 # > 必应国际版(不开分流则国内版)
-HOST,www.bing.com,Static
-HOST,www.bing.net,Static
-HOST-SUFFIX,bing.com,Static
-HOST-SUFFIX,bing.net,Static
-HOST-SUFFIX,bingapis.com,Static
-HOST-SUFFIX,bingapis.net,Static
+DOMAIN,www.bing.com,Static
+DOMAIN,www.bing.net,Static
+DOMAIN-SUFFIX,bing.com,Static
+DOMAIN-SUFFIX,bing.net,Static
+DOMAIN-SUFFIX,bingapis.com,Static
+DOMAIN-SUFFIX,bingapis.net,Static
 # > 机场
-HOST-SUFFIX,2220.it,Static
-HOST-SUFFIX,subs.usero.cn,Static
-HOST-KEYWORD,fishchips,Static
-HOST-KEYWORD,efcloud,Static
-HOST-KEYWORD,efshop,Static
-HOST-KEYWORD,mojie,Static
-HOST-KEYWORD,xsus,Static
+DOMAIN-SUFFIX,2220.it,Static
+DOMAIN-SUFFIX,subs.usero.cn,Static
+DOMAIN-KEYWORD,fishchips,Static
+DOMAIN-KEYWORD,efcloud,Static
+DOMAIN-KEYWORD,efshop,Static
+DOMAIN-KEYWORD,mojie,Static
+DOMAIN-KEYWORD,xsus,Static
 # > 代理软件
-HOST-SUFFIX,quantumult.app,Static
-HOST-SUFFIX,nssurge.com,Static
-HOST-SUFFIX,surge-activation.com,Static
-HOST-SUFFIX,stash-activation.com,Static
-HOST-KEYWORD,loon,Static
+DOMAIN-SUFFIX,quantumult.app,Static
+DOMAIN-SUFFIX,nssurge.com,Static
+DOMAIN-SUFFIX,surge-activation.com,Static
+DOMAIN-SUFFIX,stash-activation.com,Static
+DOMAIN-KEYWORD,loon,Static
 # > 其他
-HOST-SUFFIX,shrtm.nu,Static
-HOST-SUFFIX,adtidy.org,Static
-HOST-SUFFIX,adguard.com,Static
-HOST-SUFFIX,adguard.org,Static
-HOST-SUFFIX,missav.com,Static
-HOST-SUFFIX,cdnedge.live,Static
-HOST-KEYWORD,v2ex,Static
-HOST-KEYWORD,notion,Static
+DOMAIN-SUFFIX,shrtm.nu,Static
+DOMAIN-SUFFIX,adtidy.org,Static
+DOMAIN-SUFFIX,adguard.com,Static
+DOMAIN-SUFFIX,adguard.org,Static
+DOMAIN-SUFFIX,missav.com,Static
+DOMAIN-SUFFIX,cdnedge.live,Static
+DOMAIN-KEYWORD,v2ex,Static
+DOMAIN-KEYWORD,notion,Static
 # > anti-ip，针对部分软件显示ip归属地分流规则，注意！更改ip归属地有风险，不建议使用！
 # > 微博
-#HOST,api.weibo.cn,Static 
+#DOMAIN,api.weibo.cn,Static 
 # > 抖音；需家宽ip才生效，否则显示“未知”
-HOST-SUFFIX,amemv.com,Static
+DOMAIN-SUFFIX,amemv.com,Static
 # > 小红书
-HOST,edith.xiaohongshu.com,Static
+DOMAIN,edith.xiaohongshu.com,Static
 # > 贴吧
-#HOST,c.tieba.baidu.com,Static
+#DOMAIN,c.tieba.baidu.com,Static
 # > 知乎
-HOST,api.zhihu.com,Static
+DOMAIN,api.zhihu.com,Static
 # > 哔哩哔哩
-HOST,api.bilibili.com,Static
-HOST,api.biliapi.net,Static
+DOMAIN,api.bilibili.com,Static
+DOMAIN,api.biliapi.net,Static
 # > 微信
-#HOST,mp.weixin.qq.com,Static 
+#DOMAIN,mp.weixin.qq.com,Static 
 
 # > 微博
-HOST-SUFFIX,adimg.uve.weibo.com,REJECT
-HOST-SUFFIX,adimg.uve.weibo.com,REJECT
-HOST-SUFFIX,adstrategy.biz.weibo.com,REJECT
-HOST-SUFFIX,brandvideo.biz.weibo.com,REJECT
-HOST-SUFFIX,vs.biz.weibo.com,REJECT
-HOST-SUFFIX,kadmimage.biz.weibo.com,REJECT
-HOST-SUFFIX,u1.img.mobile.sina.cn,REJECT
-HOST-SUFFIX,sdkclick.biz.weibo.com,REJECT
-HOST-SUFFIX,sdkaction.biz.weibo.com,REJECT
-HOST-SUFFIX,sdkmonitor.biz.weibo.com,REJECT
-HOST-SUFFIX,sax.sina.com.cn,REJECT
-HOST-SUFFIX,saxn.sina.com.cn,REJECT
-HOST-SUFFIX,saxs.sina.com.cn,REJECT
-HOST-SUFFIX,beacon.sina.com.cn,REJECT
+DOMAIN-SUFFIX,adimg.uve.weibo.com,REJECT
+DOMAIN-SUFFIX,adimg.uve.weibo.com,REJECT
+DOMAIN-SUFFIX,adstrategy.biz.weibo.com,REJECT
+DOMAIN-SUFFIX,brandvideo.biz.weibo.com,REJECT
+DOMAIN-SUFFIX,vs.biz.weibo.com,REJECT
+DOMAIN-SUFFIX,kadmimage.biz.weibo.com,REJECT
+DOMAIN-SUFFIX,u1.img.mobile.sina.cn,REJECT
+DOMAIN-SUFFIX,sdkclick.biz.weibo.com,REJECT
+DOMAIN-SUFFIX,sdkaction.biz.weibo.com,REJECT
+DOMAIN-SUFFIX,sdkmonitor.biz.weibo.com,REJECT
+DOMAIN-SUFFIX,sax.sina.com.cn,REJECT
+DOMAIN-SUFFIX,saxn.sina.com.cn,REJECT
+DOMAIN-SUFFIX,saxs.sina.com.cn,REJECT
+DOMAIN-SUFFIX,beacon.sina.com.cn,REJECT
 # > 哔哩哔哩 后台间歇性失效，请在分流屏蔽以下域名
 # > 注意！屏蔽会导致登录和安全相关功能无法使用
 #HOST,mall.bilibili.com,REJECT
