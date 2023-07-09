@@ -393,9 +393,8 @@ DOMAIN-SUFFIX,windowsupdate.com,DIRECT
 DOMAIN-SUFFIX,wunderlist.com,DIRECT
 DOMAIN-SUFFIX,yammer.com,DIRECT
 DOMAIN-SUFFIX,yammerusercontent.com,DIRECT
-# > Speedtest；数量：18
+# > Speedtest；数量：17
 # > https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/QuantumultX/Speedtest/Speedtest.list
-DOMAIN,www.speedtest.net,PROXY
 DOMAIN,speed.dler.io,PROXY
 DOMAIN-SUFFIX,cdnst.net,PROXY
 DOMAIN-SUFFIX,cellmaps.com,PROXY
