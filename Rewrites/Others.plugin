@@ -1,10 +1,10 @@
-#!name = Others
-#!desc = Plugin
-#!author = 搬运自各位大佬
-#!openUrl = https://raw.githubusercontent.com/ZY714IU/ZY/main/Rewrites/Others.plugin
-#!homepage = https://github.com/ZY714IU/ZY/blob/main/Rewrites/Others.plugin
-#!icon = https://raw.githubusercontent.com/ZY714IU/ZY/main/Icon/Loon.png
-#!update = 2023-07-06 10:00
+#!name=Others
+#!desc=Plugin
+#!author=搬运自各位大佬
+#!openUrl=https://raw.githubusercontent.com/ZY714IU/ZY/main/Rewrites/Others.plugin
+#!homepage=https://github.com/ZY714IU/ZY/blob/main/Rewrites/Others.plugin
+#!icon=https://raw.githubusercontent.com/ZY714IU/ZY/main/Icon/Loon.png
+#!update=2023-07-06 10:00
 
 
 [General]
@@ -438,9 +438,9 @@ USER-AGENT,SpeedTest*,PROXY
 # 超话角标弹窗 !/huati/discovery
 # 文章页广告 ttarticle/x/m/aj/(reward|uvead)
 # 文章页推荐 ttarticle/x/m/aj/recommend
-# (轻享版)热搜 portal\.php\?a=hot
+# (轻享版)热搜 portal.php\?a=hot
 # (轻享版)热推 ad
-^https?://((weibointl.)?api.)?weibo.c(n|om)/(2/)?(!/)?(hot|comments/bullet|vote/get|profile/recommend|video/redpacket|remind|push/daily|search/container_discover|statuses/(push_info|container_positive)|photo/(info|editor/guide)|multimedia/video/red|live|huati/discovery|ttarticle/x/m/aj/(uvead|reward|recommend)|portal\.php\?a=hot|ad) url reject-dict
+^https?://((weibointl.)?api.)?weibo.c(n|om)/(2/)?(!/)?(hot|comments/bullet|vote/get|profile/recommend|video/redpacket|remind|push/daily|search/container_discover|statuses/(push_info|container_positive)|photo/(info|editor/guide)|multimedia/video/red|live|huati/discovery|ttarticle/x/m/aj/(uvead|reward|recommend)|portal.php\?a=hot|ad) url reject-dict
 
 # > 哔哩哔哩
 # @app2smile，@RuCu6，@ddgksf2013，@kokoryh，@ClydeTime
@@ -772,7 +772,7 @@ http-request ^https?://.+music.+(player/url|playlist|entrance|/eapi/search/).*$ 
 # 短视频 reel/reel_watch_sequence
 # script-request-body 请求体
 # binary-body-mode=true 二进制模式
-http-request ^https?://youtubei\.googleapis\.com/youtubei/v1/(browse|next|player|reel/reel_watch_sequence)\? script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/youtube.request.beta.js,requires-body=true,binary-body-mode=true,tag=youtube
+http-request ^https?://youtubei.googleapis.com/youtubei/v1/(browse|next|player|reel/reel_watch_sequence)\? script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/youtube.request.beta.js,requires-body=true,binary-body-mode=true,tag=youtube
 # 首页瀑布流 browse
 # 插播广告 next|player
 # 短视频 reel/reel_watch_sequence
@@ -781,7 +781,7 @@ http-request ^https?://youtubei\.googleapis\.com/youtubei/v1/(browse|next|player
 # 画中画、后台播放 account/get_setting
 # script-response-body 响应体
 # binary-body-mode=true 二进制模式
-http-response ^https?://youtubei\.googleapis\.com/youtubei/v1/(browse|next|player|reel/reel_watch_sequence|search|guide|account/get_setting)\? script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/youtube.response.beta.js,requires-body=true,binary-body-mode=true,tag=youtube
+http-response ^https?://youtubei.googleapis.com/youtubei/v1/(browse|next|player|reel/reel_watch_sequence|search|guide|account/get_setting)\? script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/youtube.response.beta.js,requires-body=true,binary-body-mode=true,tag=youtube
 
 # > 酷安
 # @ddgksf2013
@@ -789,31 +789,31 @@ http-response ^https?://youtubei\.googleapis\.com/youtubei/v1/(browse|next|playe
 # 商品推广 feed/detail
 # 首页广告 main/index
 # 推广广告 detail
-http-response ^https?://api\.coolapk\.com/v\d/(feed/(replyList|detail)|main/index|dataList) script-path=https://github.com/ZY714IU/ZY/raw/main/Scripts/coolapk.js,requires-body=true,timeout=10,tag=酷安
+http-response ^https?://api.coolapk.com/v\d/(feed/(replyList|detail)|main/index|dataList) script-path=https://github.com/ZY714IU/ZY/raw/main/Scripts/coolapk.js,requires-body=true,timeout=10,tag=酷安
 
 # > pornhub
 # @Adblock4limbo
 # https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/surge_pornhub.js
-http-response ^https?://(\w{0,3}(\.){0,1}(pornhub)(\.)\w{0,3})(?!.*?(/(cdn-cgi)))(?!.*?(\.(css|js|jpeg|jpg|png|gif|ico|mp3|mp4|svg|tff|PNG|woff|woff2|m3u8))).* script-path=https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/surge_pornhub.js,requires-body=true,timeout=10,tag=pornhub
+http-response ^https?://(\w{0,3}(.){0,1}(pornhub)(.)\w{0,3})(?!.*?(/(cdn-cgi)))(?!.*?(.(css|js|jpeg|jpg|png|gif|ico|mp3|mp4|svg|tff|PNG|woff|woff2|m3u8))).* script-path=https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/surge_pornhub.js,requires-body=true,timeout=10,tag=pornhub
 
 # > testflight
 # @NobyDa
 # https://github.com/NobyDa/Script/blob/master/TestFlight/TestFlightAccount.js
-http-request ^https?://testflight\.apple\.com/v\d/(app|account|invite)s script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/TestFlightAccount.js,requires-body=true,timeout=10,tag=TestFlightAccount
+http-request ^https?://testflight.apple.com/v\d/(app|account|invite)s script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/TestFlightAccount.js,requires-body=true,timeout=10,tag=TestFlightAccount
 
 # > boxjs
 # @chavyleung
 # https://github.com/chavyleung/scripts/tree/master/box
-http-request ^https?://(.+\.)?boxjs\.(com|net) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/boxjs.js,requires-body=true,timeout=10,tag=boxjs
+http-request ^https?://(.+.)?boxjs.(com|net) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/boxjs.js,requires-body=true,timeout=10,tag=boxjs
 
 # > substore
 # @Peng-YM
 # https://github.com/sub-store-org/Sub-Store/blob/master/config/QX.snippet
-http-request ^https?://sub\.store/((download)|api/(preview|sync|(utils/node-info))) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/sub_store_1.min.js, requires-body=true,timeout=10,tag=sub_store_1.min
-http-request ^https?://sub\.store script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/sub_store_0.min.js, requires-body=true,timeout=10,tag=sub_store_0.min
+http-request ^https?://sub.store/((download)|api/(preview|sync|(utils/node-info))) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/sub_store_1.min.js, requires-body=true,timeout=10,tag=sub_store_1.min
+http-request ^https?://sub.store script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/sub_store_0.min.js, requires-body=true,timeout=10,tag=sub_store_0.min
 
-# > NewBing 将 Safari 伪装成 Edge 以使用BingAI，需要将 NewBing App 地区设置为美国
-http-request ^https?://www\.bing\.com/(search|new|web) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/BingAI.js,requires-body=false,tag=BingAI
+# > NewBing将Safari伪装成Edge以使用BingAI，需要将NewBing App地区设置为美国
+http-request ^https?://www.bing.com/(search|new|web) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/BingAI.js,requires-body=false,tag=BingAI
 
 [Mitm]
-hostname = *.uve.weibo.com, *api.weibo.cn, weibo.com, grpc.biliapi.net, ap*.bili*i.*, 2402:4e00:1200:ed00:0:9089:6dac:96b6, 103.41.167.226, 103.41. 167.234, 103.41.167.235, 103.41.167.236, 103.41.167.237, 118.89.204.198, www.zhihu.com, api.zhihu.com, zhuanlan.zhihu.com, appcloud2.zhihu.com, m-cloud.zhihu.com, m5-zb.amap.com, m5.amap.com, sns.amap.com, edith.xiaohongshu.com, www.xiaohongshu.com, tiebac.baidu.com, newclient.map.baidu.com, pan.baidu.com, www.baidu.com, m.baidu.com, boxer.baidu.com, interface*.music.163.com, youtubei.googleapis.com, *.googlevideo.com, *p*.zhuan*.com, *.meitu.com, client.app.coc.10086.cn, h.app.coc.10086.cn, gx.10086.cn, *plus.meituan.net, wmapi.meituan.com, img.meituan.net, api.coolapk.com, mp.weixin.qq.com, api-shoulei-ssl.xunlei.com, rtbapi.douyucdn.cn, *ar*.umetrip.com, iyes.youku.com, gorgon.youdao.com, *.pornhub.*, testflight.apple.com, *boxjs.*, sub.store, www.bing.com
+hostname=*.uve.weibo.com,*api.weibo.cn,weibo.com,grpc.biliapi.net,ap*.bili*i.*,2402:4e00:1200:ed00:0:9089:6dac:96b6,103.41.167.226,103.41. 167.234,103.41.167.235,103.41.167.236,103.41.167.237, 118.89.204.198,www.zhihu.com,api.zhihu.com,zhuanlan.zhihu.com,appcloud2.zhihu.com,m-cloud.zhihu.com,m5-zb.amap.com,m5.amap.com,sns.amap.com,edith.xiaohongshu.com,www.xiaohongshu.com,tiebac.baidu.com,newclient.map.baidu.com,pan.baidu.com,www.baidu.com,m.baidu.com,boxer.baidu.com,interface*.music.163.com,youtubei.googleapis.com,*.googlevideo.com,*p*.zhuan*.com,*.meitu.com,client.app.coc.10086.cn,h.app.coc.10086.cn,gx.10086.cn,*plus.meituan.net,wmapi.meituan.com,img.meituan.net,api.coolapk.com,mp.weixin.qq.com,api-shoulei-ssl.xunlei.com,rtbapi.douyucdn.cn,*ar*.umetrip.com,iyes.youku.com,gorgon.youdao.com,*.pornhub.*,testflight.apple.com,*boxjs.*,sub.store,www.bing.com
