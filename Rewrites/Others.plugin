@@ -88,20 +88,32 @@ DOMAIN,api.biliapi.net,PROXY
 #DOMAIN,mp.weixin.qq.com,PROXY 
 
 # > 微博
+DOMAIN-SUFFIX,ad.weibo.com,REJECT
+DOMAIN-SUFFIX,ads.viber.com,REJECT
+DOMAIN-SUFFIX,ads-d.viber.com,REJECT
+DOMAIN-SUFFIX,ads.aws.viber.com,REJECT
+DOMAIN-SUFFIX,tui.weibo.com,REJECT
+DOMAIN-SUFFIX,alitui.weibo.com,REJECT
+DOMAIN-SUFFIX,alitui.weibo.com.cn,REJECT
 DOMAIN-SUFFIX,adimg.uve.weibo.com,REJECT
-DOMAIN-SUFFIX,adimg.uve.weibo.com,REJECT
-DOMAIN-SUFFIX,adstrategy.biz.weibo.com,REJECT
-DOMAIN-SUFFIX,brandvideo.biz.weibo.com,REJECT
-DOMAIN-SUFFIX,vs.biz.weibo.com,REJECT
-DOMAIN-SUFFIX,kadmimage.biz.weibo.com,REJECT
+DOMAIN-SUFFIX,adimg.vue.weibo.com,REJECT
+DOMAIN-SUFFIX,biz.weibo.com,REJECT
+DOMAIN-SUFFIX,beacon.sina.com.cn,REJECT
+DOMAIN-SUFFIX,click.uve.weibo.com,REJECT
+DOMAIN-SUFFIX,dsp.edm.weibo.cn,REJECT
+DOMAIN-SUFFIX,fastimage.uve.weibo.com,REJECT
+DOMAIN-SUFFIX,game.weibo.cn,REJECT
+DOMAIN-SUFFIX,game.weibo.com,REJECT
+DOMAIN-SUFFIX,game.weibo.com.cn,REJECT
+DOMAIN-SUFFIX,push.mcp.weibo.cn,REJECT
 DOMAIN-SUFFIX,u1.img.mobile.sina.cn,REJECT
-DOMAIN-SUFFIX,sdkclick.biz.weibo.com,REJECT
-DOMAIN-SUFFIX,sdkaction.biz.weibo.com,REJECT
-DOMAIN-SUFFIX,sdkmonitor.biz.weibo.com,REJECT
+DOMAIN-SUFFIX,widget.weibo.com,REJECT
+DOMAIN-SUFFIX,weibomingzi.com,REJECT
+DOMAIN-SUFFIX,s.weibo.com,REJECT
 DOMAIN-SUFFIX,sax.sina.com.cn,REJECT
 DOMAIN-SUFFIX,saxn.sina.com.cn,REJECT
 DOMAIN-SUFFIX,saxs.sina.com.cn,REJECT
-DOMAIN-SUFFIX,beacon.sina.com.cn,REJECT
+DOMAIN-SUFFIX,zymo.mps.weibo.com,REJECT
 # > 知乎
 DOMAIN-SUFFIX,appcloud.zhihu.com,REJECT
 DOMAIN-SUFFIX,appcloud2.in.zhihu.com,REJECT
@@ -230,6 +242,10 @@ DOMAIN-SUFFIX,dsp-impr2.youdao.com,REJECT
 DOMAIN-SUFFIX,img2.360buyimg.com,REJECT
 # > 闲鱼 开屏广告
 DOMAIN-SUFFIX,iyes.youku.com,REJECT
+# > 个推
+DOMAIN-SUFFIX,sdk.open.talk.getui.net,REJECT
+DOMAIN-SUFFIX,sdk-conf.getui.com,REJECT
+DOMAIN-SUFFIX,cm-10-138.getui.com,REJECT
 # > 安全浏览限制解除
 DOMAIN,u3.ucweb.com,REJECT
 DOMAIN,lookup.api.bsb.baidu.com,REJECT
