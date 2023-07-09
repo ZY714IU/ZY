@@ -2,13 +2,13 @@
 https://github.com/RuCu6/QuanX/blob/9a67ac7a83380a7c1cfaa23a3cfe7ac42a7a9ece/Scripts/bilibili/bili.js
 2023-06-11 12:38
 
-更改 tab
+更改标签页tab
           item.name === "直播" ||
           item.name === "推荐" ||
           item.name === "热门" ||
           item.name === "影视"
 
-更改 tab
+更改标签页tab
   // 标签页
   if (obj.data.tab) {
     obj.data.tab = [ 
