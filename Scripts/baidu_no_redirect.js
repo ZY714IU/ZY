@@ -1,7 +1,8 @@
 /*================
 https://github.com/app2smile/rules/blob/master/js/baidu-no-redirect.js
 ScriptName 百度搜索防跳转AppStore
-^https?:\/\/boxer\.baidu\.com\/scheme\?scheme url script-response-header https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/baidu-no-redirect.js
+^https?://boxer.baidu.com/scheme\?scheme url script-response-header https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/baidu-no-redirect.js
+
 ================*/
 
 const method = $request.method;
