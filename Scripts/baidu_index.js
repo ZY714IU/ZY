@@ -1,9 +1,10 @@
 /*================
 https://github.com/RuCu6/QuanX/tree/main/Scripts/baidu
 ScriptName baidu-index 百度搜索首页净化
-Author  @Adblock4limbo, @RuCu6
-^https?://(www|m)\.baidu\.com(/|/\?ref.*)$ url script-response-body https://github.com/ZY714IU/ZY/raw/main/Scripts/baidu_index.js
+Author @Adblock4limbo, @RuCu6
+^https?://(www|m).baidu.com(/|/\?ref.*)$ url script-response-body https://github.com/ZY714IU/ZY/raw/main/Scripts/baidu_index.js
 右上角入口按钮(已删除) .square-enterance,
+
 ================*/
 
 let rHead = "<head>";
