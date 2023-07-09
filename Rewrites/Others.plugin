@@ -18,241 +18,228 @@ skip-proxy=iosapps.itunes.apple.com
 # > 优先级：本地-插件-订阅规则集，ip和域名优先
 # > DIRECT
 # > 微博
-DOMAIN,sdkapp.uve.weibo.com,DIRECT
-DOMAIN,weibointl.api.weibo.cn,DIRECT
+HOST,sdkapp.uve.weibo.com,DIRECT
+HOST,weibointl.api.weibo.cn,DIRECT
 # > 字节跳动
-DOMAIN,verify.zijieapi.com,DIRECT
-DOMAIN-SUFFIX,byteimg.com,DIRECT
+HOST,verify.zijieapi.com,DIRECT
+HOST-SUFFIX,byteimg.com,DIRECT
 # > 阿里系
-DOMAIN,amdc.m.taobao.com,DIRECT
-DOMAIN-SUFFIX,ynuf.aliapp.org,DIRECT
-# > 个推
-DOMAIN-SUFFIX,getui.com,DIRECT
-# > 友盟
-DOMAIN-SUFFIX,msg.umeng.com,DIRECT
-DOMAIN-SUFFIX,msg.umengcloud.com,DIRECT
-# > 汽水音乐
-DOMAIN-SUFFIX,qishui.com,DIRECT
+HOST,amdc.m.taobao.com,DIRECT
 # > 腾讯
-DOMAIN,vd.l.qq.com,DIRECT
-DOMAIN,vi.l.qq.com,DIRECT
-DOMAIN,livew.l.qq.com,DIRECT
-DOMAIN,fairplay.l.qq.com,DIRECT
-# > 其他
-DOMAIN-SUFFIX,ipleak.net,DIRECT
-DOMAIN-KEYWORD,tkys,DIRECT
+HOST-SUFFIX,vd.l.qq.com,DIRECT
+HOST-SUFFIX,vi.l.qq.com,DIRECT
+HOST-SUFFIX,livew.l.qq.com,DIRECT
+HOST-SUFFIX,fairplay.l.qq.com,DIRECT
+# > 个推
+HOST-SUFFIX,getui.com,DIRECT
+# > 友盟
+HOST-SUFFIX,msg.umeng.com,DIRECT
+HOST-SUFFIX,msg.umengcloud.com,DIRECT
 
-# > PROXY
 # > 必应国际版(不开分流则国内版)
-DOMAIN,www.bing.com,PROXY
-DOMAIN,www.bing.net,PROXY
-DOMAIN-SUFFIX,bing.com,PROXY
-DOMAIN-SUFFIX,bing.net,PROXY
-DOMAIN-SUFFIX,bingapis.com,PROXY
-DOMAIN-SUFFIX,bingapis.net,PROXY
+HOST,www.bing.com,Static
+HOST,www.bing.net,Static
+HOST-SUFFIX,bing.com,Static
+HOST-SUFFIX,bing.net,Static
+HOST-SUFFIX,bingapis.com,Static
+HOST-SUFFIX,bingapis.net,Static
 # > 机场
-DOMAIN-SUFFIX,2220.it,PROXY
-DOMAIN-SUFFIX,subs.usero.cn,PROXY
-DOMAIN-KEYWORD,fishchips,PROXY
-DOMAIN-KEYWORD,efcloud,PROXY
-DOMAIN-KEYWORD,efshop,PROXY
-DOMAIN-KEYWORD,mojie,PROXY
-DOMAIN-KEYWORD,xsus,PROXY
+HOST-SUFFIX,2220.it,Static
+HOST-SUFFIX,subs.usero.cn,Static
+HOST-KEYWORD,fishchips,Static
+HOST-KEYWORD,efcloud,Static
+HOST-KEYWORD,efshop,Static
+HOST-KEYWORD,mojie,Static
+HOST-KEYWORD,xsus,Static
 # > 代理软件
-DOMAIN-SUFFIX,quantumult.app,PROXY
-DOMAIN-SUFFIX,nssurge.com,PROXY
-DOMAIN-SUFFIX,surge-activation.com,PROXY
-DOMAIN-SUFFIX,stash-activation.com,PROXY
-DOMAIN-KEYWORD,loon,PROXY
+HOST-SUFFIX,quantumult.app,Static
+HOST-SUFFIX,nssurge.com,Static
+HOST-SUFFIX,surge-activation.com,Static
+HOST-SUFFIX,stash-activation.com,Static
+HOST-KEYWORD,loon,Static
 # > 其他
-DOMAIN-SUFFIX,shrtm.nu,PROXY
-DOMAIN-SUFFIX,adtidy.org,PROXY
-DOMAIN-SUFFIX,adguard.com,PROXY
-DOMAIN-SUFFIX,adguard.org,PROXY
-DOMAIN-SUFFIX,missav.com,PROXY
-DOMAIN-SUFFIX,cdnedge.live,PROXY
-DOMAIN-KEYWORD,v2ex,PROXY
-DOMAIN-KEYWORD,notion,PROXY
+HOST-SUFFIX,shrtm.nu,Static
+HOST-SUFFIX,adtidy.org,Static
+HOST-SUFFIX,adguard.com,Static
+HOST-SUFFIX,adguard.org,Static
+HOST-SUFFIX,missav.com,Static
+HOST-SUFFIX,cdnedge.live,Static
+HOST-KEYWORD,v2ex,Static
+HOST-KEYWORD,notion,Static
 # > anti-ip，针对部分软件显示ip归属地分流规则，注意！更改ip归属地有风险，不建议使用！
 # > 微博
-# DOMAIN,api.weibo.cn,PROXY 
-# > 抖音；需家宽ip才生效，否则显示 “未知”
-# DOMAIN-SUFFIX,amemv.com,PROXY
+#HOST,api.weibo.cn,Static 
+# > 抖音；需家宽ip才生效，否则显示“未知”
+HOST-SUFFIX,amemv.com,Static
 # > 小红书
-# DOMAIN,edith.xiaohongshu.com,PROXY
+HOST,edith.xiaohongshu.com,Static
 # > 贴吧
-# DOMAIN,c.tieba.baidu.com,PROXY
+#HOST,c.tieba.baidu.com,Static
 # > 知乎
-# DOMAIN,api.zhihu.com,PROXY
+HOST,api.zhihu.com,Static
 # > 哔哩哔哩
-# DOMAIN,api.bilibili.com,PROXY
-# DOMAIN,api.biliapi.net,PROXY
+HOST,api.bilibili.com,Static
+HOST,api.biliapi.net,Static
 # > 微信
-# DOMAIN,mp.weixin.qq.com,PROXY 
+#HOST,mp.weixin.qq.com,Static 
 
-# > REJECT
 # > 微博
-DOMAIN,adimg.uve.weibo.com,REJECT
-DOMAIN,adimg.uve.weibo.com,REJECT
-DOMAIN,adstrategy.biz.weibo.com,REJECT
-DOMAIN,brandvideo.biz.weibo.com,REJECT
-DOMAIN,vs.biz.weibo.com,REJECT
-DOMAIN,kadmimage.biz.weibo.com,REJECT
-DOMAIN,u1.img.mobile.sina.cn,REJECT
-DOMAIN,sdkclick.biz.weibo.com,REJECT
-DOMAIN,sdkaction.biz.weibo.com,REJECT
-DOMAIN,sdkmonitor.biz.weibo.com,REJECT
-DOMAIN,sax.sina.com.cn,REJECT
-DOMAIN,saxn.sina.com.cn,REJECT
-DOMAIN,saxs.sina.com.cn,REJECT
-DOMAIN,beacon.sina.com.cn,REJECT
+HOST-SUFFIX,adimg.uve.weibo.com,REJECT
+HOST-SUFFIX,adimg.uve.weibo.com,REJECT
+HOST-SUFFIX,adstrategy.biz.weibo.com,REJECT
+HOST-SUFFIX,brandvideo.biz.weibo.com,REJECT
+HOST-SUFFIX,vs.biz.weibo.com,REJECT
+HOST-SUFFIX,kadmimage.biz.weibo.com,REJECT
+HOST-SUFFIX,u1.img.mobile.sina.cn,REJECT
+HOST-SUFFIX,sdkclick.biz.weibo.com,REJECT
+HOST-SUFFIX,sdkaction.biz.weibo.com,REJECT
+HOST-SUFFIX,sdkmonitor.biz.weibo.com,REJECT
+HOST-SUFFIX,sax.sina.com.cn,REJECT
+HOST-SUFFIX,saxn.sina.com.cn,REJECT
+HOST-SUFFIX,saxs.sina.com.cn,REJECT
+HOST-SUFFIX,beacon.sina.com.cn,REJECT
+# > 哔哩哔哩 后台间歇性失效，请在分流屏蔽以下域名
+# > 注意！屏蔽会导致登录和安全相关功能无法使用
+#HOST,mall.bilibili.com,REJECT
+#HOST,passport.bilibili.com,REJECT
 # > 知乎
-DOMAIN,appcloud.zhihu.com,REJECT
-DOMAIN,appcloud2.in.zhihu.com,REJECT
-DOMAIN,crash2.zhihu.com,REJECT
-DOMAIN,mqtt.zhihu.com,REJECT
-DOMAIN,sugar.zhihu.com,REJECT
-IP-CIDR,118.89.204.198/32,REJECT,no-resolve
-IP-CIDR,103.41.167.237/32,REJECT,no-resolve
-IP-CIDR6,2402:4e00:1200:ed00:0:9089:6dac:96b6/128,REJECT,no-resolve
+HOST-SUFFIX,appcloud.zhihu.com,REJECT
+HOST-SUFFIX,appcloud2.in.zhihu.com,REJECT
+HOST-SUFFIX,crash2.zhihu.com,REJECT
+HOST-SUFFIX,mqtt.zhihu.com,REJECT
+HOST-SUFFIX,sugar.zhihu.com,REJECT
+IP-CIDR,118.89.204.198/32,REJECT
+IP-CIDR,103.41.167.237/32,REJECT
+IP6-CIDR,2402:4e00:1200:ed00:0:9089:6dac:96b6/128,REJECT
 # > 字节跳动
-DOMAIN,ad.toutiao.com,REJECT
-DOMAIN,ad-sign.byteimg.com,REJECT
-DOMAIN,im-x.jd.com,REJECT
-DOMAIN,dig.bdurl.net,REJECT
-DOMAIN,dig.zjurl.cn,REJECT
-DOMAIN,dsp.toutiao.com,REJECT
-DOMAIN,api-access.pangolin-sdk-toutiao-b.com,REJECT
-DOMAIN,api-access.pangolin-sdk-toutiao.com,REJECT
-DOMAIN,sf3-fe-tos.pglstatp-toutiao.com,REJECT
-DOMAIN,sf3-ttcdn-tos.pstatp.com,REJECT
-DOMAIN-SUFFIX,snssdk.com,REJECT
-DOMAIN-SUFFIX,zijieapi.com,REJECT
-DOMAIN-SUFFIX,pangolin-sdk-toutiao-b.com,REJECT
-DOMAIN-SUFFIX,pangolin-sdk-toutiao.com,REJECT
-DOMAIN-SUFFIX,pglstatp-toutiao.com,REJECT
-DOMAIN-SUFFIX,byteorge.com,REJECT
-DOMAIN-SUFFIX,bytegoofy.com,REJECT
-DOMAIN-SUFFIX,bytedance.com,REJECT
-DOMAIN-SUFFIX,p6-ad-sign.byteimg.com,REJECT
-DOMAIN-SUFFIX,p9-ad-sign.byteimg.com,REJECT
-DOMAIN-SUFFIX,rp.hpplay.cn,REJECT
-DOMAIN-SUFFIX,shark-tracer.netease.com,REJECT
+HOST-SUFFIX,ad.toutiao.com,REJECT
+HOST-SUFFIX,ad-sign.byteimg.com,REJECT
+HOST-SUFFIX,im-x.jd.com,REJECT
+HOST-SUFFIX,dig.bdurl.net,REJECT
+HOST-SUFFIX,dig.zjurl.cn,REJECT
+HOST-SUFFIX,dsp.toutiao.com,REJECT
+HOST-SUFFIX,pangolin-sdk-toutiao-b.com,REJECT
+HOST-SUFFIX,pangolin-sdk-toutiao.com,REJECT
+HOST-SUFFIX,snssdk.com,REJECT
+HOST-SUFFIX,zijieapi.com,REJECT
+HOST-SUFFIX,pglstatp-toutiao.com,REJECT
+HOST-SUFFIX,sf3-ttcdn-tos.pstatp.com,REJECT
+HOST-SUFFIX,byteorge.com,REJECT
+HOST-SUFFIX,bytegoofy.com,REJECT
+HOST-SUFFIX,bytedance.com,REJECT
+HOST-SUFFIX,p6-ad-sign.byteimg.com,REJECT
+HOST-SUFFIX,p9-ad-sign.byteimg.com,REJECT
+HOST-SUFFIX,rp.hpplay.cn,REJECT
+HOST-SUFFIX,shark-tracer.netease.com,REJECT
 # > 百度
-DOMAIN-SUFFIX,pos.baidu.com,REJECT
-# > 百度地图
-DOMAIN,afd.baidu.com,REJECT
-DOMAIN,afdconf.baidu.com,REJECT
-DOMAIN,httpdns.baidubce.com,REJECT
-DOMAIN,lc.map.baidu.com,REJECT
-# > 贴吧、地图 屏蔽域名dns查询(否则去广告不干净)
-DOMAIN,httpdns.baidubce.com,REJECT
-IP-CIDR,180.76.76.200/32,REJECT,no-resolve
-# > 贴吧屏蔽 ws (副作用；消息通知功能失效，需手动进入查看)，强制帖子接口走http
-# DOMAIN,im.tieba.baidu.com,REJECT
-# IP-CIDR,203.107.1.1/32,REJECT,no-resolve
+HOST-SUFFIX,afd.baidu.com,REJECT
+HOST-SUFFIX,afdconf.baidu.com,REJECT
+HOST-SUFFIX,pos.baidu.com,REJECT
+HOST-SUFFIX,lc.map.baidu.com,REJECT
+HOST-SUFFIX,httpdns.baidubce.com,REJECT
+# > 贴吧、地图屏蔽域名dns查询(否则去广告不干净)
+IP-CIDR,180.76.76.200/32,REJECT
+# > 贴吧屏蔽ws(副作用；消息通知功能失效，需手动进入查看)，强制帖子接口走http
+#HOST,im.tieba.baidu.com,REJECT
+#IP-CIDR,203.107.1.1/32,REJECT
 # > 阿里巴巴
-DOMAIN,adashx.ut.amap.com,REJECT
-DOMAIN,adashx.m.taobao.com,REJECT
-DOMAIN,adashbc.m.taobao.com,REJECT
-DOMAIN,adash-c.ut.taobao.com,REJECT
-DOMAIN,adashbc.ut.taobao.com,REJECT
-DOMAIN,adashxgc.ut.taobao.com,REJECT
+HOST-SUFFIX,adashx.m.taobao.com,REJECT
+HOST-SUFFIX,adashbc.m.taobao.com,REJECT
+HOST-SUFFIX,adash-c.ut.taobao.com,REJECT
+HOST-SUFFIX,adashbc.ut.taobao.com,REJECT
+HOST-SUFFIX,adashxgc.ut.taobao.com,REJECT
 # > 高德地图
-DOMAIN,awaken.amap.com,REJECT
-DOMAIN,amap-aos-info-nogw.amap.com,REJECT
-DOMAIN,free-aos-cdn-image.amap.com,REJECT
+HOST-SUFFIX,awaken.amap.com,REJECT
+HOST-SUFFIX,adashx.ut.amap.com,REJECT
 # > 腾讯
-DOMAIN-SUFFIX,adsmind.tc.qq.com,REJECT
-DOMAIN-SUFFIX,adsmind.gdtimg.com,REJECT
-DOMAIN-SUFFIX,adsmind.ugdtimg.com,REJECT
-DOMAIN-SUFFIX,adsmind.apdcdn.tc.qq.com,REJECT
-DOMAIN-SUFFIX,api.iegadp.qq.com,REJECT
-DOMAIN-SUFFIX,gdt.qq.com,REJECT
-DOMAIN-SUFFIX,e.qq.com,REJECT
-DOMAIN-SUFFIX,l.qq.com,REJECT
-DOMAIN-SUFFIX,pgdt.gtimg.cn,REJECT
-DOMAIN-SUFFIX,pgdt.gtimg.com,REJECT
-DOMAIN-SUFFIX,pgdt.ugdtimg.com,REJECT
-DOMAIN-SUFFIX,wa.gtimg.com,REJECT
-DOMAIN-SUFFIX,wxsnsdy.wxs.qq.com,REJECT
-DOMAIN-SUFFIX,wxsnsdythumb.wxs.qq.com,REJECT
-DOMAIN-SUFFIX,ottcn.com,REJECT
-DOMAIN-SUFFIX,splashqqlive.gtimg.com,REJECT
-# > Safari 防跳转
-DOMAIN,app-site-association.cdn-apple.com,REJECT
-# > Apple 绕过 App 企业证书过期
-DOMAIN,ocsp.apple.com,REJECT
-# > 其他
-DOMAIN,ca.iadsdk.apple.com,REJECT
-DOMAIN,api-adservices.apple.com,REJECT
+HOST-SUFFIX,adsmind.tc.qq.com,REJECT
+HOST-SUFFIX,adsmind.gdtimg.com,REJECT
+HOST-SUFFIX,adsmind.ugdtimg.com,REJECT
+HOST-SUFFIX,adsmind.apdcdn.tc.qq.com,REJECT
+HOST-SUFFIX,api.iegadp.qq.com,REJECT
+HOST-SUFFIX,gdt.qq.com,REJECT
+HOST-SUFFIX,e.qq.com,REJECT
+HOST-SUFFIX,l.qq.com,REJECT
+HOST-SUFFIX,pgdt.gtimg.cn,REJECT
+HOST-SUFFIX,pgdt.gtimg.com,REJECT
+HOST-SUFFIX,pgdt.ugdtimg.com,REJECT
+HOST-SUFFIX,wa.gtimg.com,REJECT
+host-suffix,wxsnsdy.wxs.qq.com,REJECT
+HOST-SUFFIX,wxsnsdythumb.wxs.qq.com,REJECT
+HOST-SUFFIX,ottcn.com,REJECT
+HOST-SUFFIX,splashqqlive.gtimg.com,REJECT
+# > Apple绕过App企业证书过期
+HOST,ocsp.apple.com,REJECT
+# > Apple其他
+HOST,ca.iadsdk.apple.com,REJECT
+HOST,api-adservices.apple.com,REJECT
+# > Safari防跳转
+HOST,app-site-association.cdn-apple.com,REJECT
 # > Google
-DOMAIN,ads.youtube.com,REJECT
-DOMAIN,adservice.google.com,REJECT
-DOMAIN,www.googleadservices.com,REJECT
-DOMAIN-SUFFIX,doubleclick.net,REJECT
-DOMAIN-SUFFIX,googleadservices.com,REJECT
-DOMAIN-SUFFIX,googleadsserving.com,REJECT
-DOMAIN-SUFFIX,googlesyndication.com,REJECT
-DOMAIN-SUFFIX,googletagservices.com,REJECT
-DOMAIN-KEYWORD,adservice.google.com,REJECT
+HOST,www.googleadservices.com,REJECT
+HOST-SUFFIX,ads.youtube.com,REJECT
+HOST-SUFFIX,adservice.google.com,REJECT
+HOST-SUFFIX,doubleclick.net,reject
+HOST-SUFFIX,googleadservices.com,REJECT
+HOST-SUFFIX,googleadsserving.com,REJECT
+HOST-SUFFIX,googlesyndication.com,REJECT
+HOST-SUFFIX,googletagservices.com,REJECT
+HOST-KEYWORD,adservice.google.com,REJECT
 # > Amazon AD
-DOMAIN-SUFFIX,amazon-adsystem.com,REJECT
+HOST-SUFFIX,amazon-adsystem.com,REJECT
 # > 网易云音乐
-DOMAIN,httpdns.n.netease.com,REJECT
-DOMAIN,iadmat.nosdn.127.net,REJECT
-DOMAIN,iadmatapk.nosdn.127.net,REJECT
-DOMAIN,iadmusicmat.music.126.net,REJECT
-DOMAIN,iadmusicmatvideo.music.126.net,REJECT
-DOMAIN-SUFFIX,163jiasu.com,REJECT
+HOST,httpdns.n.netease.com,REJECT
+HOST,iadmat.nosdn.127.net,REJECT
+HOST,iadmatapk.nosdn.127.net,REJECT
+HOST,iadmusicmat.music.126.net,REJECT
+HOST,iadmusicmatvideo.music.126.net,REJECT
+HOST-SUFFIX,163jiasu.com,REJECT
 # > 云闪付
-DOMAIN,ads.95516.com,REJECT
-DOMAIN,cm-10-138.getui.com,REJECT
-DOMAIN,switch.cup.com.cn,REJECT
-DOMAIN,sdk-conf.getui.com,REJECT
-DOMAIN,sdk.open.talk.getui.net,REJECT
-DOMAIN,tysdk.95516.com,REJECT
+HOST-SUFFIX,ads.95516.com,REJECT
+HOST-SUFFIX,cm-10-138.getui.com,REJECT
+HOST-SUFFIX,switch.cup.com.cn,REJECT
+HOST-SUFFIX,sdk-conf.getui.com,REJECT
+HOST-SUFFIX,sdk.open.talk.getui.net,REJECT
+HOST-SUFFIX,tysdk.95516.com,REJECT
 # > 迅雷 开屏广告
-DOMAIN,adsp.xunlei.com,REJECT
-DOMAIN,adapi.izuiyou.com,REJECT
-DOMAIN,etl.xlmc.sandai.net,REJECT
+HOST-SUFFIX,adsp.xunlei.com,REJECT
+HOST-SUFFIX,adapi.izuiyou.com,REJECT
+HOST-SUFFIX,etl.xlmc.sandai.net,REJECT
 # > 迅雷 解除版权限制
-DOMAIN,hub5emu.v6.shub.sandai.net,REJECT
-DOMAIN,hub5idx.v6.shub.sandai.net,REJECT
-DOMAIN,hub5btmain.v6.shub.sandai.net,REJECT
+HOST-SUFFIX,v6.shub.sandai.net,REJECT
 # > 虎扑 开屏广告
-DOMAIN-SUFFIX,goblin.hupu.com,REJECT
+HOST-SUFFIX,goblin.hupu.com,REJECT
 # > 彩云天气
-DOMAIN,ad.cyapi.cn,REJECT
+HOST-SUFFIX,ad.cyapi.cn,REJECT
 # > 58同城
-DOMAIN,adshow.58.com,REJECT
+HOST-SUFFIX,adshow.58.com,REJECT
 # > 美图秀秀 开屏广告
-DOMAIN-SUFFIX,adui.tg.meitu.com,REJECT
+HOST-SUFFIX,adui.tg.meitu.com,REJECT
 # > 央视频 开屏广告
-DOMAIN,wimg.yangshipin.cn,REJECT
+HOST-SUFFIX,wimg.yangshipin.cn,REJECT
 # > 数字联盟
-DOMAIN-SUFFIX,shuzilm.cn,REJECT
-# > 快手联
-DOMAIN,open.e.kuaishou.com,REJECT
+HOST-SUFFIX,shuzilm.cn,REJECT
+# > 快手联盟
+HOST-SUFFIX,open.e.kuaishou.com,REJECT
 # > 有道翻译官
-DOMAIN,dsp-impr2.youdao.com,REJECT
-DOMAIN,log-yex.youdao.com,REJECT
-DOMAIN,download.ydstatic.com,REJECT
-DOMAIN,b-clkservice.youdao.com,REJECT
-DOMAIN,dsp-impr2.youdao.com,REJECT
-DOMAIN,img2.360buyimg.com,REJECT
+HOST-SUFFIX,dsp-impr2.youdao.com,REJECT
+HOST-SUFFIX,log-yex.youdao.com,REJECT
+HOST-SUFFIX,download.ydstatic.com,REJECT
+HOST-SUFFIX,b-clkservice.youdao.com,REJECT
+HOST-SUFFIX,dsp-impr2.youdao.com,REJECT
+HOST-SUFFIX,img2.360buyimg.com,REJECT
 # > 安全浏览限制解除
-DOMAIN,u3.ucweb.com,REJECT
-DOMAIN,lookup.api.bsb.baidu.com,REJECT
-DOMAIN,safebrowsing.g.applimg.com,REJECT
-DOMAIN,safebrowsing.urlsec.qq.com,REJECT
-DOMAIN,safebrowsing.googleapis.com,REJECT
-DOMAIN,proxy.safebrowsing.apple,REJECT
-DOMAIN,token.safebrowsing.apple,REJECT
-DOMAIN-SUFFIX,safebrowsing.apple,REJECT
+HOST,u3.ucweb.com,REJECT
+HOST,lookup.api.bsb.baidu.com,REJECT
+HOST,safebrowsing.g.applimg.com,REJECT
+HOST,safebrowsing.urlsec.qq.com,REJECT
+HOST,safebrowsing.googleapis.com,REJECT
+HOST,proxy.safebrowsing.apple,REJECT
+HOST,token.safebrowsing.apple,REJECT
+HOST-SUFFIX,safebrowsing.apple,REJECT
 # > 其他
-DOMAIN-KEYWORD,adsystem,REJECT
-DOMAIN-KEYWORD,adservice,REJECT
+HOST-KEYWORD,ads,REJECT
+
 # > AppleDirect；数量：28条
 # > https://github.com/ACL4SSR/ACL4SSR/blob/master/Clash/Ruleset/Apple.list
 DOMAIN,apple.comscoreresearch.com,DIRECT
