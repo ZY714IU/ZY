@@ -1,6 +1,7 @@
 /*================
 https://github.com/app2smile/rules/blob/master/js/tieba-json.js
 2023-06-12
+
 ================*/
 
 const url = $request.url;
