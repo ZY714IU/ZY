@@ -242,6 +242,8 @@ DOMAIN-SUFFIX,dsp-impr2.youdao.com,REJECT
 DOMAIN-SUFFIX,img2.360buyimg.com,REJECT
 # > 闲鱼 开屏广告
 DOMAIN-SUFFIX,iyes.youku.com,REJECT
+# > 有道翻译官 开屏广告
+DOMAIN-SUFFIX,gorgon.youdao.com,REJECT
 # > 个推
 DOMAIN-SUFFIX,sdk.open.talk.getui.net,REJECT
 DOMAIN-SUFFIX,sdk-conf.getui.com,REJECT
@@ -615,10 +617,6 @@ USER-AGENT,SpeedTest*,PROXY
 # > 航旅纵横
 # 开屏广告
 ^https?://(discardrp|startup).umetrip.com/gateway/api/umetrip/native url reject-200
-
-# > 有道翻译官
-# 开屏广告
-^https?://gorgon.youdao.com/gorgon/brand/prefetch url reject-200
 
 # > pornhub
 ^https?://(cn|www).pornhub.com/_xa/ads url reject
