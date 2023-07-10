@@ -126,12 +126,13 @@ IP-CIDR6,2402:4e00:1200:ed00:0:9089:6dac:96b6/128,REJECT
 # > 字节跳动
 DOMAIN-SUFFIX,ad.toutiao.com,REJECT
 DOMAIN-SUFFIX,ad-sign.byteimg.com,REJECT
-DOMAIN-SUFFIX,im-x.jd.com,REJECT
+DOMAIN-SUFFIX,app-alpha.bytedance.net,REJECT
 DOMAIN-SUFFIX,dig.bdurl.net,REJECT
 DOMAIN-SUFFIX,dig.zjurl.cn,REJECT
 DOMAIN-SUFFIX,dsp.toutiao.com,REJECT
 DOMAIN-SUFFIX,pangolin-sdk-toutiao-b.com,REJECT
 DOMAIN-SUFFIX,pangolin-sdk-toutiao.com,REJECT
+DOMAIN-SUFFIX,im-x.jd.com,REJECT
 DOMAIN-SUFFIX,snssdk.com,REJECT
 DOMAIN-SUFFIX,zijieapi.com,REJECT
 DOMAIN-SUFFIX,pglstatp-toutiao.com,REJECT
@@ -143,26 +144,35 @@ DOMAIN-SUFFIX,p6-ad-sign.byteimg.com,REJECT
 DOMAIN-SUFFIX,p9-ad-sign.byteimg.com,REJECT
 DOMAIN-SUFFIX,rp.hpplay.cn,REJECT
 DOMAIN-SUFFIX,shark-tracer.netease.com,REJECT
+DOMAIN-KEYWORD,ad-sign.byteimg,REJECT
+DOMAIN-KEYWORD,pangolin-sdk-toutiao,REJECT
 # > 百度
 DOMAIN-SUFFIX,afd.baidu.com,REJECT
 DOMAIN-SUFFIX,afdconf.baidu.com,REJECT
 DOMAIN-SUFFIX,pos.baidu.com,REJECT
 DOMAIN-SUFFIX,lc.map.baidu.com,REJECT
 DOMAIN-SUFFIX,httpdns.baidubce.com,REJECT
+DOMAIN-SUFFIX,udpolimenew.baidu.com,REJECT
 # > 贴吧、地图屏蔽域名dns查询(否则去广告不干净)
 IP-CIDR,180.76.76.200/32,REJECT
 # > 贴吧屏蔽ws(副作用；消息通知功能失效，需手动进入查看)，强制帖子接口走http
 #DOMAIN,im.tieba.baidu.com,REJECT
 #IP-CIDR,203.107.1.1/32,REJECT
 # > 阿里巴巴
+DOMAIN-SUFFIX,apoll.m.taobao.com,REJECT
 DOMAIN-SUFFIX,adashx.m.taobao.com,REJECT
 DOMAIN-SUFFIX,adashbc.m.taobao.com,REJECT
 DOMAIN-SUFFIX,adash-c.ut.taobao.com,REJECT
 DOMAIN-SUFFIX,adashbc.ut.taobao.com,REJECT
 DOMAIN-SUFFIX,adashxgc.ut.taobao.com,REJECT
+DOMAIN-KEYWORD,adash,REJECT
 # > 高德地图
 DOMAIN-SUFFIX,awaken.amap.com,REJECT
 DOMAIN-SUFFIX,adashx.ut.amap.com,REJECT
+# > 闲鱼 开屏广告
+DOMAIN-SUFFIX,m.ykimg.com,REJECT
+DOMAIN-SUFFIX,iyes.youku.com,REJECT
+# > 高德地图
 # > 腾讯
 DOMAIN-SUFFIX,adsmind.tc.qq.com,REJECT
 DOMAIN-SUFFIX,adsmind.gdtimg.com,REJECT
@@ -180,6 +190,7 @@ DOMAIN-SUFFIX,wxsnsdy.wxs.qq.com,REJECT
 DOMAIN-SUFFIX,wxsnsdythumb.wxs.qq.com,REJECT
 DOMAIN-SUFFIX,ottcn.com,REJECT
 DOMAIN-SUFFIX,splashqqlive.gtimg.com,REJECT
+DOMAIN-KEYWORD,adsmind,REJECT
 # > Apple绕过App企业证书过期
 DOMAIN,ocsp.apple.com,REJECT
 # > Apple其他
@@ -196,7 +207,7 @@ DOMAIN-SUFFIX,googleadservices.com,REJECT
 DOMAIN-SUFFIX,googleadsserving.com,REJECT
 DOMAIN-SUFFIX,googlesyndication.com,REJECT
 DOMAIN-SUFFIX,googletagservices.com,REJECT
-DOMAIN-KEYWORD,adservice.google.com,REJECT
+DOMAIN-KEYWORD,adservice,REJECT
 # > Amazon AD
 DOMAIN-SUFFIX,amazon-adsystem.com,REJECT
 # > 网易云音乐
@@ -239,8 +250,6 @@ DOMAIN-SUFFIX,dsp-impr2.youdao.com,REJECT
 DOMAIN-SUFFIX,log-yex.youdao.com,REJECT
 DOMAIN-SUFFIX,download.ydstatic.com,REJECT
 DOMAIN-SUFFIX,b-clkservice.youdao.com,REJECT
-# > 闲鱼 开屏广告
-DOMAIN-SUFFIX,iyes.youku.com,REJECT
 # > 个推
 DOMAIN-SUFFIX,sdk.open.talk.getui.net,REJECT
 DOMAIN-SUFFIX,sdk-conf.getui.com,REJECT
