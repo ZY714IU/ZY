@@ -250,10 +250,6 @@ DOMAIN-SUFFIX,dsp-impr2.youdao.com,REJECT
 DOMAIN-SUFFIX,log-yex.youdao.com,REJECT
 DOMAIN-SUFFIX,download.ydstatic.com,REJECT
 DOMAIN-SUFFIX,b-clkservice.youdao.com,REJECT
-# > 个推
-DOMAIN-SUFFIX,sdk.open.talk.getui.net,REJECT
-DOMAIN-SUFFIX,sdk-conf.getui.com,REJECT
-DOMAIN-SUFFIX,cm-10-138.getui.com,REJECT
 # > 安全浏览限制解除
 DOMAIN,u3.ucweb.com,REJECT
 DOMAIN,lookup.api.bsb.baidu.com,REJECT
@@ -263,6 +259,12 @@ DOMAIN,safebrowsing.googleapis.com,REJECT
 DOMAIN,proxy.safebrowsing.apple,REJECT
 DOMAIN,token.safebrowsing.apple,REJECT
 DOMAIN-SUFFIX,safebrowsing.apple,REJECT
+# > 个推
+DOMAIN-SUFFIX,sdk.open.talk.getui.net,REJECT
+DOMAIN-SUFFIX,sdk-conf.getui.com,REJECT
+DOMAIN-SUFFIX,cm-10-138.getui.com,REJECT
+# > 其他
+DOMAIN-KEYWORD,ads,REJECT
 
 # > AppleDirect；数量：28条
 # > https://github.com/ACL4SSR/ACL4SSR/blob/master/Clash/Ruleset/Apple.list
