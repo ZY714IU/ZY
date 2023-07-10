@@ -263,8 +263,6 @@ DOMAIN,safebrowsing.googleapis.com,REJECT
 DOMAIN,proxy.safebrowsing.apple,REJECT
 DOMAIN,token.safebrowsing.apple,REJECT
 DOMAIN-SUFFIX,safebrowsing.apple,REJECT
-# > 其他
-DOMAIN-KEYWORD,ads,REJECT
 
 # > AppleDirect；数量：28条
 # > https://github.com/ACL4SSR/ACL4SSR/blob/master/Clash/Ruleset/Apple.list
