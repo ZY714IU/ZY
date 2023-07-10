@@ -420,8 +420,7 @@ USER-AGENT,SpeedTest*,PROXY
 
 # > 重写
 [Rewrite]
-# > 微博
-# @RuCu6，@zmqcherish，@ddgksf2013
+# > 微博 @RuCu6，@zmqcherish，@ddgksf2013
 # 开屏广告 v2/ad|interface/sdk
 ^https?://(bootrealtime|sdkapp).uve.weibo.com/(v2/ad|interface/sdk) url reject-200
 # 热搜提醒 hot
@@ -445,8 +444,7 @@ USER-AGENT,SpeedTest*,PROXY
 # (轻享版)热推 ad
 ^https?://((weibointl.)?api.)?weibo.c(n|om)/(2/)?(!/)?(hot|comments/bullet|vote/get|profile/recommend|video/redpacket|remind|push/daily|search/container_discover|statuses/(push_info|container_positive)|photo/(info|editor/guide)|multimedia/video/red|live|huati/discovery|ttarticle/x/m/aj/(uvead|reward|recommend)|portal.php\?a=hot|ad) url reject-dict
 
-# > 哔哩哔哩
-# @app2smile，@RuCu6，@ddgksf2013，@kokoryh，@ClydeTime
+# > 哔哩哔哩 @app2smile，@RuCu6，@ddgksf2013，@kokoryh，@ClydeTime
 # ip请求
 ^https?://app.bilibili.com/x/resource/ip url reject-200
 # 播放广告浮窗 pgc/activity
@@ -456,8 +454,7 @@ USER-AGENT,SpeedTest*,PROXY
 # 打开通知弹窗 x/push/user/notify
 ^https?://(app|api|grpc).bili(bil|ap)i.(com|net)/(pgc/(activity|season/player/cards)|bilibili.app.(dynamic|interface).v\d.(Dynamic/(DynRed|CampusRedDot)|Search/DefaultWord)|x/push/user/notify) url reject-dict
 
-# > 知乎
-# @blackmatrix7，@RuCu6
+# > 知乎 @blackmatrix7，@RuCu6
 ^https?://(118.89.204.198|103.41.167.237|2402:4e00:1200:ed00:0:9089:6dac:96b6) url reject-dict
 # 开屏广告 commercial_api/(real_time_)?launch
 # 推荐页顶部横幅 commercial_api/banner
@@ -485,8 +482,7 @@ USER-AGENT,SpeedTest*,PROXY
 # 网页版广告
 ^https?://(api|www|zhuanlan).zhihu.com/(ab/)?(api/)?(v\d/)?(products/zhihu/platforms/ios|(questions|anwsers)/\d+/related-readings|hot_recommendation|articles/\d+/recommendation|commercial_api/banners_v3|mcn/v2/linkcard) url reject
 
-# > 高德地图
-# @RuCu6，@ddgksf2013，@kokoryh
+# > 高德地图 @RuCu6，@ddgksf2013，@kokoryh
 # 详情页 shield/search_poi/tips/?(_adv|rec|hooks)
 # 商铺弹窗 shield/search/client/push
 # 搜索框推荐 shield/scene/recommend
@@ -503,8 +499,7 @@ USER-AGENT,SpeedTest*,PROXY
 # 优惠券 ccoupon
 ^https?://(m5(-zb)?|sns).amap.com/ws/(shield/(search|scene)/?(_poi/tips/?(_adv|rec|hooks)|client/push|recommend|new_hotword)|faas/amap-navigation/(main-page-(assets|location)|card-service-route-plan)|boss/order(_web/friendly|/car/(king_toolbox|access_guide))|yuece/(act|openapi/activity/current)/query|promotion-web/resource|valueadded/weather|msgbox|message|asa/ads|mapapi/hint|ccoupon) url reject-dict
 
-# > 小红书
-# @RuCu6
+# > 小红书 @RuCu6
 # https://github.com/RuCu6/QuanX/blob/main/Rewrites/Cube/xiaohongshu.snippet
 # 保存图片、视频时的水印
 ^https?://edith.xiaohongshu.com/api/sns/v\d/note/(feed|redtube|videofeed) url response-body "disable_watermark":false, response-body "disable_watermark":true,
@@ -520,20 +515,17 @@ USER-AGENT,SpeedTest*,PROXY
 # 不知啥弹窗 system_service/popup
 ^https?://(edith|www).xiaohongshu.com/api/(sns|im)/v\d/(surprisebox/(get_style|open|submit_action)|(note/)?guide?/((user|template)_banner|home_guide)|user/teenager/status|followfeed/reddot|(tag/)?ads|messages/unread|system_service/popup) url reject-dict
 
-# > 百度地图
-# @ddgksf2013
+# > 百度地图 @ddgksf2013
 # 开屏&首页左上 广告 phpui2/\?qt=ads
 # 搜索推广 phpui.*qt=hw
 # 商业推广 crossmarketing
 # 我的页动态 usersystem/home/dynamic
 ^https?://newclient.map.baidu.com/client/(phpui(2/\?qt=ads|.*qt=hw)|crossmarketing|usersystem/home/dynamic) url reject-200
 
-# > 百度云盘
-# @RuCu6，@kokoryh
+# > 百度云盘 @RuCu6，@kokoryh
 ^https?://pan.baidu.com/(act/(v\d/(bchannel|welfare)/list|api/activityentry)|rest/\d.0/pcs/ad|story/(diff|new)|(im|m|basem)box|api/(diffall|account/getprivilege)|quota|richsearch|recent/diff) url reject-200
 
-# > 网易云音乐
-# @RuCu6，@Keywos，@kokoryh，@Weiren
+# > 网易云音乐 @RuCu6，@Keywos，@kokoryh，@Weiren
 # https://github.com/RuCu6/QuanX/blob/main/Rewrites/Cube/cloudmusic.snippet
 # 开屏广告 首页顶部横幅 ad/.*
 # 播放页 各种图标、提示、弹窗 link/position/show|music/songshare/text/recommend|mlivestream/entrance/playpage|community/friends/fans-group/artist|mlog/vinyl/story|user/sub/artist|vipcenter/tspopup|zone/songplay/entry|resniche/position/play
@@ -547,8 +539,7 @@ USER-AGENT,SpeedTest*,PROXY
 # 评论页 插入广告
 ^https?://interface3?.music.163.com/eapi/batch\? header-replace-regex Cookie appver=\d.\d.\d\d appver=9999
 
-# > youtube
-# 播放页广告 initplayback.+&oad
+# > youtube 播放页广告
 ^https?://[\w-]+.googlevideo.com/initplayback.+&oad url reject-200
 
 # > 转转
@@ -564,7 +555,6 @@ USER-AGENT,SpeedTest*,PROXY
 ^https?://app.zhuanzhuan.com/(zzx|zz|common)/(open/zzui_lottie_message|v\d/(zzusercenter/personalcenterreddot|corecyclelogic/getredpoint)|transfer/(getsearc(hword|configdata)|getpopup|userred)) url reject-dict
 
 # > 美图秀秀
-# 开屏广告 (已在分流拦截)
 # 我的页卡片 tool/common/home
 # 热搜页卡片 hot
 # 搜索框推荐词 search/pre
@@ -587,32 +577,22 @@ USER-AGENT,SpeedTest*,PROXY
 # 开屏广告 1102|1401；各种悬浮窗、签到模块、其他推广 2000；底部5G设置悬浮窗 1701；移动快报 1803
 ^https?://gx.10086.cn/zt-portal/gxhzg/portal/app/api/v\d/(1102|1401|2000|1701|1803) url reject-dict
 
-# > 美团&外卖
-# @RuCu6
-# 开屏广告
+# > 美团&外卖 开屏广告 @RuCu6
 ^https?://(s3plus|flowplus|img|wmapi).meituan.(net|com)/(v\d/mss_\w+/((brandcpt-vedio|waimai-alita)/\w+.zip$|linglong/\d+.jpg)|bizad/bizad_brandCpt_\d+.jpg|api/v\d/(loadInfo|openscreen|startpicture)) url reject-dict
 
-# > 酷安
-# @ddgksf2013
-# 热词
+# > 酷安 热词 @ddgksf2013
 ^https?://api.coolapk.com/v\d/search\?.*type=hotSearch url reject-dict
 
-# > 微信
-# @RuCu6
-# 公众号 中间带货推广、底部广告、底部相关文章
+# > 微信公众号 带货推广、底部广告、相关文章 @RuCu6
 ^https?://mp.weixin.qq.com/mp/(cps_product_info|getappmsgad|relatedarticle|masonryfeed)\? url reject-dict
 
-# > 迅雷
-# 开屏广告 (已在分流拦截)
-# 新人专享福利、大家都在看、经典必看
+# > 迅雷 新人专享福利、大家都在看、经典必看
 ^https?://api-shoulei-ssl.xunlei.com/flowhub/v\d/slots:batchGet url reject-200
 
-# > 斗鱼
-# 开屏广告
+# > 斗鱼 开屏广告
 ^https?://rtbapi.douyucdn.cn/japi/sign/app/(getinfo|getmaterial) url reject-200
 
-# > 航旅纵横
-# 开屏广告
+# > 航旅纵横 开屏广告
 ^https?://(discardrp|startup).umetrip.com/gateway/api/umetrip/native url reject-200
 
 # > pornhub
@@ -624,8 +604,7 @@ USER-AGENT,SpeedTest*,PROXY
 
 # > 脚本
 [Script]
-# > 微博
-# @RuCu6，@zmqcherish，@ddgksf2013
+# > 微博 @RuCu6，@zmqcherish，@ddgksf2013
 # https://github.com/RuCu6/QuanX/blob/main/Rewrites/Cube/weibo.snippet
 # 开屏广告 v1/ad|interface/sdk|wbapplua
 http-response ^https?://(bootpreload|(sdk|wb)app).uve.weibo.com/(v1/ad|interface/sdk|wbapplua) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/weibo.js,requires-body=true,timeout=10,tag=微博
@@ -666,8 +645,7 @@ http-response ^https?://(weibointl.)?api.weibo.cn/(2/)?(statuses/container_timel
 # (轻享版)搜索下方热搜 search_topic
 ^https?://weibointl.api.weibo.cn/portal.php.*feed&a=search_topic url echo-response text/html echo-response https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/weibo_search_topic.json
 
-# > 哔哩哔哩
-# @app2smile，@RuCu6，@ddgksf2013，@kokoryh，@ClydeTime
+# > 哔哩哔哩 @app2smile，@RuCu6，@ddgksf2013，@kokoryh，@ClydeTime
 # https://github.com/RuCu6/QuanX/blob/main/Rewrites/Cube/bilibili.snippet
 # 开屏广告 x/v2/splash/((brand/|event/)?list2?|show)
 # 推荐页广告 x/v2/feed/index\?
@@ -696,8 +674,7 @@ http-response ^https?://api.live.bilibili.com/xlive/(app-(room|interface)|e-comm
 # binary-body-mode=true 二进制模式
 http-response ^https?://(app|api|grpc).bili(bil|ap)i.(com|net)/bilibili.(polymer.)?(app.)?(search|dynamic|playurl|view|main.community.reply|community.service.dm|interface).v\d.(Search/SearchAll|Dynamic/Dyn(All|Video)|View/(View|TFInfo)|PlayURL/PlayView|Reply/MainList|DM/(DmView|DmSegMobile)|Teenagers/ModeStatus) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/bilibili_proto_b.js,requires-body=true, binary-body-mode=true,timeout=10,tag=哔哩哔哩
 
-# > 知乎
-# @blackmatrix7，@RuCu6
+# > 知乎 @blackmatrix7，@RuCu6
 # https://github.com/RuCu6/QuanX/blob/d2ad4b8e71b73ff2849345067ee4dddea5dfcd30/Rewrites/Cube/zhihu.snippet
 # 推送配置 v3/config|api/cloud/config
 # 关注页 moments_v3
@@ -707,8 +684,7 @@ http-response ^https?://(app|api|grpc).bili(bil|ap)i.(com|net)/bilibili.(polymer
 # 回答详情页 next-(bff|data|render)|(v4/)?questions/\d+/(feeds|answers)|api/v4/(answers|articles)/\d+/recommendation
 http-response ^https?://(api|appcloud2|m-cloud).zhihu.com/(v3/config|api/cloud/config|moments_v3|commercial_api/app_float|topstory/(recommend|hot)|next-(bff|data|render)|(v4/)?questions/\d+/(feeds|answers)|api/v4/(answers|articles)/\d+/recommendation) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/zhihu.js,requires-body=true,tag=知乎
 
-# > 高德地图
-# @RuCu6，@ddgksf2013，@kokoryh
+# > 高德地图 @RuCu6，@ddgksf2013，@kokoryh
 # https://github.com/RuCu6/QuanX/blob/main/Rewrites/Cube/amap.snippet
 # 阿里系请求 AMap|Cainiao
 http-response ^https?://amdc.m.taobao.com/amdc/mobileDispatch script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/amdc.js,tag=阿里系请求
@@ -728,8 +704,7 @@ http-response ^https?://amdc.m.taobao.com/amdc/mobileDispatch script-path=https:
 # 打车页卡片 sharedtrip/taxi/.*tips
 http-response ^https?://m5(-zb)?.amap.com/ws/(shield/(search)?_?/?(poi)?/?(city_feed|search/sp|mps|tips|poi/detail|sug|nearbyrec|common/coupon|dsp/profile/index|frogserver/aocs)|mapapi/poi/infolite|valueadded/alimama/splash|faas/amap-navigation/main-page\?|promotion-web/resource|sharedtrip/taxi/.*tips) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/amap.js,requires-body=true,tag=高德地图
 
-# > 小红书
-# @RuCu6
+# > 小红书 @RuCu6
 # https://github.com/RuCu6/QuanX/blob/main/Rewrites/Cube/xiaohongshu.snippet
 # 搜索页 search/(banner|trending|note)
 # 开屏广告 system_service/(splash_)?config
@@ -737,15 +712,13 @@ http-response ^https?://m5(-zb)?.amap.com/ws/(shield/(search)?_?/?(poi)?/?(city_
 # 关注页感兴趣的人 followfeed
 http-response ^https?://edith.xiaohongshu.com/api/sns/v\d+?/(search/(banner|trending|note)|system_service/(splash_)?config|homefeed/client|followfeed) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/xiaohongshu.js,requires-body=true,tag=小红书
 
-# > 百度贴吧
-# @app2smile
+# > 百度贴吧 @app2smile
 # https://github.com/app2smile/rules/blob/master/module/tieba-qx.conf
 http-response ^https?://(tiebac|c.tieba).baidu.com/(c/f/(frs/(page|threadlist|generalTabList)|pb/page|excellent/personalized)$|tiebaads/commonbatch|c/s/sync$) script-path=https://github.com/ZY714IU/ZY/raw/main/Scripts/baidu_tieba_json.js,requires-body=true, timeout=10,tag=贴吧
 # binary-body-mode=true 二进制模式
 http-response ^https?://(tiebac|c.tieba).baidu.com/c/f/(frs/(page|threadlist|generalTabList)|pb/page|excellent/personalized)\?cmd script-path=https://github.com/ZY714IU/ZY/raw/main/Scripts/baidu_tieba_proto.js,requires-body=true,binary-body-mode=true,timeout=10,tag=贴吧
 
-# > 百度搜索
-# @Adblock4limbo，@RuCu6，@app2smile
+# > 百度搜索 @Adblock4limbo，@RuCu6，@app2smile
 # 搜索首页广告
 http-response ^https?://(www|m).baidu.com(/|/\?ref.*)$ script-path=https://github.com/ZY714IU/ZY/raw/main/Scripts/baidu_index.js,requires-body=true,timeout=10,tag=百度搜索首页广告
 # 防跳转AppStore
@@ -753,12 +726,10 @@ http-response ^https?://boxer.baidu.com/scheme\?scheme script-path=https://raw.g
 # 搜索结果广告
 http-response ^https?://(www|m).baidu.com/.*word=.* script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/baidu_search.js,requires-body=true,timeout=10,tag=百度搜索结果广告
 
-# > 网易云音乐
-# vip (request) @Weiren
+# > 网易云音乐vip(request) @Weiren
 http-request ^https?://.+music.+(player/url|playlist|entrance|/eapi/search/).*$ script-path=https://raw.githubusercontent.com/WeiRen0/Scripts/main/wyun.js,requires-body=false,timeout=10,tag=网易云vip
 
-# > youtube
-# @app2smile，@Maasea，@Choler，@DivineEngine，@VirgilClyne，@RuCu6
+# > youtube @app2smile，@Maasea，@Choler，@DivineEngine，@VirgilClyne，@RuCu6
 # https://github.com/Maasea/sgmodule/blob/master/YoutubeAds.sgmodule
 # 需要禁止 udp 443
 # 首页瀑布流 browse
@@ -777,31 +748,26 @@ http-request ^https?://youtubei.googleapis.com/youtubei/v1/(browse|next|player|r
 # binary-body-mode=true 二进制模式
 http-response ^https?://youtubei.googleapis.com/youtubei/v1/(browse|next|player|reel/reel_watch_sequence|search|guide|account/get_setting)\? script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/youtube.response.beta.js,requires-body=true,binary-body-mode=true,tag=youtube
 
-# > 酷安
-# @ddgksf2013
+# > 酷安 @ddgksf2013
 # 评论广告 feed/replyList
 # 商品推广 feed/detail
 # 首页广告 main/index
 # 推广广告 detail
 http-response ^https?://api.coolapk.com/v\d/(feed/(replyList|detail)|main/index|dataList) script-path=https://github.com/ZY714IU/ZY/raw/main/Scripts/coolapk.js,requires-body=true,timeout=10,tag=酷安
 
-# > pornhub
-# @Adblock4limbo
+# > pornhub @Adblock4limbo
 # https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/surge_pornhub.js
 http-response ^https?://(\w{0,3}(.){0,1}(pornhub)(.)\w{0,3})(?!.*?(/(cdn-cgi)))(?!.*?(.(css|js|jpeg|jpg|png|gif|ico|mp3|mp4|svg|tff|PNG|woff|woff2|m3u8))).* script-path=https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adguard/surge_pornhub.js,requires-body=true,timeout=10,tag=pornhub
 
-# > testflight
-# @NobyDa
+# > testflight @NobyDa
 # https://github.com/NobyDa/Script/blob/master/TestFlight/TestFlightAccount.js
 http-request ^https?://testflight.apple.com/v\d/(app|account|invite)s script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/TestFlightAccount.js,requires-body=true,timeout=10,tag=TestFlightAccount
 
-# > boxjs
-# @chavyleung
+# > boxjs @chavyleung
 # https://github.com/chavyleung/scripts/tree/master/box
 http-request ^https?://(.+.)?boxjs.(com|net) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/boxjs.js,requires-body=true,timeout=10,tag=boxjs
 
-# > substore
-# @Peng-YM
+# > substore @Peng-YM
 # https://github.com/sub-store-org/Sub-Store/blob/master/config/QX.snippet
 http-request ^https?://sub.store/((download)|api/(preview|sync|(utils/node-info))) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/sub_store_1.min.js, requires-body=true,timeout=10,tag=sub_store_1.min
 http-request ^https?://sub.store script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/sub_store_0.min.js, requires-body=true,timeout=10,tag=sub_store_0.min
