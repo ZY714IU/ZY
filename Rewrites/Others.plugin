@@ -233,17 +233,14 @@ DOMAIN-SUFFIX,wimg.yangshipin.cn,REJECT
 DOMAIN-SUFFIX,shuzilm.cn,REJECT
 # > 快手联盟
 DOMAIN-SUFFIX,open.e.kuaishou.com,REJECT
-# > 有道翻译官
+# > 有道翻译官 开屏广告
+DOMAIN-SUFFIX,gorgon.youdao.com,REJECT
 DOMAIN-SUFFIX,dsp-impr2.youdao.com,REJECT
 DOMAIN-SUFFIX,log-yex.youdao.com,REJECT
 DOMAIN-SUFFIX,download.ydstatic.com,REJECT
 DOMAIN-SUFFIX,b-clkservice.youdao.com,REJECT
-DOMAIN-SUFFIX,dsp-impr2.youdao.com,REJECT
-DOMAIN-SUFFIX,img2.360buyimg.com,REJECT
 # > 闲鱼 开屏广告
 DOMAIN-SUFFIX,iyes.youku.com,REJECT
-# > 有道翻译官 开屏广告
-DOMAIN-SUFFIX,gorgon.youdao.com,REJECT
 # > 个推
 DOMAIN-SUFFIX,sdk.open.talk.getui.net,REJECT
 DOMAIN-SUFFIX,sdk-conf.getui.com,REJECT
