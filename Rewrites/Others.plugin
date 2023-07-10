@@ -775,7 +775,7 @@ http-request ^https?://testflight.apple.com/v\d/(app|account|invite)s script-pat
 
 # > boxjs   @chavyleung
 # https://github.com/chavyleung/scripts/tree/master/box
-http-request ^https?://(.+.)?boxjs.(com|net) script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/box/chavy.boxjs.js, requires-body=true, timeout=10, tag=boxjs
+# http-request ^https?://(.+.)?boxjs.(com|net) script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/box/chavy.boxjs.js, requires-body=true, timeout=10, tag=boxjs
 
 # > substore   @Peng-YM
 # https://github.com/sub-store-org/Sub-Store/blob/master/config/QX.snippet
