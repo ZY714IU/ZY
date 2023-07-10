@@ -562,8 +562,8 @@ USER-AGENT,SpeedTest*,PROXY
 # 视频剪辑横幅 promotion/config
 # 设计室悬浮窗 homepage
 # 我的页vip prompt/query
-# 其他 user/show|user/unread|topic/retouch_topics|business|tool/common/activity|common/activity
-^https?://((api|tool|h5).(xiuxiu|posters)|vesdk).meitu.com//?(v\d/)?(tool/common/home|hot|search/pre|vip/(sub_popup|prompt/query)|homepage|promotion/config|user/show|user/unread|topic/retouch_topic|business|tool/activity|common/activity) url reject-dict
+# 其他 user/(unread|show|recommends)|topic/retouch_topics|business|tool/common/activity|common/activity
+^https?://((api|tool|h5).(xiuxiu|posters)|vesdk).meitu.com//?(v\d/)?(tool/common/home|hot|search/pre|vip/(sub_popup|prompt/query)|homepage|promotion/config|user/(unread|show|recommends)|topic/retouch_topic|business|tool/activity|common/activity) url reject-dict
 
 # > 中国移动
 # 开屏广告 init/startInit|explorePage/getAdverList
