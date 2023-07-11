@@ -582,7 +582,7 @@ USER-AGENT,SpeedTest*,PROXY
 # 子页悬浮窗 emotionMarket
 # 子页悬浮窗 baseServiceFunction/getAdverList
 # 其他 (msg|mailService|fault)/get(MessageUnread|UnreadCount|PromptInfo)
-^https?://((client|h).app.coc|app).10086.cn/biz-orange/(DN|WN|DA)/(init/startInit|emotionMarket|((explorePage|baseServiceFunction|msg|mailService|fault)/get(AdverList|MessageUnread|UnreadCount|PromptInfo))) url reject-dict
+^https?://(client|h).app.coc.10086.cn/biz-orange/(DN|WN|DA)/(init/startInit|emotionMarket|((explorePage|baseServiceFunction|msg|mailService|fault)/get(AdverList|MessageUnread|UnreadCount|PromptInfo))) url reject-dict
 
 # > 中国移动广西
 # 开屏广告 1102|1401；各种悬浮窗、签到模块、其他推广 2000；底部5G设置悬浮窗 1701；移动快报 1803
