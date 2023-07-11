@@ -440,7 +440,7 @@ USER-AGENT,SpeedTest*,PROXY
 # 视频流红包 video/redpacket
 # 首页角标弹窗 remind
 # 首页左上弹窗 push/daily
-# 搜索框推荐词 search/container_discover
+# 搜索框热词 search/container_discover
 # 信息流提示条 statuses/push_info
 # 作者其他微博 statuses/container_positive
 # 看图界面 photo/info
@@ -460,7 +460,7 @@ USER-AGENT,SpeedTest*,PROXY
 # 播放广告浮窗 pgc/activity
 # 播放广告卡片 pgc/season/player/cards
 # 动态页角标 Dynamic/(DynRed|CampusRedDot)
-# 搜索框推荐词 Search/DefaultWord
+# 搜索框热词 Search/DefaultWord
 # 打开通知弹窗 x/push/user/notify
 ^https?://(app|api|grpc).bili(bil|ap)i.(com|net)/(pgc/(activity|season/player/cards)|bilibili.app.(dynamic|interface).v\d.(Dynamic/(DynRed|CampusRedDot)|Search/DefaultWord)|x/push/user/notify) url reject-dict
 
@@ -475,7 +475,7 @@ USER-AGENT,SpeedTest*,PROXY
 # 创作中心各卡片 v4/creators|sku
 # 会员页悬浮窗 bazaar/float
 # 搜索框左侧活动 root/window
-# 搜索框推荐词 search/preset
+# 搜索框热词 search/preset
 # 活动推荐窗？ event-center/recommend
 # 热榜直播 drama/hot
 # 关注页角标 moments/tab
@@ -496,7 +496,7 @@ USER-AGENT,SpeedTest*,PROXY
 # 详情页 shield/search_poi/tips/?(_adv|rec|hooks)
 # 商铺弹窗 shield/search/client/push
 # 搜索框推荐 shield/scene/recommend
-# 搜索框推荐词 shield/search/new_hotword
+# 搜索框热词 shield/search/new_hotword
 # 首页底部卡片 faas/amap-navigation/main-page-(location|assets)
 # 路线规划广告 faas/amap-navigation/card-service-route-plan
 # 打车页卡片 boss/order(_web/friendly|/car/(king_toolbox|access_guide))
@@ -540,7 +540,7 @@ USER-AGENT,SpeedTest*,PROXY
 # 开屏广告 首页顶部横幅 ad/.*
 # 播放页 各种图标、提示、弹窗 link/position/show|music/songshare/text/recommend|mlivestream/entrance/playpage|community/friends/fans-group/artist|mlog/vinyl/story|user/sub/artist|vipcenter/tspopup|zone/songplay/entry|resniche/position/play
 # 首页 右上角图标、会员续费弹窗、侧边栏推广 event/floating|homepage/banner/ad|link/scene/show|music-vip-(membership|thoth)|vipauth/app/auth/recycle|side-bar|delivery/batch-deliver
-# 搜索页 推荐词、排行榜 search/(chart/(detail|list)$|(default/|rcmd/|special)keyword)
+# 搜索页 热词、排行榜 search/(chart/(detail|list)$|(default/|rcmd/|special)keyword)
 # 评论页 广告、星评馆、回复广告 comment/(hotcomment|feed/inserted|tips)|(v1/)?content/exposure/(comment/banner|vinyl/comment/entrance)
 # 歌单页 横幅广告 (middle/clientcfg|resource-exposure)(/activity)?/config
 # 播客 弹出广告 voice/play/page/ad
@@ -559,7 +559,7 @@ USER-AGENT,SpeedTest*,PROXY
 # 右下悬浮窗 v\d/zzusercenter/personalcenterreddot
 # 角标红点 v\d/corecyclelogic/getredpoint
 # 搜索框推荐搜索 transfer/getsearchword
-# 搜索框推荐词 transfer/getsearchconfigdata
+# 搜索框热词 transfer/getsearchconfigdata
 # 弹窗 transfer/getpopup
 # 不知是啥？transfer/userred
 ^https?://app.zhuanzhuan.com/(zzx|zz|common)/(open/zzui_lottie_message|v\d/(zzusercenter/personalcenterreddot|corecyclelogic/getredpoint)|transfer/(getsearc(hword|configdata)|getpopup|userred)) url reject-dict
@@ -568,7 +568,7 @@ USER-AGENT,SpeedTest*,PROXY
 # 我的页卡片 tool/common/home
 # 我的页弹窗 common/popup
 # 热搜页卡片 hot
-# 搜索框推荐词 search/pre
+# 搜索框热词 search/pre
 # 设计室悬浮窗 homepage
 # 视频剪辑横幅 promotion/config
 # 首页vip弹窗 sub_popup
@@ -645,7 +645,7 @@ http-response ^https?://(bootpreload|(sdk|wb)app).uve.weibo.com/(v1/ad|interface
 http-response ^https?://api.weibo.cn/2/((statuses|profile|search)/?(container_timeline(\?|_unread|_hot)|all|finder|extend|show|me)|comments/build|video/tiny_stream|messageflow|direct_messages|checkin|push/active|client/publisher|cardlist\?gsid|page|container/asyn|flowlist) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/weibo.js, requires-body=true, timeout=10, tag=微博
 # https://github.com/ddgksf2013/Rewrite/blob/master/AdBlock/Weibo.conf
 # 超话信息流 container_timeline_topic
-# 未登录搜索推荐词 cardlist
+# 未登录搜索框热词 cardlist
 # 未登录推荐信息流 timeline
 # 未登录关注信息流 statuses_unread_hot_timeline
 # (轻享版)开屏广告 .*get_coopen_ads
@@ -653,7 +653,7 @@ http-response ^https?://api.weibo.cn/2/((statuses|profile|search)/?(container_ti
 # (轻享版)热搜置顶 \?a=search_topic
 # (轻享版)我的vip栏 \?a=user_center
 http-response ^https?://(weibointl.)?api.weibo.cn/(2/)?(statuses/container_timeline_topic|guest/(cardlist|(statuses_unread_hot_)?timeline)|portal.php(.*(get_coopen_ads|feed&a=trends)|\?a=(search_topic|user_center))) script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/weibo_a.js, requires-body=true, timeout=10, tag=微博
-# (轻享版)搜索推荐词 get_searching_info
+# (轻享版)搜索热词 get_searching_info
 #^https?://weibointl.api.weibo.cn/portal.php.*user&a=get_searching_info url echo-response text/html echo-response https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/weibo_search_info.json
 # (轻享版)搜索下方热搜 search_topic
 #^https?://weibointl.api.weibo.cn/portal.php.*feed&a=search_topic url echo-response text/html echo-response https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/weibo_search_topic.json
