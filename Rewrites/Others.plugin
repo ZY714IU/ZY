@@ -89,32 +89,7 @@ DOMAIN,api.biliapi.net,PROXY
 #DOMAIN,mp.weixin.qq.com,PROXY 
 
 # > 微博
-DOMAIN-SUFFIX,ad.weibo.com,REJECT
-DOMAIN-SUFFIX,ads.viber.com,REJECT
-DOMAIN-SUFFIX,ads-d.viber.com,REJECT
-DOMAIN-SUFFIX,ads.aws.viber.com,REJECT
-DOMAIN-SUFFIX,tui.weibo.com,REJECT
-DOMAIN-SUFFIX,alitui.weibo.com,REJECT
-DOMAIN-SUFFIX,alitui.weibo.com.cn,REJECT
-DOMAIN-SUFFIX,adimg.uve.weibo.com,REJECT
-DOMAIN-SUFFIX,adimg.vue.weibo.com,REJECT
 DOMAIN-SUFFIX,biz.weibo.com,REJECT
-DOMAIN-SUFFIX,beacon.sina.com.cn,REJECT
-DOMAIN-SUFFIX,click.uve.weibo.com,REJECT
-DOMAIN-SUFFIX,dsp.edm.weibo.cn,REJECT
-DOMAIN-SUFFIX,fastimage.uve.weibo.com,REJECT
-DOMAIN-SUFFIX,game.weibo.cn,REJECT
-DOMAIN-SUFFIX,game.weibo.com,REJECT
-DOMAIN-SUFFIX,game.weibo.com.cn,REJECT
-DOMAIN-SUFFIX,push.mcp.weibo.cn,REJECT
-DOMAIN-SUFFIX,u1.img.mobile.sina.cn,REJECT
-DOMAIN-SUFFIX,widget.weibo.com,REJECT
-DOMAIN-SUFFIX,weibomingzi.com,REJECT
-DOMAIN-SUFFIX,s.weibo.com,REJECT
-DOMAIN-SUFFIX,sax.sina.com.cn,REJECT
-DOMAIN-SUFFIX,saxn.sina.com.cn,REJECT
-DOMAIN-SUFFIX,saxs.sina.com.cn,REJECT
-DOMAIN-SUFFIX,zymo.mps.weibo.com,REJECT
 # > 知乎
 DOMAIN-SUFFIX,appcloud.zhihu.com,REJECT
 DOMAIN-SUFFIX,appcloud2.in.zhihu.com,REJECT
