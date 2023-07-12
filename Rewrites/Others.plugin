@@ -593,8 +593,8 @@ USER-AGENT,SpeedTest*,PROXY
 # > 美团&外卖 开屏广告   @RuCu6
 ^https?://(s3plus|flowplus|img|wmapi).meituan.(net|com)/(v\d/mss_\w+/((brandcpt-vedio|waimai-alita)/\w+.zip$|linglong/\d+.jpg)|bizad/bizad_brandCpt_\d+.jpg|api/v\d/(loadInfo|openscreen|startpicture)) url reject-dict
 
-# > 酷安 热词   @ddgksf2013
-^https?://api.coolapk.com/v\d/search\?.*type=hotSearch url reject-dict
+# > 酷安 搜索框热词   @RuCu6
+^https?://api.coolapk.com/v6/search\?.*type=hotSearch url reject-dict
 
 # > 微信公众号 带货推广、底部广告、相关文章   @RuCu6
 ^https?://mp.weixin.qq.com/mp/(cps_product_info|getappmsgad|relatedarticle|masonryfeed)\? url reject-dict
@@ -761,12 +761,12 @@ http-request ^https?://youtubei.googleapis.com/youtubei/v1/(browse|next|player|r
 # binary-body-mode=true 二进制模式
 http-response ^https?://youtubei.googleapis.com/youtubei/v1/(browse|next|player|reel/reel_watch_sequence|search|guide|account/get_setting)\? script-path=https://raw.githubusercontent.com/ZY714IU/ZY/main/Scripts/youtube.response.beta.js, requires-body=true, binary-body-mode=true, tag=youtube
 
-# > 酷安   @ddgksf2013
+# > 酷安
 # 评论广告 feed/replyList
 # 商品推广 feed/detail
-# 首页广告 main/index
-# 推广广告 detail
-http-response ^https?://api.coolapk.com/v\d/(feed/(replyList|detail)|main/index|dataList) script-path=https://github.com/ZY714IU/ZY/raw/main/Scripts/coolapk.js, requires-body=true, timeout=10, tag=酷安
+# 首页广告 main/(dataList|indexV8)
+# 酷安热搜 page/dataList
+http-response ^https?://api.coolapk.com/v6/(feed|main|page)/(detail|replyList|dataList|indexV8) script-path=https://github.com/ZY714IU/ZY/raw/main/Scripts/coolapk.js, requires-body=true, timeout=10, tag=酷安
 
 # > pornhub   @ddgksf2013
 # https://github.com/ddgksf2013/Scripts/blob/master/pornhub.js
