@@ -1,6 +1,6 @@
 # > Name   Others
 # > Desc   分流
-# > Update 2023-07-09 23:00
+# > Update 2023-07-05 20:12
 
 # > 微博
 HOST,sdkapp.uve.weibo.com,DIRECT
@@ -36,6 +36,7 @@ HOST-SUFFIX,bingapis.net,Static
 HOST-SUFFIX,2220.it,Static
 HOST-SUFFIX,subs.usero.cn,Static
 HOST-KEYWORD,fishchips,Static
+HOST-KEYWORD,eflink,Static
 HOST-KEYWORD,efcloud,Static
 HOST-KEYWORD,efshop,Static
 HOST-KEYWORD,mojie,Static
@@ -73,20 +74,7 @@ HOST,api.biliapi.net,Static
 #HOST,mp.weixin.qq.com,Static 
 
 # > 微博
-HOST-SUFFIX,adimg.uve.weibo.com,REJECT
-HOST-SUFFIX,adimg.uve.weibo.com,REJECT
-HOST-SUFFIX,adstrategy.biz.weibo.com,REJECT
-HOST-SUFFIX,brandvideo.biz.weibo.com,REJECT
-HOST-SUFFIX,vs.biz.weibo.com,REJECT
-HOST-SUFFIX,kadmimage.biz.weibo.com,REJECT
-HOST-SUFFIX,u1.img.mobile.sina.cn,REJECT
-HOST-SUFFIX,sdkclick.biz.weibo.com,REJECT
-HOST-SUFFIX,sdkaction.biz.weibo.com,REJECT
-HOST-SUFFIX,sdkmonitor.biz.weibo.com,REJECT
-HOST-SUFFIX,sax.sina.com.cn,REJECT
-HOST-SUFFIX,saxn.sina.com.cn,REJECT
-HOST-SUFFIX,saxs.sina.com.cn,REJECT
-HOST-SUFFIX,beacon.sina.com.cn,REJECT
+HOST-SUFFIX,biz.weibo.com,REJECT
 # > 哔哩哔哩 后台间歇性失效，请在分流屏蔽以下域名
 # > 注意！屏蔽会导致登录和安全相关功能无法使用
 #HOST,mall.bilibili.com,REJECT
@@ -103,12 +91,13 @@ IP6-CIDR,2402:4e00:1200:ed00:0:9089:6dac:96b6/128,REJECT
 # > 字节跳动
 HOST-SUFFIX,ad.toutiao.com,REJECT
 HOST-SUFFIX,ad-sign.byteimg.com,REJECT
-HOST-SUFFIX,im-x.jd.com,REJECT
+HOST-SUFFIX,app-alpha.bytedance.net,REJECT
 HOST-SUFFIX,dig.bdurl.net,REJECT
 HOST-SUFFIX,dig.zjurl.cn,REJECT
 HOST-SUFFIX,dsp.toutiao.com,REJECT
 HOST-SUFFIX,pangolin-sdk-toutiao-b.com,REJECT
 HOST-SUFFIX,pangolin-sdk-toutiao.com,REJECT
+HOST-SUFFIX,im-x.jd.com,REJECT
 HOST-SUFFIX,snssdk.com,REJECT
 HOST-SUFFIX,zijieapi.com,REJECT
 HOST-SUFFIX,pglstatp-toutiao.com,REJECT
@@ -120,26 +109,34 @@ HOST-SUFFIX,p6-ad-sign.byteimg.com,REJECT
 HOST-SUFFIX,p9-ad-sign.byteimg.com,REJECT
 HOST-SUFFIX,rp.hpplay.cn,REJECT
 HOST-SUFFIX,shark-tracer.netease.com,REJECT
+HOST-KEYWORD,ad-sign.byteimg,REJECT
+HOST-KEYWORD,pangolin-sdk-toutiao,REJECT
 # > 百度
 HOST-SUFFIX,afd.baidu.com,REJECT
 HOST-SUFFIX,afdconf.baidu.com,REJECT
 HOST-SUFFIX,pos.baidu.com,REJECT
 HOST-SUFFIX,lc.map.baidu.com,REJECT
 HOST-SUFFIX,httpdns.baidubce.com,REJECT
+HOST-SUFFIX,udpolimenew.baidu.com,REJECT
 # > 贴吧、地图屏蔽域名dns查询(否则去广告不干净)
 IP-CIDR,180.76.76.200/32,REJECT
 # > 贴吧屏蔽ws(副作用；消息通知功能失效，需手动进入查看)，强制帖子接口走http
 #HOST,im.tieba.baidu.com,REJECT
 #IP-CIDR,203.107.1.1/32,REJECT
 # > 阿里巴巴
+HOST-SUFFIX,apoll.m.taobao.com,REJECT
 HOST-SUFFIX,adashx.m.taobao.com,REJECT
 HOST-SUFFIX,adashbc.m.taobao.com,REJECT
 HOST-SUFFIX,adash-c.ut.taobao.com,REJECT
 HOST-SUFFIX,adashbc.ut.taobao.com,REJECT
 HOST-SUFFIX,adashxgc.ut.taobao.com,REJECT
+HOST-KEYWORD,adash,REJECT
 # > 高德地图
 HOST-SUFFIX,awaken.amap.com,REJECT
 HOST-SUFFIX,adashx.ut.amap.com,REJECT
+# > 闲鱼 开屏广告
+HOST-SUFFIX,m.ykimg.com,REJECT
+HOST-SUFFIX,iyes.youku.com,REJECT
 # > 腾讯
 HOST-SUFFIX,adsmind.tc.qq.com,REJECT
 HOST-SUFFIX,adsmind.gdtimg.com,REJECT
@@ -157,6 +154,7 @@ HOST-SUFFIX,wxsnsdy.wxs.qq.com,REJECT
 HOST-SUFFIX,wxsnsdythumb.wxs.qq.com,REJECT
 HOST-SUFFIX,ottcn.com,REJECT
 HOST-SUFFIX,splashqqlive.gtimg.com,REJECT
+HOST-KEYWORD,adsmind,REJECT
 # > Apple绕过App企业证书过期
 HOST,ocsp.apple.com,REJECT
 # > Apple其他
@@ -173,7 +171,7 @@ HOST-SUFFIX,googleadservices.com,REJECT
 HOST-SUFFIX,googleadsserving.com,REJECT
 HOST-SUFFIX,googlesyndication.com,REJECT
 HOST-SUFFIX,googletagservices.com,REJECT
-HOST-KEYWORD,adservice.google.com,REJECT
+HOST-KEYWORD,adservice,REJECT
 # > Amazon AD
 HOST-SUFFIX,amazon-adsystem.com,REJECT
 # > 网易云音乐
@@ -211,12 +209,11 @@ HOST-SUFFIX,shuzilm.cn,REJECT
 # > 快手联盟
 HOST-SUFFIX,open.e.kuaishou.com,REJECT
 # > 有道翻译官
+HOST-SUFFIX,gorgon.youdao.com,REJECT
 HOST-SUFFIX,dsp-impr2.youdao.com,REJECT
 HOST-SUFFIX,log-yex.youdao.com,REJECT
 HOST-SUFFIX,download.ydstatic.com,REJECT
 HOST-SUFFIX,b-clkservice.youdao.com,REJECT
-HOST-SUFFIX,dsp-impr2.youdao.com,REJECT
-HOST-SUFFIX,img2.360buyimg.com,REJECT
 # > 安全浏览限制解除
 HOST,u3.ucweb.com,REJECT
 HOST,lookup.api.bsb.baidu.com,REJECT
@@ -226,6 +223,10 @@ HOST,safebrowsing.googleapis.com,REJECT
 HOST,proxy.safebrowsing.apple,REJECT
 HOST,token.safebrowsing.apple,REJECT
 HOST-SUFFIX,safebrowsing.apple,REJECT
+# > 个推
+HOST-SUFFIX,sdk.open.talk.getui.net,REJECT
+HOST-SUFFIX,sdk-conf.getui.com,REJECT
+HOST-SUFFIX,cm-10-138.getui.com,REJECT
 # > 其他
 HOST-KEYWORD,ads,REJECT
 
